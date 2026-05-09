@@ -1,0 +1,2788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajput Heritage — Valor, Chivalry & Royal Legacy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple-deep: #7C3AED;
+    --purple-mid: #A78BFA;
+    --purple-light: #C4B5FD;
+    --blue-soft: #60A5FA;
+    --blue-mist: #B9D9DC;
+    --white: #FFFFFF;
+    --off-white: #F8F6FF;
+    --glass-bg: rgba(255,255,255,0.72);
+    --glass-border: rgba(167,139,250,0.25);
+    --shadow-soft: 0 8px 32px rgba(124,58,237,0.10);
+    --shadow-card: 0 4px 24px rgba(124,58,237,0.13);
+    --text-dark: #1a0a3a;
+    --text-mid: #4a3070;
+    --text-light: #7C5FAB;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Crimson Pro', Georgia, serif;
+    background: var(--off-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* ── BACKGROUND TEXTURE ── */
+  body::before {
+    content:'';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 10% 10%, rgba(196,181,253,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 90% 80%, rgba(96,165,250,0.13) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 40% at 50% 50%, rgba(185,217,220,0.10) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 2px 20px rgba(124,58,237,0.07);
+    padding: 0 2rem;
+    height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--purple-deep);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex; gap: 0.2rem; list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: all 0.2s;
+    letter-spacing: 0.06em;
+  }
+  .nav-links a:hover {
+    background: var(--purple-light);
+    color: var(--purple-deep);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; z-index:1;
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 100px 2rem 4rem;
+    overflow: hidden;
+  }
+  .hero-ornament {
+    position: absolute; top: 80px; left: 50%; transform: translateX(-50%);
+    opacity: 0.13;
+    animation: slow-spin 60s linear infinite;
+  }
+  @keyframes slow-spin { to { transform: translateX(-50%) rotate(360deg); } }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(196,181,253,0.3);
+    border: 1px solid rgba(167,139,250,0.4);
+    border-radius: 100px;
+    padding: 6px 18px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--purple-deep);
+    margin-bottom: 2rem;
+    backdrop-filter: blur(8px);
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(2.6rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    background: linear-gradient(135deg, var(--purple-deep) 0%, #5B21B6 30%, var(--blue-soft) 70%, var(--purple-mid) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.2rem;
+    animation: fadeUp 0.9s ease 0.1s both;
+  }
+  .hero-sub {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.85rem, 2vw, 1.1rem);
+    color: var(--text-light);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+    animation: fadeUp 0.9s ease 0.2s both;
+  }
+  .hero-desc {
+    font-size: 1.2rem;
+    color: var(--text-mid);
+    max-width: 620px;
+    line-height: 1.8;
+    font-style: italic;
+    animation: fadeUp 0.9s ease 0.3s both;
+  }
+  .hero-stats {
+    display: flex; gap: 2.5rem; margin-top: 3rem;
+    animation: fadeUp 0.9s ease 0.4s both;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--purple-deep);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+  }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(28px); }
+    to { opacity:1; transform: translateY(0); }
+  }
+
+  /* ── SECTION COMMON ── */
+  section { position: relative; z-index: 1; padding: 5rem 2rem; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+  .section-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--purple-mid);
+    margin-bottom: 0.8rem;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .section-eyebrow::before, .section-eyebrow::after {
+    content:''; height: 1px; width: 40px;
+    background: linear-gradient(90deg, transparent, var(--purple-mid));
+  }
+  .section-eyebrow::after { background: linear-gradient(90deg, var(--purple-mid), transparent); }
+
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.2;
+  }
+  .section-title span {
+    background: linear-gradient(135deg, var(--purple-deep), var(--blue-soft));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .section-desc {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    margin-top: 0.8rem;
+    font-style: italic;
+    max-width: 560px;
+    margin-left: auto; margin-right: auto;
+  }
+
+  /* ── GLASS CARD ── */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: var(--shadow-card);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(124,58,237,0.18);
+  }
+
+  /* ── ORIGIN SECTION ── */
+  .origin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .origin-main {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-card);
+  }
+  .origin-main h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    color: var(--purple-deep);
+    margin-bottom: 1rem;
+  }
+  .origin-main p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--text-mid);
+    margin-bottom: 1rem;
+  }
+  .origin-facts {
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .fact-item {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.4rem 1.6rem;
+    box-shadow: var(--shadow-soft);
+    display: flex; align-items: flex-start; gap: 1rem;
+  }
+  .fact-icon {
+    flex-shrink: 0;
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--purple-light), var(--blue-mist));
+    display: flex; align-items: center; justify-content: center;
+  }
+  .fact-item h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    color: var(--purple-deep);
+    margin-bottom: 0.3rem;
+  }
+  .fact-item p {
+    font-size: 0.93rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  /* ── CLANS GRID ── */
+  .clans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .clan-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+  .clan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 48px rgba(124,58,237,0.2);
+  }
+  .clan-header {
+    padding: 1.4rem 1.6rem 1rem;
+    border-bottom: 1px solid rgba(167,139,250,0.15);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .clan-symbol {
+    width: 48px; height: 48px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .clan-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+  .clan-origin-tag {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.08em;
+  }
+  .clan-body {
+    padding: 1rem 1.6rem 1.4rem;
+  }
+  .clan-body p {
+    font-size: 0.93rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+  }
+  .clan-tags {
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .tag {
+    background: rgba(196,181,253,0.3);
+    color: var(--purple-deep);
+    border: 1px solid rgba(167,139,250,0.3);
+    border-radius: 100px;
+    padding: 3px 10px;
+    font-size: 0.7rem;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.05em;
+  }
+  .tag.blue {
+    background: rgba(185,217,220,0.35);
+    color: #1d6a8a;
+    border-color: rgba(96,165,250,0.3);
+  }
+
+  /* ── KINGDOMS ── */
+  .kingdoms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.8rem;
+  }
+  .kingdom-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 22px;
+    box-shadow: var(--shadow-card);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .kingdom-card:hover { transform: translateY(-4px); box-shadow: 0 14px 44px rgba(124,58,237,0.19); }
+  .kingdom-card::before {
+    content:'';
+    position: absolute; top: 0; right: 0;
+    width: 100px; height: 100px;
+    border-radius: 0 22px 0 100%;
+    opacity: 0.08;
+  }
+  .k-era {
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 0.6rem;
+  }
+  .k-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.3rem;
+  }
+  .k-clan {
+    font-size: 0.85rem;
+    color: var(--purple-mid);
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  .kingdom-card p {
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  .k-founder {
+    display: flex; align-items: center; gap: 8px;
+    background: rgba(196,181,253,0.2);
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 0.82rem;
+    color: var(--text-mid);
+  }
+  .k-founder strong {
+    color: var(--purple-deep);
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+  }
+
+  /* ── WARRIORS ── */
+  .warriors-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .warrior-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 1.8rem;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+  }
+  .warrior-card:hover { transform: translateY(-4px); box-shadow: 0 12px 38px rgba(124,58,237,0.18); }
+  .warrior-rank {
+    position: absolute; top: 1.4rem; right: 1.4rem;
+    background: linear-gradient(135deg, var(--purple-deep), var(--blue-soft));
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+  .warrior-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+  }
+  .warrior-title {
+    font-size: 0.85rem;
+    color: var(--purple-mid);
+    font-style: italic;
+    margin-bottom: 0.8rem;
+  }
+  .warrior-card p {
+    font-size: 0.93rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* ── VALUES ── */
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.2rem;
+  }
+  .value-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    padding: 1.8rem 1.4rem;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s;
+  }
+  .value-card:hover { transform: translateY(-3px); }
+  .value-icon {
+    width: 56px; height: 56px;
+    border-radius: 16px;
+    margin: 0 auto 1rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .value-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.4rem;
+  }
+  .value-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .timeline::before {
+    content:'';
+    position: absolute; left: 50%; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--purple-light), var(--blue-mist), var(--purple-light));
+    transform: translateX(-50%);
+  }
+  .tl-item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    align-items: flex-start;
+  }
+  .tl-item:nth-child(even) { flex-direction: row-reverse; }
+  .tl-content {
+    flex: 1;
+    background: var(--glass-bg);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.4rem 1.6rem;
+    box-shadow: var(--shadow-soft);
+  }
+  .tl-year {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1rem;
+    color: var(--purple-deep);
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+  .tl-content h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+  }
+  .tl-content p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.6; }
+  .tl-dot {
+    flex-shrink: 0; width: 16px; height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple-deep), var(--blue-soft));
+    margin-top: 1.2rem;
+    position: relative; z-index: 1;
+    box-shadow: 0 0 0 4px rgba(167,139,250,0.25);
+  }
+
+  /* ── SUBCASTE TABLE ── */
+  .sub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.2rem;
+  }
+  .sub-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.4rem;
+    box-shadow: var(--shadow-soft);
+  }
+  .sub-card h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--purple-deep);
+    margin-bottom: 0.6rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .sub-card ul {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .sub-card ul li {
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    padding: 3px 0;
+    border-bottom: 1px solid rgba(167,139,250,0.1);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .sub-card ul li::before {
+    content:'';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--purple-mid);
+    flex-shrink: 0;
+  }
+
+  /* ── CULTURE ── */
+  .culture-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .culture-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 1.8rem;
+    box-shadow: var(--shadow-card);
+  }
+  .culture-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .culture-card p {
+    font-size: 0.93rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative; z-index:1;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--glass-border);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  .footer-brand {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 1.4rem;
+    color: var(--purple-deep);
+    margin-bottom: 0.5rem;
+  }
+  .footer-tagline {
+    font-style: italic;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  .footer-links {
+    display: flex; justify-content: center; gap: 1.5rem; list-style: none; margin-bottom: 1.5rem;
+  }
+  .footer-links a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--purple-deep); }
+  footer p { font-size: 0.8rem; color: var(--text-light); }
+
+  /* ── DIVIDER ── */
+  .svg-divider { display: block; margin: 0 auto; opacity: 0.3; }
+
+  /* ── SEARCH BAR ── */
+  .search-wrap {
+    max-width: 500px;
+    margin: 2rem auto 0;
+    position: relative;
+  }
+  .search-input {
+    width: 100%;
+    padding: 14px 50px 14px 20px;
+    border-radius: 50px;
+    border: 1.5px solid rgba(167,139,250,0.35);
+    background: rgba(255,255,255,0.85);
+    font-family: 'Crimson Pro', serif;
+    font-size: 1rem;
+    color: var(--text-dark);
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+    box-shadow: var(--shadow-soft);
+  }
+  .search-input:focus {
+    border-color: var(--purple-mid);
+    box-shadow: 0 0 0 3px rgba(167,139,250,0.2);
+  }
+  .search-btn {
+    position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--purple-deep), var(--blue-soft));
+    border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.2s;
+  }
+  .search-btn:hover { opacity: 0.88; }
+
+  /* ── SCROLL HINT ── */
+  .scroll-hint {
+    margin-top: 3rem;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    animation: fadeUp 1s ease 0.8s both;
+  }
+  .scroll-hint span {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--text-light);
+  }
+  .scroll-arrow {
+    animation: bounce 2s ease infinite;
+  }
+  @keyframes bounce { 0%,100%{transform:translateY(0)}50%{transform:translateY(6px)} }
+
+  /* Responsive */
+  @media(max-width:768px){
+    .origin-grid, .culture-grid { grid-template-columns: 1fr; }
+    .timeline::before { left: 12px; }
+    .tl-item, .tl-item:nth-child(even) { flex-direction: column; padding-left: 2.5rem; }
+    .tl-dot { position: absolute; left: 0; }
+    .nav-links { display: none; }
+    .hero-stats { gap: 1.5rem; }
+  }
+
+  /* ── FAMILY TREE ── */
+  .ft-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+  .ft-tab {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    padding: 9px 20px;
+    border-radius: 100px;
+    border: 1.5px solid rgba(167,139,250,0.35);
+    background: rgba(255,255,255,0.7);
+    color: var(--text-mid);
+    cursor: pointer;
+    transition: all 0.22s;
+    backdrop-filter: blur(8px);
+  }
+  .ft-tab:hover {
+    border-color: var(--purple-mid);
+    color: var(--purple-deep);
+    background: rgba(196,181,253,0.18);
+  }
+  .ft-tab.active {
+    background: linear-gradient(135deg, var(--purple-deep), #5B21B6);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 16px rgba(124,58,237,0.3);
+  }
+
+  .ft-tree { display: none; }
+  .ft-tree.active { display: block; }
+
+  .ft-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  .ft-leg-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    letter-spacing: 0.06em;
+  }
+  .ft-leg-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .ft-leg-dot.founder { background: linear-gradient(135deg,#7C3AED,#5B21B6); }
+  .ft-leg-dot.king    { background: linear-gradient(135deg,#60A5FA,#2563EB); }
+  .ft-leg-dot.warrior { background: linear-gradient(135deg,#F59E0B,#D97706); }
+  .ft-leg-dot.saint   { background: linear-gradient(135deg,#EC4899,#BE185D); }
+
+  .ft-scroll-wrap {
+    overflow-x: auto;
+    padding-bottom: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .ft-canvas {
+    min-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2rem 2rem;
+    position: relative;
+  }
+
+  /* Levels */
+  .ft-level {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+  .ft-level.multi { align-items: flex-start; }
+  .ft-branch-group {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    position: relative;
+  }
+  /* Horizontal connector between siblings */
+  .ft-branch-group::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(50% - 50%);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--purple-light), transparent);
+    width: 100%;
+    transform: translateY(-14px);
+    z-index: 0;
+  }
+
+  /* Vertical connector between levels */
+  .ft-connector-down {
+    width: 2px;
+    height: 38px;
+    background: linear-gradient(180deg, var(--purple-light), var(--blue-mist));
+    margin: 0 auto;
+    position: relative;
+    z-index: 0;
+    flex-shrink: 0;
+  }
+
+  /* Node card */
+  .ft-node {
+    position: relative;
+    background: var(--glass-bg);
+    backdrop-filter: blur(14px);
+    border: 1.5px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1rem 1.2rem;
+    min-width: 160px;
+    max-width: 220px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    z-index: 1;
+  }
+  .ft-node:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 36px rgba(124,58,237,0.22);
+    border-color: var(--purple-mid);
+  }
+  .ft-node.large {
+    min-width: 200px;
+    padding: 1.3rem 1.4rem;
+  }
+  .ft-node.major {
+    border-color: rgba(167,139,250,0.5);
+  }
+
+  /* Node type colors */
+  .ft-node.founder {
+    background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(91,33,182,0.08));
+    border-color: rgba(124,58,237,0.4);
+  }
+  .ft-node.king {
+    background: linear-gradient(135deg, rgba(96,165,250,0.1), rgba(37,99,235,0.06));
+    border-color: rgba(96,165,250,0.35);
+  }
+  .ft-node.warrior {
+    background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(217,119,6,0.06));
+    border-color: rgba(245,158,11,0.35);
+  }
+  .ft-node.saint {
+    background: linear-gradient(135deg, rgba(236,72,153,0.1), rgba(190,24,93,0.06));
+    border-color: rgba(236,72,153,0.35);
+  }
+
+  .fn-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    margin: 0 auto 0.6rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ft-node.founder .fn-icon { background: linear-gradient(135deg,#7C3AED,#5B21B6); }
+  .ft-node.king .fn-icon    { background: linear-gradient(135deg,#60A5FA,#2563EB); }
+  .ft-node.warrior .fn-icon { background: linear-gradient(135deg,#F59E0B,#D97706); }
+  .ft-node.saint .fn-icon   { background: linear-gradient(135deg,#EC4899,#BE185D); }
+  .ft-node.major.king .fn-icon { background: linear-gradient(135deg,#60A5FA,#7C3AED); }
+
+  .fn-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.3;
+    margin-bottom: 0.25rem;
+  }
+  .fn-meta {
+    font-size: 0.72rem;
+    color: var(--text-light);
+    font-family: 'Cinzel', serif;
+    margin-bottom: 0.3rem;
+  }
+  .fn-caste {
+    font-size: 0.68rem;
+    color: var(--purple-mid);
+    font-style: italic;
+    line-height: 1.3;
+  }
+
+  /* Tooltip */
+  .ft-tooltip {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(20px);
+    border: 1.5px solid rgba(167,139,250,0.35);
+    border-radius: 16px;
+    padding: 1.1rem 1.4rem;
+    max-width: 300px;
+    box-shadow: 0 16px 48px rgba(124,58,237,0.22);
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+    pointer-events: none;
+  }
+  .ft-tooltip.visible { display: block; }
+  .ft-tooltip-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--purple-deep);
+    margin-bottom: 0.5rem;
+  }
+
+  /* Node pulse on hover */
+  .ft-node.founder::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 18px;
+    border: 1.5px solid rgba(124,58,237,0.25);
+    animation: pulse-ring 2.5s ease infinite;
+    pointer-events: none;
+  }
+  @keyframes pulse-ring {
+    0%  { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 0.2; transform: scale(1.04); }
+    100%{ opacity: 0.7; transform: scale(1); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+      <path d="M14 2L17 9H24L18.5 13.5L20.5 21L14 16.5L7.5 21L9.5 13.5L4 9H11L14 2Z" fill="url(#navgrad)"/>
+      <defs><linearGradient id="navgrad" x1="4" y1="2" x2="24" y2="21"><stop stop-color="#7C3AED"/><stop offset="1" stop-color="#60A5FA"/></linearGradient></defs>
+    </svg>
+    Rajput Heritage
+  </a>
+  <ul class="nav-links">
+    <li><a href="#origin">Origin</a></li>
+    <li><a href="#clans">Clans</a></li>
+    <li><a href="#kingdoms">Kingdoms</a></li>
+    <li><a href="#warriors">Warriors</a></li>
+    <li><a href="#subcastes">Sub-Castes</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#culture">Culture</a></li>
+    <li><a href="#familytree">Family Tree</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <svg class="hero-ornament" width="600" height="600" viewBox="0 0 600 600" fill="none">
+    <circle cx="300" cy="300" r="280" stroke="#7C3AED" stroke-width="1"/>
+    <circle cx="300" cy="300" r="240" stroke="#A78BFA" stroke-width="0.5" stroke-dasharray="4 8"/>
+    <circle cx="300" cy="300" r="200" stroke="#60A5FA" stroke-width="1"/>
+    <circle cx="300" cy="300" r="160" stroke="#7C3AED" stroke-width="0.5" stroke-dasharray="2 6"/>
+    <line x1="300" y1="20" x2="300" y2="580" stroke="#A78BFA" stroke-width="0.4"/>
+    <line x1="20" y1="300" x2="580" y2="300" stroke="#A78BFA" stroke-width="0.4"/>
+    <line x1="100" y1="100" x2="500" y2="500" stroke="#C4B5FD" stroke-width="0.4"/>
+    <line x1="500" y1="100" x2="100" y2="500" stroke="#C4B5FD" stroke-width="0.4"/>
+    <polygon points="300,60 340,140 430,140 365,195 390,280 300,230 210,280 235,195 170,140 260,140" stroke="#7C3AED" stroke-width="0.8" fill="none"/>
+  </svg>
+
+  <div class="hero-badge">
+    <svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 1L8.5 4.5H12L9.5 6.8L10.5 10.5L7 8.5L3.5 10.5L4.5 6.8L2 4.5H5.5L7 1Z" fill="#7C3AED"/></svg>
+    KSHATRIYA LEGACY OF INDIA
+  </div>
+
+  <h1>Rajput<br>Heritage</h1>
+  <p class="hero-sub">Valor · Chivalry · Royal Legacy · Honor</p>
+  <p class="hero-desc">
+    Descendants of warrior kings, the Rajputs upheld a code of honor unmatched in Indian history — 
+    forging mighty empires, fighting legendary battles, and leaving a cultural legacy that endures to this day.
+  </p>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">36+</div>
+      <div class="stat-label">Royal Clans</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">500+</div>
+      <div class="stat-label">Sub-Castes</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">1500+</div>
+      <div class="stat-label">Years of History</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">22+</div>
+      <div class="stat-label">Kingdoms</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>EXPLORE BELOW</span>
+    <svg class="scroll-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M10 4V16M10 16L5 11M10 16L15 11" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ORIGIN SECTION -->
+<section id="origin" style="padding-top:4rem;">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Origins & Identity</div>
+      <h2 class="section-title">Who Are the <span>Rajputs?</span></h2>
+      <p class="section-desc">A proud warrior aristocracy that shaped the destiny of the Indian subcontinent.</p>
+    </div>
+
+    <div class="origin-grid">
+      <div class="origin-main">
+        <h3>Historical Origins</h3>
+        <p>
+          The term "Rajput" (Sanskrit: <em>Rājaputra</em>) literally means "son of a king." They are a large multi-component group from the Indian subcontinent who claim to be descendants of ancient ruling Hindu warrior classes of the Kshatriya varna.
+        </p>
+        <p>
+          Rajput clans rose to prominence between the 6th and 12th centuries CE across northern and central India, particularly in Rajputana (modern Rajasthan), Gujarat, and Madhya Pradesh. They are traditionally categorized into three primary lineages — <strong>Suryavanshi</strong> (Solar), <strong>Chandravanshi</strong> (Lunar), and <strong>Agnivanshi</strong> (Fire-born).
+        </p>
+        <p>
+          The Agnikula legend, recorded in medieval texts like the Prithviraj Raso, describes four Rajput clans — Parmar, Chahamana, Chaulukya, and Paramara — as emerging from a sacrificial fire (<em>agni kunda</em>) on Mount Abu, sent by the gods to fight against demonic forces.
+        </p>
+        <p>
+          Modern historians view Rajputs as a heterogeneous group formed from various Indian and Central Asian communities during the post-Gupta period, united by military service, Hindu religion, and a warrior code of conduct called <em>Rajputra Dharma</em>.
+        </p>
+      </div>
+
+      <div class="origin-facts">
+        <div class="fact-item">
+          <div class="fact-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path d="M11 2C6.03 2 2 6.03 2 11s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 2c1.96 0 3.76.64 5.22 1.7L4.7 16.22A6.97 6.97 0 0 1 4 13c0-3.87 3.13-7 7-7zm0 14c-1.96 0-3.76-.64-5.22-1.7L17.3 5.78A6.97 6.97 0 0 1 18 9c0 3.87-3.13 7-7 7z" fill="#7C3AED"/>
+            </svg>
+          </div>
+          <div>
+            <h4>The Three Lineages</h4>
+            <p><strong>Suryavanshi</strong> — Solar dynasty, claiming descent from the sun god Surya. Includes the Sisodiya, Kachwaha, and Rathore clans.</p>
+          </div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path d="M11 2a5.5 5.5 0 1 0 0 11A5.5 5.5 0 0 0 11 2zm0 2a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7zM4 18c0-2.21 3.13-4 7-4s7 1.79 7 4" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Chandravanshi — Lunar Dynasty</h4>
+            <p>Claiming descent from the moon god Chandra. Includes the Jadaun (Yadav), Bhati, and Tomar clans.</p>
+          </div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path d="M11 3L8 8H3l4 3.5L5.5 17 11 13.5 16.5 17 15 11.5 19 8h-5L11 3z" fill="#A78BFA"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Agnivanshi — Fire-born</h4>
+            <p>Clans said to have emerged from sacred fire: Parmar, Chahamana (Chauhan), Chaulukya (Solanki), and Pratihara.</p>
+          </div>
+        </div>
+        <div class="fact-item">
+          <div class="fact-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <rect x="3" y="3" width="16" height="16" rx="3" stroke="#B9D9DC" stroke-width="1.8" fill="none"/>
+              <path d="M7 11h8M11 7v8" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <h4>Geographic Spread</h4>
+            <p>Primarily Rajasthan, Gujarat, MP, UP, Bihar, Himachal Pradesh, Uttarakhand, Punjab, Haryana, and parts of Nepal, Pakistan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLANS SECTION -->
+<section id="clans" style="background: rgba(255,255,255,0.3);">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">The 36 Royal Kulas</div>
+      <h2 class="section-title">Major Rajput <span>Clans</span></h2>
+      <p class="section-desc">The 36 royal clans (Chattis Rajkulas) recognized in traditional Rajput genealogy.</p>
+    </div>
+
+    <div class="clans-grid">
+
+      <!-- Sisodiya -->
+      <div class="clan-card">
+        <div class="clan-header">
+          <div class="clan-symbol" style="background:linear-gradient(135deg,#7C3AED22,#A78BFA33)">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M15 4L19 11H26L20.5 15.5L23 23L15 18.5L7 23L9.5 15.5L4 11H11L15 4Z" fill="#7C3AED"/></svg>
+          </div>
+          <div>
+            <div class="clan-name">Sisodiya (Sisodia)</div>
+            <div class="clan-origin-tag">Suryavanshi · Mewar</div>
+          </div>
+        </div>
+        <div class="clan-body">
+          <p>The most prominent Rajput clan, ruling the kingdom of Mewar (Udaipur). Known for their fierce resistance against Mughal emperors. Their motto: <em>Jo Dridh Rahe So Mewar Rahe</em>.</p>
+          <div class="clan-tags">
+            <span class="tag">Bappa Rawal (Founder)</span>
+            <span class="tag blue">Mewar Kingdom</span>
+            <span class="tag">Maharana Pratap</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rathore -->
+      <div class="clan-card">
+        <div class="clan-header">
+          <div class="clan-symbol" style="background:linear-gradient(135deg,#60A5FA22,#B9D9DC33)">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="11" stroke="#60A5FA" stroke-width="2" fill="none"/><path d="M15 8L17.5 13H23L18.8 16.3L20.6 21.5L15 18.3L9.4 21.5L11.2 16.3L7 13H12.5L15 8Z" fill="#60A5FA"/></svg>
+          </div>
+          <div>
+            <div class="clan-name">Rathore</div>
+            <div class="clan-origin-tag">Suryavanshi · Marwar</div>
+          </div>
+        </div>
+        <div class="clan-body">
+          <p>One of the most powerful Rajput clans, ruling the Marwar region from Jodhpur. Descended from Rao Siyaji, who came from Kannauj. Known for their valor and the iconic Mehrangarh Fort.</p>
+          <div class="clan-tags">
+            <span class="tag">Rao Siyaji (Founder)</span>
+            <span class="tag blue">Jodhpur State</span>
+            <span class="tag">Bikaner State</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kachwaha -->
+      <div class="clan-card">
+        <div class="clan-header">
+          <div class="clan-symbol" style="background:linear-gradient(135deg,#C4B5FD22,#7C3AED22)">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M15 3L24 9V21L15 27L6 21V9L15 3Z" stroke="#A78BFA" stroke-width="2" fill="none"/><circle cx="15" cy="15" r="4" fill="#A78BFA"/></svg>
+          </div>
+          <div>
+            <div class="clan-name">Kachwaha (Kachchwaha)</div>
+            <div class="clan-origin-tag">Suryavanshi · Amber/Jaipur</div>
+          </div>
+        </div>
+        <div class="clan-body">
+          <p>Rulers of Amber and later Jaipur (Dhundhar). Noted for their alliance with the Mughal Empire. Maharaja Man Singh I was a top general of Emperor Akbar. Founded the Pink City, Jaipur.</p>
+          <div class="clan-tags">
+            <span class="tag">Dhola Rai (Founder)</span>
+            <span class="tag blue">Jaipur State</span>
+            <span class="tag">Jai Singh II</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chauhan -->
+      <div class="clan-card">
+        <div class="clan-header">
+          <div class="clan-symbol" style="background:linear-gradient(135deg,#B9D9DC22,#60A5FA22)">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M8 22L15 4L22 22H8Z" stroke="#60A5FA" stroke-width="2" fill="none"/><path d="M10 18h10" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div class="clan-name">Chahamana (Chauhan)</div>
+            <div class="clan-origin-tag">Agnivanshi · Shakambhari</div>
+          </div>
+        </div>
+        <div class="clan-body">
+          <p>Rose to power in Shakambhari (Sambhar). Their greatest ruler Prithviraj Chauhan III, the last Hindu emperor of Delhi, is immortalized in the epic poem Prithviraj Raso.</p>
+          <div class="clan-tags">
+            <span class="tag">Vasudeva (Founder)</span>
+            <span class="tag blue">Shakambhari Kingdom</span>
+            <span class="tag">Prithviraj Chauhan</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Parmar -->
+      <div class="clan-card">
+        <div class="clan-header">
+          <div class="clan-symbol" style="background:linear-gradient(135deg,#7C3AED22,#C4B5FD22)">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><rect x="6" y="6" width="18" height="18" rx="4" stroke="#7C3AED" stroke-width="2" fill="none"/><path d="M10 15h10M15 10v10" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div class="clan-name">Parmar (Paramara)</div>
+            <div class="clan-origin-tag">Agnivanshi · Malwa</div>
+          </div>
+        </div>
+        <div class="clan-body">
+          <p>Rulers of the Malwa region. King Bhoja (Raja Bhoja) of the Paramara dynasty was renowned as a great scholar, author, and patron of arts — sometimes called the "ideal king" of medieval India.</p>
+          <div class="clan-tags">
+            <span class="tag">Upendra (Founder)</span>
+            <span class="tag blue">Malwa Kingdom</span>
+            <span class="tag">Raja Bhoja</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solanki -->
+      <div class="clan-card">
+        <div class="clan-header">
+          <div class="clan-symbol" style="background:linear-gradient(135deg,#60A5FA22,#B9D9DC22)">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M15 5l2.5 7.5H25l-6.3 4.6 2.4 7.4L15 20.1l-6.1 4.4 2.4-7.4L5 12.5h7.5L15 5z" stroke="#60A5FA" stroke-width="1.5" fill="none"/></svg>
+          </div>
+          <div>
+            <div class="clan-name">Chaulukya (Solanki)</div>
+            <div class="clan-origin-tag">Agnivanshi · Gujarat</div>
+          </div>
+        </div>
+        <div class="clan-body">
+          <p>Ruled Gujarat and parts of Rajasthan from Anhilwara (Patan). Under Kumarpal and Siddhraj Jaisingh, the dynasty reached its peak, building the famous Modhera Sun Temple.</p>
+          <div class="clan-tags">
+            <span class="tag">Mularaja (Founder)</span>
+            <span class="tag blue">Gujarat Kingdom</span>
+            <span class="tag">Siddhraj Jaisingh</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bhati -->
+      <div class="clan-card">
+        <div class="clan-header">
+          <div class="clan-symbol" style="background:linear-gradient(135deg,#A78BFA22,#7C3AED22)">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M15 4C9 4 4 9 4 15s5 11 11 11 11-5 11-11S21 4 15 4z" stroke="#A78BFA" stroke-width="2" fill="none"/><path d="M11 12l4 6 4-6" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          </div>
+          <div>
+            <div class="clan-name">Bhati (Bhatti)</div>
+            <div class="clan-origin-tag">Chandravanshi · Jaisalmer</div>
+          </div>
+        </div>
+        <div class="clan-body">
+          <p>Founders of Jaisalmer (the "Golden City"). Descended from the Yadu clan of Lord Krishna. Rawal Jaisal founded the iconic Jaisalmer Fort in 1156 CE on the Trikuta Hill.</p>
+          <div class="clan-tags">
+            <span class="tag">Rawal Jaisal (Founder)</span>
+            <span class="tag blue">Jaisalmer State</span>
+            <span class="tag">Yadav Lineage</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tomar -->
+      <div class="clan-card">
+        <div class="clan-header">
+          <div class="clan-symbol" style="background:linear-gradient(135deg,#B9D9DC22,#60A5FA22)">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M6 24V10l9-6 9 6v14" stroke="#60A5FA" stroke-width="2" fill="none" stroke-linejoin="round"/><rect x="11" y="16" width="8" height="8" stroke="#B9D9DC" stroke-width="1.5" fill="none"/></svg>
+          </div>
+          <div>
+            <div class="clan-name">Tomar (Tomara)</div>
+            <div class="clan-origin-tag">Chandravanshi · Delhi</div>
+          </div>
+        </div>
+        <div class="clan-body">
+          <p>Founded the city of Delhi (Dhilika) around 736 CE. Their most famous king was Anangpal Tomar II, who established Delhi as a major capital and built the famous Iron Pillar complex.</p>
+          <div class="clan-tags">
+            <span class="tag">Anangpal I (Founder)</span>
+            <span class="tag blue">Delhi Kingdom</span>
+            <span class="tag">Gwalior Fort</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bundela -->
+      <div class="clan-card">
+        <div class="clan-header">
+          <div class="clan-symbol" style="background:linear-gradient(135deg,#7C3AED22,#A78BFA22)">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M15 3l3 9h9l-7.5 5.5L22 26l-7-5.5L8 26l2.5-8.5L3 12h9L15 3z" fill="#7C3AED" opacity="0.7"/></svg>
+          </div>
+          <div>
+            <div class="clan-name">Bundela</div>
+            <div class="clan-origin-tag">Suryavanshi · Bundelkhand</div>
+          </div>
+        </div>
+        <div class="clan-body">
+          <p>Rulers of the Bundelkhand region (present-day MP and UP). Their most celebrated hero is Chhatrasal Bundela, who defeated Aurangzeb's forces and freed Bundelkhand from Mughal control.</p>
+          <div class="clan-tags">
+            <span class="tag">Hemkaran (Founder)</span>
+            <span class="tag blue">Bundelkhand</span>
+            <span class="tag">Maharaja Chhatrasal</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jadaun -->
+      <div class="clan-card">
+        <div class="clan-header">
+          <div class="clan-symbol" style="background:linear-gradient(135deg,#C4B5FD22,#B9D9DC22)">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="12" r="6" stroke="#A78BFA" stroke-width="2" fill="none"/><path d="M5 26c0-5.52 4.48-10 10-10s10 4.48 10 10" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+          </div>
+          <div>
+            <div class="clan-name">Jadaun (Jadon)</div>
+            <div class="clan-origin-tag">Chandravanshi · Karauli</div>
+          </div>
+        </div>
+        <div class="clan-body">
+          <p>Descendants of the Yadava lineage of Lord Krishna. Ruled Karauli in Rajasthan. Their deity is Lord Krishna, and they consider themselves direct descendants of the Vrishni clan.</p>
+          <div class="clan-tags">
+            <span class="tag">Vijayapal (Founder)</span>
+            <span class="tag blue">Karauli State</span>
+            <span class="tag">Krishna Vanshi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gaur -->
+      <div class="clan-card">
+        <div class="clan-header">
+          <div class="clan-symbol" style="background:linear-gradient(135deg,#60A5FA22,#7C3AED22)">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M7 23L15 5L23 23H7Z" stroke="#60A5FA" stroke-width="2" fill="none"/><circle cx="15" cy="17" r="3" fill="#A78BFA"/></svg>
+          </div>
+          <div>
+            <div class="clan-name">Gaur (Gauda)</div>
+            <div class="clan-origin-tag">Suryavanshi · Bengal/UP</div>
+          </div>
+        </div>
+        <div class="clan-body">
+          <p>One of the ancient Rajput clans, prominent in northern India and Bengal. Associated with the Brahman-Kshatriya tradition. Found mainly in Uttar Pradesh, Rajasthan, and neighboring states.</p>
+          <div class="clan-tags">
+            <span class="tag">Ancient Lineage</span>
+            <span class="tag blue">North India</span>
+            <span class="tag">Suryavanshi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dogra -->
+      <div class="clan-card">
+        <div class="clan-header">
+          <div class="clan-symbol" style="background:linear-gradient(135deg,#B9D9DC22,#A78BFA22)">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M15 4L25 12V24H5V12L15 4Z" stroke="#B9D9DC" stroke-width="2" fill="none"/><path d="M10 24V18h10v6" stroke="#60A5FA" stroke-width="1.5" fill="none"/></svg>
+          </div>
+          <div>
+            <div class="clan-name">Dogra</div>
+            <div class="clan-origin-tag">Suryavanshi · Jammu</div>
+          </div>
+        </div>
+        <div class="clan-body">
+          <p>Warrior Rajputs from the Jammu region who founded the Dogra dynasty. Maharaja Gulab Singh founded the princely state of Jammu and Kashmir in 1846, ruling as its first Maharaja.</p>
+          <div class="clan-tags">
+            <span class="tag">Gulab Singh (Founder)</span>
+            <span class="tag blue">J&K Kingdom</span>
+            <span class="tag">Jammu Hills</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KINGDOMS SECTION -->
+<section id="kingdoms">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Royal Dominions</div>
+      <h2 class="section-title">Great Rajput <span>Kingdoms</span></h2>
+      <p class="section-desc">Empires forged by sword and honor that shaped the political landscape of India.</p>
+    </div>
+
+    <div class="kingdoms-grid">
+
+      <div class="kingdom-card">
+        <div class="kingdom-card" style="padding:0; box-shadow:none; border:none;">
+          <div class="k-era">7th – 18th Century CE</div>
+          <div class="k-name">Kingdom of Mewar</div>
+          <div class="k-clan">Sisodiya Clan · Udaipur (Chittorgarh)</div>
+          <p>The oldest surviving royal house of Rajputana, tracing roots to Bappa Rawal (8th century). Mewar became the symbol of Rajput resistance — against the Delhi Sultanate, Mughals, and Marathas. The three Jauhars (mass self-immolations) at Chittorgarh remain legends of honor and sacrifice.</p>
+          <div class="k-founder">
+            <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="6" r="3" fill="#A78BFA"/><path d="M2 14c0-3.31 2.69-6 6-6s6 2.69 6 6" stroke="#C4B5FD" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+            <span>Founded by <strong>Bappa Rawal</strong> · Capital: Chittorgarh, later Udaipur</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="kingdom-card">
+        <div class="k-era">15th – 19th Century CE</div>
+        <div class="k-name">Marwar (Jodhpur State)</div>
+        <div class="k-clan">Rathore Clan · Jodhpur</div>
+        <p>One of the largest princely states, ruled by the Rathores from the magnificent Mehrangarh Fort. Rao Jodha founded Jodhpur in 1459. The kingdom controlled strategic trade routes between the Indus valley and the Gangetic plains.</p>
+        <div class="k-founder">
+          <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="6" r="3" fill="#60A5FA"/><path d="M2 14c0-3.31 2.69-6 6-6s6 2.69 6 6" stroke="#B9D9DC" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          <span>Founded by <strong>Rao Siyaji</strong> · Established by <strong>Rao Jodha</strong> in 1459</span>
+        </div>
+      </div>
+
+      <div class="kingdom-card">
+        <div class="k-era">11th – 19th Century CE</div>
+        <div class="k-name">Amber / Jaipur State</div>
+        <div class="k-clan">Kachwaha Clan · Jaipur</div>
+        <p>Originally based at Amber Fort, the kingdom was transformed when Maharaja Sawai Jai Singh II founded Jaipur in 1727 — one of the first planned cities in South Asia, designed using Vedic architecture. The dynasty allied with the Mughals under Man Singh I.</p>
+        <div class="k-founder">
+          <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="6" r="3" fill="#A78BFA"/><path d="M2 14c0-3.31 2.69-6 6-6s6 2.69 6 6" stroke="#C4B5FD" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          <span>Founded by <strong>Dhola Rai</strong> · Jaipur by <strong>Jai Singh II</strong> in 1727</span>
+        </div>
+      </div>
+
+      <div class="kingdom-card">
+        <div class="k-era">12th Century CE</div>
+        <div class="k-name">Kingdom of Jaisalmer</div>
+        <div class="k-clan">Bhati Clan · Thar Desert</div>
+        <p>Founded in 1156 CE by Rawal Jaisal, the golden city of Jaisalmer dominated the Thar Desert trade routes. The city's magnificent fort (Sonar Qila) rises from golden sandstone and remains one of the few living forts in the world.</p>
+        <div class="k-founder">
+          <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="6" r="3" fill="#60A5FA"/><path d="M2 14c0-3.31 2.69-6 6-6s6 2.69 6 6" stroke="#B9D9DC" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          <span>Founded by <strong>Rawal Jaisal</strong> · 1156 CE</span>
+        </div>
+      </div>
+
+      <div class="kingdom-card">
+        <div class="k-era">9th – 12th Century CE</div>
+        <div class="k-name">Shakambhari Kingdom</div>
+        <div class="k-clan">Chahamana (Chauhan) Clan</div>
+        <p>Rose from Shakambhari (Sambhar Lake) to eventually control Delhi and Ajmer. Prithviraj Chauhan III (1178–1192) extended the kingdom to its zenith, winning the First Battle of Tarain but tragically losing the Second to Muhammad of Ghor in 1192 CE.</p>
+        <div class="k-founder">
+          <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="6" r="3" fill="#A78BFA"/><path d="M2 14c0-3.31 2.69-6 6-6s6 2.69 6 6" stroke="#C4B5FD" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          <span>Founded by <strong>Vasudeva Chahamana</strong> · c. 551 CE</span>
+        </div>
+      </div>
+
+      <div class="kingdom-card">
+        <div class="k-era">8th – 12th Century CE</div>
+        <div class="k-name">Gujarat Solanki Kingdom</div>
+        <div class="k-clan">Chaulukya (Solanki) Clan</div>
+        <p>The Chaulukya dynasty of Gujarat, founded by Mularaja in 941 CE, built the magnificent Somnath Temple and the Modhera Sun Temple. Under Kumarpal, the kingdom reached its cultural and architectural zenith, with strong Jain influence.</p>
+        <div class="k-founder">
+          <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="6" r="3" fill="#60A5FA"/><path d="M2 14c0-3.31 2.69-6 6-6s6 2.69 6 6" stroke="#B9D9DC" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          <span>Founded by <strong>Mularaja I</strong> · 941 CE · Anhilwara (Patan)</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WARRIORS SECTION -->
+<section id="warriors" style="background:rgba(255,255,255,0.3);">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Legends & Heroes</div>
+      <h2 class="section-title">Legendary Rajput <span>Warriors</span></h2>
+      <p class="section-desc">Heroes whose names echo through centuries of valor and sacrifice.</p>
+    </div>
+
+    <div class="warriors-list">
+
+      <div class="warrior-card">
+        <span class="warrior-rank">Maharana</span>
+        <div class="warrior-name">Maharana Pratap Singh</div>
+        <div class="warrior-title">Lion of Mewar · (1540–1597)</div>
+        <p>The greatest Rajput warrior, who never surrendered to Akbar despite losing the Battle of Haldighati (1576). He spent years in exile in the Aravalli jungles, reconquering most of Mewar through guerrilla warfare. His horse Chetak and loyal general Hakim Khan Sur are legendary. Became a symbol of Rajput pride and patriotism.</p>
+      </div>
+
+      <div class="warrior-card">
+        <span class="warrior-rank">Samrat</span>
+        <div class="warrior-name">Prithviraj Chauhan III</div>
+        <div class="warrior-title">Last Hindu Emperor of Delhi · (c.1149–1192)</div>
+        <p>The last Hindu emperor to rule from Delhi. Won 20 of 21 encounters against Muhammad of Ghor. His love story with Sanyogita and the epic poem Prithviraj Raso by Chand Bardai immortalized him. Captured at the Second Battle of Tarain (1192), he reportedly killed Ghor with a sound-guided arrow before being martyred.</p>
+      </div>
+
+      <div class="warrior-card">
+        <span class="warrior-rank">Maharaja</span>
+        <div class="warrior-name">Rana Sanga (Sangram Singh I)</div>
+        <div class="warrior-title">Rana of Mewar · (1482–1528)</div>
+        <p>Called "a man with a hundred wounds," Rana Sanga lost an eye, an arm, and walked with a limp from battle injuries yet never wavered. He united Rajput clans against the Lodhi Sultanate and invited Babur to India — a decision that ultimately led to the founding of the Mughal Empire at the First Battle of Panipat (1526).</p>
+      </div>
+
+      <div class="warrior-card">
+        <span class="warrior-rank">Rawal</span>
+        <div class="warrior-name">Bappa Rawal</div>
+        <div class="warrior-title">Founder of Mewar · (8th century CE)</div>
+        <p>The legendary founder of the Sisodiya dynasty and the Mewar kingdom. He drove Arab invaders from Sindh and established Rajput supremacy in Rajputana. Considered a near-divine figure, he is believed to have received blessings from the sage Harit Rashi, and tradition credits him with miraculous military campaigns as far as Persia.</p>
+      </div>
+
+      <div class="warrior-card">
+        <span class="warrior-rank">Maharaja</span>
+        <div class="warrior-name">Chhatrasal Bundela</div>
+        <div class="warrior-title">King of Bundelkhand · (1649–1731)</div>
+        <p>Born into captivity under the Mughals, Chhatrasal fought under Shivaji before returning to free Bundelkhand. He defeated Mughal governors and founded an independent kingdom. Later, he allied with the Maratha Peshwa Baji Rao I — who came to his aid against Bundelkhand's invasion by the Mughal commander Muhammad Khan Bangash.</p>
+      </div>
+
+      <div class="warrior-card">
+        <span class="warrior-rank">Hada Rani</span>
+        <div class="warrior-name">Hada Rani (Suhagan Bai)</div>
+        <div class="warrior-title">Queen of Salumbar · (17th century)</div>
+        <p>One of the most revered female figures in Rajput history. When her husband Ratan Singh Chundawat was called to battle just after their marriage, she sent her own severed head as his "memento" so he would have no reason to look back — the ultimate sacrifice for his duty. Immortalized in Rajasthani folk songs.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VALUES SECTION -->
+<section id="values">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Code of Honor</div>
+      <h2 class="section-title">Rajputra <span>Dharma</span></h2>
+      <p class="section-desc">The warrior code that defined Rajput identity and guided their lives.</p>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon" style="background:linear-gradient(135deg,#7C3AED,#A78BFA)">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 3L17 10H24L18.5 14.5L21 22L14 17.5L7 22L9.5 14.5L4 10H11L14 3Z" fill="white"/></svg>
+        </div>
+        <div class="value-name">Kshatriya Dharma</div>
+        <p>The sacred duty of the warrior caste — to protect the weak, uphold justice, and fight against injustice without fear of death.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon" style="background:linear-gradient(135deg,#60A5FA,#B9D9DC)">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4L20 10v8l-6 6-6-6v-8L14 4z" stroke="white" stroke-width="2" fill="none"/><circle cx="14" cy="14" r="3" fill="white"/></svg>
+        </div>
+        <div class="value-name">Shastra Vidya</div>
+        <p>Mastery of arms and warfare. Every Rajput was trained from childhood in sword-fighting, archery, horsemanship, and military strategy.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon" style="background:linear-gradient(135deg,#A78BFA,#7C3AED)">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 5c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm0 4l2 4h4l-3 2.5 1 4L14 17l-4 2.5 1-4L8 13h4L14 9z" fill="white"/></svg>
+        </div>
+        <div class="value-name">Praan Jaye Par Vachana Na Jaye</div>
+        <p>"Life may be sacrificed but not one's word." Rajputs held their oath sacred — breaking a promise was considered more shameful than death.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon" style="background:linear-gradient(135deg,#B9D9DC,#60A5FA)">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4L5 9v10l9 5 9-5V9L14 4z" stroke="white" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="value-name">Jauhar & Saka</div>
+        <p>The supreme sacrifice — when defeat was certain, Rajput women performed Jauhar (self-immolation in fire) while men donned saffron robes and charged to die fighting.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon" style="background:linear-gradient(135deg,#C4B5FD,#A78BFA)">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="10" r="4" stroke="white" stroke-width="2" fill="none"/><path d="M6 24c0-4.42 3.58-8 8-8s8 3.58 8 8" stroke="white" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+        </div>
+        <div class="value-name">Atithi Devo Bhava</div>
+        <p>Sacred hospitality — even an enemy was treated with honor when they entered as a guest. Rajput kings were renowned for protecting those who sought refuge.</p>
+      </div>
+
+      <div class="value-card">
+        <div class="value-icon" style="background:linear-gradient(135deg,#7C3AED,#60A5FA)">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14 4C9 4 5 8 5 13c0 6 9 11 9 11s9-5 9-11c0-5-4-9-9-9z" stroke="white" stroke-width="2" fill="none"/><circle cx="14" cy="13" r="3" fill="white"/></svg>
+        </div>
+        <div class="value-name">Rajputri Honor</div>
+        <p>Rajput women (Rajputni) were equal partners in honor. They received warrior training, managed kingdoms in their husband's absence, and chose death over dishonor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUB-CASTES SECTION -->
+<section id="subcastes" style="background:rgba(255,255,255,0.3);">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Genealogy & Lineages</div>
+      <h2 class="section-title">Sub-Clans & <span>Branches</span></h2>
+      <p class="section-desc">The vast network of Rajput sub-clans and regional branches across India.</p>
+    </div>
+
+    <div class="sub-grid">
+
+      <div class="sub-card">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 2L11 7H16L12 10.5L13.5 15.5L9 12.5L4.5 15.5L6 10.5L2 7H7L9 2Z" fill="#7C3AED"/></svg>
+          Sisodiya Sub-clans
+        </h4>
+        <ul>
+          <li>Ahariya</li>
+          <li>Mangliya</li>
+          <li>Rawat</li>
+          <li>Bainsi</li>
+          <li>Gogadev</li>
+          <li>Pithaliya</li>
+          <li>Saktawat</li>
+          <li>Chandrawat</li>
+        </ul>
+      </div>
+
+      <div class="sub-card">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="7" stroke="#60A5FA" stroke-width="1.5" fill="none"/><circle cx="9" cy="9" r="3" fill="#60A5FA"/></svg>
+          Rathore Sub-clans
+        </h4>
+        <ul>
+          <li>Jodha (Jodhpur)</li>
+          <li>Bikaji (Bikaner)</li>
+          <li>Karmsot</li>
+          <li>Jaitmali</li>
+          <li>Mertiya</li>
+          <li>Pokharna</li>
+          <li>Sanchora</li>
+          <li>Champawat</li>
+        </ul>
+      </div>
+
+      <div class="sub-card">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 18 18"><path d="M3 15L9 3L15 15H3Z" stroke="#A78BFA" stroke-width="1.5" fill="none"/><path d="M6 12h6" stroke="#A78BFA" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Chauhan Sub-clans
+        </h4>
+        <ul>
+          <li>Hada (Bundi/Kota)</li>
+          <li>Devda</li>
+          <li>Sonagara</li>
+          <li>Nirban (Narobana)</li>
+          <li>Balecha</li>
+          <li>Sanchora</li>
+          <li>Sagor</li>
+          <li>Punasiyo</li>
+        </ul>
+      </div>
+
+      <div class="sub-card">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 18 18"><rect x="3" y="3" width="12" height="12" rx="3" stroke="#B9D9DC" stroke-width="1.5" fill="none"/><path d="M6 9h6M9 6v6" stroke="#60A5FA" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Kachwaha Sub-clans
+        </h4>
+        <ul>
+          <li>Rajawat (Jaipur)</li>
+          <li>Shekhawat (Shekhawati)</li>
+          <li>Naruka</li>
+          <li>Nathawat</li>
+          <li>Bhadoria</li>
+          <li>Tilauni</li>
+          <li>Khangarot</li>
+          <li>Punawar</li>
+        </ul>
+      </div>
+
+      <div class="sub-card">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 2L16 6.5V12L9 16L2 12V6.5L9 2Z" stroke="#7C3AED" stroke-width="1.5" fill="none"/><circle cx="9" cy="9" r="2.5" fill="#C4B5FD"/></svg>
+          Bhati Sub-clans
+        </h4>
+        <ul>
+          <li>Jaisalmeria</li>
+          <li>Nambhika</li>
+          <li>Lanaga</li>
+          <li>Pundasra</li>
+          <li>Mohil</li>
+          <li>Tanvar Bhati</li>
+          <li>Tanu</li>
+          <li>Varecha</li>
+        </ul>
+      </div>
+
+      <div class="sub-card">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 2L11.5 7H16.5L12.5 10.5L14 15.5L9 12.5L4 15.5L5.5 10.5L1.5 7H6.5L9 2Z" fill="#A78BFA" opacity="0.8"/></svg>
+          Parmar Sub-clans
+        </h4>
+        <ul>
+          <li>Rana Parmar</li>
+          <li>Sankha</li>
+          <li>Morvava</li>
+          <li>Umra</li>
+          <li>Maguda</li>
+          <li>Munja</li>
+          <li>Dhamariya</li>
+          <li>Umat</li>
+        </ul>
+      </div>
+
+      <div class="sub-card">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="7" r="4" stroke="#60A5FA" stroke-width="1.5" fill="none"/><path d="M3 17c0-3.31 2.69-6 6-6s6 2.69 6 6" stroke="#B9D9DC" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+          Hill Rajputs (Pahadi)
+        </h4>
+        <ul>
+          <li>Katoch (Kangra)</li>
+          <li>Guleria</li>
+          <li>Rana (Himachal)</li>
+          <li>Jaswal</li>
+          <li>Chandel (Chamba)</li>
+          <li>Mankotia</li>
+          <li>Pathania</li>
+          <li>Sirmouri</li>
+        </ul>
+      </div>
+
+      <div class="sub-card">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 18 18"><path d="M4 14V7L9 3L14 7V14" stroke="#A78BFA" stroke-width="1.5" fill="none" stroke-linejoin="round"/><rect x="6" y="10" width="6" height="4" stroke="#C4B5FD" stroke-width="1" fill="none"/></svg>
+          Eastern Rajputs (UP/Bihar)
+        </h4>
+        <ul>
+          <li>Gaharwar</li>
+          <li>Bais (Baiswara)</li>
+          <li>Sengar</li>
+          <li>Chandel</li>
+          <li>Janwar</li>
+          <li>Dikshit</li>
+          <li>Chamar Gaur</li>
+          <li>Surajbansi</li>
+        </ul>
+      </div>
+
+      <div class="sub-card">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 3L16 8V14L9 15L2 14V8L9 3Z" stroke="#60A5FA" stroke-width="1.5" fill="none"/><circle cx="9" cy="9" r="2" fill="#B9D9DC"/></svg>
+          Rajputs of Gujarat
+        </h4>
+        <ul>
+          <li>Gohil (Bhavnagar)</li>
+          <li>Jethwa</li>
+          <li>Vaghela</li>
+          <li>Chudasama</li>
+          <li>Zala</li>
+          <li>Jadeja (Kutch)</li>
+          <li>Mori</li>
+          <li>Sarvaiya</li>
+        </ul>
+      </div>
+
+      <div class="sub-card">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 2L11 6H15.5L12 8.8L13.2 13.5L9 11L4.8 13.5L6 8.8L2.5 6H7L9 2Z" stroke="#7C3AED" stroke-width="1.2" fill="none"/></svg>
+          Rajputs of Punjab/Haryana
+        </h4>
+        <ul>
+          <li>Minhas</li>
+          <li>Virk</li>
+          <li>Chib</li>
+          <li>Pathania</li>
+          <li>Punwar</li>
+          <li>Bhatti</li>
+          <li>Bajwa</li>
+          <li>Aulakh</li>
+        </ul>
+      </div>
+
+      <div class="sub-card">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 18 18"><path d="M9 2C5.13 2 2 5.13 2 9s3.13 7 7 7 7-3.13 7-7-3.13-7-7-7zm0 3l1.5 3.5H14L11.5 10l1 3.5L9 11.5 6.5 13.5l1-3.5L5 8.5h3.5L9 5z" fill="#A78BFA" opacity="0.7"/></svg>
+          Rajputs of MP/CG
+        </h4>
+        <ul>
+          <li>Bundela</li>
+          <li>Chandel</li>
+          <li>Baghel (Rewa)</li>
+          <li>Tomar (Gwalior)</li>
+          <li>Khangar</li>
+          <li>Rawat</li>
+          <li>Dikhit</li>
+          <li>Panwar</li>
+        </ul>
+      </div>
+
+      <div class="sub-card">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 18 18"><path d="M5 15L9 4L13 15H5Z" stroke="#B9D9DC" stroke-width="1.5" fill="none"/><circle cx="9" cy="11" r="2" fill="#60A5FA"/></svg>
+          Rajputs of Uttarakhand
+        </h4>
+        <ul>
+          <li>Rana</li>
+          <li>Rawat</li>
+          <li>Pundir</li>
+          <li>Panwar</li>
+          <li>Chauhan (Garhwal)</li>
+          <li>Negi</li>
+          <li>Bisht</li>
+          <li>Bora</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE SECTION -->
+<section id="timeline">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Chronological History</div>
+      <h2 class="section-title">Timeline of <span>Rajput History</span></h2>
+      <p class="section-desc">From ancient origins to the princely states era — key moments in Rajput history.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-content">
+          <div class="tl-year">c. 550 CE</div>
+          <h4>Rise of Early Rajput Clans</h4>
+          <p>Post-Gupta period sees the emergence of various warrior clans in northwestern India. The Chahamanas, Pratiharas, and Gurjaras begin consolidating power in Rajputana.</p>
+        </div>
+        <div class="tl-dot"></div>
+        <div style="flex:1"></div>
+      </div>
+
+      <div class="tl-item">
+        <div style="flex:1"></div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-year">736 CE</div>
+          <h4>Foundation of Delhi by Tomar Rajputs</h4>
+          <p>Anangpal Tomar I founds the city of Dhilika (ancient Delhi). The Tomars would rule for over 400 years before being displaced by the Chahamanas.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-content">
+          <div class="tl-year">8th Century</div>
+          <h4>Bappa Rawal & the Mewar Dynasty</h4>
+          <p>Bappa Rawal (Kalbhoj) establishes the Sisodiya Rajput dynasty at Chittorgarh, repelling Arab invasions from Sindh and founding the legendary Mewar kingdom.</p>
+        </div>
+        <div class="tl-dot"></div>
+        <div style="flex:1"></div>
+      </div>
+
+      <div class="tl-item">
+        <div style="flex:1"></div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-year">1025 CE</div>
+          <h4>Somnath Temple Sacked</h4>
+          <p>Mahmud of Ghazni sacks the Somnath Temple in Gujarat, looting immense treasure. Rajput kings including Solanki ruler Bhimdev I attempt to defend the temple.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-content">
+          <div class="tl-year">1191 CE</div>
+          <h4>First Battle of Tarain — Rajput Victory</h4>
+          <p>Prithviraj Chauhan III defeats Muhammad of Ghor at the First Battle of Tarain, capturing the Afghan sultan who is later released as an act of Rajput chivalry.</p>
+        </div>
+        <div class="tl-dot"></div>
+        <div style="flex:1"></div>
+      </div>
+
+      <div class="tl-item">
+        <div style="flex:1"></div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-year">1192 CE</div>
+          <h4>Second Battle of Tarain — Turning Point</h4>
+          <p>Muhammad of Ghor returns with an improved cavalry. Prithviraj Chauhan is defeated and captured. This battle marks the beginning of the Delhi Sultanate and a new era for Rajput kingdoms.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-content">
+          <div class="tl-year">1303 CE</div>
+          <h4>First Jauhar at Chittorgarh</h4>
+          <p>Rani Padmini leads the first great Jauhar at Chittorgarh as Alauddin Khilji besieges the fort. Thousands of Rajput women perish in fire rather than face capture.</p>
+        </div>
+        <div class="tl-dot"></div>
+        <div style="flex:1"></div>
+      </div>
+
+      <div class="tl-item">
+        <div style="flex:1"></div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-year">1576 CE</div>
+          <h4>Battle of Haldighati</h4>
+          <p>Maharana Pratap of Mewar fights Akbar's forces (commanded by Man Singh I Kachwaha) in the narrow mountain pass of Haldighati. Though outnumbered, Pratap's forces inflict heavy casualties before retreating.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-content">
+          <div class="tl-year">1727 CE</div>
+          <h4>Foundation of Jaipur</h4>
+          <p>Maharaja Sawai Jai Singh II founds the planned city of Jaipur — one of the world's first grid-planned cities — based on Vedic architecture and Vaastu shastra principles.</p>
+        </div>
+        <div class="tl-dot"></div>
+        <div style="flex:1"></div>
+      </div>
+
+      <div class="tl-item">
+        <div style="flex:1"></div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-year">1947 CE</div>
+          <h4>Merger with Indian Union</h4>
+          <p>Following Indian independence, all Rajput princely states sign the Instrument of Accession and merge with the Indian Union. The era of sovereign Rajput kingdoms ends, but their heritage and culture thrive.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CULTURE SECTION -->
+<section id="culture" style="background:rgba(255,255,255,0.3);">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Arts, Architecture & Traditions</div>
+      <h2 class="section-title">Rajput <span>Culture & Heritage</span></h2>
+      <p class="section-desc">A civilization defined not just by warfare but by magnificent art, literature, and devotion.</p>
+    </div>
+
+    <div class="culture-grid">
+      <div class="culture-card">
+        <h3>
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 18V8L11 4L18 8V18" stroke="#7C3AED" stroke-width="1.8" fill="none" stroke-linejoin="round"/><rect x="8" y="12" width="6" height="6" stroke="#A78BFA" stroke-width="1.5" fill="none"/></svg>
+          Architecture & Forts
+        </h3>
+        <p>Rajput architecture represents one of India's finest traditions. From the towering Mehrangarh Fort in Jodhpur, the island palace Jal Mahal in Jaipur, to the golden Jaisalmer Fort and the magnificent City Palace of Udaipur — Rajput builders combined military strength with breathtaking artistic elegance. The Rajput style, known as Rajputana architecture, blends Hindu temple architecture with later Islamic influences (creating the Indo-Saracenic style). Key features include ornate <em>jharokhas</em> (projecting balconies), intricate <em>jaali</em> (lattice) work, mirrored interiors, and soaring entrance <em>darwazas</em>.</p>
+      </div>
+
+      <div class="culture-card">
+        <h3>
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 19V5L11 3L17 5V19" stroke="#60A5FA" stroke-width="1.8" fill="none"/><path d="M8 10h6M8 13h6M8 16h4" stroke="#B9D9DC" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Literature & Poetry
+        </h3>
+        <p>Rajput courts were great patrons of literature. The <em>Prithviraj Raso</em> by court poet Chand Bardai is considered one of the first great works in the Hindi/Braj Bhasha tradition. The <em>Hammir Mahakavya</em>, <em>Khumman Raso</em>, and other bardic traditions (<em>Charan</em> poetry) preserved Rajput genealogies and heroic tales. Saints like Mirabai (a Rathore princess who became a devotee of Krishna) created timeless bhakti poetry that transcends religion. The Rajput literary tradition also includes astronomical treatises — Maharaja Jai Singh II wrote the famous <em>Zij-i Muhammad Shahi</em> and built five Jantar Mantar observatories.</p>
+      </div>
+
+      <div class="culture-card">
+        <h3>
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3L14 8H19L15 12L17 18L11 14L5 18L7 12L3 8H8L11 3Z" stroke="#A78BFA" stroke-width="1.8" fill="none"/></svg>
+          Paintings & Visual Arts
+        </h3>
+        <p>The Rajput school of painting, flourishing from the 16th to 18th centuries, is one of India's greatest artistic traditions. Distinct regional styles developed — <em>Mewar School</em>, <em>Marwar School</em>, <em>Kishangarh School</em> (known for the iconic idealized face), <em>Bundi-Kota School</em> (known for hunt scenes and wildlife), and <em>Jaipur School</em>. These miniature paintings depicted mythology, court life, seasons, Ragamala music, and portraits in vivid jewel-toned pigments with exquisite detail. The Kishangarh school's famous "Bani Thani" portrait is considered the Mona Lisa of Indian art.</p>
+      </div>
+
+      <div class="culture-card">
+        <h3>
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#60A5FA" stroke-width="1.8" fill="none"/><path d="M7 11c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4" stroke="#B9D9DC" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="11" cy="11" r="2" fill="#60A5FA"/></svg>
+          Music & Dance
+        </h3>
+        <p>Rajput courts were epicenters of classical music and dance. The <em>Dhrupad</em> style of classical vocal music flourished under Rajput patronage — particularly in Gwalior, where the Gwalior Gharana originated. Folk traditions like <em>Ghoomar</em> dance (native to Bhil tribes, adopted by Rajput women), <em>Kalbelia</em> (snake-charmer community dance), <em>Chari dance</em>, and <em>Terah Taali</em> remain integral to Rajasthani culture. The <em>Maand</em> style of semi-classical singing, associated with royal households, carries haunting melodies of love and heroism.</p>
+      </div>
+
+      <div class="culture-card">
+        <h3>
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3C7.69 3 5 5.69 5 9c0 4.5 6 10 6 10s6-5.5 6-10c0-3.31-2.69-6-6-6z" stroke="#7C3AED" stroke-width="1.8" fill="none"/><circle cx="11" cy="9" r="2.5" fill="#A78BFA"/></svg>
+          Religion & Devotion
+        </h3>
+        <p>Rajputs are predominantly Hindu and follow the <em>Kshatriya Dharma</em> as outlined in Vedic texts. Their primary patron deities are <em>Shiva</em> (Eklingji for Mewar), <em>Surya</em> (solar clan ancestors), and <em>Vishnu/Krishna</em> (Chandravanshi clans). The cult goddess is often <em>Durga Mata</em> or clan-specific deities (<em>Kuldevi</em>). Rajput women have contributed deeply to bhakti — Mirabai and Karmaiti Bai are revered saints. Temples built by Rajput kings — the Dilwara Jain Temples at Mount Abu, the Somnath Temple, and the Khajuraho temples (Chandela Rajputs) — are masterpieces of religious architecture.</p>
+      </div>
+
+      <div class="culture-card">
+        <h3>
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M6 19V10L11 6L16 10V19" stroke="#B9D9DC" stroke-width="1.8" fill="none" stroke-linejoin="round"/><path d="M8 14h6M9 11h4" stroke="#60A5FA" stroke-width="1.2" stroke-linecap="round"/></svg>
+          Cuisine & Traditions
+        </h3>
+        <p>Rajput cuisine reflects their warrior and desert heritage — rich, hearty dishes with bold spices. Signature dishes include <em>Laal Maas</em> (red mutton curry), <em>Safed Maas</em> (white mutton), <em>Jungli Maas</em> (forest-style game meat), <em>Bajre ki Roti</em> with garlic chutney, and <em>Dal Baati Churma</em>. Rajput festivals include the vibrant <em>Gangaur</em> (worship of Gauri), <em>Teej</em>, <em>Holi</em> celebrated with legendary opulence at Udaipur, and the royal <em>Shikaar</em> (hunting) tradition. The <em>Safa</em> (turban) and <em>Angarakha</em> (coat) are iconic elements of traditional Rajput dress.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!-- FAMILY TREE SECTION -->
+<section id="familytree">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Royal Genealogy</div>
+      <h2 class="section-title">Rajput <span>Family Trees</span></h2>
+      <p class="section-desc">Trace the royal lineages from founding ancestors through generations of kings and warriors.</p>
+    </div>
+
+    <!-- Clan Selector Tabs -->
+    <div class="ft-tabs">
+      <button class="ft-tab active" onclick="showTree('mewar')">Mewar (Sisodiya)</button>
+      <button class="ft-tab" onclick="showTree('marwar')">Marwar (Rathore)</button>
+      <button class="ft-tab" onclick="showTree('jaipur')">Jaipur (Kachwaha)</button>
+      <button class="ft-tab" onclick="showTree('chauhan')">Ajmer (Chauhan)</button>
+      <button class="ft-tab" onclick="showTree('jaisalmer')">Jaisalmer (Bhati)</button>
+    </div>
+
+    <!-- MEWAR TREE -->
+    <div class="ft-tree active" id="tree-mewar">
+      <div class="ft-legend">
+        <span class="ft-leg-item"><span class="ft-leg-dot founder"></span>Founder / Patriarch</span>
+        <span class="ft-leg-item"><span class="ft-leg-dot king"></span>King / Maharana</span>
+        <span class="ft-leg-item"><span class="ft-leg-dot warrior"></span>Warrior / General</span>
+        <span class="ft-leg-item"><span class="ft-leg-dot saint"></span>Saint / Princess</span>
+      </div>
+      <div class="ft-scroll-wrap">
+        <div class="ft-canvas">
+
+          <!-- Root -->
+          <div class="ft-level">
+            <div class="ft-node founder large" data-info="Legendary king and founder of the Sisodiya (Gehlot) dynasty of Mewar. Said to have received the kingdom from the sage Harit Rashi. Led campaigns against Arab invaders from Sindh around 728 CE.">
+              <div class="fn-icon">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L14 8H20L15.5 12L17 18L11 14.5L5 18L6.5 12L2 8H8L11 2Z" fill="white"/></svg>
+              </div>
+              <div class="fn-name">Bappa Rawal</div>
+              <div class="fn-meta">c. 713–753 CE</div>
+              <div class="fn-caste">Sisodiya · Suryavanshi</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king" data-info="Son of Bappa Rawal. Consolidated Mewar's territory after his father's legendary conquests. Continued the Gehlot dynasty's tradition of resisting foreign invasions.">
+              <div class="fn-name">Khuman I</div>
+              <div class="fn-meta">c. 753–773 CE</div>
+              <div class="fn-caste">Sisodiya · Mewar</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king" data-info="Mattat defeated the Arab governor of Sindh in multiple campaigns, securing Rajputana's northwestern frontier. Under his rule, Mewar expanded its influence.">
+              <div class="fn-name">Mattat</div>
+              <div class="fn-meta">c. 773–793 CE</div>
+              <div class="fn-caste">Sisodiya · Mewar</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <!-- Branch Level -->
+          <div class="ft-level multi">
+            <div class="ft-branch-group">
+              <div class="ft-node king" data-info="Ruled Mewar and continued expansionist policies. Known for diplomatic marriages with neighboring Rajput clans to consolidate power.">
+                <div class="fn-name">Khuman II</div>
+                <div class="fn-meta">c. 812–836 CE</div>
+                <div class="fn-caste">Sisodiya · Mewar</div>
+              </div>
+              <div class="ft-node king" data-info="Mahayak strengthened Mewar's administrative structure and temple-building activities. Patron of Shaivite traditions.">
+                <div class="fn-name">Mahayak</div>
+                <div class="fn-meta">c. 836–853 CE</div>
+                <div class="fn-caste">Sisodiya · Mewar</div>
+              </div>
+              <div class="ft-node king" data-info="Khuman III faced and repelled the Gurjara-Pratihara expansion into Rajputana. Known for his fierce independence.">
+                <div class="fn-name">Khuman III</div>
+                <div class="fn-meta">c. 853–878 CE</div>
+                <div class="fn-caste">Sisodiya · Mewar</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="One of the mightiest Mewar kings. Expanded the kingdom significantly and repaired and fortified Chittorgarh. Faced the armies of the Paramara and Chandela kingdoms.">
+              <div class="fn-icon">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1L11 6H16.5L12 9.5L14 15L9 11.5L4 15L6 9.5L1.5 6H7L9 1Z" fill="white"/></svg>
+              </div>
+              <div class="fn-name">Allat</div>
+              <div class="fn-meta">c. 951–971 CE</div>
+              <div class="fn-caste">Sisodiya · Mewar</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level multi">
+            <div class="ft-branch-group">
+              <div class="ft-node king" data-info="Naravahana ruled Mewar during a period of relative stability, strengthening trade routes and alliances with other Rajput clans.">
+                <div class="fn-name">Naravahana</div>
+                <div class="fn-meta">c. 971–973 CE</div>
+                <div class="fn-caste">Sisodiya</div>
+              </div>
+              <div class="ft-node king major" data-info="Shakti Kumar is remembered for defeating the Paramara king Vakpati Munja. His reign saw significant architectural developments at Eklingji temple.">
+                <div class="fn-name">Shakti Kumar</div>
+                <div class="fn-meta">c. 977–993 CE</div>
+                <div class="fn-caste">Sisodiya · Mewar</div>
+              </div>
+              <div class="ft-node king" data-info="Ambaprasad continued his father Shakti Kumar's policies and maintained peace with neighboring kingdoms through strategic alliances.">
+                <div class="fn-name">Ambaprasad</div>
+                <div class="fn-meta">c. 993–1007 CE</div>
+                <div class="fn-caste">Sisodiya</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="Ruled during the period when Mahmud of Ghazni was raiding India. Defended Mewar's territories and is remembered for his administrative reforms and patronage of Eklingji temple.">
+              <div class="fn-name">Sahajanmalla</div>
+              <div class="fn-meta">c. 1021–1035 CE</div>
+              <div class="fn-caste">Sisodiya · Mewar</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="Kumbhakarna, better known as Rana Kumbha, was one of Mewar's greatest kings. Built 32 forts including the famous Kumbhalgarh Fort. A scholar, musician, and writer, he authored several works including Sangit Raj.">
+              <div class="fn-icon">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1L11 6H16.5L12 9.5L14 15L9 11.5L4 15L6 9.5L1.5 6H7L9 1Z" fill="white"/></svg>
+              </div>
+              <div class="fn-name">Rana Kumbha</div>
+              <div class="fn-meta">1433–1468 CE</div>
+              <div class="fn-caste">Sisodiya · Maharana of Mewar</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level multi">
+            <div class="ft-branch-group">
+              <div class="ft-node king major" data-info="Rana Sanga, called 'a man with 100 wounds', united Rajput clans against the Lodhi Sultanate. He had one eye, one arm, and walked with a limp, yet never lost his resolve. He invited Babur from Kabul, which led to the First Battle of Panipat.">
+                <div class="fn-icon">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1L10 5.5H15L11.5 8.5L13 13.5L8 10.5L3 13.5L4.5 8.5L1 5.5H6L8 1Z" fill="white"/></svg>
+                </div>
+                <div class="fn-name">Rana Sanga</div>
+                <div class="fn-meta">1509–1528 CE</div>
+                <div class="fn-caste">Sisodiya · Maharana</div>
+              </div>
+              <div class="ft-node king" data-info="Prithviraj of Mewar was the elder brother of Rana Sanga who died before ascending the throne. Known for his valor in battles against the Lodi Sultanate.">
+                <div class="fn-name">Prithviraj (Mewar)</div>
+                <div class="fn-meta">c. 1473–1503 CE</div>
+                <div class="fn-caste">Sisodiya · Prince</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level multi">
+            <div class="ft-branch-group">
+              <div class="ft-node king" data-info="Ratan Singh II of Mewar ruled after Rana Sanga. He was killed in the Battle of Khanwa's aftermath, fighting to maintain Mewar's independence from the rising Mughal power.">
+                <div class="fn-name">Ratan Singh II</div>
+                <div class="fn-meta">1528–1531 CE</div>
+                <div class="fn-caste">Sisodiya · Maharana</div>
+              </div>
+              <div class="ft-node saint" data-info="Princess Mirabai was daughter-in-law of Rana Sanga, married to Prince Bhoj Raj. She became one of India's greatest bhakti saints, composing thousands of devotional songs (bhajans) to Lord Krishna. She is revered across all castes and religions.">
+                <div class="fn-icon">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="white" stroke-width="1.5" fill="none"/><circle cx="7" cy="7" r="2" fill="white"/></svg>
+                </div>
+                <div class="fn-name">Mirabai</div>
+                <div class="fn-meta">c. 1498–1547 CE</div>
+                <div class="fn-caste">Rathore · Princess / Saint</div>
+              </div>
+              <div class="ft-node king" data-info="Vikramaditya Singh ruled Mewar during the turbulent period after Rana Sanga. His short reign saw internal conflicts within the royal family.">
+                <div class="fn-name">Vikramaditya Singh</div>
+                <div class="fn-meta">1531–1536 CE</div>
+                <div class="fn-caste">Sisodiya · Maharana</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="Udai Singh II is best known as the founder of Udaipur city in 1559. After the third Jauhar of Chittorgarh under Akbar's siege in 1568, he moved the capital to the scenic Lake Pichola site, founding the City of Lakes.">
+              <div class="fn-icon">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1L11 6H16.5L12 9.5L14 15L9 11.5L4 15L6 9.5L1.5 6H7L9 1Z" fill="white"/></svg>
+              </div>
+              <div class="fn-name">Udai Singh II</div>
+              <div class="fn-meta">1537–1572 CE</div>
+              <div class="fn-caste">Sisodiya · Maharana · Founder of Udaipur</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level multi">
+            <div class="ft-branch-group">
+              <div class="ft-node warrior major" data-info="Maharana Pratap is the greatest Rajput hero — who never surrendered to Akbar despite losing the Battle of Haldighati (1576). He spent years in jungles, reconquering Mewar through guerrilla warfare. His horse Chetak died carrying him to safety and is immortalized in poetry and sculpture.">
+                <div class="fn-icon">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1L11 6H16.5L12 9.5L14 15L9 11.5L4 15L6 9.5L1.5 6H7L9 1Z" fill="white"/></svg>
+                </div>
+                <div class="fn-name">Maharana Pratap</div>
+                <div class="fn-meta">1572–1597 CE</div>
+                <div class="fn-caste">Sisodiya · Maharana · Lion of Mewar</div>
+              </div>
+              <div class="ft-node king" data-info="Shakti Singh was a younger brother of Maharana Pratap who had a falling-out and served under Akbar. However, he later warned Pratap of an ambush after the Battle of Haldighati, showing his deeper loyalty.">
+                <div class="fn-name">Shakti Singh</div>
+                <div class="fn-meta">c. 1550 CE</div>
+                <div class="fn-caste">Sisodiya · Prince</div>
+              </div>
+              <div class="ft-node king" data-info="Jagmal was declared as Udai Singh's successor on his deathbed, bypassing the elder Pratap. The Rajput council overruled this and crowned Pratap, sending Jagmal into exile who then joined Akbar's court.">
+                <div class="fn-name">Jagmal Singh</div>
+                <div class="fn-meta">c. 1560 CE</div>
+                <div class="fn-caste">Sisodiya · Prince</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level multi">
+            <div class="ft-branch-group">
+              <div class="ft-node king major" data-info="Amar Singh I, son of Maharana Pratap, continued his father's resistance for years but ultimately signed the Treaty of Udaipur with Mughal Emperor Jahangir in 1615 — the first Sisodiya to formally accept Mughal suzerainty, though Mewar retained its autonomy.">
+                <div class="fn-name">Amar Singh I</div>
+                <div class="fn-meta">1597–1620 CE</div>
+                <div class="fn-caste">Sisodiya · Maharana</div>
+              </div>
+              <div class="ft-node warrior" data-info="Kunwar Amar Singh (not to be confused with Maharana Amar Singh) — several princes of Mewar carried this name across generations, reflecting the dynasty's continuity.">
+                <div class="fn-name">Bhim Singh</div>
+                <div class="fn-meta">c. 1580–1620 CE</div>
+                <div class="fn-caste">Sisodiya · Prince</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king" data-info="Karan Singh of Mewar continued the policy of limited Mughal cooperation while maintaining Mewar's de facto independence. He is noted for cultural patronage and temple restoration.">
+              <div class="fn-name">Karan Singh</div>
+              <div class="fn-meta">1620–1628 CE</div>
+              <div class="fn-caste">Sisodiya · Maharana</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="Jagat Singh I was a great patron of the arts. Under his reign Mewar painting reached its classical peak — the magnificent illustrated manuscripts of the Ramayana and Bhagavata Purana were produced at his court. He built the Jagdish Temple in Udaipur (1651).">
+              <div class="fn-icon">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1L10 5.5H15L11.5 8.5L13 13.5L8 10.5L3 13.5L4.5 8.5L1 5.5H6L8 1Z" fill="white"/></svg>
+              </div>
+              <div class="fn-name">Jagat Singh I</div>
+              <div class="fn-meta">1628–1652 CE</div>
+              <div class="fn-caste">Sisodiya · Maharana · Patron of Arts</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- MARWAR / RATHORE TREE -->
+    <div class="ft-tree" id="tree-marwar">
+      <div class="ft-legend">
+        <span class="ft-leg-item"><span class="ft-leg-dot founder"></span>Founder</span>
+        <span class="ft-leg-item"><span class="ft-leg-dot king"></span>King / Maharaja</span>
+        <span class="ft-leg-item"><span class="ft-leg-dot warrior"></span>Warrior</span>
+        <span class="ft-leg-item"><span class="ft-leg-dot saint"></span>Saint / Notable</span>
+      </div>
+      <div class="ft-scroll-wrap">
+        <div class="ft-canvas">
+
+          <div class="ft-level">
+            <div class="ft-node founder large" data-info="Rao Siyaji was a prince of Kannauj who migrated to Rajputana after the fall of the Gahadavala dynasty. He is considered the patriarch of all Rathores, settling in the Pali region of Marwar around 1212 CE.">
+              <div class="fn-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L14 8H20L15.5 12L17 18L11 14.5L5 18L6.5 12L2 8H8L11 2Z" fill="white"/></svg></div>
+              <div class="fn-name">Rao Siyaji</div>
+              <div class="fn-meta">c. 1212 CE</div>
+              <div class="fn-caste">Rathore · Suryavanshi · Patriarch</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king" data-info="Son of Siyaji. Continued establishing Rathore presence in Marwar, making alliances with local chiefs and expanding territory around Pali and Kher.">
+              <div class="fn-name">Rao Asthan</div>
+              <div class="fn-meta">c. 1230 CE</div>
+              <div class="fn-caste">Rathore · Marwar</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king" data-info="Duhad expanded the Rathore's presence in the region around modern Nagaur and began the process of subjugating rival Rajput and Bhil chieftains in Marwar.">
+              <div class="fn-name">Duhad</div>
+              <div class="fn-meta">c. 1250 CE</div>
+              <div class="fn-caste">Rathore · Marwar</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="Rao Chanda was the first Rathore to capture Mandore (the ancient capital near modern Jodhpur) from the Parihar Rajputs in 1394 CE — a landmark victory that established Rathore supremacy in Marwar.">
+              <div class="fn-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1L10 5.5H15L11.5 8.5L13 13.5L8 10.5L3 13.5L4.5 8.5L1 5.5H6L8 1Z" fill="white"/></svg></div>
+              <div class="fn-name">Rao Chanda</div>
+              <div class="fn-meta">1383–1424 CE</div>
+              <div class="fn-caste">Rathore · Conquered Mandore</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="Rao Rinmal was a powerful Rathore chief who controlled all of Marwar. He was killed in an internal conflict at the Mewar court. His death led to a war between Mewar and Marwar, eventually resolved when his son Jodha reclaimed the throne.">
+              <div class="fn-name">Rao Rinmal</div>
+              <div class="fn-meta">1427–1438 CE</div>
+              <div class="fn-caste">Rathore · Marwar Chief</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level multi">
+            <div class="ft-branch-group">
+              <div class="ft-node king major" data-info="Rao Jodha founded the magnificent city of Jodhpur in 1459 CE on the rocky hill where Mehrangarh Fort stands. He expanded Marwar's territory significantly and is considered the true founder of the Jodhpur State and the iconic Mehrangarh Fort.">
+                <div class="fn-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1L11 6H16.5L12 9.5L14 15L9 11.5L4 15L6 9.5L1.5 6H7L9 1Z" fill="white"/></svg></div>
+                <div class="fn-name">Rao Jodha</div>
+                <div class="fn-meta">1438–1489 CE</div>
+                <div class="fn-caste">Rathore · Founder of Jodhpur</div>
+              </div>
+              <div class="ft-node king" data-info="Kandal was the second son of Rao Rinmal who aided his brother Jodha in recapturing Marwar from Mewar's control. He led important military campaigns.">
+                <div class="fn-name">Kandal</div>
+                <div class="fn-meta">c. 1440 CE</div>
+                <div class="fn-caste">Rathore · Prince</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level multi">
+            <div class="ft-branch-group">
+              <div class="ft-node king major" data-info="Rao Sataldev, eldest son of Rao Jodha, consolidated Jodhpur and extended Marwar's borders. His reign saw relative stability and prosperity for the Rathore kingdom.">
+                <div class="fn-name">Rao Sataldev</div>
+                <div class="fn-meta">1489–1492 CE</div>
+                <div class="fn-caste">Rathore · Jodhpur</div>
+              </div>
+              <div class="ft-node king major" data-info="Rao Bikaji, a younger son of Jodha, founded the city of Bikaner in 1488 CE in the Thar Desert, establishing a separate Rathore branch kingdom that would last until 1947.">
+                <div class="fn-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="white" stroke-width="1.5" fill="none"/><circle cx="7" cy="7" r="2" fill="white"/></svg></div>
+                <div class="fn-name">Rao Bikaji</div>
+                <div class="fn-meta">c. 1465 CE</div>
+                <div class="fn-caste">Rathore · Founder of Bikaner</div>
+              </div>
+              <div class="ft-node saint" data-info="Duda Ji was the son of Rao Jodha who settled the Nagaur area. He is the ancestor of the Mertiya branch of Rathores — from which the celebrated saint Mirabai descended.">
+                <div class="fn-name">Duda Ji</div>
+                <div class="fn-meta">c. 1462 CE</div>
+                <div class="fn-caste">Rathore · Mertiya Branch</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="Rao Ganga was a strong Marwar ruler who expanded the kingdom. He is the father of Maldeo Rathore, who would become one of the most powerful rulers in Rajputana.">
+              <div class="fn-name">Rao Ganga</div>
+              <div class="fn-meta">1515–1532 CE</div>
+              <div class="fn-caste">Rathore · Jodhpur</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="Rao Maldeo was the most powerful ruler of Marwar. At the height of his power, he controlled 58 parganas (administrative units) and was one of the most feared rulers in north India. He fought both the Afghan Sur dynasty and local Rajput rivals.">
+              <div class="fn-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1L11 6H16.5L12 9.5L14 15L9 11.5L4 15L6 9.5L1.5 6H7L9 1Z" fill="white"/></svg></div>
+              <div class="fn-name">Rao Maldeo</div>
+              <div class="fn-meta">1532–1562 CE</div>
+              <div class="fn-caste">Rathore · Most Powerful Rathore Chief</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level multi">
+            <div class="ft-branch-group">
+              <div class="ft-node king major" data-info="Rao Chandrasen Rathore was the 'Forgotten Hero' who refused to submit to Akbar. He spent years fighting the Mughals through guerrilla warfare in the hills of Marwar — preceding Maharana Pratap's similar struggle. He died undefeated in exile.">
+                <div class="fn-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L9 5H13.5L10 8L11.5 12.5L7 10L2.5 12.5L4 8L0.5 5H5L7 1Z" fill="white"/></svg></div>
+                <div class="fn-name">Rao Chandrasen</div>
+                <div class="fn-meta">1562–1581 CE</div>
+                <div class="fn-caste">Rathore · The Forgotten Hero</div>
+              </div>
+              <div class="ft-node king" data-info="Rao Ram was an elder brother of Chandrasen who briefly controlled Jodhpur before yielding to Akbar's pressure, accepting Mughal suzerainty unlike his brother.">
+                <div class="fn-name">Rao Ram</div>
+                <div class="fn-meta">c. 1562 CE</div>
+                <div class="fn-caste">Rathore · Prince</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- JAIPUR / KACHWAHA TREE -->
+    <div class="ft-tree" id="tree-jaipur">
+      <div class="ft-legend">
+        <span class="ft-leg-item"><span class="ft-leg-dot founder"></span>Founder</span>
+        <span class="ft-leg-item"><span class="ft-leg-dot king"></span>King / Maharaja</span>
+        <span class="ft-leg-item"><span class="ft-leg-dot warrior"></span>Warrior / General</span>
+        <span class="ft-leg-item"><span class="ft-leg-dot saint"></span>Scholar / Notable</span>
+      </div>
+      <div class="ft-scroll-wrap">
+        <div class="ft-canvas">
+
+          <div class="ft-level">
+            <div class="ft-node founder large" data-info="Dhola Rai was the legendary founder of the Kachwaha dynasty in Rajputana. He came from Narwar (Gwalior region) and conquered the Amber region from the Meena tribe around 967 CE, establishing the first Kachwaha fort at Amber.">
+              <div class="fn-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L14 8H20L15.5 12L17 18L11 14.5L5 18L6.5 12L2 8H8L11 2Z" fill="white"/></svg></div>
+              <div class="fn-name">Dhola Rai</div>
+              <div class="fn-meta">c. 967 CE</div>
+              <div class="fn-caste">Kachwaha · Suryavanshi · Founder of Amber</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king" data-info="Kakil Dev expanded the Kachwaha territory and is remembered for constructing early defensive structures around Amber. He is also credited with beginning the tradition of intermarriage with other Rajput clans.">
+              <div class="fn-name">Kakil Dev</div>
+              <div class="fn-meta">c. 1036 CE</div>
+              <div class="fn-caste">Kachwaha · Amber</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="Pajwan captured the present Amber hilltop site from the Susawat Meenas and permanently established the Kachwaha capital at Amber around 1150 CE, building the early structures of what would become the famous Amber Fort.">
+              <div class="fn-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1L10 5.5H15L11.5 8.5L13 13.5L8 10.5L3 13.5L4.5 8.5L1 5.5H6L8 1Z" fill="white"/></svg></div>
+              <div class="fn-name">Pajwan</div>
+              <div class="fn-meta">c. 1150 CE</div>
+              <div class="fn-caste">Kachwaha · Established Amber Fort Site</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="Prithviraj Kachwaha was a powerful ruler who expanded the Amber kingdom significantly, establishing sub-branches of the Kachwaha clan including the Shekhawat lineage named after his son Shekha.">
+              <div class="fn-name">Rao Prithviraj Kachwaha</div>
+              <div class="fn-meta">c. 1503–1527 CE</div>
+              <div class="fn-caste">Kachwaha · Amber</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level multi">
+            <div class="ft-branch-group">
+              <div class="ft-node king major" data-info="Raja Bharmal was the first Rajput king to form a matrimonial alliance with the Mughal Emperor Akbar, giving his daughter Harkha Bai (Jodha Bai) in marriage in 1562. This alliance elevated the Kachwaha's power and influence at the Mughal court enormously.">
+                <div class="fn-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L9 5H13.5L10 8L11.5 12.5L7 10L2.5 12.5L4 8L0.5 5H5L7 1Z" fill="white"/></svg></div>
+                <div class="fn-name">Raja Bharmal</div>
+                <div class="fn-meta">1548–1574 CE</div>
+                <div class="fn-caste">Kachwaha · First Mughal Alliance</div>
+              </div>
+              <div class="ft-node king" data-info="Rao Shekha was a younger son of Rao Mandan and founder of the Shekhawat sub-clan of Kachwahas, who established the Shekhawati region of Rajasthan.">
+                <div class="fn-name">Rao Shekha</div>
+                <div class="fn-meta">c. 1433–1488 CE</div>
+                <div class="fn-caste">Shekhawat · Founder of Shekhawati</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level multi">
+            <div class="ft-branch-group">
+              <div class="ft-node warrior major" data-info="Man Singh I was one of Akbar's navratnas (nine jewels) and a brilliant military general. He commanded the Mughal army at the Battle of Haldighati (1576) against Maharana Pratap. He built temples in Vrindavan and the famous Man Mandir in Gwalior.">
+                <div class="fn-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1L11 6H16.5L12 9.5L14 15L9 11.5L4 15L6 9.5L1.5 6H7L9 1Z" fill="white"/></svg></div>
+                <div class="fn-name">Man Singh I</div>
+                <div class="fn-meta">1590–1614 CE (as Raja)</div>
+                <div class="fn-caste">Kachwaha · Akbar's General · Navratna</div>
+              </div>
+              <div class="ft-node saint" data-info="Harkha Bai (Jodha Bai) was the daughter of Raja Bharmal who married Emperor Akbar in 1562. She was the mother of Emperor Jahangir (Salim). She was permitted to maintain her Hindu faith in the Mughal court.">
+                <div class="fn-name">Harkha Bai (Jodha Bai)</div>
+                <div class="fn-meta">c. 1542–1623 CE</div>
+                <div class="fn-caste">Kachwaha · Queen of Akbar · Mother of Jahangir</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="Mirza Raja Jai Singh I was one of the greatest Kachwaha rulers. He fought against both the Marathas and the Deccan kingdoms for the Mughals. A brilliant general, he negotiated the Treaty of Purandar with Shivaji Maharaj in 1665 on behalf of Aurangzeb.">
+              <div class="fn-name">Mirza Raja Jai Singh I</div>
+              <div class="fn-meta">1621–1667 CE</div>
+              <div class="fn-caste">Kachwaha · Amber · Mughal Commander</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="Sawai Jai Singh II was a polymath — king, astronomer, mathematician, and city planner. He founded the planned city of Jaipur in 1727, built 5 Jantar Mantar observatories (Delhi, Jaipur, Ujjain, Mathura, Varanasi), and compiled the astronomical treatise Zij-i Muhammad Shahi. He is one of medieval India's greatest intellects.">
+              <div class="fn-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1L11 6H16.5L12 9.5L14 15L9 11.5L4 15L6 9.5L1.5 6H7L9 1Z" fill="white"/></svg></div>
+              <div class="fn-name">Sawai Jai Singh II</div>
+              <div class="fn-meta">1700–1743 CE</div>
+              <div class="fn-caste">Kachwaha · Founder of Jaipur · Astronomer-King</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAUHAN TREE -->
+    <div class="ft-tree" id="tree-chauhan">
+      <div class="ft-scroll-wrap">
+        <div class="ft-canvas">
+          <div class="ft-legend">
+            <span class="ft-leg-item"><span class="ft-leg-dot founder"></span>Founder</span>
+            <span class="ft-leg-item"><span class="ft-leg-dot king"></span>King</span>
+            <span class="ft-leg-item"><span class="ft-leg-dot warrior"></span>Warrior</span>
+          </div>
+
+          <div class="ft-level">
+            <div class="ft-node founder large" data-info="Vasudeva Chahamana founded the Chahamana (Chauhan) dynasty at Shakambhari (Sambhar Lake) around 551 CE. He is the earliest known ruler of this dynasty. The Chahamanas claim descent from the Agnivansha — born from a sacred fire on Mount Abu.">
+              <div class="fn-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L14 8H20L15.5 12L17 18L11 14.5L5 18L6.5 12L2 8H8L11 2Z" fill="white"/></svg></div>
+              <div class="fn-name">Vasudeva Chahamana</div>
+              <div class="fn-meta">c. 551 CE</div>
+              <div class="fn-caste">Chauhan · Agnivanshi · Shakambhari</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king" data-info="Samantaraja extended the kingdom's boundaries and established the Chahamana dominance over the Sambhar salt lake region — a vital source of revenue. He is mentioned in the Bijolia rock inscription.">
+              <div class="fn-name">Samantaraja</div>
+              <div class="fn-meta">c. 684–709 CE</div>
+              <div class="fn-caste">Chauhan · Shakambhari</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="Ajayaraja II founded the city of Ajayameru (Ajmer) around 1113 CE — one of the most strategically important cities in medieval India, located between Rajputana and the Gangetic plains. He also issued some of the earliest Rajput coins.">
+              <div class="fn-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1L10 5.5H15L11.5 8.5L13 13.5L8 10.5L3 13.5L4.5 8.5L1 5.5H6L8 1Z" fill="white"/></svg></div>
+              <div class="fn-name">Ajayaraja II</div>
+              <div class="fn-meta">c. 1110–1135 CE</div>
+              <div class="fn-caste">Chauhan · Founder of Ajmer</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="Vigraharaja IV (Visaladeva) was a great Chahamana king who captured Delhi from the Tomar Rajputs and extended his empire from the Himalayas to the Vindhyas. A Sanskrit poet himself, he composed the play Harikeli-Nataka.">
+              <div class="fn-name">Vigraharaja IV (Visaladeva)</div>
+              <div class="fn-meta">c. 1150–1164 CE</div>
+              <div class="fn-caste">Chauhan · Emperor · Scholar-King</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king" data-info="Someshvara was the father of Prithviraj Chauhan III. He was raised at the Chaulukya (Solanki) court in Gujarat before inheriting the Chahamana throne. He died in battle against the Paramara king of Abu.">
+              <div class="fn-name">Someshvara</div>
+              <div class="fn-meta">c. 1169–1177 CE</div>
+              <div class="fn-caste">Chauhan · Shakambhari</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level multi">
+            <div class="ft-branch-group">
+              <div class="ft-node warrior major" data-info="Prithviraj Chauhan III, the last Hindu emperor of Delhi, was a legendary warrior who won 20 of 21 encounters against Muhammad of Ghor before losing the Second Battle of Tarain in 1192 CE. His romance with Sanyogita, his bravery, and his tragic end are immortalized in the epic Prithviraj Raso by his court poet Chand Bardai.">
+                <div class="fn-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1L11 6H16.5L12 9.5L14 15L9 11.5L4 15L6 9.5L1.5 6H7L9 1Z" fill="white"/></svg></div>
+                <div class="fn-name">Prithviraj Chauhan III</div>
+                <div class="fn-meta">1178–1192 CE</div>
+                <div class="fn-caste">Chauhan · Last Hindu Emperor of Delhi</div>
+              </div>
+              <div class="ft-node king" data-info="Hariraja was the younger brother of Prithviraj Chauhan III who briefly tried to reconquer the Chahamana kingdom after his brother's defeat at the Second Battle of Tarain, but was overwhelmed by Qutb ud-Din Aibak's forces.">
+                <div class="fn-name">Hariraja</div>
+                <div class="fn-meta">c. 1193 CE</div>
+                <div class="fn-caste">Chauhan · Last Chahamana Ruler</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="After the fall of the Shakambhari branch, the Chauhan legacy was carried on by the Hada Chauhans of Bundi and Kota. Deva Hada founded the Bundi kingdom, creating a new Chauhan royal house that would thrive for centuries under Mughal and later Maratha influence.">
+              <div class="fn-name">Deva (Hada Branch — Bundi)</div>
+              <div class="fn-meta">c. 1242 CE</div>
+              <div class="fn-caste">Hada Chauhan · Founder of Bundi</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- JAISALMER / BHATI TREE -->
+    <div class="ft-tree" id="tree-jaisalmer">
+      <div class="ft-scroll-wrap">
+        <div class="ft-canvas">
+          <div class="ft-legend">
+            <span class="ft-leg-item"><span class="ft-leg-dot founder"></span>Founder</span>
+            <span class="ft-leg-item"><span class="ft-leg-dot king"></span>King / Rawal</span>
+            <span class="ft-leg-item"><span class="ft-leg-dot warrior"></span>Warrior</span>
+          </div>
+
+          <div class="ft-level">
+            <div class="ft-node founder large" data-info="Bhati I is considered the legendary ancestor of the Bhati (Bhatti) clan. He was a Yadava prince descended from the lineage of Lord Krishna. The Bhatis claim descent through the Chandravanshi lunar dynasty — specifically through Krishna's Vrishni clan.">
+              <div class="fn-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2L14 8H20L15.5 12L17 18L11 14.5L5 18L6.5 12L2 8H8L11 2Z" fill="white"/></svg></div>
+              <div class="fn-name">Bhati I (Yadava Ancestor)</div>
+              <div class="fn-meta">c. 6th Century CE</div>
+              <div class="fn-caste">Bhati · Chandravanshi · Yadava Lineage</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king" data-info="Gaj was an early Bhati ruler who established the clan's dominance in the Thar Desert region. The Bhatis expanded from Sindh into the arid Rajputana borderlands, controlling vital desert trade routes.">
+              <div class="fn-name">Gaj</div>
+              <div class="fn-meta">c. 623 CE</div>
+              <div class="fn-caste">Bhati · Early Desert Ruler</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="Deoraj founded the city of Lodurva (near modern Jaisalmer) which served as the Bhati capital before the founding of Jaisalmer. Lodurva was a prosperous center until it was sacked by Mahmud of Ghazni.">
+              <div class="fn-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1L10 5.5H15L11.5 8.5L13 13.5L8 10.5L3 13.5L4.5 8.5L1 5.5H6L8 1Z" fill="white"/></svg></div>
+              <div class="fn-name">Deoraj</div>
+              <div class="fn-meta">c. 768 CE</div>
+              <div class="fn-caste">Bhati · Founded Lodurva (old capital)</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king" data-info="Vijayaraja was a powerful Bhati ruler who expanded the kingdom significantly into Sindh. He is noted for defeating the Arab rulers who were pushing into Rajputana and securing the desert frontier.">
+              <div class="fn-name">Vijayaraja</div>
+              <div class="fn-meta">c. 900 CE</div>
+              <div class="fn-caste">Bhati · Marwar/Sindh</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="Rawal Jaisal founded the golden city of Jaisalmer on the Trikuta Hill in 1156 CE. The city was named after him — Jaisal's fort (Jaisalmer). The Sonar Qila (Golden Fort) built of yellow sandstone still stands today as a UNESCO World Heritage Site and is one of the few living forts in the world.">
+              <div class="fn-icon"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1L11 6H16.5L12 9.5L14 15L9 11.5L4 15L6 9.5L1.5 6H7L9 1Z" fill="white"/></svg></div>
+              <div class="fn-name">Rawal Jaisal</div>
+              <div class="fn-meta">1156 CE</div>
+              <div class="fn-caste">Bhati · Founder of Jaisalmer · Sonar Qila</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king" data-info="Shalavansi was the son and successor of Rawal Jaisal who consolidated the new city of Jaisalmer and completed several defensive structures on the Trikuta Hill. He maintained trade routes across the Thar Desert.">
+              <div class="fn-name">Shalavansi</div>
+              <div class="fn-meta">c. 1168 CE</div>
+              <div class="fn-caste">Bhati · Jaisalmer</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="Rawal Jaitsi is famous for successfully defending Jaisalmer against the Delhi Sultanate forces of Alauddin Khilji in 1299–1301 CE. The siege lasted years, and the fort's defenders performed a heroic Saka (last-stand battle) after sending women to Jauhar.">
+              <div class="fn-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L9 5H13.5L10 8L11.5 12.5L7 10L2.5 12.5L4 8L0.5 5H5L7 1Z" fill="white"/></svg></div>
+              <div class="fn-name">Rawal Jaitsi</div>
+              <div class="fn-meta">c. 1276–1306 CE</div>
+              <div class="fn-caste">Bhati · Defended vs Alauddin Khilji</div>
+            </div>
+          </div>
+
+          <div class="ft-connector-down"></div>
+
+          <div class="ft-level">
+            <div class="ft-node king major" data-info="Rawal Lunakaran signed a treaty with Humayun (Mughal) which helped Jaisalmer maintain its independence. He was known for his diplomatic skill in navigating the complex Mughal-Rajput political landscape of the 16th century.">
+              <div class="fn-name">Rawal Lunakaran</div>
+              <div class="fn-meta">1528–1551 CE</div>
+              <div class="fn-caste">Bhati · Jaisalmer · Mughal Era</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Tooltip -->
+    <div class="ft-tooltip" id="ftTooltip"></div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">Rajput Heritage</div>
+  <p class="footer-tagline">"The glory of a Rajput lies not in his birth, but in his conduct."</p>
+  <ul class="footer-links">
+    <li><a href="#origin">Origin</a></li>
+    <li><a href="#clans">Clans</a></li>
+    <li><a href="#kingdoms">Kingdoms</a></li>
+    <li><a href="#warriors">Warriors</a></li>
+    <li><a href="#subcastes">Sub-Castes</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#culture">Culture</a></li>
+    <li><a href="#familytree">Family Tree</a></li>
+  </ul>
+  <p>A tribute to the valor, chivalry and royal heritage of Rajput civilization · Educational Reference</p>
+</footer>
+
+<script>
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Subtle scroll-reveal animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.clan-card, .kingdom-card, .warrior-card, .value-card, .sub-card, .culture-card, .fact-item, .tl-content').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+    observer.observe(el);
+  });
+
+  // ── FAMILY TREE ──
+  function showTree(id) {
+    document.querySelectorAll('.ft-tree').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.ft-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tree-' + id).classList.add('active');
+    document.querySelector('.ft-tab[onclick="showTree(\'' + id + '\')"]').classList.add('active');
+  }
+
+  // Tooltip
+  const tooltip = document.getElementById('ftTooltip');
+  let tooltipTimeout;
+
+  document.querySelectorAll('.ft-node').forEach(node => {
+    node.addEventListener('mouseenter', function(e) {
+      clearTimeout(tooltipTimeout);
+      const info = this.getAttribute('data-info');
+      const name = this.querySelector('.fn-name')?.textContent || '';
+      const caste = this.querySelector('.fn-caste')?.textContent || '';
+      if (!info) return;
+      tooltip.innerHTML = `<div class="ft-tooltip-title">${name}</div><div style="font-size:0.72rem;color:var(--purple-mid);margin-bottom:0.5rem;font-style:italic;">${caste}</div>${info}`;
+      tooltip.classList.add('visible');
+      positionTooltip(e);
+    });
+
+    node.addEventListener('mousemove', positionTooltip);
+
+    node.addEventListener('mouseleave', function() {
+      tooltipTimeout = setTimeout(() => tooltip.classList.remove('visible'), 120);
+    });
+  });
+
+  function positionTooltip(e) {
+    const tw = 310, th = 160;
+    let x = e.clientX + 16;
+    let y = e.clientY + 16;
+    if (x + tw > window.innerWidth - 10) x = e.clientX - tw - 16;
+    if (y + th > window.innerHeight - 10) y = e.clientY - th - 16;
+    tooltip.style.left = x + 'px';
+    tooltip.style.top  = y + 'px';
+  }
+
+</script>
+</body>
+</html>
