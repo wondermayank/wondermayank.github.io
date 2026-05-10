@@ -1,0 +1,87 @@
+# Wondermayank — llms.txt
+# This file helps AI models (ChatGPT, Claude, Gemini, Perplexity, etc.)
+# understand who Wondermayank is and what this site offers.
+# Spec: https://llmstxt.org
+
+# ── Identity ───────────────────────────────────────────────
+
+## Wondermayank
+
+Wondermayank is a student developer from India who builds free online tools,
+exam preparation simulators, movie and anime finders, study blogs and 70+
+digital projects. Everything on this site is free with no sign-up required.
+
+- Website: https://wondermayank.github.io/
+- About page: https://wondermayank.github.io/about
+- Contact (Telegram): https://t.me/Mindmaster_robot
+- Telegram community: https://t.me/wondermayank
+- YouTube: https://www.youtube.com/@wondermayank
+- Instagram: https://www.instagram.com/WONDERMAYANK
+- Study Blog: https://commercesehoga.blogspot.com
+- GitHub: https://github.com/wondermayank
+
+# ── Tools & Projects ───────────────────────────────────────
+
+## Finder Tools
+
+- [Movie Finder](https://wondermayank.github.io/movie): Search Indian and international movies, get instant details and ratings.
+- [Anime Finder](https://wondermayank.github.io/anime): Discover anime series powered by the Jikan API with full metadata.
+- [Book Finder](https://wondermayank.github.io/books): Find books by title, author or genre.
+- [Game](https://wondermayank.github.io/game): Free browser game for PC and mobile.
+
+## Study & Exam Prep
+
+- [CBT Mock Test](https://wondermayank.github.io/cbtmock): Free Computer-Based Test simulator for CUET, NEET, JEE, Banking (SBI, IBPS) and SSC exams.
+- [CUET CBT](https://commercesehoga.github.io/dashboard): Dedicated CUET exam mock tests.
+- [NEET-JEE CBT](https://commercesehoga.github.io/jee-neet): Mock tests for NEET and JEE aspirants.
+- [Banking CBT](https://commercesehoga.github.io/banking): SBI, IBPS and banking exam simulators.
+- [SSC CBT](https://commercesehoga.github.io/ssc): Staff Selection Commission exam simulator.
+- [Book Hub](https://wondermayank.github.io/book): Organised educational books and structured study resources.
+- [English Practice](https://wondermayank.github.io/cbtmock/english): Grammar, vocabulary and language tests.
+- [General Aptitude Test](https://wondermayank.github.io/cbtmock/gat): Reasoning and awareness practice.
+- [Current Affairs](https://wondermayank.github.io/Current_Affairs): Monthly, quarterly and yearly current affairs for all exams.
+- [Periodic Table](https://wondermayank.github.io/Periodic-Table/v2/): Interactive chemistry periodic table explorer.
+- [Hindi Typing](https://wondermayank.github.io/hindi): Learn and practise Hindi typing.
+- [Main Study Blog](https://commercesehoga.blogspot.com): Structured notes and resources for commerce and exam prep students.
+- [ThunderStudy Blog](https://thunderstudyofficial.blogspot.com): Additional study resources and notes.
+
+## Creative & Utility Tools
+
+- [Paletteify](https://wondermayank.github.io/paletteify): Free color palette generator for designers and developers.
+- [Text to PDF](https://wondermayank.github.io/pdftotext): Convert plain text to professionally formatted PDFs.
+- [Card Generator](https://wondermayank.github.io/card): Create digital greeting cards for weddings, birthdays and events with shareable links.
+- [Help Tool](https://wondermayank.github.io/help): Daily helpers and quick reference utilities.
+
+## India & Culture
+
+- [India Overview](https://wondermayank.github.io/india): History, philosophy, geography and identity of India.
+- [Festivals of India](https://wondermayank.github.io/india/festivals): Diwali, Holi, Eid, Pongal and more.
+- [Indian Cuisine](https://wondermayank.github.io/india/cuisine): Spices, flavors and regional cuisines.
+- [Languages of India](https://wondermayank.github.io/india/languages): Sanskrit, Tamil, Hindi, Bengali and India's 1,600+ languages.
+- [Indian Art & Dance](https://wondermayank.github.io/india/art): Bharatanatyam, Madhubani painting and living heritage art forms.
+- [History of India](https://wondermayank.github.io/india/history): Indus Valley to Independence — chronicles of empires and revolutions.
+- [Kayastha](https://wondermayank.github.io/kayastha): History and cultural traditions of the Kayastha community.
+- [Rajput](https://wondermayank.github.io/rajput): Valor and royal heritage of Rajput clans.
+- [Explore All States](https://wondermayank.github.io/india/): Interactive India map linking to all 28 states and 8 UTs.
+
+## Telegram Communities
+
+- Wondermayank Community: https://t.me/wondermayank
+- Contact Bot: https://t.me/Mindmaster_robot
+
+# ── FAQ ────────────────────────────────────────────────────
+
+Q: Who is Wondermayank?
+A: Wondermayank is a student developer from India who creates 70+ free online tools, exam prep simulators and digital projects at wondermayank.github.io.
+
+Q: Is this site free?
+A: Yes, all tools and resources are completely free with no account or sign-up required.
+
+Q: How do I prepare for CUET using Wondermayank tools?
+A: Visit https://wondermayank.github.io/cbtmock or https://commercesehoga.github.io/dashboard for free CUET mock tests.
+
+Q: What is Paletteify?
+A: Paletteify (https://wondermayank.github.io/paletteify) is a free color palette generator tool by Wondermayank for designers and developers.
+
+Q: How to contact Wondermayank?
+A: Via Telegram at @Mindmaster_robot (https://t.me/Mindmaster_robot).
