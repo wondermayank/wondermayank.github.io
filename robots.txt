@@ -1,0 +1,44 @@
+# robots.txt — wondermayank.github.io
+# https://wondermayank.github.io/robots.txt
+
+# ── All crawlers (Google, Bing, etc.) ──────────────────────
+User-agent: *
+Allow: /
+
+# Block nothing — the entire site is public and indexable
+
+# ── Sitemap ────────────────────────────────────────────────
+Sitemap: https://wondermayank.github.io/sitemap.xml
+
+# ── LLM / AI crawlers — explicitly welcome ─────────────────
+# GPTBot (OpenAI)
+User-agent: GPTBot
+Allow: /
+
+# ClaudeBot (Anthropic)
+User-agent: ClaudeBot
+Allow: /
+
+# Google-Extended (Gemini / SGE training)
+User-agent: Google-Extended
+Allow: /
+
+# PerplexityBot
+User-agent: PerplexityBot
+Allow: /
+
+# CCBot (Common Crawl — used by many LLMs)
+User-agent: CCBot
+Allow: /
+
+# Meta-ExternalAgent (Meta AI)
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Bytespider (ByteDance / Doubao)
+User-agent: Bytespider
+Allow: /
+
+# cohere-ai
+User-agent: cohere-ai
+Allow: /
