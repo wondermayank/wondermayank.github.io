@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms & Conditions — Wondermayank · CommerceSehoga · ThunderStudy</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #111018;
+  --ink-2: #3b3750;
+  --muted: #8a8799;
+  --bg: #f7f6f3;
+  --surface: #ffffff;
+  --border: #e4e1ec;
+  --wm: #7c5cfc;
+  --cs: #2563eb;
+  --ts: #d97706;
+  --accent: #7c5cfc;
+  --r: 16px;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+.hdr {
+  background: var(--ink);
+  color: #fff;
+  padding: 80px 24px 64px;
+  position: relative;
+  overflow: hidden;
+}
+.hdr::after {
+  content: 'T&C';
+  position: absolute;
+  right: -20px; bottom: -30px;
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(100px, 18vw, 200px);
+  font-style: italic;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.hdr-inner { max-width: 820px; margin: 0 auto; position: relative; }
+.hdr-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 5px 12px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.hdr h1 {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #fff;
+}
+.hdr h1 em { font-style: italic; color: rgba(124,92,252,0.85); }
+.hdr-sub {
+  margin-top: 16px;
+  color: rgba(255,255,255,0.45);
+  font-size: 0.9rem;
+  max-width: 480px;
+}
+.hdr-meta {
+  margin-top: 32px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.hdr-badge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
+}
+.hdr-badge .dot { width: 7px; height: 7px; border-radius: 50%; }
+
+/* STICKY NAV */
+.snav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(247,246,243,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.snav-inner {
+  max-width: 820px; margin: 0 auto;
+  display: flex; gap: 0;
+  overflow-x: auto; scrollbar-width: none;
+  padding: 0 24px;
+}
+.snav-inner::-webkit-scrollbar { display: none; }
+.snav-inner a {
+  display: block;
+  padding: 13px 16px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.18s, border-color 0.18s;
+}
+.snav-inner a:hover { color: var(--ink); }
+
+/* MAIN */
+.wrap { max-width: 820px; margin: 0 auto; padding: 56px 24px 100px; }
+
+/* CLAUSE */
+.clause {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 0 20px;
+  margin-bottom: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.clause:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
+.clause-num {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 28px 0 28px;
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--border);
+  border-right: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.clause-body { padding: 24px 28px 24px 0; }
+.clause-title {
+  font-weight: 700;
+  font-size: 0.97rem;
+  color: var(--ink);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.clause-badge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.cb-wm { background: rgba(124,92,252,0.1); color: var(--wm); }
+.cb-cs { background: rgba(37,99,235,0.1); color: var(--cs); }
+.cb-ts { background: rgba(217,119,6,0.1); color: var(--ts); }
+.cb-all { background: rgba(17,16,24,0.07); color: var(--ink-2); }
+
+p { font-size: 0.92rem; color: var(--ink-2); margin-bottom: 10px; line-height: 1.75; }
+p:last-child { margin-bottom: 0; }
+ol, ul { padding-left: 18px; margin-bottom: 10px; }
+li { font-size: 0.91rem; color: var(--ink-2); margin-bottom: 7px; line-height: 1.65; }
+strong { color: var(--ink); font-weight: 600; }
+
+/* HIGHLIGHT */
+.hl {
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin: 14px 0;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  border-left: 3px solid;
+}
+.hl-wm { background: rgba(124,92,252,0.06); border-color: var(--wm); color: #3a2280; }
+.hl-cs { background: rgba(37,99,235,0.06); border-color: var(--cs); color: #1e3a6b; }
+.hl-ts { background: rgba(217,119,6,0.06); border-color: var(--ts); color: #6b3800; }
+
+/* SECTION HEADER */
+.sec-hdr {
+  margin: 56px 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.sec-hdr::before {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.sec-hdr-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+/* PLATFORMS ROW */
+.platforms {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.plat-chip {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  font-size: 12px; font-weight: 600;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+.plat-chip .pip { width: 8px; height: 8px; border-radius: 50%; }
+
+/* FOOTER */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 11.5px;
+  line-height: 2;
+}
+footer a { color: rgba(124,92,252,0.7); text-decoration: none; }
+.foot-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 10px; }
+.foot-links a { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.35); transition: color 0.2s; }
+.foot-links a:hover { color: rgba(124,92,252,0.9); }
+
+@media (max-width: 600px) {
+  .clause { grid-template-columns: 40px 1fr; gap: 0 14px; }
+  .clause-num { font-size: 1.2rem; padding: 20px 0; }
+  .clause-body { padding: 18px 16px 18px 0; }
+}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-inner">
+    <div class="hdr-tag">Legal Document</div>
+    <h1>Terms &amp;<br><em>Conditions</em></h1>
+    <p class="hdr-sub">These terms govern all use of Wondermayank, CommerceSehoga, and ThunderStudy platforms.</p>
+    <div class="hdr-meta">
+      <div class="hdr-badge"><span class="dot" style="background:#7c5cfc"></span> wondermayank.github.io</div>
+      <div class="hdr-badge"><span class="dot" style="background:#2563eb"></span> commercesehoga.github.io</div>
+      <div class="hdr-badge"><span class="dot" style="background:#d97706"></span> ThunderStudy</div>
+      <div class="hdr-badge" style="margin-left:auto; opacity:0.6">Effective: May 2025</div>
+    </div>
+  </div>
+</header>
+
+<nav class="snav">
+  <div class="snav-inner">
+    <a href="#acceptance">Acceptance</a>
+    <a href="#use">Use of Platforms</a>
+    <a href="#ip">Intellectual Property</a>
+    <a href="#third-party">Third-Party</a>
+    <a href="#gamification">Gamification</a>
+    <a href="#accounts">Accounts</a>
+    <a href="#modifications">Modifications</a>
+    <a href="#law">Governing Law</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <div class="platforms">
+    <a href="https://wondermayank.github.io" target="_blank" class="plat-chip"><span class="pip" style="background:#7c5cfc"></span> Wondermayank</a>
+    <a href="https://commercesehoga.github.io" target="_blank" class="plat-chip"><span class="pip" style="background:#2563eb"></span> CommerceSehoga</a>
+    <div class="plat-chip"><span class="pip" style="background:#d97706"></span> ThunderStudy</div>
+  </div>
+
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;margin-bottom:36px;font-size:0.88rem;color:var(--muted);line-height:1.7;">
+    <strong style="color:var(--ink);">Please read these Terms carefully.</strong> By accessing or using any of our platforms, you agree to be bound by the following Terms and Conditions. These apply to all users — students, educators, visitors, and participants of any feature.
+  </div>
+
+  <!-- 1 -->
+  <div class="clause" id="acceptance">
+    <div class="clause-num">1</div>
+    <div class="clause-body">
+      <div class="clause-title">Acceptance of Terms <span class="clause-badge cb-all">All Platforms</span></div>
+      <p>By accessing or using any platform under the Wondermayank, CommerceSehoga, or ThunderStudy umbrella, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions in full.</p>
+      <p>If you disagree with any part of these terms, please discontinue use immediately. These terms apply to all users — including students, educators, casual visitors, and registered participants of any gamified or mock-test feature.</p>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="clause" id="use">
+    <div class="clause-num">2</div>
+    <div class="clause-body">
+      <div class="clause-title">Permitted &amp; Prohibited Use <span class="clause-badge cb-all">All Platforms</span></div>
+      <p>All platforms are provided free of charge for personal, educational, and non-commercial use. By using these platforms you agree to the following:</p>
+      <ol>
+        <li>You will not misuse, reverse-engineer, scrape, or systematically reproduce any content without explicit written permission from Wondermayank.</li>
+        <li>You will not attempt to bypass any student ID gate, access control, authentication system, or gamification mechanism through technical manipulation or social engineering.</li>
+        <li>You will not submit false, misleading, abusive, or spam content in any feedback form, review section, leaderboard, or community feature.</li>
+        <li>Automated bots, scrapers, or scripts interacting with any CBT mock test engine, leaderboard, or database endpoint are strictly prohibited.</li>
+        <li>You will not impersonate another student, educator, or the platform creator in any capacity.</li>
+        <li>You will not use these platforms to distribute malware, phishing links, or any malicious content.</li>
+      </ol>
+      <div class="hl hl-cs">Violation of any of these conditions may result in immediate suspension of access across all platforms without notice.</div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="clause" id="ip">
+    <div class="clause-num">3</div>
+    <div class="clause-body">
+      <div class="clause-title">Intellectual Property <span class="clause-badge cb-wm">Wondermayank</span></div>
+      <p>All content across these platforms — including but not limited to source code, UI design, animations, SVG assets, question banks, subject notes, mock test sets, gamification systems, rank badge artwork, boot animations, and written content — is the intellectual property of Wondermayank / ThunderStudy unless otherwise explicitly credited.</p>
+      <p>Exam questions used in CBT mock tests are created for educational practice purposes. Any structural similarity to official NTA examination patterns is intentional for simulation familiarity and does not constitute official NTA, CBSE, NCERT, or government material.</p>
+      <div class="hl hl-wm">You may share links to these platforms freely. You may <strong>not</strong> copy, republish, redistribute, sell, or commercially exploit any content — including question sets, PDF notes, source code, or UI designs — without prior written permission.</div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="clause" id="third-party">
+    <div class="clause-num">4</div>
+    <div class="clause-body">
+      <div class="clause-title">Third-Party Services &amp; Integrations <span class="clause-badge cb-cs">CommerceSehoga</span></div>
+      <p>These platforms integrate with and rely on third-party services. Your use of these platforms also constitutes acknowledgement of these integrations:</p>
+      <ul>
+        <li><strong>Google Fonts &amp; Firebase / Firestore</strong> — styling and cloud data sync</li>
+        <li><strong>Google Sheets (Apps Script)</strong> — student score and leaderboard sync</li>
+        <li><strong>Google Drive</strong> — hosting of PDF study materials in StudyHub</li>
+        <li><strong>Monetag &amp; Ad Networks</strong> — platform monetisation; advertisements may appear</li>
+        <li><strong>Blogger / GitHub Pages</strong> — platform hosting infrastructure</li>
+        <li><strong>Third-party APIs</strong> — Movie, Anime, Book Finder tools (Wondermayank)</li>
+      </ul>
+      <p>Use of these third-party services is governed by their respective terms of service and privacy policies. Wondermayank is not responsible for third-party content, data handling, service availability, or outages.</p>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="clause" id="gamification">
+    <div class="clause-num">5</div>
+    <div class="clause-body">
+      <div class="clause-title">Gamification, Leaderboards &amp; Virtual Currency <span class="clause-badge cb-ts">ThunderStudy</span></div>
+      <p>ThunderStudy's HP (Health Points), XP (Experience Points), and RP (Rank Points) system, rank badges, study streaks, leaderboard positions, and all related gamification features are provided for educational motivation and community engagement only.</p>
+      <ul>
+        <li>Virtual currency and rank tiers carry <strong>no monetary value</strong> and are not redeemable for cash or real-world goods outside the platform.</li>
+        <li>HP-gated access to StudyHub materials is a platform feature and may be modified or removed at any time.</li>
+        <li>Inactivity penalties, rank resets, and leaderboard recalculations may occur without prior notice as part of platform maintenance.</li>
+        <li>Leaderboard rankings are for motivational purposes only and carry no official academic or competitive standing.</li>
+      </ul>
+      <div class="hl hl-ts">Any attempt to manipulate scores, exploit gamification logic, or create fraudulent accounts for leaderboard advantage will result in immediate removal and a permanent ban from all platforms.</div>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="clause" id="accounts">
+    <div class="clause-num">6</div>
+    <div class="clause-body">
+      <div class="clause-title">Student IDs &amp; Account Security <span class="clause-badge cb-ts">ThunderStudy</span></div>
+      <p>Where student IDs, passphrases, or access codes are used to gate content or features, you are solely responsible for maintaining the confidentiality of your credentials.</p>
+      <ul>
+        <li>Sharing access credentials with others is not permitted and may result in account suspension.</li>
+        <li>Any activity that occurs under your student ID — including score submissions and leaderboard entries — is your responsibility.</li>
+        <li>We reserve the right to revoke, reset, or modify any account at any time for violation of these terms or for platform integrity reasons.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="clause" id="modifications">
+    <div class="clause-num">7</div>
+    <div class="clause-body">
+      <div class="clause-title">Modifications to Terms &amp; Platform <span class="clause-badge cb-all">All Platforms</span></div>
+      <p>These Terms and Conditions may be updated, revised, or replaced at any time at our sole discretion. Continued use of any platform after changes have been posted constitutes acceptance of the revised Terms.</p>
+      <p>Significant changes will be communicated via in-platform admin notices, the ThunderStudy broadcast system (where applicable), or via the Telegram community at <strong>t.me/wondermayank</strong>.</p>
+      <p>We also reserve the right to modify, suspend, or discontinue any feature, section, or the entire platform at any time without liability.</p>
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="clause" id="law">
+    <div class="clause-num">8</div>
+    <div class="clause-body">
+      <div class="clause-title">Disclaimer of Warranties &amp; Governing Law <span class="clause-badge cb-all">All Platforms</span></div>
+      <p>All platforms and content are provided <em>"as-is"</em> without warranties of any kind — express, implied, or statutory. We do not warrant that platforms will be uninterrupted, error-free, or free of harmful components.</p>
+      <p>To the maximum extent permitted by applicable law, Wondermayank shall not be liable for any indirect, incidental, or consequential damages arising from your use of or inability to use any platform or feature.</p>
+      <div class="hl hl-wm">These Terms are governed by and construed in accordance with the laws of <strong>India</strong>. Any disputes arising in connection with these Terms shall be subject to the exclusive jurisdiction of courts in India.</div>
+      <p>If any provision of these Terms is found to be unenforceable, the remaining provisions shall continue in full force and effect.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:48px; padding:24px; background:var(--surface); border:1px solid var(--border); border-radius:var(--r); text-align:center;">
+    <p style="font-size:0.85rem; color:var(--muted); margin:0;">Questions about these terms? Contact us on Telegram: <a href="https://t.me/wondermayank" style="color:var(--wm); font-weight:600;">@Mindmaster_robot</a> or <a href="https://t.me/wondermayank" style="color:var(--wm); font-weight:600;">t.me/wondermayank</a></p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="foot-links">
+    <a href="https://wondermayank.github.io" target="_blank">wondermayank.github.io</a>
+    <a href="https://commercesehoga.github.io" target="_blank">commercesehoga.github.io</a>
+    <a href="disclaimer.html">Disclaimer</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="https://t.me/wondermayank" target="_blank">Telegram</a>
+  </div>
+  <p>© 2025 Wondermayank / ThunderStudy / CommerceSehoga. All rights reserved.</p>
+  <p style="margin-top:4px; font-size:10.5px;">Independent student developer from India 🇮🇳 · Last updated May 2025</p>
+</footer>
+
+</body>
+</html>
