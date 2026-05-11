@@ -1,0 +1,3 @@
+Contact: https://t.me/Mindmaster_robot
+Preferred-Languages: en, hi
+Canonical: https://wondermayank.github.io/.well-known/security.txt
