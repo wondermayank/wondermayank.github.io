@@ -1,0 +1,12 @@
+/* TEAM */
+Name: Wondermayank
+Location: India
+GitHub: github.com/wondermayank
+Site: wondermayank.github.io
+YouTube: youtube.com/@wondermayank
+Telegram: t.me/wondermayank
+
+/* SITE */
+Last update: 2026
+Language: English, Hindi
+Standards: HTML5, CSS3, Vanilla JS
