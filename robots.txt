@@ -42,3 +42,15 @@ Allow: /
 # cohere-ai
 User-agent: cohere-ai
 Allow: /
+
+# OAI-SearchBot (OpenAI's search/retrieval bot — different from GPTBot)
+User-agent: OAI-SearchBot
+Allow: /
+
+# Applebot-Extended (Apple Intelligence / Siri knowledge)
+User-agent: Applebot-Extended
+Allow: /
+
+# DuckAssistBot (DuckDuckGo AI answers)
+User-agent: DuckAssistBot
+Allow: /
