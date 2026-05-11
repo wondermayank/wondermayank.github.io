@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reviews — Wondermayank · CommerceSehoga · ThunderStudy</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0d0c14;
+  --ink-2: #36334a;
+  --muted: #8b889f;
+  --bg: #f8f7fc;
+  --surface: #ffffff;
+  --border: #eae7f5;
+  --wm: #8b5cf6;
+  --wm-2: #ec4899;
+  --cs: #2563eb;
+  --cs-2: #7c3aed;
+  --ts: #f59e0b;
+  --ts-2: #ef4444;
+  --r: 20px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.05), 0 4px 20px rgba(0,0,0,0.06);
+  --shadow-hover: 0 2px 6px rgba(0,0,0,0.06), 0 8px 32px rgba(0,0,0,0.1);
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); overflow-x: hidden; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--ink);
+  padding: 88px 24px 72px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-orbs {
+  position: absolute; inset: 0; pointer-events: none;
+}
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.35;
+}
+.orb1 { width: 400px; height: 400px; background: #8b5cf6; top: -100px; left: -80px; }
+.orb2 { width: 300px; height: 300px; background: #ec4899; top: 40px; right: -60px; }
+.orb3 { width: 250px; height: 250px; background: #2563eb; bottom: -60px; left: 30%; }
+.hero-inner { position: relative; max-width: 680px; margin: 0 auto; }
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+  text-transform: uppercase; color: rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 5px 14px; border-radius: 100px; margin-bottom: 24px;
+}
+.hero-tag::before { content: '★'; color: #f59e0b; font-size: 11px; }
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  font-weight: 800;
+  line-height: 1.0;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+.hero h1 span {
+  background: linear-gradient(90deg, #a78bfa, #ec4899, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  margin-top: 18px;
+  color: rgba(255,255,255,0.42);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+.platform-tabs {
+  display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;
+  margin-top: 36px;
+}
+.ptab {
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 12.5px; font-weight: 600;
+  border: 1px solid;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  display: inline-block;
+}
+.ptab:hover { transform: translateY(-2px); }
+.ptab-wm { background: rgba(139,92,246,0.15); border-color: rgba(139,92,246,0.4); color: #c4b5fd; }
+.ptab-cs { background: rgba(37,99,235,0.15); border-color: rgba(37,99,235,0.4); color: #93c5fd; }
+.ptab-ts { background: rgba(245,158,11,0.15); border-color: rgba(245,158,11,0.4); color: #fde68a; }
+
+/* ── STICKY NAV ── */
+.snav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(248,247,252,0.95);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.snav-inner {
+  max-width: 1020px; margin: 0 auto;
+  display: flex; overflow-x: auto; scrollbar-width: none; padding: 0 24px;
+}
+.snav-inner::-webkit-scrollbar { display: none; }
+.snav-inner a {
+  display: block; padding: 13px 16px;
+  font-size: 12.5px; font-weight: 500;
+  color: var(--muted); text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.18s, border-color 0.18s;
+}
+.snav-inner a:hover { color: var(--ink); }
+
+/* ── LAYOUT ── */
+.wrap { max-width: 1020px; margin: 0 auto; padding: 60px 24px 100px; }
+
+/* ── SECTION HEADER ── */
+.sec-top {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+  margin-bottom: 28px;
+  scroll-margin-top: 70px;
+}
+.sec-title-group {}
+.sec-eyebrow {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--muted);
+  margin-bottom: 6px;
+  display: flex; align-items: center; gap: 8px;
+}
+.sec-eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--border); }
+.sec-name {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* ── RATING BANNER ── */
+.rating-banner {
+  display: flex; align-items: center; gap: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+  flex-wrap: wrap;
+}
+.rb-score {
+  font-family: 'Syne', sans-serif;
+  font-size: 3.6rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.rb-right { flex: 1; min-width: 160px; }
+.rb-stars { font-size: 20px; margin-bottom: 3px; }
+.rb-label { font-size: 11.5px; color: var(--muted); }
+.rb-bars { flex: 2; min-width: 200px; }
+.bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+.bar-n { font-size: 11px; color: var(--muted); width: 14px; text-align: right; flex-shrink: 0; }
+.bar-track { flex: 1; height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 3px; transition: width 1.2s cubic-bezier(0.34,1.56,0.64,1); }
+.bf-wm { background: linear-gradient(90deg, var(--wm), var(--wm-2)); }
+.bf-cs { background: linear-gradient(90deg, var(--cs), var(--cs-2)); }
+.bf-ts { background: linear-gradient(90deg, var(--ts), var(--ts-2)); }
+
+/* ── REVIEW GRID ── */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+
+/* ── REVIEW CARD ── */
+.rcard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 22px 24px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.22s, transform 0.22s;
+  position: relative;
+  overflow: hidden;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.rcard:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+.rcard::after {
+  content: '"';
+  position: absolute;
+  top: -10px; right: 14px;
+  font-family: 'Syne', sans-serif;
+  font-size: 80px;
+  font-weight: 800;
+  opacity: 0.045;
+  color: var(--ink);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* top accent bar */
+.rcard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  border-radius: var(--r) var(--r) 0 0;
+}
+.rc-wm::before { background: linear-gradient(90deg, var(--wm), var(--wm-2)); }
+.rc-cs::before { background: linear-gradient(90deg, var(--cs), var(--cs-2)); }
+.rc-ts::before { background: linear-gradient(90deg, var(--ts), var(--ts-2)); }
+
+.rc-top { display: flex; align-items: center; gap: 12px; }
+.rc-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 17px; font-weight: 800;
+  flex-shrink: 0;
+  border: 2px solid;
+}
+.av-wm { background: rgba(139,92,246,0.1); color: var(--wm); border-color: rgba(139,92,246,0.25); }
+.av-cs { background: rgba(37,99,235,0.1); color: var(--cs); border-color: rgba(37,99,235,0.25); }
+.av-ts { background: rgba(245,158,11,0.1); color: var(--ts); border-color: rgba(245,158,11,0.25); }
+
+.rc-info { flex: 1; }
+.rc-name { font-weight: 700; font-size: 0.92rem; color: var(--ink); }
+.rc-meta { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.rc-stars { font-size: 13px; flex-shrink: 0; }
+
+.rc-text { font-size: 0.875rem; color: var(--ink-2); line-height: 1.75; }
+
+.rc-foot { display: flex; align-items: center; justify-content: space-between; }
+.rc-tag {
+  display: inline-block;
+  font-size: 9.5px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 4px;
+}
+.tag-wm { background: rgba(139,92,246,0.1); color: var(--wm); }
+.tag-cs { background: rgba(37,99,235,0.1); color: var(--cs); }
+.tag-ts { background: rgba(245,158,11,0.1); color: #b45309; }
+.rc-platform {
+  font-size: 10px; color: var(--muted); font-weight: 500;
+  display: flex; align-items: center; gap: 4px;
+}
+
+/* ── SECTION DIVIDER ── */
+.sec-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
+  margin: 64px 0;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.35);
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 11.5px;
+  line-height: 2;
+}
+.foot-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 10px; }
+.foot-links a { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+.foot-links a:hover { color: #a78bfa; }
+
+@media (max-width: 640px) {
+  .reviews-grid { grid-template-columns: 1fr; }
+  .rating-banner { gap: 12px; }
+  .rb-score { font-size: 2.8rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-orbs">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-tag">Community Reviews</div>
+    <h1>What<br><span>Students Say</span></h1>
+    <p class="hero-sub">Genuine feedback from students and users across Wondermayank, CommerceSehoga, and ThunderStudy.</p>
+    <div class="platform-tabs">
+      <a href="#rev-wm" class="ptab ptab-wm">⚡ Wondermayank</a>
+      <a href="#rev-cs" class="ptab ptab-cs">📚 CommerceSehoga</a>
+      <a href="#rev-ts" class="ptab ptab-ts">🎓 ThunderStudy</a>
+    </div>
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<nav class="snav">
+  <div class="snav-inner">
+    <a href="#rev-wm">Wondermayank</a>
+    <a href="#rev-cs">CommerceSehoga</a>
+    <a href="#rev-ts">ThunderStudy</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- ════════════════════════════════════════
+       WONDERMAYANK REVIEWS
+  ════════════════════════════════════════ -->
+  <section id="rev-wm" style="margin-bottom:0; scroll-margin-top:70px;">
+    <div class="sec-top">
+      <div class="sec-title-group">
+        <div class="sec-eyebrow">Portfolio &amp; Tools Hub</div>
+        <div class="sec-name" style="background:linear-gradient(90deg,var(--wm),var(--wm-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Wondermayank</div>
+      </div>
+    </div>
+
+    <div class="rating-banner">
+      <div class="rb-score" style="color:var(--wm);">4.8</div>
+      <div class="rb-right">
+        <div class="rb-stars">★★★★★</div>
+        <div class="rb-label">Community feedback · wondermayank.github.io</div>
+      </div>
+      <div class="rb-bars">
+        <div class="bar-row"><span class="bar-n">5</span><div class="bar-track"><div class="bar-fill bf-wm" style="width:82%"></div></div></div>
+        <div class="bar-row"><span class="bar-n">4</span><div class="bar-track"><div class="bar-fill bf-wm" style="width:14%"></div></div></div>
+        <div class="bar-row"><span class="bar-n">3</span><div class="bar-track"><div class="bar-fill bf-wm" style="width:4%"></div></div></div>
+        <div class="bar-row"><span class="bar-n">2</span><div class="bar-track"><div class="bar-fill bf-wm" style="width:0%"></div></div></div>
+        <div class="bar-row"><span class="bar-n">1</span><div class="bar-track"><div class="bar-fill bf-wm" style="width:0%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+
+      <div class="rcard rc-wm">
+        <div class="rc-top">
+          <div class="rc-avatar av-wm">A</div>
+          <div class="rc-info">
+            <div class="rc-name">Ananya S.</div>
+            <div class="rc-meta">Design Student · Delhi</div>
+          </div>
+          <div class="rc-stars" style="color:var(--wm);">★★★★★</div>
+        </div>
+        <p class="rc-text">The design of this portfolio is genuinely stunning. I've seen hundreds of student dev sites and most look like a Bootstrap copy-paste — but Wondermayank actually feels like a real creative work. The glassmorphism cards with the soft purple-to-pink gradient are so polished, and the dark/light toggle is buttery smooth. The Syne + DM Sans font pairing is absolutely perfect. Whoever designed this has a serious creative eye.</p>
+        <div class="rc-foot">
+          <span class="rc-tag tag-wm">UI / UX Design</span>
+          <span class="rc-platform">⚡ Wondermayank</span>
+        </div>
+      </div>
+
+      <div class="rcard rc-wm">
+        <div class="rc-top">
+          <div class="rc-avatar av-wm">R</div>
+          <div class="rc-info">
+            <div class="rc-name">Rahul M.</div>
+            <div class="rc-meta">CUET Aspirant · Jaipur</div>
+          </div>
+          <div class="rc-stars" style="color:var(--wm);">★★★★★</div>
+        </div>
+        <p class="rc-text">The CBT mock test tool is one of the best free simulators I've used. It actually mimics the NTA interface properly — timer, section switching, review panel, the whole thing. Saved me from spending ₹500 on some Telegram course's "mock test series." And the Movie Finder actually loads fast, unlike other sites that crash on my budget Android.</p>
+        <div class="rc-foot">
+          <span class="rc-tag tag-wm">CBT Simulator</span>
+          <span class="rc-platform">⚡ Wondermayank</span>
+        </div>
+      </div>
+
+      <div class="rcard rc-wm">
+        <div class="rc-top">
+          <div class="rc-avatar av-wm">P</div>
+          <div class="rc-info">
+            <div class="rc-name">Priya K.</div>
+            <div class="rc-meta">Web Dev Student · Pune</div>
+          </div>
+          <div class="rc-stars" style="color:var(--wm);">★★★★★</div>
+        </div>
+        <p class="rc-text">Used Paletteify to generate a colour scheme for my college project and got palettes I genuinely wouldn't have thought of myself. Really clean tool, no ads in your face, no sign-up needed. Also used the Text to PDF tool — works perfectly on mobile which is rare. This whole site feels like it was made with actual care.</p>
+        <div class="rc-foot">
+          <span class="rc-tag tag-wm">Paletteify · Tools</span>
+          <span class="rc-platform">⚡ Wondermayank</span>
+        </div>
+      </div>
+
+      <div class="rcard rc-wm">
+        <div class="rc-top">
+          <div class="rc-avatar av-wm">K</div>
+          <div class="rc-info">
+            <div class="rc-name">Karan T.</div>
+            <div class="rc-meta">Developer · Bengaluru</div>
+          </div>
+          <div class="rc-stars" style="color:var(--wm);">★★★★☆</div>
+        </div>
+        <p class="rc-text">The fact that this entire thing runs as a single-file HTML with vanilla JS and still feels this smooth is impressive engineering. The Three.js particle galaxy on the homepage doesn't kill page performance like similar sites. I'd love dark mode preference to persist across sessions, but overall this is genuinely well-crafted. 4 stars only because mobile scroll on the projects section can feel slightly laggy on older phones.</p>
+        <div class="rc-foot">
+          <span class="rc-tag tag-wm">Dev Quality</span>
+          <span class="rc-platform">⚡ Wondermayank</span>
+        </div>
+      </div>
+
+      <div class="rcard rc-wm">
+        <div class="rc-top">
+          <div class="rc-avatar av-wm">S</div>
+          <div class="rc-info">
+            <div class="rc-name">Simran D.</div>
+            <div class="rc-meta">Anime Fan · Chandigarh</div>
+          </div>
+          <div class="rc-stars" style="color:var(--wm);">★★★★★</div>
+        </div>
+        <p class="rc-text">The Anime Finder is streamlined in a way MAL and AniList aren't — great for quick discovery. I also spent 20 minutes exploring the full tools list and the categories are well organised. It doesn't feel like a dump of random links. Someone actually thought about how people would navigate this. Very cool project.</p>
+        <div class="rc-foot">
+          <span class="rc-tag tag-wm">Anime Finder</span>
+          <span class="rc-platform">⚡ Wondermayank</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="sec-divider"></div>
+
+  <!-- ════════════════════════════════════════
+       COMMERCESEHOGA REVIEWS
+  ════════════════════════════════════════ -->
+  <section id="rev-cs" style="margin-bottom:0; scroll-margin-top:70px;">
+    <div class="sec-top">
+      <div class="sec-title-group">
+        <div class="sec-eyebrow">CUET UG Exam Prep</div>
+        <div class="sec-name" style="background:linear-gradient(90deg,var(--cs),var(--cs-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">CommerceSehoga</div>
+      </div>
+    </div>
+
+    <div class="rating-banner">
+      <div class="rb-score" style="color:var(--cs);">4.7</div>
+      <div class="rb-right">
+        <div class="rb-stars" style="color:var(--cs);">★★★★★</div>
+        <div class="rb-label">Commerce stream students · Mock test users</div>
+      </div>
+      <div class="rb-bars">
+        <div class="bar-row"><span class="bar-n">5</span><div class="bar-track"><div class="bar-fill bf-cs" style="width:78%"></div></div></div>
+        <div class="bar-row"><span class="bar-n">4</span><div class="bar-track"><div class="bar-fill bf-cs" style="width:18%"></div></div></div>
+        <div class="bar-row"><span class="bar-n">3</span><div class="bar-track"><div class="bar-fill bf-cs" style="width:4%"></div></div></div>
+        <div class="bar-row"><span class="bar-n">2</span><div class="bar-track"><div class="bar-fill bf-cs" style="width:0%"></div></div></div>
+        <div class="bar-row"><span class="bar-n">1</span><div class="bar-track"><div class="bar-fill bf-cs" style="width:0%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+
+      <div class="rcard rc-cs">
+        <div class="rc-top">
+          <div class="rc-avatar av-cs">N</div>
+          <div class="rc-info">
+            <div class="rc-name">Nishtha A.</div>
+            <div class="rc-meta">CUET 2026 Aspirant · Lucknow</div>
+          </div>
+          <div class="rc-stars" style="color:var(--cs);">★★★★★</div>
+        </div>
+        <p class="rc-text">The Economics mock tests are the closest thing I've found to actual CUET-style questions. The combination MCQs, assertion-reason, and case study sets are genuinely challenging — not the basic fill-in-the-blank stuff you get on other free sites. I did 3 full mocks before my slot and felt prepared for the format. The Micro/Macro/Indian Economy split makes revision structured.</p>
+        <div class="rc-foot">
+          <span class="rc-tag tag-cs">Economics Mock</span>
+          <span class="rc-platform">📚 CommerceSehoga</span>
+        </div>
+      </div>
+
+      <div class="rcard rc-cs">
+        <div class="rc-top">
+          <div class="rc-avatar av-cs">V</div>
+          <div class="rc-info">
+            <div class="rc-name">Varun P.</div>
+            <div class="rc-meta">Class 12 Commerce · Mumbai</div>
+          </div>
+          <div class="rc-stars" style="color:var(--cs);">★★★★★</div>
+        </div>
+        <p class="rc-text">Business Studies tests cover all 12 chapters properly and the explanations after each question actually explain the concept, not just say "the correct answer is B." The NTA interface — with review-later, the question palette, and the timer — makes it feel like the actual exam. I've told my whole study group about this. Nothing else free comes close.</p>
+        <div class="rc-foot">
+          <span class="rc-tag tag-cs">Business Studies</span>
+          <span class="rc-platform">📚 CommerceSehoga</span>
+        </div>
+      </div>
+
+      <div class="rcard rc-cs">
+        <div class="rc-top">
+          <div class="rc-avatar av-cs">I</div>
+          <div class="rc-info">
+            <div class="rc-name">Isha G.</div>
+            <div class="rc-meta">CUET 2025 Appeared · Noida</div>
+          </div>
+          <div class="rc-stars" style="color:var(--cs);">★★★★☆</div>
+        </div>
+        <p class="rc-text">Used CommerceSehoga for Accountancy prep — the chapter-wise tests helped me pinpoint weak areas in Partnership and Company accounts specifically. One suggestion: a "wrong questions only" revision mode would be amazing. The mock test itself works without any bugs which honestly I didn't expect from a free site.</p>
+        <div class="rc-foot">
+          <span class="rc-tag tag-cs">Accountancy</span>
+          <span class="rc-platform">📚 CommerceSehoga</span>
+        </div>
+      </div>
+
+      <div class="rcard rc-cs">
+        <div class="rc-top">
+          <div class="rc-avatar av-cs">D</div>
+          <div class="rc-info">
+            <div class="rc-name">Dev R.</div>
+            <div class="rc-meta">CUET Humanities · Indore</div>
+          </div>
+          <div class="rc-stars" style="color:var(--cs);">★★★★★</div>
+        </div>
+        <p class="rc-text">The Political Science and History CBTs are really well-calibrated. The case study passage questions force you to read and apply rather than just recall — exactly what CUET demands. History tests cover dates and events thoroughly. Would love more sets for Political Science but what's there is already excellent quality.</p>
+        <div class="rc-foot">
+          <span class="rc-tag tag-cs">Pol. Sci / History</span>
+          <span class="rc-platform">📚 CommerceSehoga</span>
+        </div>
+      </div>
+
+      <div class="rcard rc-cs">
+        <div class="rc-top">
+          <div class="rc-avatar av-cs">M</div>
+          <div class="rc-info">
+            <div class="rc-name">Mahima S.</div>
+            <div class="rc-meta">CUET 2026 Aspirant · Kolkata</div>
+          </div>
+          <div class="rc-stars" style="color:var(--cs);">★★★★★</div>
+        </div>
+        <p class="rc-text">The Psychology mock tests were a surprise find. Everything I'd found before was too easy or just reading out the textbook. These MCQs test application and understanding of theories, not just definitions. The match-the-following sets are tricky in the best way. This is now my primary Psychology revision tool for CUET prep.</p>
+        <div class="rc-foot">
+          <span class="rc-tag tag-cs">Psychology</span>
+          <span class="rc-platform">📚 CommerceSehoga</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="sec-divider"></div>
+
+  <!-- ════════════════════════════════════════
+       THUNDERSTUDY REVIEWS
+  ════════════════════════════════════════ -->
+  <section id="rev-ts" style="margin-bottom:0; scroll-margin-top:70px;">
+    <div class="sec-top">
+      <div class="sec-title-group">
+        <div class="sec-eyebrow">Gamified Study Dashboard</div>
+        <div class="sec-name" style="background:linear-gradient(90deg,var(--ts),var(--ts-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">ThunderStudy</div>
+      </div>
+    </div>
+
+    <div class="rating-banner">
+      <div class="rb-score" style="color:var(--ts);">4.9</div>
+      <div class="rb-right">
+        <div class="rb-stars" style="color:var(--ts);">★★★★★</div>
+        <div class="rb-label">Registered ThunderStudy students</div>
+      </div>
+      <div class="rb-bars">
+        <div class="bar-row"><span class="bar-n">5</span><div class="bar-track"><div class="bar-fill bf-ts" style="width:91%"></div></div></div>
+        <div class="bar-row"><span class="bar-n">4</span><div class="bar-track"><div class="bar-fill bf-ts" style="width:7%"></div></div></div>
+        <div class="bar-row"><span class="bar-n">3</span><div class="bar-track"><div class="bar-fill bf-ts" style="width:2%"></div></div></div>
+        <div class="bar-row"><span class="bar-n">2</span><div class="bar-track"><div class="bar-fill bf-ts" style="width:0%"></div></div></div>
+        <div class="bar-row"><span class="bar-n">1</span><div class="bar-track"><div class="bar-fill bf-ts" style="width:0%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+
+      <div class="rcard rc-ts">
+        <div class="rc-top">
+          <div class="rc-avatar av-ts">T</div>
+          <div class="rc-info">
+            <div class="rc-name">Tanvi M.</div>
+            <div class="rc-meta">ThunderStudy Commerce · Surat</div>
+          </div>
+          <div class="rc-stars" style="color:var(--ts);">★★★★★</div>
+        </div>
+        <p class="rc-text">ThunderStudy changed how I study. The HP/XP system sounds gimmicky but it genuinely motivates you to maintain streaks. I've gone from 2 mocks a week to one every day because I want to protect my HP and climb the leaderboard. The rank badges feel genuinely rewarding (I'm at Gold tier now!) and the boot animation when you open the dashboard is an amazing touch.</p>
+        <div class="rc-foot">
+          <span class="rc-tag tag-ts">Gamification</span>
+          <span class="rc-platform">🎓 ThunderStudy</span>
+        </div>
+      </div>
+
+      <div class="rcard rc-ts">
+        <div class="rc-top">
+          <div class="rc-avatar av-ts">A</div>
+          <div class="rc-info">
+            <div class="rc-name">Arjun N.</div>
+            <div class="rc-meta">ThunderStudy Science · Hyderabad</div>
+          </div>
+          <div class="rc-stars" style="color:var(--ts);">★★★★★</div>
+        </div>
+        <p class="rc-text">The Science dashboard is incredible — PCMB all in one place, chapter-level test tracking, and the analytics chart shows me exactly which chapters I'm weak in. The Chemistry CBTs are the hardest I've found anywhere free; some organic questions genuinely stumped me, which is exactly what I needed. The Physics tests are equally well-calibrated. This replaced three different apps I was using.</p>
+        <div class="rc-foot">
+          <span class="rc-tag tag-ts">Science Dashboard</span>
+          <span class="rc-platform">🎓 ThunderStudy</span>
+        </div>
+      </div>
+
+      <div class="rcard rc-ts">
+        <div class="rc-top">
+          <div class="rc-avatar av-ts">Z</div>
+          <div class="rc-info">
+            <div class="rc-name">Zara F.</div>
+            <div class="rc-meta">ThunderStudy Commerce · Lahore</div>
+          </div>
+          <div class="rc-stars" style="color:var(--ts);">★★★★★</div>
+        </div>
+        <p class="rc-text">The notes pages are genuinely some of the best concise notes I've found. The CS/IP chapter-wise page is exactly what I needed — the dual PDF buttons (Detailed vs Short Notes) are so useful because sometimes I need the full explanation and sometimes just a quick revision. Physical Education notes are equally well-organised. The design is clean, not overwhelming like coaching institute PDFs.</p>
+        <div class="rc-foot">
+          <span class="rc-tag tag-ts">Notes &amp; PDFs</span>
+          <span class="rc-platform">🎓 ThunderStudy</span>
+        </div>
+      </div>
+
+      <div class="rcard rc-ts">
+        <div class="rc-top">
+          <div class="rc-avatar av-ts">R</div>
+          <div class="rc-info">
+            <div class="rc-name">Rohan B.</div>
+            <div class="rc-meta">ThunderStudy Premium · Pune</div>
+          </div>
+          <div class="rc-stars" style="color:var(--ts);">★★★★★</div>
+        </div>
+        <p class="rc-text">The StudyHub is underrated. The Pomodoro timer with tab-switch detection keeps you honest, the scratch card cashback is a fun detail that made me smile, and the bookmark system for wrong questions is genuinely useful for targeted revision. This feels like a proper EdTech product, not a student side project. The HP-gated premium books are also solid quality PDFs.</p>
+        <div class="rc-foot">
+          <span class="rc-tag tag-ts">StudyHub</span>
+          <span class="rc-platform">🎓 ThunderStudy</span>
+        </div>
+      </div>
+
+      <div class="rcard rc-ts">
+        <div class="rc-top">
+          <div class="rc-avatar av-ts">P</div>
+          <div class="rc-info">
+            <div class="rc-name">Pallavi R.</div>
+            <div class="rc-meta">ThunderStudy Humanities · Chennai</div>
+          </div>
+          <div class="rc-stars" style="color:var(--ts);">★★★★★</div>
+        </div>
+        <p class="rc-text">The Leaderboard keeps me coming back. It's not toxic competition — it just pushes you to be consistent. The inactivity HP penalty genuinely stresses me out (in a good way!). I've missed maybe 3 days in 2 months because of it. Confetti on rank-up is a such a nice touch, and the admin notice system keeps you updated with exam dates. This is a full study ecosystem.</p>
+        <div class="rc-foot">
+          <span class="rc-tag tag-ts">Leaderboard</span>
+          <span class="rc-platform">🎓 ThunderStudy</span>
+        </div>
+      </div>
+
+      <div class="rcard rc-ts">
+        <div class="rc-top">
+          <div class="rc-avatar av-ts">H</div>
+          <div class="rc-info">
+            <div class="rc-name">Harsh V.</div>
+            <div class="rc-meta">Developer &amp; Student · Ahmedabad</div>
+          </div>
+          <div class="rc-stars" style="color:var(--ts);">★★★★☆</div>
+        </div>
+        <p class="rc-text">From a dev perspective, the fact that this runs as a single HTML file — Firebase sync, leaderboard, gamification, analytics charts, NTA CBT engine — all in vanilla JS with no npm — is genuinely impressive. Fast on budget phones too. 4 stars only because I'd love an official APK rather than just a PWA. The DevTools code is clean and structured for a solo build.</p>
+        <div class="rc-foot">
+          <span class="rc-tag tag-ts">Tech Quality</span>
+          <span class="rc-platform">🎓 ThunderStudy</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-links">
+    <a href="https://wondermayank.github.io" target="_blank">wondermayank.github.io</a>
+    <a href="https://commercesehoga.github.io" target="_blank">commercesehoga.github.io</a>
+    <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+    <a href="disclaimer.html">Disclaimer</a>
+    <a href="https://t.me/wondermayank" target="_blank">Telegram</a>
+  </div>
+  <p>© 2025 Wondermayank / ThunderStudy / CommerceSehoga. All rights reserved.</p>
+  <p style="margin-top:4px; font-size:10.5px;">Independent student developer from India 🇮🇳</p>
+</footer>
+
+<script>
+// Animate rating bars when they scroll into view
+const barObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.bar-fill').forEach(b => {
+        const w = b.style.width;
+        b.style.width = '0';
+        requestAnimationFrame(() => requestAnimationFrame(() => { b.style.width = w; }));
+      });
+      barObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.rating-banner').forEach(el => barObs.observe(el));
+</script>
+</body>
+</html>
