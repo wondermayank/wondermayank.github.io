@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Wondermayank</title>
+    <meta name="description" content="Privacy Policy for Wondermayank (wondermayank.github.io) — how we handle your data, cookies, and third-party services.">
+    <meta name="author" content="Wondermayank">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://wondermayank.github.io/privacy">
+    <link rel="icon" type="image/svg+xml" href="logo2.svg">
+    <meta property="og:title" content="Privacy Policy — Wondermayank">
+    <meta property="og:description" content="How Wondermayank handles your data, cookies, and third-party services.">
+    <meta property="og:url" content="https://wondermayank.github.io/privacy">
+    <meta property="og:site_name" content="Wondermayank">
+    <meta property="og:image" content="https://wondermayank.github.io/og-cover.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Privacy Policy — Wondermayank",
+      "url": "https://wondermayank.github.io/privacy",
+      "description": "Privacy Policy for wondermayank.github.io",
+      "author": { "@type": "Person", "name": "Wondermayank" },
+      "dateModified": "2026-05-01"
+    }
+    </script>
+    <style>
+        :root {
+            --primary: #c8a2ff; --primary-dark: #9b6fff; --secondary: #93c5fd;
+            --accent: #ff9eb5; --bg-start: #fdfbff; --bg-end: #ebfaff;
+            --glass: rgba(255,255,255,0.35); --glass-border: rgba(255,255,255,0.55);
+            --text-main: #1a1a2e; --text-muted: #8b8ba0;
+            --font-display: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+            --ease: cubic-bezier(.22,.68,0,1.2);
+        }
+        body.theme-dark {
+            --primary: #c084fc; --primary-dark: #a855f7; --secondary: #7dd3fc;
+            --accent: #f472b6; --bg-start: #05010c; --bg-end: #150026;
+            --glass: rgba(20,8,35,.68); --glass-border: rgba(192,132,252,.24);
+            --text-main: #f6edff; --text-muted: #bda7d8;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+            color: var(--text-main); font-family: var(--font-body);
+            min-height: 100vh; overflow-x: hidden; line-height: 1.7;
+        }
+        body.theme-dark { background: radial-gradient(circle at 20% 0%, rgba(126,34,206,.32), transparent 34%), radial-gradient(circle at 80% 28%, rgba(88,28,135,.26), transparent 30%), linear-gradient(135deg, #030008, #13001f 58%, #05000a); }
+
+        .shape { position: fixed; border-radius: 50%; filter: blur(90px); opacity: .1; pointer-events: none; z-index: 0; animation: fs 28s ease-in-out infinite; }
+        .s1 { width: 420px; height: 420px; background: var(--primary); top: -100px; left: -100px; }
+        .s2 { width: 320px; height: 320px; background: var(--secondary); bottom: -80px; right: -80px; animation-duration: 22s; }
+        @keyframes fs { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(20px,-15px) scale(1.03)} }
+
+        nav { position: fixed; top: 0; width: 100%; height: 70px; padding: 0 7%; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,.28); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); border-bottom: 1px solid var(--glass-border); z-index: 1000; }
+        body.theme-dark nav { background: rgba(10,2,20,.55); }
+        .logo-wrap { display: flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--text-main); }
+        .logo-img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--glass-border); }
+        .nav-brand { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; }
+        .theme-toggle { width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(200,162,255,.42); background: rgba(255,255,255,.24); color: var(--primary-dark); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: .3s var(--ease); backdrop-filter: blur(18px); }
+        .theme-toggle:hover { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; }
+        .theme-toggle svg { width: 16px; height: 16px; }
+
+        main { position: relative; z-index: 1; padding: 110px 7% 80px; max-width: 860px; margin: 0 auto; }
+
+        /* Hero banner */
+        .page-hero {
+            background: var(--glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border); border-radius: 24px;
+            padding: 2.5rem 2.8rem; margin-bottom: 2.8rem;
+            animation: fadeUp .7s var(--ease) both;
+        }
+        @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+        .page-badge { display: inline-flex; align-items: center; gap: .4rem; font-size: .66rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 13px; border-radius: 20px; background: rgba(200,162,255,.12); color: var(--primary-dark); border: 1px solid rgba(200,162,255,.28); margin-bottom: 1rem; }
+        .page-title { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -1.5px; margin-bottom: .7rem; }
+        .page-meta { font-size: .82rem; color: var(--text-muted); display: flex; gap: 1.5rem; flex-wrap: wrap; }
+        .page-meta span { display: flex; align-items: center; gap: .35rem; }
+        .page-meta svg { width: 13px; height: 13px; }
+
+        /* Content card */
+        .card {
+            background: var(--glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border); border-radius: 20px;
+            padding: 2rem 2.4rem; margin-bottom: 1.4rem;
+            animation: fadeUp .7s var(--ease) both;
+        }
+        .card:nth-child(2) { animation-delay: .05s; }
+        .card:nth-child(3) { animation-delay: .1s; }
+        .card:nth-child(4) { animation-delay: .15s; }
+        .card:nth-child(5) { animation-delay: .2s; }
+        .card:nth-child(6) { animation-delay: .25s; }
+        .card:nth-child(7) { animation-delay: .3s; }
+
+        .section-icon { width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(135deg, rgba(200,162,255,.2), rgba(147,197,253,.15)); border: 1px solid rgba(200,162,255,.22); display: inline-flex; align-items: center; justify-content: center; margin-bottom: .9rem; }
+        .section-icon svg { width: 18px; height: 18px; }
+        h2 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 800; letter-spacing: -.5px; margin-bottom: .8rem; }
+        p { color: var(--text-muted); font-size: .92rem; margin-bottom: .7rem; }
+        p:last-child { margin-bottom: 0; }
+        ul { list-style: none; padding: 0; }
+        ul li { color: var(--text-muted); font-size: .92rem; padding: .35rem 0; padding-left: 1.2rem; position: relative; }
+        ul li::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 5px; height: 5px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); }
+        a { color: var(--primary-dark); text-decoration: none; font-weight: 600; }
+        a:hover { text-decoration: underline; }
+        strong { color: var(--text-main); font-weight: 600; }
+
+        .highlight-box { background: rgba(200,162,255,.08); border: 1px solid rgba(200,162,255,.22); border-radius: 12px; padding: 1rem 1.2rem; margin: .8rem 0; }
+        .highlight-box p { color: var(--text-main); font-size: .88rem; margin: 0; }
+
+        footer { position: relative; z-index: 1; border-top: 1px solid var(--glass-border); padding: 1.4rem 7%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; background: rgba(255,255,255,.12); backdrop-filter: blur(20px); }
+        body.theme-dark footer { background: rgba(10,2,20,.4); }
+        .foot-copy { font-size: .78rem; color: var(--text-muted); }
+        .foot-links { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+        .foot-links a { font-size: .78rem; color: var(--text-muted); text-decoration: none; transition: color .2s; }
+        .foot-links a:hover { color: var(--primary-dark); }
+
+        @media(max-width:600px) {
+            main { padding: 100px 5% 60px; }
+            .page-hero { padding: 1.8rem 1.5rem; }
+            .card { padding: 1.5rem 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="shape s1"></div>
+<div class="shape s2"></div>
+
+<nav>
+    <a href="https://wondermayank.github.io/" class="logo-wrap">
+        <img src="https://i.pinimg.com/1200x/72/11/17/721117f3130a87778647a91cbc62a9a6.jpg" alt="Wondermayank" class="logo-img" loading="lazy">
+        <span class="nav-brand">Wondermayank ✨</span>
+    </a>
+    <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Toggle theme">
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.6 6.6 0 0 0 21 12.8z"/></svg>
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+</nav>
+
+<main>
+
+    <div class="page-hero">
+        <div class="page-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Legal
+        </div>
+        <h1 class="page-title">Privacy Policy</h1>
+        <div class="page-meta">
+            <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Last updated: May 1, 2026
+            </span>
+            <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                wondermayank.github.io
+            </span>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="section-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#9b6fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h2>Overview</h2>
+        <p>Welcome to <strong>Wondermayank</strong> (wondermayank.github.io). This Privacy Policy explains how we handle information when you use our website, tools, and services. We are committed to protecting your privacy and being transparent about our practices.</p>
+        <p>By using this website, you agree to the practices described in this policy. If you disagree with any part, please discontinue use of the site.</p>
+        <div class="highlight-box">
+            <p><strong>Short version:</strong> We don't collect personal data, sell your information, or require account creation. This site is free and runs entirely in your browser.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="section-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h2>Information We Collect</h2>
+        <p>Wondermayank does not actively collect personally identifiable information (PII). However, the following may be automatically gathered:</p>
+        <ul>
+            <li><strong>Browser local storage:</strong> Some tools (like CBT exam simulators and ThunderStudy) store your progress data locally in your browser. This data never leaves your device.</li>
+            <li><strong>Usage analytics:</strong> We use Google Analytics (GA4) to understand anonymous traffic patterns — pages visited, device type, and geographic region. No personal identity is tracked.</li>
+            <li><strong>Third-party embeds:</strong> Embedded content (YouTube videos, Telegram widgets) may collect data per their own privacy policies.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="section-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </div>
+        <h2>GitHub Pages Hosting</h2>
+        <p>This website is hosted on <strong>GitHub Pages</strong> (github.io). GitHub may collect server logs including IP addresses, browser type, and referring URLs for security and infrastructure purposes. Please review <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub's Privacy Statement</a> for details.</p>
+    </div>
+
+    <div class="card">
+        <div class="section-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h2>Cookies</h2>
+        <p>Wondermayank itself does not set tracking cookies. However, the following may set cookies:</p>
+        <ul>
+            <li><strong>Google Analytics:</strong> Sets anonymous measurement cookies (_ga, _gid) to track sessions. These do not identify you personally.</li>
+            <li><strong>Google Fonts:</strong> May log requests to serve fonts. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+            <li><strong>Theme preference:</strong> We store your dark/light mode choice in your browser's localStorage — not a cookie, and not sent to any server.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <div class="section-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h2>Third-Party Services</h2>
+        <p>Our site integrates with these third-party services, each governed by their own policies:</p>
+        <ul>
+            <li><strong>Google Analytics 4</strong> — anonymous traffic measurement</li>
+            <li><strong>Google Fonts</strong> — web font delivery</li>
+            <li><strong>YouTube</strong> — embedded video content</li>
+            <li><strong>Telegram</strong> — community links and bot contact</li>
+            <li><strong>TMDB / Jikan APIs</strong> — movie and anime data for finder tools</li>
+            <li><strong>Google Sheets (Apps Script)</strong> — used in ThunderStudy exam result recording</li>
+        </ul>
+        <p>We do not control these services. Please review their respective privacy policies before use.</p>
+    </div>
+
+    <div class="card">
+        <div class="section-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h2>Children's Privacy</h2>
+        <p>Wondermayank is designed to be a safe, educational resource. We do not knowingly collect data from children under 13. If you believe a child has submitted personal information through our site, please contact us immediately via Telegram at <a href="https://t.me/Mindmaster_robot" target="_blank" rel="noopener">@Mindmaster_robot</a>.</p>
+    </div>
+
+    <div class="card">
+        <div class="section-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#c8a2ff" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Changes will be reflected in the "Last updated" date above. Continued use of the site after changes constitutes acceptance of the updated policy.</p>
+    </div>
+
+    <div class="card">
+        <div class="section-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+        </div>
+        <h2>Contact</h2>
+        <p>For any privacy-related questions or concerns, reach out to us via Telegram:</p>
+        <div class="highlight-box">
+            <p>
+                <svg viewBox="0 0 24 24" fill="none" stroke="#0088cc" stroke-width="2" width="14" height="14" style="vertical-align:middle;margin-right:6px"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                <a href="https://t.me/Mindmaster_robot" target="_blank" rel="noopener">t.me/Mindmaster_robot</a>
+            </p>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <span class="foot-copy">© 2018–2026 Wondermayank. All rights reserved.</span>
+    <div class="foot-links">
+        <a href="https://wondermayank.github.io/">Home</a>
+        <a href="https://wondermayank.github.io/terms">Terms</a>
+        <a href="https://wondermayank.github.io/disclaimer">Disclaimer</a>
+        <a href="https://wondermayank.github.io/review">Review</a>
+    </div>
+</footer>
+
+<script>
+    const saved = localStorage.getItem('wm-theme');
+    if (saved === 'dark') applyDark();
+    function applyDark() { document.body.classList.add('theme-dark'); document.querySelector('.moon-icon').style.display='none'; document.querySelector('.sun-icon').style.display=''; }
+    function toggleTheme() { const isDark = document.body.classList.toggle('theme-dark'); localStorage.setItem('wm-theme', isDark ? 'dark' : 'light'); document.querySelector('.moon-icon').style.display=isDark?'none':''; document.querySelector('.sun-icon').style.display=isDark?'':'none'; }
+</script>
+</body>
+</html>
