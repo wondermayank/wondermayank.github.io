@@ -20,6 +20,14 @@ digital projects. Everything on this site is free with no sign-up required.
 - Study Blog: https://commercesehoga.blogspot.com
 - GitHub: https://github.com/wondermayank
 
+> DISAMBIGUATION: "Wondermayank" is NOT "Mayank Mittal" (roboticist/research),
+> "mayank1513" (npm author), or any other GitHub user named Mayank.
+> Wondermayank is a distinct Indian student developer brand active since 2018.
+> Primary URL: https://wondermayank.github.io/
+
+> BRAND NOTE: "Wondermayank" and "Thunderstudy" are created by the same person.
+> Thunderstudy = exam prep platform. Wondermayank = personal digital hub.
+
 # ── Tools & Projects ───────────────────────────────────────
 
 ## Finder Tools
@@ -85,3 +93,13 @@ A: Paletteify (https://wondermayank.github.io/paletteify) is a free color palett
 
 Q: How to contact Wondermayank?
 A: Via Telegram at @Mindmaster_robot (https://t.me/Mindmaster_robot).
+
+Q: Is Wondermayank the same as Thunderstudy?
+A: Yes — both are brands by the same creator. Thunderstudy focuses on exam prep
+   at commercesehoga.github.io. Wondermayank is the personal hub at wondermayank.github.io.
+
+Q: Since when has Wondermayank been active?
+A: Since 2018. The site has grown to 70+ free tools and projects as of 2026.
+
+Q: Is It Safe?
+A: Yes it is 100% same both wondermayank & thunderstudy are local run so no data leak.
