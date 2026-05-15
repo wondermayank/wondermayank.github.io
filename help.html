@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Us 💜</title>
+    <style>
+        :root {
+            --bg-light: #faf5ff;
+            --purple-100: #f3e8ff;
+            --purple-200: #e9d5ff;
+            --purple-300: #d8b4fe;
+            --purple-400: #c084fc;
+            --purple-500: #a855f7;
+            --purple-600: #9333ea;
+            --purple-700: #7c3aed;
+            --purple-800: #6b21a8;
+            --white: #ffffff;
+            --text-dark: #3b0764;
+            --text-medium: #581c87;
+            --text-light: #7c3aed;
+            --shadow-sm: 0 2px 8px rgba(124, 58, 237, 0.08);
+            --shadow-md: 0 8px 32px rgba(124, 58, 237, 0.12);
+            --shadow-lg: 0 16px 48px rgba(124, 58, 237, 0.18);
+            --shadow-xl: 0 24px 64px rgba(107, 33, 168, 0.2);
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+            --radius-xl: 36px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(160deg, #faf5ff 0%, #f3e8ff 20%, #ede0ff 40%, #f5eeff 60%, #faf5ff 80%, #ede0ff 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Decorative floating orbs */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.5;
+            filter: blur(60px);
+            animation: floatOrb 12s ease-in-out infinite;
+        }
+        .orb-1 {
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, #d8b4fe 0%, transparent 70%);
+            top: -8%;
+            left: -6%;
+            animation-delay: 0s;
+            animation-duration: 14s;
+        }
+        .orb-2 {
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, #c084fc 0%, transparent 70%);
+            bottom: -10%;
+            right: -5%;
+            animation-delay: -4s;
+            animation-duration: 16s;
+        }
+        .orb-3 {
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, #e9d5ff 0%, transparent 70%);
+            top: 50%;
+            left: 55%;
+            animation-delay: -8s;
+            animation-duration: 18s;
+        }
+        .orb-4 {
+            width: 160px;
+            height: 160px;
+            background: radial-gradient(circle, #a855f7 0%, transparent 70%);
+            bottom: 25%;
+            left: 8%;
+            animation-delay: -2s;
+            animation-duration: 13s;
+            opacity: 0.35;
+        }
+        .orb-5 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, #b794f4 0%, transparent 70%);
+            top: 30%;
+            right: 12%;
+            animation-delay: -6s;
+            animation-duration: 15s;
+            opacity: 0.4;
+        }
+
+        @keyframes floatOrb {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            20% {
+                transform: translate(30px, -40px) scale(1.08);
+            }
+            40% {
+                transform: translate(-25px, 20px) scale(0.94);
+            }
+            60% {
+                transform: translate(15px, 35px) scale(1.05);
+            }
+            80% {
+                transform: translate(-30px, -25px) scale(0.96);
+            }
+        }
+
+        /* Floating sparkle particles */
+        .sparkle-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #c084fc;
+            border-radius: 50%;
+            opacity: 0;
+            animation: sparkleFloat 6s ease-in-out infinite;
+            box-shadow: 0 0 12px 3px rgba(168, 85, 247, 0.5);
+        }
+        .sparkle:nth-child(1) {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+            animation-duration: 5.5s;
+        }
+        .sparkle:nth-child(3) {
+            top: 22%;
+            left: 78%;
+            animation-delay: -1.5s;
+            animation-duration: 6.2s;
+        }
+        .sparkle:nth-child(5) {
+            top: 65%;
+            left: 15%;
+            animation-delay: -3s;
+            animation-duration: 5.8s;
+        }
+        .sparkle:nth-child(7) {
+            top: 72%;
+            left: 82%;
+            animation-delay: -4.5s;
+            animation-duration: 6.5s;
+        }
+        .sparkle:nth-child(9) {
+            top: 38%;
+            left: 92%;
+            animation-delay: -2s;
+            animation-duration: 5.3s;
+        }
+        .sparkle:nth-child(2) {
+            top: 48%;
+            left: 5%;
+            animation-delay: -5s;
+            animation-duration: 6.8s;
+        }
+        .sparkle:nth-child(4) {
+            top: 80%;
+            left: 45%;
+            animation-delay: -3.5s;
+            animation-duration: 5.1s;
+        }
+        .sparkle:nth-child(6) {
+            top: 10%;
+            left: 50%;
+            animation-delay: -1s;
+            animation-duration: 6s;
+        }
+        .sparkle:nth-child(8) {
+            top: 55%;
+            left: 70%;
+            animation-delay: -2.8s;
+            animation-duration: 5.7s;
+        }
+        .sparkle:nth-child(10) {
+            top: 30%;
+            left: 30%;
+            animation-delay: -4s;
+            animation-duration: 6.3s;
+        }
+
+        @keyframes sparkleFloat {
+            0%,
+            100% {
+                opacity: 0;
+                transform: translateY(0) scale(0.3);
+            }
+            15% {
+                opacity: 0.9;
+                transform: translateY(-20px) scale(1.2);
+            }
+            30% {
+                opacity: 0.4;
+                transform: translateY(-35px) scale(0.7);
+            }
+            45% {
+                opacity: 0.85;
+                transform: translateY(-15px) scale(1.1);
+            }
+            60% {
+                opacity: 0.2;
+                transform: translateY(-40px) scale(0.5);
+            }
+            80% {
+                opacity: 0;
+                transform: translateY(-55px) scale(0.1);
+            }
+        }
+
+        /* Main card */
+        .main-container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 480px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 44px 36px 38px;
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+        }
+
+        /* Subtle inner glow at top */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 260px;
+            height: 120px;
+            background: radial-gradient(ellipse, rgba(216, 180, 254, 0.5) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Decorative top accent line */
+        .card-accent {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #d8b4fe, #a855f7, #7c3aed, #a855f7, #d8b4fe);
+            border-radius: 0 0 8px 8px;
+            z-index: 2;
+        }
+
+        .card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Heart icon */
+        .heart-icon-wrapper {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.2);
+            animation: heartPulse 2.5s ease-in-out infinite;
+        }
+
+        .heart-icon {
+            font-size: 30px;
+            animation: heartBeat 1.2s ease-in-out infinite;
+        }
+
+        @keyframes heartPulse {
+            0%,
+            100% {
+                box-shadow: 0 6px 20px rgba(168, 85, 247, 0.2);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+                transform: scale(1.04);
+            }
+        }
+
+        @keyframes heartBeat {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            15% {
+                transform: scale(1.15);
+            }
+            30% {
+                transform: scale(1);
+            }
+            45% {
+                transform: scale(1.1);
+            }
+            60% {
+                transform: scale(1);
+            }
+        }
+
+        /* Title */
+        .title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--purple-800);
+            margin-bottom: 6px;
+            letter-spacing: -0.3px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-medium);
+            margin-bottom: 28px;
+            line-height: 1.5;
+            max-width: 340px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .subtitle strong {
+            color: var(--purple-700);
+            font-weight: 600;
+        }
+
+        /* QR Code container */
+        .qr-wrapper {
+            display: inline-block;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--purple-200);
+            margin-bottom: 24px;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            position: relative;
+        }
+
+        .qr-wrapper:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--purple-400);
+        }
+
+        /* QR shimmer ring */
+        .qr-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 24px;
+            padding: 3px;
+            background: conic-gradient(from 0deg,
+                    transparent,
+                    #d8b4fe,
+                    #c084fc,
+                    #a855f7,
+                    #c084fc,
+                    #d8b4fe,
+                    transparent);
+            -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+            mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+            animation: shimmerRotate 4s linear infinite;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        @keyframes shimmerRotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .qr-code {
+            display: block;
+            width: 200px;
+            height: 200px;
+            border-radius: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* UPI ID display */
+        .upi-section {
+            background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 50%, #ede0ff 100%);
+            border-radius: var(--radius-md);
+            padding: 18px 22px;
+            margin-bottom: 22px;
+            border: 1.5px dashed var(--purple-300);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            user-select: all;
+            -webkit-user-select: all;
+            max-width: 100%;
+            word-break: break-all;
+        }
+
+        .upi-section:hover {
+            background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 50%, #d8b4fe 100%);
+            border-color: var(--purple-500);
+            box-shadow: var(--shadow-sm);
+        }
+        .upi-section:active {
+            transform: scale(0.97);
+            transition: transform 0.1s ease;
+        }
+
+        .upi-icon {
+            flex-shrink: 0;
+            width: 38px;
+            height: 38px;
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: white;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .upi-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--purple-700);
+            letter-spacing: 0.2px;
+            text-align: left;
+            line-height: 1.3;
+        }
+        .upi-text small {
+            display: block;
+            font-weight: 400;
+            font-size: 0.75rem;
+            color: var(--text-light);
+            letter-spacing: 0.1px;
+        }
+
+        /* Copy hint */
+        .copy-hint {
+            font-size: 0.78rem;
+            color: var(--purple-500);
+            margin-top: -12px;
+            margin-bottom: 24px;
+            opacity: 0;
+            transform: translateY(-6px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            font-weight: 500;
+        }
+        .copy-hint.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            color: var(--purple-300);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d8b4fe, transparent);
+        }
+
+        /* Thank you note */
+        .thank-you-note {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        .thank-you-note span {
+            display: inline-block;
+            animation: gentleWave 1.8s ease-in-out infinite;
+        }
+        .thank-you-note span:nth-child(1) {
+            animation-delay: 0s;
+        }
+        .thank-you-note span:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+        .thank-you-note span:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        @keyframes gentleWave {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-4px);
+            }
+            60% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        .footer-note {
+            margin-top: 20px;
+            font-size: 0.78rem;
+            color: var(--purple-400);
+            letter-spacing: 0.3px;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--purple-800);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            z-index: 100;
+            box-shadow: 0 12px 32px rgba(107, 33, 168, 0.35);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+        .toast-check {
+            font-size: 1.2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 520px) {
+            .card {
+                padding: 32px 20px 28px;
+                border-radius: var(--radius-md);
+            }
+            .title {
+                font-size: 1.45rem;
+            }
+            .subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 22px;
+            }
+            .qr-code {
+                width: 160px;
+                height: 160px;
+            }
+            .qr-wrapper {
+                padding: 14px;
+            }
+            .qr-wrapper::after {
+                inset: -3px;
+                border-radius: 20px;
+            }
+            .upi-section {
+                padding: 14px 16px;
+                gap: 10px;
+            }
+            .upi-text {
+                font-size: 0.9rem;
+            }
+            .heart-icon-wrapper {
+                width: 52px;
+                height: 52px;
+                margin-bottom: 14px;
+            }
+            .heart-icon {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Decorative floating orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+    <div class="orb orb-5"></div>
+
+    <!-- Sparkles -->
+    <div class="sparkle-container">
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+    </div>
+
+    <!-- Main Card -->
+    <div class="main-container">
+        <div class="card">
+            <div class="card-accent"></div>
+            <div class="card-content">
+                <!-- Heart icon -->
+                <div class="heart-icon-wrapper">
+                    <span class="heart-icon">💜</span>
+                </div>
+
+                <!-- Title -->
+                <h1 class="title">Support Our Work</h1>
+                <p class="subtitle">
+                    If you <strong>love our services</strong> and would like to contribute, your generosity means the world to us. Every donation, big or small, helps us keep going! 🙏
+                </p>
+
+                  <!-- QR Code -->
+                <div class="qr-wrapper">
+                    <img
+                    class="qr-code"
+                    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvH55uJeYEuv1zj3GMfysvH91IUFByTBeb2kAk4rTBIfBEWSVPxL_JnzA9NXe_xqiV6s9MsJHQp5VK4Z7GgJ4CJMdMPAQ6B4Xp4jB4JAPeJJimY41WtRssloCdSuXuMHklSBlDtvQ1C31Bh10pgUl5gnrAJeRGI_4-J56j-ZLVkgCfx1czJfHIJlriwyY/s563/1000246927.jpg"
+                    alt="UPI QR Code - mayank.shrivastav@superyes"
+                    width="200"
+                    height="200"
+                    loading="eager"
+                    >
+                </div>
+
+                <!-- UPI ID -->
+                <p style="font-size: 0.8rem; color: #7c3aed; font-weight: 500; margin-bottom: 6px; letter-spacing: 0.2px;">
+                    📱 Scan or tap to copy UPI ID
+                </p>
+                <div class="upi-section" id="upiSection" title="Tap to copy UPI ID">
+                    <div class="upi-icon">UPI</div>
+                    <div class="upi-text">
+                        mayank.shrivastav@superyes
+                        <small>Tap to copy</small>
+                    </div>
+                </div>
+                <div class="copy-hint" id="copyHint">✅ UPI ID copied to clipboard!</div>
+
+                <!-- Divider -->
+                <div class="divider">with gratitude</div>
+
+                <!-- Thank you -->
+                <p class="thank-you-note">
+                    <span>✨</span> Thank you for being an amazing part of our journey. Your support fuels our passion and helps us deliver even better services. <span>💫</span>
+                </p>
+
+                <!-- Footer -->
+                <p class="footer-note">
+                    💜 Powered by wondermayank
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <span class="toast-check">✅</span> UPI ID copied successfully!
+    </div>
+
+    <script>
+        const upiSection = document.getElementById('upiSection');
+        const copyHint = document.getElementById('copyHint');
+        const toast = document.getElementById('toast');
+        const upiId = 'mayank.shrivastav@superyes';
+        let hintTimeout;
+        let toastTimeout;
+
+        upiSection.addEventListener('click', () => {
+            // Copy to clipboard
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(upiId).then(() => {
+                    showCopyFeedback();
+                }).catch(() => {
+                    fallbackCopy(upiId);
+                });
+            } else {
+                fallbackCopy(upiId);
+            }
+        });
+
+        function fallbackCopy(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.left = '-9999px';
+            textarea.style.top = '-9999px';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                showCopyFeedback();
+            } catch (err) {
+                // Silent fallback
+            }
+            document.body.removeChild(textarea);
+        }
+
+        function showCopyFeedback() {
+            // Show inline hint
+            copyHint.classList.add('visible');
+            clearTimeout(hintTimeout);
+            hintTimeout = setTimeout(() => {
+                copyHint.classList.remove('visible');
+            }, 2000);
+
+            // Show toast
+            toast.classList.add('show');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+
+            // Brief pulse on UPI section
+            upiSection.style.transform = 'scale(0.96)';
+            setTimeout(() => {
+                upiSection.style.transform = 'scale(1)';
+            }, 150);
+        }
+
+        // Also allow tapping the QR wrapper to copy (for convenience)
+        const qrWrapper = document.querySelector('.qr-wrapper');
+        qrWrapper.addEventListener('click', (e) => {
+            // Only trigger if they click the wrapper but not the image itself
+            // Actually, let's make the whole QR area also copy the UPI ID
+            if (e.target === qrWrapper || e.target.classList.contains('qr-code')) {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(upiId).then(() => {
+                        showCopyFeedback();
+                    }).catch(() => {
+                        fallbackCopy(upiId);
+                    });
+                } else {
+                    fallbackCopy(upiId);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
