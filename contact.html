@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — WonderMayank Network</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --sky-50:  #f0f9ff;
+      --sky-100: #e0f2fe;
+      --sky-200: #bae6fd;
+      --sky-300: #7dd3fc;
+      --sky-400: #38bdf8;
+      --sky-500: #0ea5e9;
+      --sky-600: #0284c7;
+      --sky-700: #0369a1;
+      --white:   #ffffff;
+      --slate-50: #f8fafc;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --radius-card: 20px;
+      --shadow-soft: 0 4px 24px rgba(14,165,233,0.10);
+      --shadow-hover: 0 12px 40px rgba(14,165,233,0.22);
+      --transition: 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--sky-50);
+      color: var(--slate-700);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── ANIMATED BACKGROUND ── */
+    .bg-blobs {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+    }
+    .blob {
+      position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.35;
+      animation: blobFloat 12s ease-in-out infinite;
+    }
+    .blob-1 { width: 480px; height: 480px; background: var(--sky-300); top: -120px; left: -120px; animation-delay: 0s; }
+    .blob-2 { width: 360px; height: 360px; background: var(--sky-200); bottom: 5%; right: -100px; animation-delay: 4s; }
+    .blob-3 { width: 280px; height: 280px; background: var(--sky-400); top: 45%; left: 50%; transform: translateX(-50%); animation-delay: 8s; opacity: 0.2; }
+
+    @keyframes blobFloat {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50%       { transform: translateY(-40px) scale(1.06); }
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: relative; z-index: 10;
+      padding: 56px 24px 0;
+      text-align: center;
+      animation: fadeDown 0.7s ease both;
+    }
+
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--sky-100); border: 1px solid var(--sky-200);
+      color: var(--sky-600); font-family: 'Syne', sans-serif;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 999px; margin-bottom: 24px;
+    }
+    .badge-dot { width: 7px; height: 7px; background: var(--sky-400); border-radius: 50%; animation: pulse 2s infinite; }
+
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(36px, 6vw, 72px);
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--slate-800);
+      margin-bottom: 16px;
+    }
+    h1 span { color: var(--sky-500); }
+
+    .subtitle {
+      font-size: clamp(15px, 2vw, 17px);
+      color: var(--slate-600);
+      max-width: 540px;
+      margin: 0 auto 56px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ── SITES ROW ── */
+    .sites-row {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+      max-width: 860px; margin: 0 auto 56px;
+      padding: 0 24px;
+      position: relative; z-index: 10;
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+    .site-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--white); border: 1.5px solid var(--sky-200);
+      color: var(--sky-600); font-size: 12px; font-weight: 500;
+      padding: 6px 14px; border-radius: 999px;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: 0 2px 8px rgba(14,165,233,0.08);
+    }
+    .site-chip:hover {
+      background: var(--sky-500); color: var(--white);
+      border-color: var(--sky-500);
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: var(--shadow-hover);
+    }
+    .site-chip svg { width: 12px; height: 12px; }
+
+    /* ── GRID ── */
+    main {
+      position: relative; z-index: 10;
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 24px 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    /* ── CARD BASE ── */
+    .card {
+      background: var(--white);
+      border: 1.5px solid var(--sky-100);
+      border-radius: var(--radius-card);
+      padding: 28px 28px 24px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
+      position: relative; overflow: hidden;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+    .card::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(186,230,253,0.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* stagger */
+    .card:nth-child(1){ animation-delay:0.1s }
+    .card:nth-child(2){ animation-delay:0.18s }
+    .card:nth-child(3){ animation-delay:0.26s }
+    .card:nth-child(4){ animation-delay:0.34s }
+    .card:nth-child(5){ animation-delay:0.42s }
+    .card:nth-child(6){ animation-delay:0.50s }
+
+    .card-icon {
+      width: 48px; height: 48px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover .card-icon { transform: rotate(-6deg) scale(1.1); }
+
+    .card-icon.instagram { background: linear-gradient(135deg, #f9a8d4 0%, #e879f9 50%, #818cf8 100%); }
+    .card-icon.telegram-group { background: linear-gradient(135deg, #7dd3fc 0%, #38bdf8 100%); }
+    .card-icon.telegram-dm { background: linear-gradient(135deg, #67e8f9 0%, #0ea5e9 100%); }
+    .card-icon.reddit  { background: linear-gradient(135deg, #fca5a5 0%, #f97316 100%); }
+    .card-icon.form    { background: linear-gradient(135deg, #86efac 0%, #22c55e 100%); }
+    .card-icon.email   { background: linear-gradient(135deg, #fde68a 0%, #f59e0b 100%); }
+
+    .card-icon svg { width: 24px; height: 24px; fill: var(--white); }
+
+    .card-label {
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--sky-500); margin-bottom: 6px; font-family: 'Syne', sans-serif;
+    }
+    .card h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px; font-weight: 700;
+      color: var(--slate-800); margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 14px; line-height: 1.65; color: var(--slate-600); margin-bottom: 20px;
+    }
+
+    .card-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      text-decoration: none;
+      background: var(--sky-500); color: var(--white);
+      font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 600;
+      padding: 10px 20px; border-radius: 999px;
+      transition: var(--transition);
+      cursor: pointer; border: none;
+    }
+    .card-link:hover {
+      background: var(--sky-600);
+      transform: scale(1.04);
+      box-shadow: 0 6px 20px rgba(14,165,233,0.35);
+    }
+    .card-link svg { width: 14px; height: 14px; }
+
+    /* handle tag */
+    .handle-tag {
+      display: inline-block;
+      background: var(--sky-50); border: 1px solid var(--sky-200);
+      color: var(--sky-600); font-size: 13px; font-weight: 500;
+      padding: 4px 12px; border-radius: 8px; margin-bottom: 18px;
+      font-family: monospace;
+    }
+
+    /* ── GOOGLE FORM GUIDE ── */
+    .guide-card {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #e0f2fe 0%, var(--white) 60%);
+    }
+    .guide-card h2 { font-size: 22px; }
+    .steps { list-style: none; display: flex; flex-direction: column; gap: 14px; margin: 16px 0 20px; }
+    .steps li {
+      display: flex; gap: 14px; align-items: flex-start;
+      font-size: 14px; line-height: 1.6; color: var(--slate-700);
+    }
+    .step-num {
+      min-width: 28px; height: 28px; border-radius: 50%;
+      background: var(--sky-500); color: var(--white);
+      font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .code-inline {
+      display: inline; background: var(--sky-100); border: 1px solid var(--sky-200);
+      color: var(--sky-700); font-family: monospace; font-size: 12px;
+      padding: 1px 7px; border-radius: 5px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative; z-index: 10;
+      background: var(--slate-800);
+      color: #94a3b8;
+      padding: 56px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+    }
+    .footer-brand {
+      font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800;
+      color: var(--white); margin-bottom: 8px;
+    }
+    .footer-tagline { font-size: 13px; color: #64748b; margin-bottom: 40px; }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 32px 24px;
+      margin-bottom: 40px;
+    }
+    .footer-col h3 {
+      font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--sky-400); margin-bottom: 14px;
+    }
+    .footer-col a {
+      display: block; color: #94a3b8; text-decoration: none;
+      font-size: 13px; line-height: 1; margin-bottom: 11px;
+      transition: color 0.2s ease;
+    }
+    .footer-col a:hover { color: var(--sky-300); }
+
+    .footer-divider { height: 1px; background: #334155; margin-bottom: 24px; }
+    .footer-bottom {
+      display: flex; flex-wrap: wrap; align-items: center;
+      justify-content: space-between; gap: 12px;
+      font-size: 12px; color: #64748b;
+    }
+    .footer-bottom a { color: var(--sky-400); text-decoration: none; }
+    .footer-bottom a:hover { text-decoration: underline; }
+
+    /* ── KEYFRAMES ── */
+    @keyframes fadeDown {
+      from { opacity:0; transform:translateY(-20px) } to { opacity:1; transform:translateY(0) }
+    }
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(28px) } to { opacity:1; transform:translateY(0) }
+    }
+
+    @media (max-width: 600px) {
+      main { grid-template-columns: 1fr; }
+      .guide-card { grid-column: 1; }
+    }
+
+    /* ── RIPPLE on card-link ── */
+    .card-link { position: relative; overflow: hidden; }
+    .card-link .ripple {
+      position: absolute; border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+      transform: scale(0); animation: rippleAnim 0.55s linear;
+      pointer-events: none;
+    }
+    @keyframes rippleAnim { to { transform: scale(4); opacity: 0; } }
+
+    /* scroll reveal */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- Animated background blobs -->
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="badge"><span class="badge-dot"></span> WonderMayank Network</div>
+  <h1>Get in <span>Touch</span></h1>
+  <p class="subtitle">Collaborate, chat, report bugs, or drop a mock request — pick the right channel and we'll get back to you.</p>
+</header>
+
+<!-- Sites row -->
+<div class="sites-row" aria-label="Our websites">
+  <a href="https://commercesehoga.github.io" target="_blank" rel="noopener" class="site-chip">
+    <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2"/><path d="M12 2a15 15 0 010 20M12 2a15 15 0 000 20" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    commercesehoga.github.io
+  </a>
+  <a href="https://thunderstudy.github.io" target="_blank" rel="noopener" class="site-chip">
+    <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2"/><path d="M12 2a15 15 0 010 20M12 2a15 15 0 000 20" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    thunderstudy.github.io
+  </a>
+  <a href="https://wondermayank.github.io" target="_blank" rel="noopener" class="site-chip">
+    <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2"/><path d="M12 2a15 15 0 010 20M12 2a15 15 0 000 20" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    wondermayank.github.io
+  </a>
+  <a href="https://sciencesehoga.github.io" target="_blank" rel="noopener" class="site-chip">
+    <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2"/><path d="M12 2a15 15 0 010 20M12 2a15 15 0 000 20" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    sciencesehoga.github.io
+  </a>
+  <a href="https://commercesehoga.blogspot.com" target="_blank" rel="noopener" class="site-chip">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 8h10M7 12h6"/></svg>
+    commercesehoga.blogspot.com
+  </a>
+  <a href="https://sciencesehoga.blogspot.com" target="_blank" rel="noopener" class="site-chip">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 8h10M7 12h6"/></svg>
+    sciencesehoga.blogspot.com
+  </a>
+</div>
+
+<!-- Contact Cards -->
+<main>
+
+  <!-- Instagram -->
+  <div class="card">
+    <div class="card-icon instagram">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </div>
+    <div class="card-label">Collab & Content</div>
+    <h2>Instagram</h2>
+    <span class="handle-tag">@wondermayank</span>
+    <p>Want to collab on content, reels, or educational projects? Slide into the DMs on Instagram — the best place for creative collaborations.</p>
+    <a href="https://instagram.com/wondermayank" target="_blank" rel="noopener" class="card-link">
+      Open Instagram
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+    </a>
+  </div>
+
+  <!-- Telegram Group -->
+  <div class="card">
+    <div class="card-icon telegram-group">
+      <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    </div>
+    <div class="card-label">Community Chat</div>
+    <h2>Telegram Group</h2>
+    <span class="handle-tag">t.me/wondermayank_chat</span>
+    <p>Join our community group to chat, make friends, ask questions, and stay updated. Students, learners, and curious minds welcome!</p>
+    <a href="https://t.me/wondermayank_chat" target="_blank" rel="noopener" class="card-link">
+      Join Group
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+    </a>
+  </div>
+
+  <!-- Telegram DM -->
+  <div class="card">
+    <div class="card-icon telegram-dm">
+      <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.96 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    </div>
+    <div class="card-label">Owner Direct</div>
+    <h2>Telegram DM</h2>
+    <span class="handle-tag">t.me/wondermayank</span>
+    <p>For serious queries, partnership discussions, or anything you'd rather keep private — message the owner directly on Telegram.</p>
+    <a href="https://t.me/wondermayank" target="_blank" rel="noopener" class="card-link">
+      Message Owner
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+    </a>
+  </div>
+
+  <!-- Reddit -->
+  <div class="card">
+    <div class="card-icon reddit">
+      <svg viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+    <div class="card-label">Owner Chat</div>
+    <h2>Reddit</h2>
+    <span class="handle-tag">u/wondermayank</span>
+    <p>Find us on Reddit for discussions, feedback threads, and community conversations. Comment or DM the owner's Reddit profile.</p>
+    <a href="https://reddit.com/u/wondermayank" target="_blank" rel="noopener" class="card-link">
+      Visit Reddit
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+    </a>
+  </div>
+
+  <!-- Google Form -->
+  <div class="card">
+    <div class="card-icon form">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zM9 13h6M9 17h4M13 2v6h6"/></svg>
+    </div>
+    <div class="card-label">Mock & Requests</div>
+    <h2>Google Form</h2>
+    <span class="handle-tag">Mock Request / Any Request</span>
+    <p>Want a mock test, special content, or have a suggestion? Fill out our Google Form — the fastest way to send structured requests to the team.</p>
+    <!-- Replace YOUR_FORM_ID with your actual Google Form link -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSePwlvdMzRLYoYuXNbKlamargjazyRiedg0rE0JfAzyKPyHEA/viewform?usp=publish-editor" target="_blank" rel="noopener" class="card-link" id="formBtn">
+      Open Request Form
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+    </a>
+  </div>
+
+  <!-- Email -->
+  <div class="card">
+    <div class="card-icon email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 7 10-7"/></svg>
+    </div>
+    <div class="card-label">Bug Reports</div>
+    <h2>Email Us</h2>
+    <span class="handle-tag">thunderstudyofficialx@gmail.com</span>
+    <p>Found a bug, broken link, or something wrong on any of our sites? Send a detailed bug report to our official email and we'll fix it ASAP.</p>
+    <a href="mailto:thunderstudyofficialx@gmail.com?subject=Bug Report&body=Site URL: %0ADescribe the bug: %0ASteps to reproduce: %0ADevice/Browser: " class="card-link">
+      Send Bug Report
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+    </a>
+  </div>
+
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">WonderMayank</div>
+    <div class="footer-tagline">Learning made simple — Commerce · Science · Study</div>
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Main</h3>
+        <a href="https://wondermayank.github.io" target="_blank" rel="noopener">wondermayank.github.io</a>
+        <a href="https://commercesehoga.github.io/dashboard" target="_blank" rel="noopener">CBT Mock Platform</a>
+        <a href="https://commercesehoga.github.io/help" target="_blank" rel="noopener">Donation / Support</a>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <a href="https://wondermayank.github.io/terms" target="_blank" rel="noopener">Terms of Service</a>
+        <a href="https://wondermayank.github.io/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://wondermayank.github.io/disclaimer" target="_blank" rel="noopener">Disclaimer</a>
+      </div>
+      <div class="footer-col">
+        <h3>Connect</h3>
+        <a href="https://wondermayank.github.io/contact" target="_blank" rel="noopener">Contact Page</a>
+        <a href="https://instagram.com/wondermayank" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://t.me/wondermayank_chat" target="_blank" rel="noopener">Telegram Group</a>
+        <a href="https://reddit.com/u/wondermayank" target="_blank" rel="noopener">Reddit</a>
+      </div>
+      <div class="footer-col">
+        <h3>Sites</h3>
+        <a href="https://commercesehoga.github.io" target="_blank" rel="noopener">commercesehoga.github.io</a>
+        <a href="https://thunderstudy.github.io" target="_blank" rel="noopener">thunderstudy.github.io</a>
+        <a href="https://sciencesehoga.github.io" target="_blank" rel="noopener">sciencesehoga.github.io</a>
+        <a href="https://commercesehoga.blogspot.com" target="_blank" rel="noopener">commercesehoga Blog</a>
+        <a href="https://sciencesehoga.blogspot.com" target="_blank" rel="noopener">sciencesehoga Blog</a>
+      </div>
+    </div>
+
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <span>© 2025 WonderMayank Network · All rights reserved</span>
+      <span>Built with ❤️ for learners · <a href="mailto:thunderstudyofficialx@gmail.com">Bug Report</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Ripple effect on buttons
+  document.querySelectorAll('.card-link').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      const rect = this.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      const size = Math.max(rect.width, rect.height) * 2;
+      ripple.classList.add('ripple');
+      ripple.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX-rect.left-size/2}px;top:${e.clientY-rect.top-size/2}px`;
+      this.appendChild(ripple);
+      ripple.addEventListener('animationend', () => ripple.remove());
+    });
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
