@@ -1702,15 +1702,15 @@ addTilt('.india-card');
     // 1. Same-repo relative path (works when hosted on the same GitHub Pages repo)
     // 2. wondermayank.github.io remote URL
     const relativeSrc  = isPortrait ? 'background_m.mp4'                                    : 'background.mp4';
-    const remoteSrc    = isPortrait ? 'https://wondermayank.github.io/background_m.mp4'     : 'https://wondermayank.github.io/background.mp4';
+    const remoteSrc    = isPortrait ? 'https://wondermayank.github.io/upload/background_m.mp4'     : 'https://wondermayank.github.io/upload/background.mp4';
     const relativeAlt  = isPortrait ? 'background.mp4'                                      : 'background_m.mp4'; // cross-variant last resort
-    const remoteAlt    = isPortrait ? 'https://wondermayank.github.io/background.mp4'       : 'https://wondermayank.github.io/background_m.mp4';
+    const remoteAlt    = isPortrait ? 'https://wondermayank.github.io/upload/background.mp4'       : 'https://wondermayank.github.io/upload/background_m.mp4';
 
     // Re-swap video if user rotates device
     window.matchMedia('(orientation: portrait)').addEventListener('change', e => {
         const src = e.matches
             ? 'https://wondermayank.github.io/background_m.mp4'
-            : 'https://wondermayank.github.io/background.mp4';
+            : 'https://wondermayank.github.io/upload/background.mp4';
         const t = v.currentTime;
         v.src = src;
         v.load();
