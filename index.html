@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,16 +73,16 @@
         "@type": "Person",
         "name": "Wondermayank"
       },
-      "inLanguage": "en-IN"
+      "inLanguage": "en-IN",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://wondermayank.github.io/movie?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
     }
-        "potentialAction": {
-  "@type": "SearchAction",
-  "target": {
-    "@type": "EntryPoint",
-    "urlTemplate": "https://wondermayank.github.io/movie?q={search_term_string}"
-  },
-  "query-input": "required name=search_term_string"
-}
     </script>
 
     <!-- JSON-LD: FAQPage Schema (AEO — AI/Featured Snippet) -->
@@ -227,6 +228,9 @@
         .india-map-status{font-size:.75rem;font-weight:700;color:var(--text-muted);white-space:nowrap}
         .india-map-tip{position:fixed;z-index:10000;display:none;pointer-events:none;padding:.48rem .7rem;border-radius:10px;background:rgba(20,8,35,.94);color:white;font-size:.76rem;font-weight:700;box-shadow:0 12px 32px rgba(0,0,0,.28)}
         .india-map-svg .is-active-region{fill:rgba(155,111,255,.72)!important}
+        .india-map-svg path, .india-map-svg polygon{transition:fill .2s var(--ease),opacity .3s var(--ease)}
+        .india-map-svg.has-search path:not(.is-search-match),.india-map-svg.has-search polygon:not(.is-search-match){opacity:.25}
+        .india-map-svg.has-search path.is-search-match,.india-map-svg.has-search polygon.is-search-match{opacity:1;fill:rgba(155,111,255,.8)!important}
         body.theme-dark .india-map-search{background:rgba(18,6,32,.82);border-color:rgba(192,132,252,.28);color:var(--text-main)}
         body.theme-dark .india-map-tip{background:rgba(246,237,255,.96);color:#160322}
         .india-card{transform-style:preserve-3d;cursor:default}
@@ -261,6 +265,9 @@
         .nav-links a:hover{color:var(--primary)}
         .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
         .hamburger span{width:22px;height:2px;background:var(--text-main);border-radius:2px;transition:.3s var(--ease)}
+        .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+        .hamburger.open span:nth-child(2){opacity:0;transform:scale(0)}
+        .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
         .mobile-nav{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(255,255,255,.94);backdrop-filter:blur(30px);border-bottom:1px solid var(--glass-border);padding:1.4rem 7%;flex-direction:column;gap:1rem;z-index:999}
         .mobile-nav a{text-decoration:none;color:var(--text-main);font-weight:500;font-size:.95rem;padding:.5rem 0;border-bottom:1px solid rgba(0,0,0,.05)}
         .mobile-theme-toggle{justify-content:flex-start;width:100%;height:auto;border-radius:14px;padding:.7rem .9rem;margin-top:.2rem;font-size:.9rem;gap:.55rem}
@@ -307,16 +314,1012 @@
 
         /* ── PROJECT CARDS ── */
         .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:1.6rem}
-        .project-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r);padding:1.9rem;transition:.45s var(--ease);backdrop-filter:blur(15px);position:relative;overflow:hidden;transform-style:preserve-3d;cursor:default;display:flex;flex-direction:column}
+        .project-card{--c:var(--primary);background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r);padding:1.9rem;transition:.45s var(--ease);backdrop-filter:blur(15px);position:relative;overflow:hidden;transform-style:preserve-3d;cursor:default;display:flex;flex-direction:column}
         .project-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,0) 60%);opacity:0;transition:.4s;pointer-events:none}
         .project-card:hover{border-color:rgba(200,162,255,.5);box-shadow:0 18px 45px rgba(0,0,0,.07)}
         .project-card:hover::after{opacity:1}
         .proj-icon{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;flex-shrink:0}
         .proj-icon svg{width:20px;height:20px}
         .proj-tag{position:absolute;top:1.1rem;right:1.1rem;font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;padding:3px 9px;border-radius:20px;background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;box-shadow:0 2px 8px rgba(0,0,0,.1)}
-        .project-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.6rem;letter-spacing:-.2px}
+        .project-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.6rem;letter-spacing:-.2px;transition:text-shadow 0.3s var(--ease), color 0.3s var(--ease)}
         .project-card p{font-size:.84rem;color:var(--text-muted);line-height:1.65;flex:1;margin-bottom:1.4rem}
+        .text-highlight{transition:background-color 0.22s var(--ease), color 0.22s var(--ease);border-radius:5px;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:2px 5px !important;background-color:transparent}
+        .project-card h3 .text-highlight{padding:3px 8px !important}
+        
+        /* Solid organic wrapped inline highlights with zero layout shifts (like in the reference image) */
+        .project-card.style-study-cyber:hover .text-highlight,
+        .project-card.style-bento-combined:hover h3 .text-highlight,
+        .project-card.style-love-card:hover h3 .text-highlight,
+        .project-card.style-code-tech:hover h3 .text-highlight,
+        .project-card.style-ideas-draft:hover h3 .text-highlight,
+        .project-card.style-fun-pop:hover h3 .text-highlight {
+            background-color:var(--c) !important;
+            color:#ffffff !important;
+            text-shadow: none !important;
+        }
+        body.theme-dark .project-card.style-study-cyber:hover .text-highlight,
+        body.theme-dark .project-card.style-bento-combined:hover h3 .text-highlight,
+        body.theme-dark .project-card.style-love-card:hover h3 .text-highlight,
+        body.theme-dark .project-card.style-code-tech:hover h3 .text-highlight,
+        body.theme-dark .project-card.style-ideas-draft:hover h3 .text-highlight,
+        body.theme-dark .project-card.style-fun-pop:hover h3 .text-highlight {
+            background-color:var(--c) !important;
+            color:#ffffff !important;
+            text-shadow: none !important;
+        }
+        
+        /* Other section cards (Finder, etc., except Study and Tools): Soft glowing neon text-shadow backlights */
+        .project-card:not(.style-study-cyber):not(.style-tools-prism):hover h3{color:var(--text-main) !important;text-shadow:0 0 8px var(--c), 0 0 16px rgba(255,255,255,0.95), 0 0 24px rgba(255,255,255,0.95) !important}
+        .project-card:not(.style-study-cyber):not(.style-tools-prism):hover p{color:var(--text-main) !important;transition:color 0.3s var(--ease)}
+        body.theme-dark .project-card:not(.style-study-cyber):not(.style-tools-prism):hover h3{color:#ffffff !important;text-shadow:0 0 10px var(--c), 0 0 20px var(--c), 0 0 30px var(--c) !important}
+        body.theme-dark .project-card:not(.style-study-cyber):not(.style-tools-prism):hover p{color:var(--text-main) !important}
+
+        /* Premium glassmorphism button highlights on card hover */
+        .project-card:hover .glass-btn,
+        .project-card:hover .cyber-btn {
+            background: rgba(255, 255, 255, 0.22) !important;
+            backdrop-filter: blur(14px) saturate(180%) !important;
+            -webkit-backdrop-filter: blur(14px) saturate(180%) !important;
+            border: 1px solid rgba(255, 255, 255, 0.55) !important;
+            color: var(--text-main) !important;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.08), 0 0 14px var(--c) !important;
+            transform: translateY(-2px) !important;
+        }
+        
+        /* Directly hovering over the glass/cyber button increases its glossiness */
+        .project-card .glass-btn:hover,
+        .project-card .cyber-btn:hover {
+            background: rgba(255, 255, 255, 0.38) !important;
+            border-color: rgba(255, 255, 255, 0.85) !important;
+            color: var(--text-main) !important;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15), 0 0 20px var(--c) !important;
+            transform: translateY(-4px) !important;
+        }
+        
+        /* Dark mode overrides for maximum visual high-end styling */
+        body.theme-dark .project-card:hover .glass-btn,
+        body.theme-dark .project-card:hover .cyber-btn {
+            background: rgba(255, 255, 255, 0.06) !important;
+            border-color: rgba(255, 255, 255, 0.16) !important;
+            color: #ffffff !important;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.32), 0 0 16px var(--c) !important;
+        }
+        body.theme-dark .project-card .glass-btn:hover,
+        body.theme-dark .project-card .cyber-btn:hover {
+            background: rgba(255, 255, 255, 0.14) !important;
+            border-color: rgba(255, 255, 255, 0.28) !important;
+            color: #ffffff !important;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), 0 0 22px var(--c) !important;
+        }
         .card-actions{display:flex;gap:.55rem;flex-wrap:wrap}
+
+        /* ─── TOOLS STYLE: PRISM NEOMORPHISM (PRISM FLOAT) ─── */
+        .project-card.style-tools-prism {
+            position: relative !important;
+            background: rgba(255, 255, 255, 0.12) !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+            border-radius: 28px !important;
+            padding: 2.2rem !important;
+            overflow: hidden !important;
+            backdrop-filter: blur(20px) saturate(180%) !important;
+            -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03), inset 0 20px 20px -10px rgba(255,255,255,0.2) !important;
+            transition: all 0.45s var(--ease) !important;
+        }
+        body.theme-dark .project-card.style-tools-prism {
+            background: rgba(14, 8, 30, 0.55) !important;
+            border-color: rgba(192, 132, 252, 0.18) !important;
+            box-shadow: 0 16px 42px rgba(0, 0, 0, 0.3) !important;
+        }
+        .project-card.style-tools-prism::before {
+            content: '';
+            position: absolute;
+            top: -60px; right: -60px;
+            width: 140px; height: 140px;
+            background: radial-gradient(circle, var(--c) 0%, transparent 70%);
+            opacity: 0.15;
+            transition: transform 0.6s var(--ease), opacity 0.45s;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .project-card.style-tools-prism:hover::before {
+            transform: scale(2) translate(-20px, 20px);
+            opacity: 0.45;
+        }
+        .project-card.style-tools-prism:hover {
+            transform: translateY(-8px) !important;
+            border-color: var(--c) !important;
+            box-shadow: 0 22px 52px rgba(0, 0, 0, 0.08), 0 0 24px var(--c) !important;
+        }
+        .project-card.style-tools-prism .prism-icon-wrap {
+            width: 54px; height: 54px;
+            border-radius: 18px;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(255, 255, 255, 0.35);
+            border: 1.5px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            margin-bottom: 1.4rem;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.45s var(--ease), border-color 0.45s, box-shadow 0.45s;
+        }
+        body.theme-dark .project-card.style-tools-prism .prism-icon-wrap {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+        .project-card.style-tools-prism:hover .prism-icon-wrap {
+            transform: scale(1.12) rotate(6deg) translateY(-3px);
+            border-color: var(--c) !important;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15), 0 0 12px var(--c);
+        }
+
+        /* ─── FINDER BENTO GRID SPLIT (Style 3 + Style 1 Hover Backglow) ─── */
+        .project-card.style-bento-combined {
+            display: grid !important;
+            grid-template-columns: 1.4fr 0.6fr !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+            border-radius: var(--r) !important;
+            background: rgba(255, 255, 255, 0.2) !important;
+            border: 1px solid var(--glass-border) !important;
+            border-top: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+            border-left: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+            backdrop-filter: blur(20px) saturate(180%) !important;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.04), inset 0 20px 20px -10px rgba(255,255,255,0.3) !important;
+            transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease) !important;
+            cursor: default;
+            transform-style: flat !important;
+            flex-direction: row;
+        }
+        
+        body.theme-dark .project-card.style-bento-combined {
+            background: rgba(18, 6, 32, 0.65) !important;
+            border: 1px solid rgba(192, 132, 252, 0.18) !important;
+            border-top: 1.5px solid rgba(255, 255, 255, 0.08) !important;
+            border-left: 1.5px solid rgba(255, 255, 255, 0.08) !important;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28), inset 0 10px 15px -5px rgba(255, 255, 255, 0.03) !important;
+        }
+
+        .project-card.style-bento-combined .bento-content {
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .project-card.style-bento-combined .bento-side {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-left: 1px solid var(--glass-border) !important;
+            transition: background 0.4s var(--ease), border-color 0.4s var(--ease);
+        }
+        
+        body.theme-dark .project-card.style-bento-combined .bento-side {
+            border-left-color: rgba(192, 132, 252, 0.18) !important;
+        }
+
+        .project-card.style-bento-combined:hover {
+            transform: translateY(-6px) !important;
+            border-color: var(--c) !important;
+            /* Style 1: Ultra-Glossy soft leak colored backglow */
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08), 0 0 28px var(--c) !important;
+        }
+
+        .project-card.style-bento-combined:hover .bento-side {
+            background: var(--c) !important;
+            border-left-color: var(--c) !important;
+        }
+
+        .project-card.style-bento-combined:hover .bento-side svg {
+            stroke: #fff !important;
+        }
+
+        .proj-icon-bento {
+            width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0
+        }
+        .proj-icon-bento svg {
+            width:20px;height:20px
+        }
+        .proj-tag-bento {
+            font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;padding:3px 9px;border-radius:20px;color:white;box-shadow:0 2px 8px rgba(0,0,0,.1);width:fit-content;margin-bottom:0.8rem
+        }
+
+        /* ─── NEW STUDY SECTION: FUTURISTIC CYBER-GRID THEME ─── */
+        .project-card.style-study-cyber {
+            position: relative !important;
+            background: rgba(255, 255, 255, 0.14) !important;
+            border: 1px solid rgba(255, 255, 255, 0.35) !important;
+            border-radius: 26px !important;
+            padding: 2.1rem !important;
+            overflow: hidden !important;
+            backdrop-filter: blur(20px) saturate(160%) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+            transition: all 0.4s var(--ease) !important;
+            display: flex !important;
+            flex-direction: column !important;
+            transform-style: preserve-3d !important;
+            cursor: default;
+        }
+
+        body.theme-dark .project-card.style-study-cyber {
+            background: rgba(14, 8, 24, 0.6) !important;
+            border-color: rgba(192, 132, 252, 0.2) !important;
+            box-shadow: 0 14px 42px rgba(0, 0, 0, 0.38) !important;
+        }
+
+        /* Blueprint Dot Grid Background */
+        .project-card.style-study-cyber .cyber-grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(200, 162, 255, 0.08) 1.2px, transparent 1.2px);
+            background-size: 16px 16px;
+            opacity: 0.8;
+            pointer-events: none;
+            transition: opacity 0.4s var(--ease);
+            z-index: 1;
+        }
+
+        body.theme-dark .project-card.style-study-cyber .cyber-grid-bg {
+            background-image: radial-gradient(rgba(192, 132, 252, 0.15) 1.2px, transparent 1.2px);
+        }
+
+        .project-card.style-study-cyber:hover .cyber-grid-bg {
+            opacity: 1;
+            background-image: radial-gradient(var(--c) 1.5px, transparent 1.5px);
+        }
+
+        .project-card.style-study-cyber .cyber-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-card.style-study-cyber h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: -0.4px;
+            margin-bottom: 0.6rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-card.style-study-cyber p {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            flex: 1;
+            margin-bottom: 1.6rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project-card.style-study-cyber .card-actions {
+            position: relative;
+            z-index: 2;
+            margin-top: auto;
+        }
+
+        /* Cyber Tag Pill */
+        .proj-tag-cyber {
+            font-size: 0.64rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 4px 11px;
+            border-radius: 30px;
+            color: white;
+            background: linear-gradient(135deg, var(--c), var(--primary-dark));
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Interactive Cyber Icon */
+        .proj-icon-cyber {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+        }
+
+        .project-card.style-study-cyber:hover .proj-icon-cyber {
+            transform: scale(1.1) rotate(15deg);
+            box-shadow: 0 0 15px var(--c);
+        }
+
+        /* Interactive Cyber Button */
+        .cyber-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0.75rem 1.4rem;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.84rem;
+            font-weight: 700;
+            transition: all 0.3s var(--ease);
+        }
+
+        body.theme-dark .cyber-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .cyber-btn svg {
+            width: 14px;
+            height: 14px;
+            transition: transform 0.3s var(--ease);
+        }
+
+        .cyber-btn:hover {
+            background: var(--c) !important;
+            border-color: var(--c) !important;
+            color: white !important;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .cyber-btn:hover svg {
+            transform: translateX(3px);
+            stroke: white !important;
+        }
+
+        .project-card.style-study-cyber:hover {
+            transform: translateY(-8px) scale(1.01) !important;
+            border-color: var(--c) !important;
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08), 0 0 30px var(--c) !important;
+        }
+
+        /* 💖 NEW LOVE SECTION: ROSE QUARTZ HEARTBEATS THEME (TOP ICON) 💖 */
+        .project-card.style-love-card {
+            position: relative !important;
+            background: rgba(255, 230, 240, 0.25) !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.6) !important;
+            border-radius: 30px !important;
+            padding: 2.1rem !important;
+            overflow: hidden !important;
+            backdrop-filter: blur(20px) saturate(180%) !important;
+            -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.04), inset 0 20px 20px -10px rgba(255, 255, 255, 0.4) !important;
+            transition: all 0.45s var(--ease) !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            cursor: default;
+        }
+        body.theme-dark .project-card.style-love-card {
+            background: rgba(30, 10, 22, 0.55) !important;
+            border-color: rgba(244, 114, 182, 0.18) !important;
+            box-shadow: 0 16px 42px rgba(0, 0, 0, 0.32), inset 0 10px 15px -5px rgba(255, 255, 255, 0.03) !important;
+        }
+        .project-card.style-love-card .proj-tag-bento {
+            position: absolute !important;
+            top: 1.1rem !important;
+            right: 1.1rem !important;
+            margin-bottom: 0 !important;
+        }
+        .project-card.style-love-card h3 {
+            text-align: center !important;
+            width: 100% !important;
+        }
+        .project-card.style-love-card p {
+            text-align: center !important;
+            width: 100% !important;
+            margin-bottom: 1.4rem !important;
+        }
+        .project-card.style-love-card::before {
+            content: '';
+            position: absolute;
+            top: -40px; right: -40px;
+            width: 130px; height: 130px;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, transparent 70%);
+            transition: transform 0.6s var(--ease), opacity 0.45s;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .project-card.style-love-card:hover::before {
+            transform: scale(2.2);
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.28) 0%, transparent 70%);
+        }
+        .project-card.style-love-card:hover {
+            transform: translateY(-8px) scale(1.01) !important;
+            border-color: var(--c) !important;
+            box-shadow: 0 22px 52px rgba(236, 72, 153, 0.08), 0 0 28px var(--c) !important;
+        }
+        .project-card.style-love-card .love-icon-wrap {
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1.5px solid rgba(255, 255, 255, 0.7);
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.08);
+            position: relative;
+            z-index: 2;
+            transition: transform 0.4s var(--ease), border-color 0.4s, box-shadow 0.4s;
+            animation: love-heartbeat 2.4s ease-in-out infinite;
+        }
+        body.theme-dark .project-card.style-love-card .love-icon-wrap {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+        .project-card.style-love-card:hover .love-icon-wrap {
+            transform: scale(1.15) rotate(-8deg);
+            border-color: var(--c) !important;
+            box-shadow: 0 10px 24px rgba(236, 72, 153, 0.2), 0 0 14px var(--c);
+            animation: none;
+            background: rgba(255, 255, 255, 0.2) !important;
+        }
+        @keyframes love-heartbeat {
+            0%, 100% { transform: scale(1); }
+            14% { transform: scale(1.12); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.12); }
+            70% { transform: scale(1); }
+        }
+        .love-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 0.7rem 1.45rem;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.3) !important;
+            border: 1px solid rgba(255, 255, 255, 0.6) !important;
+            color: var(--text-main) !important;
+            text-decoration: none;
+            font-size: 0.84rem;
+            font-weight: 700;
+            transition: all 0.3s var(--ease) !important;
+            position: relative;
+            z-index: 2;
+        }
+        body.theme-dark .love-btn {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border-color: rgba(255, 255, 255, 0.12) !important;
+            color: #ffffff !important;
+        }
+        .love-btn:hover {
+            background: linear-gradient(135deg, #f43f5e, #ec4899) !important;
+            border-color: #f43f5e !important;
+            color: white !important;
+            box-shadow: 0 8px 24px rgba(236, 72, 153, 0.35) !important;
+            transform: translateY(-2px) !important;
+        }
+        .love-btn svg {
+            width: 14px; height: 14px;
+            transition: transform 0.3s var(--ease);
+        }
+        .love-btn:hover svg {
+            transform: scale(1.2);
+            stroke: white !important;
+        }
+
+        /* 💻 NEW CODE SECTION: CYBER IDE DEVELOPER THEME 💻 */
+        .project-card.style-code-tech {
+            position: relative !important;
+            background: rgba(15, 23, 42, 0.15) !important;
+            border: 1px solid rgba(255, 255, 255, 0.25) !important;
+            border-left: 4.5px solid var(--c) !important;
+            border-radius: 20px !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+            backdrop-filter: blur(20px) saturate(160%) !important;
+            -webkit-backdrop-filter: blur(20px) saturate(160%) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02) !important;
+            transition: all 0.4s var(--ease) !important;
+            display: flex !important;
+            flex-direction: column !important;
+            cursor: default;
+        }
+        body.theme-dark .project-card.style-code-tech {
+            background: rgba(15, 23, 42, 0.55) !important;
+            border-color: rgba(255, 255, 255, 0.08) !important;
+            box-shadow: 0 16px 42px rgba(0, 0, 0, 0.28) !important;
+        }
+        .project-card.style-code-tech:hover {
+            transform: translateY(-8px) scale(1.01) !important;
+            border-color: rgba(255, 255, 255, 0.35) !important;
+            border-left-color: var(--c) !important;
+            box-shadow: 0 22px 52px rgba(0, 0, 0, 0.08), 0 0 24px var(--c) !important;
+        }
+        .project-card.style-code-tech .code-editor-header {
+            display: flex !important;
+            align-items: center !important;
+            background: rgba(0, 0, 0, 0.05) !important;
+            padding: 0.6rem 1.2rem !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+            gap: 1rem !important;
+        }
+        body.theme-dark .project-card.style-code-tech .code-editor-header {
+            background: rgba(0, 0, 0, 0.2) !important;
+            border-bottom-color: rgba(255, 255, 255, 0.05) !important;
+        }
+        .project-card.style-code-tech .code-window-dots {
+            display: flex !important;
+            gap: 6px !important;
+            align-items: center !important;
+        }
+        .project-card.style-code-tech .code-window-dots span {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .project-card.style-code-tech .code-window-dots .dot-red { background: #ff5f56; }
+        .project-card.style-code-tech .code-window-dots .dot-yellow { background: #ffbd2e; }
+        .project-card.style-code-tech .code-window-dots .dot-green { background: #27c93f; }
+        
+        .project-card.style-code-tech .code-editor-tag {
+            font-family: monospace !important;
+            font-size: 0.65rem !important;
+            color: var(--text-muted) !important;
+            letter-spacing: 0.5px !important;
+            background: rgba(255, 255, 255, 0.12) !important;
+            padding: 2px 8px !important;
+            border-radius: 4px !important;
+            border: 1px solid rgba(255, 255, 255, 0.25) !important;
+        }
+        body.theme-dark .project-card.style-code-tech .code-editor-tag {
+            background: rgba(255, 255, 255, 0.04) !important;
+            border-color: rgba(255, 255, 255, 0.08) !important;
+        }
+        .project-card.style-code-tech .code-card-body {
+            padding: 1.8rem !important;
+            display: flex !important;
+            flex-direction: column !important;
+            flex: 1 !important;
+        }
+        .project-card.style-code-tech .code-icon-wrap {
+            width: 48px; height: 48px;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.3rem;
+            transition: transform 0.4s var(--ease);
+        }
+        .project-card.style-code-tech:hover .code-icon-wrap {
+            transform: scale(1.1) rotate(5deg);
+        }
+        .project-card.style-code-tech h3 {
+            font-family: monospace !important;
+            font-size: 1.1rem !important;
+            font-weight: 700 !important;
+            margin-bottom: 0.6rem !important;
+            color: var(--text-main) !important;
+        }
+        .project-card.style-code-tech p {
+            font-size: 0.84rem !important;
+            color: var(--text-muted) !important;
+            line-height: 1.6 !important;
+            margin-bottom: 1.4rem !important;
+        }
+        .code-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 0.7rem 1.45rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.2) !important;
+            border: 1px solid rgba(255, 255, 255, 0.4) !important;
+            color: var(--text-main) !important;
+            text-decoration: none;
+            font-family: monospace !important;
+            font-size: 0.8rem;
+            font-weight: 700;
+            transition: all 0.3s var(--ease) !important;
+            position: relative;
+            z-index: 2;
+        }
+        body.theme-dark .code-btn {
+            background: rgba(255, 255, 255, 0.04) !important;
+            border-color: rgba(255, 255, 255, 0.08) !important;
+            color: #ffffff !important;
+        }
+        .code-btn:hover {
+            background: var(--c) !important;
+            border-color: var(--c) !important;
+            color: white !important;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 0 14px var(--c) !important;
+            transform: translateY(-2px) !important;
+        }
+        .code-btn svg {
+            width: 12px; height: 12px;
+            transition: transform 0.3s var(--ease);
+            stroke: currentColor !important;
+        }
+        .code-btn:hover svg {
+            transform: scale(1.15);
+            fill: white !important;
+        }
+
+        /* 🎨 NEW IDEAS SECTION: DESIGN DRAFT THEME 🎨 */
+        .project-card.style-ideas-draft {
+            position: relative !important;
+            background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), 
+                        linear-gradient(rgba(0,0,0,0.035) 1px, transparent 1px), 
+                        linear-gradient(90deg, rgba(0,0,0,0.035) 1px, transparent 1px) !important;
+            background-size: auto, 18px 18px, 18px 18px !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+            border-radius: 28px !important;
+            padding: 2.1rem !important;
+            overflow: hidden !important;
+            backdrop-filter: blur(20px) saturate(180%) !important;
+            -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03), inset 0 20px 20px -10px rgba(255, 255, 255, 0.4) !important;
+            transition: all 0.45s var(--ease) !important;
+            display: flex !important;
+            flex-direction: column !important;
+            cursor: default;
+        }
+        body.theme-dark .project-card.style-ideas-draft {
+            background: linear-gradient(rgba(18, 10, 32, 0.8), rgba(18, 10, 32, 0.8)), 
+                        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), 
+                        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px) !important;
+            background-size: auto, 18px 18px, 18px 18px !important;
+            border-color: rgba(255, 255, 255, 0.08) !important;
+            box-shadow: 0 16px 42px rgba(0, 0, 0, 0.32), inset 0 10px 15px -5px rgba(255, 255, 255, 0.03) !important;
+        }
+        .project-card.style-ideas-draft:hover {
+            transform: translateY(-8px) scale(1.01) !important;
+            border-color: var(--c) !important;
+            box-shadow: 0 22px 52px rgba(0, 0, 0, 0.08), 0 0 28px var(--c) !important;
+        }
+        .project-card.style-ideas-draft .ideas-top-row {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            margin-bottom: 1.5rem !important;
+            width: 100% !important;
+        }
+        .project-card.style-ideas-draft .ideas-tag {
+            font-size: 0.68rem !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1.5px !important;
+            font-weight: 700 !important;
+            padding: 3px 10px !important;
+            border-radius: 12px !important;
+            background: rgba(255, 255, 255, 0.6) !important;
+            border: 1px solid rgba(255, 255, 255, 0.8) !important;
+            color: var(--text-main) !important;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+        }
+        body.theme-dark .project-card.style-ideas-draft .ideas-tag {
+            background: rgba(255, 255, 255, 0.06) !important;
+            border-color: rgba(255, 255, 255, 0.1) !important;
+            color: #ffffff !important;
+        }
+        .project-card.style-ideas-draft .ideas-icon-wrap {
+            width: 52px; height: 52px;
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            position: relative;
+            z-index: 2;
+            transform: rotate(-6deg);
+            transition: transform 0.4s var(--ease), border-color 0.4s, box-shadow 0.4s;
+        }
+        .project-card.style-ideas-draft:hover .ideas-icon-wrap {
+            transform: scale(1.15) rotate(6deg);
+            border-color: var(--c) !important;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05), 0 0 12px var(--c);
+        }
+        .project-card.style-ideas-draft .ideas-body {
+            display: flex !important;
+            flex-direction: column !important;
+            flex: 1 !important;
+        }
+        .project-card.style-ideas-draft h3 {
+            font-size: 1.1rem !important;
+            font-weight: 700 !important;
+            margin-bottom: 0.6rem !important;
+        }
+        .project-card.style-ideas-draft p {
+            font-size: 0.84rem !important;
+            color: var(--text-muted) !important;
+            line-height: 1.65 !important;
+            margin-bottom: 1.4rem !important;
+            flex: 1 !important;
+        }
+        .ideas-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 0.7rem 1.45rem;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.3) !important;
+            border: 1px solid rgba(255, 255, 255, 0.6) !important;
+            color: var(--text-main) !important;
+            text-decoration: none;
+            font-size: 0.84rem;
+            font-weight: 700;
+            transition: all 0.3s var(--ease) !important;
+            position: relative;
+            z-index: 2;
+        }
+        body.theme-dark .ideas-btn {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border-color: rgba(255, 255, 255, 0.12) !important;
+            color: #ffffff !important;
+        }
+        .ideas-btn:hover {
+            background: var(--c) !important;
+            border-color: var(--c) !important;
+            color: white !important;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 0 14px var(--c) !important;
+            transform: translateY(-2px) !important;
+        }
+        .ideas-btn svg {
+            width: 14px; height: 14px;
+            transition: transform 0.3s var(--ease);
+            stroke: currentColor !important;
+        }
+        .ideas-btn:hover svg {
+            transform: translate(2px, -2px) scale(1.1);
+            stroke: white !important;
+        }
+
+        /* 🎈 NEW FUN SECTION: PLAYFUL STICKER POP THEME 🎈 */
+        .project-card.style-fun-pop {
+            position: relative !important;
+            background: rgba(255, 255, 255, 0.16) !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+            border-radius: 30px !important;
+            padding: 2.1rem !important;
+            overflow: hidden !important;
+            backdrop-filter: blur(20px) saturate(180%) !important;
+            -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03), inset 0 20px 20px -10px rgba(255, 255, 255, 0.3) !important;
+            transition: all 0.45s var(--ease) !important;
+            display: flex !important;
+            flex-direction: column !important;
+            cursor: default;
+        }
+        body.theme-dark .project-card.style-fun-pop {
+            background: rgba(26, 12, 42, 0.55) !important;
+            border-color: rgba(255, 255, 255, 0.08) !important;
+            box-shadow: 0 16px 42px rgba(0, 0, 0, 0.32), inset 0 10px 15px -5px rgba(255, 255, 255, 0.03) !important;
+        }
+        .project-card.style-fun-pop:hover {
+            transform: translateY(-8px) rotate(1.2deg) scale(1.01) !important;
+            border-color: var(--c) !important;
+            box-shadow: 0 22px 52px rgba(0, 0, 0, 0.08), 0 0 28px var(--c) !important;
+        }
+        .project-card.style-fun-pop .fun-top-row {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            margin-bottom: 1.5rem !important;
+            width: 100% !important;
+        }
+        .project-card.style-fun-pop .fun-tag {
+            font-size: 0.68rem !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1.5px !important;
+            font-weight: 800 !important;
+            padding: 4px 11px !important;
+            border-radius: 12px !important;
+            background: rgba(255, 255, 255, 0.6) !important;
+            border: 1.5px dashed var(--c) !important;
+            color: var(--c) !important;
+            transform: rotate(-3deg);
+            display: inline-block;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03) !important;
+            transition: transform 0.3s var(--ease) !important;
+        }
+        body.theme-dark .project-card.style-fun-pop .fun-tag {
+            background: rgba(255, 255, 255, 0.05) !important;
+        }
+        .project-card.style-fun-pop:hover .fun-tag {
+            transform: rotate(3deg) scale(1.05);
+        }
+        .project-card.style-fun-pop .fun-icon-wrap {
+            width: 52px; height: 52px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.4s var(--ease), border-color 0.4s, box-shadow 0.4s;
+            animation: fun-float 3s ease-in-out infinite;
+        }
+        .project-card.style-fun-pop:hover .fun-icon-wrap {
+            transform: scale(1.15) rotate(12deg);
+            border-color: var(--c) !important;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05), 0 0 12px var(--c);
+            animation: none;
+        }
+        @keyframes fun-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+        .project-card.style-fun-pop .fun-body {
+            display: flex !important;
+            flex-direction: column !important;
+            flex: 1 !important;
+        }
+        .project-card.style-fun-pop h3 {
+            font-size: 1.1rem !important;
+            font-weight: 700 !important;
+            margin-bottom: 0.6rem !important;
+        }
+        .project-card.style-fun-pop p {
+            font-size: 0.84rem !important;
+            color: var(--text-muted) !important;
+            line-height: 1.65 !important;
+            margin-bottom: 1.4rem !important;
+            flex: 1 !important;
+        }
+        .fun-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 0.7rem 1.45rem;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.3) !important;
+            border: 1px solid rgba(255, 255, 255, 0.6) !important;
+            color: var(--text-main) !important;
+            text-decoration: none;
+            font-size: 0.84rem;
+            font-weight: 700;
+            transition: all 0.3s var(--ease) !important;
+            position: relative;
+            z-index: 2;
+        }
+        body.theme-dark .fun-btn {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border-color: rgba(255, 255, 255, 0.12) !important;
+            color: #ffffff !important;
+        }
+        .fun-btn:hover {
+            background: var(--c) !important;
+            border-color: var(--c) !important;
+            color: white !important;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 0 14px var(--c) !important;
+            transform: translateY(-2px) !important;
+        }
+
+        /* ─── NEW CBT QUICK: SCI-FI CONTROL CONSOLE THEME ─── */
+        .cbt-quick.style-cbt-console {
+            margin-top: 2rem;
+            padding: 1.8rem 2.2rem !important;
+            background: radial-gradient(circle at 10% 20%, rgba(200, 162, 255, 0.04), transparent 50%), rgba(255, 255, 255, 0.2) !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+            border-top: 2px solid rgba(255, 255, 255, 0.65) !important;
+            border-radius: 24px !important;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.03) !important;
+            backdrop-filter: blur(20px) !important;
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        body.theme-dark .cbt-quick.style-cbt-console {
+            background: radial-gradient(circle at 10% 20%, rgba(192, 132, 252, 0.08), transparent 50%), rgba(14, 8, 24, 0.7) !important;
+            border: 1px solid rgba(192, 132, 252, 0.22) !important;
+            border-top: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35) !important;
+        }
+
+        .cbt-quick.style-cbt-console::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(192, 132, 252, 0.08) 1.2px, transparent 1.2px);
+            background-size: 16px 16px;
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        .cbt-quick.style-cbt-console .cbt-label {
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-main);
+            margin-bottom: 0 !important;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-right: 1.5px dashed rgba(200, 162, 255, 0.4);
+            padding-right: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        body.theme-dark .cbt-quick.style-cbt-console .cbt-label {
+            border-right-color: rgba(192, 132, 252, 0.25);
+        }
+
+        .cbt-quick.style-cbt-console .cbt-label::after {
+            content: 'TIMED CBT ACTIVE';
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: #16a34a;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        /* Add a blinking green dot */
+        .cbt-quick.style-cbt-console .cbt-label::before {
+            content: '';
+            display: inline-block;
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: #16a34a;
+            box-shadow: 0 0 10px #16a34a;
+            position: absolute;
+            bottom: -5px; left: 0;
+            animation: bs-pulse 1.5s ease infinite;
+        }
+
+        .cbt-quick.style-cbt-console .cbt-pills {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Sci-fi console pills buttons */
+        .cbt-quick.style-cbt-console .cbt-pills a {
+            padding: 0.7rem 1.45rem !important;
+            font-size: 0.8rem !important;
+            font-weight: 700 !important;
+            background: rgba(255, 255, 255, 0.25) !important;
+            border: 1px solid rgba(255, 255, 255, 0.5) !important;
+            color: var(--text-main) !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04) !important;
+            text-transform: none !important;
+            letter-spacing: 0.2px !important;
+            border-radius: 12px !important;
+            transition: all 0.3s var(--ease) !important;
+        }
+
+        body.theme-dark .cbt-quick.style-cbt-console .cbt-pills a {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+        }
+
+        .cbt-quick.style-cbt-console .cbt-pills a:hover {
+            transform: translateY(-3px) !important;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary)) !important;
+            border-color: var(--primary) !important;
+            color: white !important;
+            box-shadow: 0 8px 24px rgba(155, 111, 255, 0.3) !important;
+        }
+
+        @media (max-width: 768px) {
+            .cbt-quick.style-cbt-console {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+                padding: 1.5rem !important;
+            }
+            .cbt-quick.style-cbt-console .cbt-label {
+                border-right: none;
+                border-bottom: 1.5px dashed rgba(200, 162, 255, 0.25);
+                padding-right: 0;
+                padding-bottom: 1rem;
+                width: 100%;
+            }
+        }
 
         /* ── CBT QUICK ── */
         .cbt-quick{margin-top:1.4rem;padding:1.2rem 1.5rem;background:rgba(200,162,255,.06);border:1px solid rgba(200,162,255,.2);border-radius:16px}
@@ -643,16 +1646,21 @@
             <span class="cs-count">6 resources</span>
         </div>
         <div class="projects-grid" id="g-study"></div>
-        <div class="cbt-quick">
+        <div class="cbt-quick style-cbt-console">
             <div class="cbt-label">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                 Quick CBT Access
             </div>
             <div class="cbt-pills">
-                <a href="https://commercesehoga.github.io/cuet" class="glass-btn sm primary" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>CUET CBT</a>
-                <a href="https://commercesehoga.github.io/jee-neet" class="glass-btn sm primary" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>NEET-JEE CBT</a>
-                <a href="https://commercesehoga.github.io/banking" class="glass-btn sm primary" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>Banking CBT</a>
-                <a href="https://commercesehoga.github.io/ssc" class="glass-btn sm primary" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>SSC CBT</a>
+                <a href="https://commercesehoga.github.io/cuet" class="glass-btn sm primary" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>/cuet</a>
+                <a href="https://commercesehoga.github.io/jee-neet" class="glass-btn sm primary" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>/jee-neet</a>
+                <a href="https://commercesehoga.github.io/banking" class="glass-btn sm primary" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>/banking</a>
+                <a href="https://commercesehoga.github.io/ssc" class="glass-btn sm primary" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>/ssc</a>
+                <a href="https://commercesehoga.github.io/clat" class="glass-btn sm primary" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>/clat</a>
+                <a href="https://commercesehoga.github.io/cat" class="glass-btn sm primary" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>/cat</a>
+                <a href="https://commercesehoga.github.io/nda" class="glass-btn sm primary" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>/nda</a>
+                <a href="https://commercesehoga.github.io/english" class="glass-btn sm primary" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>/english</a>
+                <a href="https://commercesehoga.github.io/gat" class="glass-btn sm primary" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>/gat</a>
             </div>
         </div>
     </div>
@@ -1421,6 +2429,7 @@ const I = {
     india:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8 2 4 5 3 9c-1 4 1 8 4 10l1 1h8l1-1c3-2 5-6 4-10C20 5 16 2 12 2z"/><circle cx="12" cy="12" r="2.5"/><line x1="12" y1="9.5" x2="12" y2="14.5"/></svg>`,
     om:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 16c-2-1-3-3-2-5 1-2 3-3 5-2s3 3 3 5c0 2-1 3-2 4"/><path d="M12 18c1 1 3 1 4 0s1-3 0-4"/><path d="M5 10c0-3 2-6 5-7"/><path d="M17 8c1 1 1 3 0 4"/><circle cx="18" cy="6" r="1" fill="currentColor"/></svg>`,
     mappin:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+    game:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="15" y1="13" x2="15.01" y2="13" stroke-width="3" stroke-linecap="round"/><line x1="18" y1="11" x2="18.01" y2="11" stroke-width="3" stroke-linecap="round"/><rect x="2" y="6" width="20" height="12" rx="3"/></svg>`,
 };
 
 function ic(k, col) {
@@ -1433,18 +2442,18 @@ const creations = {
         {title:'Movie Finder',desc:'Search and explore movie databases. Get instant details, ratings and trending films.',link:'https://wondermayank.github.io/movie',icon:'film',color:'#e03030',tag:'Cinema'},
         {title:'Anime Finder',desc:'Discover anime series and more. Powered by the modern Jikan API with full details.',link:'https://wondermayank.github.io/anime',icon:'tv',color:'#8b5cf6',tag:'Media'},
         {title:'Book Finder',desc:'Your personal library explorer. Find books by title, author or genre with ease.',link:'https://wondermayank.github.io/books',icon:'books',color:'#2563eb',tag:'Knowledge'},
-         {title:'pokede',desc:'Search and explore pokemon world',link:'https://wondermayank.github.io/pokedex',icon:'film',color:'#FF0000',tag:'ball'},
-     {title:'games Finder',desc:'Free Game For PC & Mobile',link:'https://wondermayank.github.io/game',icon:'Game',color:'#ADD8E6',tag:'Gaming'},
+        {title:'Pokédex',desc:'Search and explore the Pokémon world.',link:'https://wondermayank.github.io/pokedex',icon:'game',color:'#FF0000',tag:'Pokémon'},
+        {title:'Games Finder',desc:'Free Games for PC & Mobile.',link:'https://wondermayank.github.io/game',icon:'game',color:'#ADD8E6',tag:'Gaming'},
     ],
     study:[
         {title:'Book Hub',desc:'Organized educational books and structured study resources for all subjects.',link:'https://wondermayank.github.io/book',icon:'book',color:'#2563eb',tag:'Books'},
         {title:'CBT Mock Test',desc:'Computer-Based Test simulator for CUET, NEET, JEE, Banking & SSC preparation.',link:'https://wondermayank.github.io/cbtmock',icon:'clipboard',color:'#16a34a',tag:'Exam Prep'},
         {title:'Main Study Blog',desc:'Structured notes, resources and educational content for commerce students.',link:'https://commercesehoga.blogspot.com/',icon:'books',color:'#e8602c',tag:'Commerce'},
-        {title:'English Practice',desc:'Daily English tests, grammar exercises, vocabulary builders and more.',link:'https://wondermayank.github.io/cbtmock/english',icon:'type',color:'#0891b2',tag:'Language'},
-        {title:'General Aptitude Test',desc:'Practice general awareness, reasoning and aptitude tests systematically.',link:'https://wondermayank.github.io/cbtmock/gat',icon:'check',color:'#7c3aed',tag:'Aptitude'},
+        {title:'English Practice',desc:'Daily English tests, grammar exercises, vocabulary builders and more.',link:'https://commercesehoga.github.io/english',icon:'type',color:'#0891b2',tag:'Language'},
+        {title:'General Aptitude Test',desc:'Practice general awareness, reasoning and aptitude tests systematically.',link:'https://commercesehoga.github.io/gat',icon:'check',color:'#7c3aed',tag:'Aptitude'},
         {title:'Current Affairs',desc:'Yearly, Monthly, Quarterly & Half-Yearly current affairs for all exams.',link:'https://wondermayank.github.io/Current_Affairs',icon:'news',color:'#b45309',tag:'News'},
         {title:'Periodic Table',desc:'Study Periodic Table With Future Tech',link:'https://wondermayank.github.io/Periodic-Table/v2/',icon:'Chemistry',color:'#2563eb',tag:'Chemistry'},
-        {title:'Hindi',desc:'Hindi Typing Learn, pratice and More',link:'https://wondermayank.github.io/hindi',icon:'hindi',color:'#ffb7ce',tag:'Hindi'},
+        {title:'Hindi',desc:'Hindi Typing, Learn, Practice & More',link:'https://wondermayank.github.io/hindi',icon:'hindi',color:'#ffb7ce',tag:'Hindi'},
     ],
     tools:[
         {title:'Text to PDF',desc:'Convert plain text documents into professionally formatted PDFs in one click.',link:'https://wondermayank.github.io/pdftotext',icon:'pdf',color:'#dc2626',tag:'PDF'},
@@ -1456,8 +2465,8 @@ const creations = {
     ],
     code:[
         {title:'Paletteify',desc:'Generate aesthetic color palettes instantly. Discover unique harmonious gradients.',link:'https://wondermayank.github.io/paletteify',icon:'palette',color:'#7c3aed',tag:'Design'},
-        {title:'Code Helper',desc:'Curated coding tools and developer utilities. Fast, minimal and efficient snippets.',link:'https://wondermayank.github.io/code',icon:'code',color:'#1d4ed8',tag:'Developer'},
-       {title:'hand ai',desc:'Play With Your Hand',link:'https://wondermayank.github.io/code/handai.html',icon:'laugh',color:'#1d4ed8',tag:'Fun'},
+        {title:'Code Helper',desc:'Curated coding tools and developer utilities. Fast, minimal and efficient snippets.',link:'https://wondermayank.github.io/code',icon:'code',color:'#0ea5e9',tag:'Developer'},
+        {title:'hand ai',desc:'Play With Your Hand',link:'https://wondermayank.github.io/code/handai.html',icon:'laugh',color:'#10b981',tag:'Fun'},
     ],
     ideas:[
         {title:'Portfolio Hub',desc:'A collection of beautiful portfolio site ideas and design inspiration for creatives.',link:'https://wondermayank.github.io/portfolio',icon:'layout',color:'#0891b2',tag:'Portfolio'},
@@ -1525,13 +2534,46 @@ const igCh = [
 // ─── RENDER ──────────────────────────────────────────────
 function renderCard(p) {
     const bg = `background:linear-gradient(135deg,${p.color}22,${p.color}10);border:1px solid ${p.color}30;`;
-    return `<div class="project-card">
+    return `<div class="project-card" style="--c:${p.color}">
         <span class="proj-tag">${p.tag}</span>
         <div class="proj-icon" style="${bg}">${ic(p.icon,p.color)}</div>
-        <h3>${p.title}</h3>
-        <p>${p.desc}</p>
+        <h3><span class="text-highlight">${p.title}</span></h3>
+        <p><span class="text-highlight">${p.desc}</span></p>
         <div class="card-actions">
             <a href="${p.link}" class="glass-btn primary" target="_blank" rel="noopener noreferrer">${I.eye} Preview</a>
+        </div>
+    </div>`;
+}
+function renderFinderCard(p) {
+    return `<div class="project-card style-bento-combined" style="--c:${p.color}">
+        <div class="bento-content">
+            <span class="proj-tag-bento" style="background:linear-gradient(135deg,var(--primary),var(--secondary))">${p.tag}</span>
+            <h3><span class="text-highlight">${p.title}</span></h3>
+            <p><span class="text-highlight">${p.desc}</span></p>
+            <div class="card-actions">
+                <a href="${p.link}" class="glass-btn primary" target="_blank" rel="noopener noreferrer">${I.eye} Preview</a>
+            </div>
+        </div>
+        <div class="bento-side" style="background:${p.color}0c">
+            <div class="proj-icon-bento" style="background:${p.color}18">${ic(p.icon,p.color)}</div>
+        </div>
+    </div>`;
+}
+function renderStudyCard(p) {
+    const bg = `background:linear-gradient(135deg,${p.color}22,${p.color}10);border:1px solid ${p.color}30;`;
+    return `<div class="project-card style-study-cyber" style="--c:${p.color}">
+        <div class="cyber-grid-bg"></div>
+        <div class="cyber-top-row">
+            <span class="proj-tag-cyber">${p.tag}</span>
+            <div class="proj-icon-cyber" style="${bg}">${ic(p.icon,p.color)}</div>
+        </div>
+        <h3><span class="text-highlight">${p.title}</span></h3>
+        <p><span class="text-highlight">${p.desc}</span></p>
+        <div class="card-actions">
+            <a href="${p.link}" class="cyber-btn" target="_blank" rel="noopener noreferrer">
+                <span>Launch Resource</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
         </div>
     </div>`;
 }
@@ -1574,10 +2616,121 @@ function renderCh(ch,plat) {
     </a>`;
 }
 
+function renderToolsCard(p) {
+    const bg = `background:linear-gradient(135deg,${p.color}22,${p.color}10);border:1px solid ${p.color}30;`;
+    return `<div class="project-card style-tools-prism" style="--c:${p.color}">
+        <span class="proj-tag-bento" style="background:linear-gradient(135deg,var(--primary),var(--secondary)); margin-bottom: 1.2rem; display: inline-block;">${p.tag}</span>
+        <div class="prism-icon-wrap" style="${bg}">${ic(p.icon,p.color)}</div>
+        <h3>${p.title}</h3>
+        <p>${p.desc}</p>
+        <div class="card-actions">
+            <a href="${p.link}" class="glass-btn primary" target="_blank" rel="noopener noreferrer">${I.eye} Preview</a>
+        </div>
+    </div>`;
+}
+
+function renderLoveCard(p) {
+    const bg = `background:linear-gradient(135deg,${p.color}22,${p.color}10);border:1px solid ${p.color}30;`;
+    return `<div class="project-card style-love-card" style="--c:${p.color}">
+        <span class="proj-tag-bento" style="background:linear-gradient(135deg,#ec4899,#f43f5e);">${p.tag}</span>
+        <div class="love-icon-wrap" style="${bg}">${ic(p.icon,p.color)}</div>
+        <h3><span class="text-highlight">${p.title}</span></h3>
+        <p><span class="text-highlight">${p.desc}</span></p>
+        <div class="card-actions" style="width: 100%">
+            <a href="${p.link}" class="love-btn" target="_blank" rel="noopener noreferrer">
+                ${I.heart}
+                <span>Launch Romance</span>
+            </a>
+        </div>
+    </div>`;
+}
+
+function renderCodeCard(p) {
+    const bg = `background:linear-gradient(135deg,${p.color}22,${p.color}10);border:1px solid ${p.color}30;`;
+    return `<div class="project-card style-code-tech" style="--c:${p.color}">
+        <div class="code-editor-header">
+            <div class="code-window-dots">
+                <span class="dot-red"></span>
+                <span class="dot-yellow"></span>
+                <span class="dot-green"></span>
+            </div>
+            <span class="code-editor-tag">${p.tag}</span>
+        </div>
+        <div class="code-card-body">
+            <div class="code-icon-wrap" style="${bg}">${ic(p.icon,p.color)}</div>
+            <h3><span class="text-highlight">${p.title}</span></h3>
+            <p>${p.desc}</p>
+            <div class="card-actions" style="width: 100%">
+                <a href="${p.link}" class="code-btn" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    <span>Execute Project</span>
+                </a>
+            </div>
+        </div>
+    </div>`;
+}
+
+function renderIdeasCard(p) {
+    const bg = `background:linear-gradient(135deg,${p.color}22,${p.color}10);border:1px solid ${p.color}30;`;
+    return `<div class="project-card style-ideas-draft" style="--c:${p.color}">
+        <div class="ideas-top-row">
+            <span class="ideas-tag">${p.tag}</span>
+            <div class="ideas-icon-wrap" style="${bg}">${ic(p.icon,p.color)}</div>
+        </div>
+        <div class="ideas-body">
+            <h3><span class="text-highlight">${p.title}</span></h3>
+            <p>${p.desc}</p>
+            <div class="card-actions" style="width: 100%">
+                <a href="${p.link}" class="ideas-btn" target="_blank" rel="noopener noreferrer">
+                    <span>Explore Design</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>`;
+}
+
+function renderFunCard(p) {
+    const bg = `background:linear-gradient(135deg,${p.color}22,${p.color}10);border:1px solid ${p.color}30;`;
+    return `<div class="project-card style-fun-pop" style="--c:${p.color}">
+        <div class="fun-top-row">
+            <span class="fun-tag">${p.tag}</span>
+            <div class="fun-icon-wrap" style="${bg}">${ic(p.icon,p.color)}</div>
+        </div>
+        <div class="fun-body">
+            <h3><span class="text-highlight">${p.title}</span></h3>
+            <p>${p.desc}</p>
+            <div class="card-actions" style="width: 100%">
+                <a href="${p.link}" class="fun-btn" target="_blank" rel="noopener noreferrer">
+                    <span>Play & Explore</span>
+                </a>
+            </div>
+        </div>
+    </div>`;
+}
+
 // Inject all grids
 Object.entries(creations).forEach(([k,arr])=>{
     const el=document.getElementById('g-'+k);
-    if(el) el.innerHTML=arr.map(renderCard).join('');
+    if(el) {
+        if(k === 'finder') {
+            el.innerHTML=arr.map(renderFinderCard).join('');
+        } else if(k === 'study') {
+            el.innerHTML=arr.map(renderStudyCard).join('');
+        } else if(k === 'tools') {
+            el.innerHTML=arr.map(renderToolsCard).join('');
+        } else if(k === 'love') {
+            el.innerHTML=arr.map(renderLoveCard).join('');
+        } else if(k === 'code') {
+            el.innerHTML=arr.map(renderCodeCard).join('');
+        } else if(k === 'ideas') {
+            el.innerHTML=arr.map(renderIdeasCard).join('');
+        } else if(k === 'fun') {
+            el.innerHTML=arr.map(renderFunCard).join('');
+        } else {
+            el.innerHTML=arr.map(renderCard).join('');
+        }
+    }
 });
 document.getElementById('tg-bots').innerHTML=tgBots.map(t=>renderTg(t,'bot')).join('');
 document.getElementById('tg-groups').innerHTML=tgGroups.map(t=>renderTg(t,'grp')).join('');
@@ -1630,6 +2783,22 @@ function renderIndiaList(filter=''){
         .map(region=>({ id:region.id, name:region.getAttribute('name') || region.id, slug:indiaMapLinks[region.id], region }))
         .filter(item=>!q || item.name.toLowerCase().includes(q))
         .sort((a,b)=>a.name.localeCompare(b.name));
+    
+    // Highlight matching states on the SVG map
+    const mapSvg = document.querySelector('.india-map-svg');
+    if(mapSvg){
+        if(q){
+            mapSvg.classList.add('has-search');
+            indiaRegions.forEach(region=>{
+                const isMatch = matches.some(m=>m.id===region.id);
+                region.classList.toggle('is-search-match', isMatch);
+            });
+        } else {
+            mapSvg.classList.remove('has-search');
+            indiaRegions.forEach(region=>region.classList.remove('is-search-match'));
+        }
+    }
+
     indiaList.innerHTML = matches.map(item=>`<a class="india-state-link" data-region-id="${item.id}" href="https://wondermayank.github.io/india/${item.slug}" target="_blank" rel="noopener noreferrer">${ic('mappin','var(--primary-dark)')}<span>${item.name}</span></a>`).join('');
     if(indiaStatus) indiaStatus.textContent = `${matches.length} region${matches.length===1?'':'s'}`;
     indiaList.querySelectorAll('.india-state-link').forEach(link=>{
@@ -1643,14 +2812,19 @@ renderIndiaList();
 
 // ─── CURSOR GLOW ─────────────────────────────────────────
 const glow=document.getElementById('cursor-glow');
-document.addEventListener('mousemove',e=>{
-    glow.style.left=e.clientX+'px';
-    glow.style.top=e.clientY+'px';
-});
+if (window.matchMedia('(hover: hover)').matches) {
+    document.addEventListener('mousemove',e=>{
+        glow.style.left=e.clientX+'px';
+        glow.style.top=e.clientY+'px';
+    });
+} else {
+    glow.style.display = 'none';
+}
 
 // ─── HAMBURGER ───────────────────────────────────────────
 function toggleNav(){
     document.getElementById('mobnav').classList.toggle('open');
+    document.getElementById('ham').classList.toggle('open');
 }
 function applyTheme(theme){
     const isDark = theme === 'dark';
@@ -1748,13 +2922,22 @@ addTilt('.india-card');
     tryNextWithTimer(); // kick off
 })();
 // ─── BOOT SCREEN DISMISS ─────────────────────────────────
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        const bs = document.getElementById('boot-screen');
+const bs = document.getElementById('boot-screen');
+function dismissBootScreen() {
+    if (bs && !bs.classList.contains('bs-hide')) {
         bs.classList.add('bs-hide');
         setTimeout(() => bs.remove(), 750);
-    }, 2800);
+    }
+}
+// Automatically fade out after page loads (reduced to 1.5s for snappier experience)
+window.addEventListener('load', () => {
+    setTimeout(dismissBootScreen, 1500);
 });
+// Allow quick skipping by clicking anywhere on the loading screen
+if (bs) {
+    bs.addEventListener('click', dismissBootScreen);
+    bs.style.cursor = 'pointer';
+}
 </script>
 <!-- ─── STATIC FALLBACK for LLM/no-JS crawlers (GEO+SEO) ──
      Invisible visually but readable by AI crawlers & Googlebot text-mode ── -->
@@ -1770,8 +2953,8 @@ window.addEventListener('load', () => {
     <li><a href="https://wondermayank.github.io/pdftotext">Text to PDF — Convert plain text to formatted PDF</a></li>
     <li><a href="https://wondermayank.github.io/cbtmock">CBT Mock Test — CUET, NEET, JEE, Banking and SSC exam simulator</a></li>
     <li><a href="https://wondermayank.github.io/book">Book Hub — Educational books and study resources</a></li>
-    <li><a href="https://wondermayank.github.io/cbtmock/english">English Practice — Grammar, vocabulary and language tests</a></li>
-    <li><a href="https://wondermayank.github.io/cbtmock/gat">General Aptitude Test — Reasoning and awareness practice</a></li>
+    <li><a href="https://commercesehoga.github.io/english">English Practice — Grammar, vocabulary and language tests</a></li>
+    <li><a href="https://commercesehoga.github.io/gat">General Aptitude Test — Reasoning and awareness practice</a></li>
     <li><a href="https://wondermayank.github.io/Current_Affairs">Current Affairs — Monthly and yearly current affairs for all exams</a></li>
     <li><a href="https://wondermayank.github.io/Periodic-Table/v2/">Periodic Table — Interactive chemistry periodic table</a></li>
     <li><a href="https://wondermayank.github.io/hindi">Hindi Typing — Learn and practice Hindi typing</a></li>
@@ -1789,6 +2972,11 @@ window.addEventListener('load', () => {
     <li><a href="https://commercesehoga.github.io/jee-neet">NEET-JEE CBT — Mock tests for NEET and JEE aspirants</a></li>
     <li><a href="https://commercesehoga.github.io/banking">Banking CBT — SBI IBPS and other banking exam mock tests</a></li>
     <li><a href="https://commercesehoga.github.io/ssc">SSC CBT — Staff Selection Commission exam simulator</a></li>
+    <li><a href="https://commercesehoga.github.io/clat">CLAT CBT — Common Law Admission Test mock simulator</a></li>
+    <li><a href="https://commercesehoga.github.io/cat">CAT CBT — Common Admission Test mock simulator</a></li>
+    <li><a href="https://commercesehoga.github.io/nda">NDA CBT — National Defence Academy mock simulator</a></li>
+    <li><a href="https://commercesehoga.github.io/english">English Practice — English grammar and vocabulary mock tests</a></li>
+    <li><a href="https://commercesehoga.github.io/gat">General Aptitude Test (GAT) — Aptitude and general test mock tests</a></li>
   </ul>
   <p>Contact: <a href="https://t.me/Mindmaster_robot">@Mindmaster_robot on Telegram</a></p>
 </section>
