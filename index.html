@@ -1328,19 +1328,7 @@
         .cbt-pills{display:flex;gap:.65rem;flex-wrap:wrap}
 
         /* ── TELEGRAM ── */
-        .tg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:1.6rem}
-        .tg-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r);padding:1.7rem;backdrop-filter:blur(15px);display:flex;flex-direction:column;transition:.4s var(--ease);position:relative;overflow:hidden;text-decoration:none;color:var(--text-main);transform-style:preserve-3d}
-        .tg-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.2) 0%,transparent 60%);opacity:0;transition:.4s;pointer-events:none}
-        .tg-card:hover::after{opacity:1}
-        .tg-card:hover{border-color:rgba(0,136,204,.35);box-shadow:0 18px 45px rgba(0,136,204,.07)}
-        .tg-icon{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;flex-shrink:0}
-        .tg-icon svg{width:19px;height:19px}
-        .tg-badge{position:absolute;top:1.1rem;right:1.1rem;font-size:.64rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;padding:3px 9px;border-radius:20px}
-        .tg-badge.bot{background:rgba(0,136,204,.1);color:#0088cc;border:1px solid rgba(0,136,204,.2)}
-        .tg-badge.grp{background:rgba(50,180,120,.1);color:#32b478;border:1px solid rgba(50,180,120,.25)}
-        .tg-card h3{font-size:.98rem;font-weight:700;margin-bottom:.4rem}
-        .tg-handle{font-size:.76rem;color:#0088cc;font-weight:600;margin-bottom:.65rem}
-        .tg-card p{font-size:.82rem;color:var(--text-muted);line-height:1.6;flex:1;margin-bottom:1.2rem}
+        .tg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.6rem}
         .tg-sub-header{display:flex;align-items:center;gap:12px;margin-bottom:1.6rem}
         .tg-platform-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.7);flex-shrink:0}
         .tg-platform-icon.bots{background:rgba(0,136,204,.1);border-color:rgba(0,136,204,.2)}
@@ -1348,6 +1336,61 @@
         .tg-platform-icon svg{width:19px;height:19px}
         .tg-sub-header h3{font-size:1.15rem;font-weight:700;letter-spacing:-.3px}
         .tg-sub-header span{font-size:.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1.5px;font-weight:600;display:block;margin-top:2px}
+
+        /* ── BOT CARDS: Variant 6 — Vibrant Gradient ── */
+        .tg-card.style-bot{
+            border:none;border-radius:20px;padding:1.6rem;
+            display:flex;flex-direction:column;
+            text-decoration:none;color:#fff;
+            position:relative;overflow:hidden;
+            transition:all .4s var(--ease);
+            box-shadow:0 10px 30px rgba(0,136,204,.22);
+            background:var(--bot-grad,linear-gradient(135deg,#005fa3,#0088cc));
+        }
+        .tg-card.style-bot::before{content:'';position:absolute;width:200px;height:200px;top:-80px;right:-60px;border-radius:50%;background:rgba(255,255,255,.12);transition:transform .5s var(--ease);pointer-events:none}
+        .tg-card.style-bot::after{content:'';position:absolute;width:120px;height:120px;bottom:-40px;left:-30px;border-radius:50%;background:rgba(255,255,255,.07);transition:transform .6s var(--ease);pointer-events:none}
+        .tg-card.style-bot:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 22px 52px rgba(0,136,204,.35)}
+        .tg-card.style-bot:hover::before{transform:scale(1.5)}
+        .tg-card.style-bot:hover::after{transform:scale(1.8)}
+        .tg-bot-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.3rem;position:relative;z-index:1}
+        .tg-bot-icon{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);flex-shrink:0;transition:transform .4s var(--ease)}
+        .tg-bot-icon svg{width:20px;height:20px}
+        .tg-card.style-bot:hover .tg-bot-icon{transform:rotate(-8deg) scale(1.1)}
+        .tg-badge-v6{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,.2);color:#fff;border:1px solid rgba(255,255,255,.3)}
+        .tg-card.style-bot h3{font-size:1.05rem;font-weight:800;letter-spacing:-.4px;margin-bottom:.25rem;position:relative;z-index:1;color:#fff}
+        .tg-card.style-bot .tg-handle{font-size:.73rem;color:rgba(255,255,255,.78);font-weight:600;margin-bottom:.7rem;position:relative;z-index:1}
+        .tg-card.style-bot p{font-size:.82rem;line-height:1.65;color:rgba(255,255,255,.68);flex:1;margin-bottom:1.3rem;position:relative;z-index:1}
+        .tg-btn-v6{display:flex;align-items:center;justify-content:center;gap:8px;padding:.7rem;border-radius:50px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:.82rem;font-weight:700;text-decoration:none;transition:all .3s var(--ease);position:relative;z-index:1}
+        .tg-btn-v6 svg{width:14px;height:14px;flex-shrink:0}
+        .tg-card.style-bot:hover .tg-btn-v6{background:rgba(255,255,255,.3);box-shadow:0 8px 20px rgba(0,0,0,.2)}
+
+        /* ── GROUP CARDS: Variant 5 — Minimal Editorial ── */
+        .tg-card.style-grp{
+            border:none;
+            border-top:3px solid #32b478;
+            border-bottom:1px solid var(--glass-border);
+            border-radius:0;
+            padding:1.5rem 0 1.8rem;
+            background:transparent;
+            display:flex;flex-direction:column;gap:.6rem;
+            text-decoration:none;color:var(--text-main);
+            transition:all .3s var(--ease);
+            position:relative;
+        }
+        .tg-card.style-grp::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:#32b478;transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+        .tg-card.style-grp:hover::after{transform:scaleX(1)}
+        .tg-grp-row1{display:flex;align-items:center;justify-content:space-between}
+        .tg-grp-type{font-size:.62rem;text-transform:uppercase;letter-spacing:2px;color:#32b478;font-weight:700}
+        .tg-card.style-grp .tg-handle{font-size:.65rem;color:var(--text-muted);font-weight:500;letter-spacing:.3px;margin-bottom:0}
+        .tg-card.style-grp h3{font-family:var(--font-display);font-size:1.15rem;font-weight:800;letter-spacing:-.5px;color:var(--text-main);transition:color .3s var(--ease);margin-bottom:0}
+        .tg-card.style-grp:hover h3{color:#32b478}
+        .tg-card.style-grp p{font-size:.82rem;line-height:1.7;color:var(--text-muted);margin-bottom:0;flex:1}
+        .tg-btn-v5{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;font-weight:700;color:#32b478;text-decoration:none;transition:gap .3s var(--ease);width:fit-content;margin-top:.4rem}
+        .tg-card.style-grp:hover .tg-btn-v5{gap:12px}
+        .tg-btn-v5-arr{transition:transform .3s var(--ease);font-size:1rem}
+        .tg-card.style-grp:hover .tg-btn-v5-arr{transform:translateX(3px)}
+        body.theme-dark .tg-card.style-grp{border-top-color:#32b478;border-bottom-color:rgba(192,132,252,.16)}
+        body.theme-dark .tg-card.style-grp::after{background:#32b478}
 
         /* ── HUBS ── */
         .hubs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
@@ -2579,16 +2622,41 @@ function renderStudyCard(p) {
 }
 function renderTg(t,type) {
     const isBot=type==='bot';
-    const col=isBot?'#0088cc':'#32b478';
-    const bg=`background:${col}18;border:1px solid ${col}28;`;
-    return `<a href="${t.link}" class="tg-card" target="_blank" rel="noopener noreferrer">
-        <span class="tg-badge ${isBot?'bot':'grp'}">${isBot?'Bot':'Group'}</span>
-        <div class="tg-icon" style="${bg}">${ic(isBot?'bot':'users',col)}</div>
-        <h3>${t.title}</h3>
-        <div class="tg-handle">${t.handle}</div>
-        <p>${t.desc}</p>
-        <div class="glass-btn sm">${ic('tg',col)} ${isBot?'Open Bot':'Join Group'}</div>
-    </a>`;
+    if(isBot){
+        // Variant 6 — Vibrant Gradient (bots)
+        const botColors=[
+            'linear-gradient(135deg,#005fa3,#0088cc)',
+            'linear-gradient(135deg,#4c1d95,#7c3aed)',
+            'linear-gradient(135deg,#0c4a6e,#0ea5e9)',
+            'linear-gradient(135deg,#831843,#db2777)',
+            'linear-gradient(135deg,#064e3b,#10b981)',
+            'linear-gradient(135deg,#1e3a5f,#3b82f6)',
+        ];
+        const grad=botColors[tgBots.indexOf(t)%botColors.length];
+        const iconSvg=`<svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16" stroke-width="3" stroke-linecap="round"/><line x1="16" y1="16" x2="16" y2="16" stroke-width="3" stroke-linecap="round"/></svg>`;
+        const tgSvg=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>`;
+        return `<a href="${t.link}" class="tg-card style-bot" style="--bot-grad:${grad}" target="_blank" rel="noopener noreferrer">
+            <div class="tg-bot-top">
+                <div class="tg-bot-icon">${iconSvg}</div>
+                <span class="tg-badge-v6">Bot</span>
+            </div>
+            <h3>${t.title}</h3>
+            <div class="tg-handle">${t.handle}</div>
+            <p>${t.desc}</p>
+            <a href="${t.link}" class="tg-btn-v6" target="_blank" rel="noopener noreferrer">${tgSvg} Open Bot</a>
+        </a>`;
+    } else {
+        // Variant 5 — Minimal Editorial (groups)
+        return `<a href="${t.link}" class="tg-card style-grp" target="_blank" rel="noopener noreferrer">
+            <div class="tg-grp-row1">
+                <span class="tg-grp-type">Group</span>
+                <span class="tg-handle">${t.handle}</span>
+            </div>
+            <h3>${t.title}</h3>
+            <p>${t.desc}</p>
+            <span class="tg-btn-v5">Join Group <span class="tg-btn-v5-arr">→</span></span>
+        </a>`;
+    }
 }
 function renderHub(h,i) {
     const cols=['#c8a2ff','#a2d4ff','#a2ffc8','#ffd4a2','#ffa2c8'];
@@ -2860,7 +2928,7 @@ function addTilt(sel){
 addTilt('.project-card');
 addTilt('.hub-card');
 addTilt('.channel-card');
-addTilt('.tg-card');
+addTilt('.tg-card.style-bot');
 addTilt('.india-card');
 </script>
 
