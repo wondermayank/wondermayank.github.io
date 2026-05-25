@@ -1360,14 +1360,11 @@
         .tg-card.style-bot h3{font-size:1.05rem;font-weight:800;letter-spacing:-.4px;margin-bottom:.25rem;position:relative;z-index:1;color:#fff}
         .tg-card.style-bot .tg-handle{font-size:.73rem;color:rgba(255,255,255,.78);font-weight:600;margin-bottom:.7rem;position:relative;z-index:1}
         .tg-card.style-bot p{font-size:.82rem;line-height:1.65;color:rgba(255,255,255,.68);flex:1;margin-bottom:1.3rem;position:relative;z-index:1}
-        .tg-btn-v6{display:flex;align-items:center;justify-content:center;gap:8px;padding:.7rem;border-radius:50px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:.82rem;font-weight:700;text-decoration:none;transition:all .3s var(--ease);position:relative;z-index:1}
-        .tg-btn-v6 svg{width:14px;height:14px;flex-shrink:0}
-        .tg-card.style-bot:hover .tg-btn-v6{background:rgba(255,255,255,.3);box-shadow:0 8px 20px rgba(0,0,0,.2)}
 
         /* ── GROUP CARDS: Variant 5 — Minimal Editorial ── */
         .tg-card.style-grp{
             border:none;
-            border-top:3px solid #32b478;
+            border-top:3px solid var(--grp-accent, #32b478);
             border-bottom:1px solid var(--glass-border);
             border-radius:0;
             padding:1.5rem 0 1.8rem;
@@ -1377,45 +1374,422 @@
             transition:all .3s var(--ease);
             position:relative;
         }
-        .tg-card.style-grp::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:#32b478;transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+        .tg-card.style-grp::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--grp-accent, #32b478);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
         .tg-card.style-grp:hover::after{transform:scaleX(1)}
         .tg-grp-row1{display:flex;align-items:center;justify-content:space-between}
-        .tg-grp-type{font-size:.62rem;text-transform:uppercase;letter-spacing:2px;color:#32b478;font-weight:700}
+        .tg-grp-type{font-size:.62rem;text-transform:uppercase;letter-spacing:2px;color:var(--grp-accent, #32b478);font-weight:700}
         .tg-card.style-grp .tg-handle{font-size:.65rem;color:var(--text-muted);font-weight:500;letter-spacing:.3px;margin-bottom:0}
         .tg-card.style-grp h3{font-family:var(--font-display);font-size:1.15rem;font-weight:800;letter-spacing:-.5px;color:var(--text-main);transition:color .3s var(--ease);margin-bottom:0}
-        .tg-card.style-grp:hover h3{color:#32b478}
+        .tg-card.style-grp:hover h3{color:var(--grp-accent, #32b478)}
         .tg-card.style-grp p{font-size:.82rem;line-height:1.7;color:var(--text-muted);margin-bottom:0;flex:1}
-        .tg-btn-v5{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;font-weight:700;color:#32b478;text-decoration:none;transition:gap .3s var(--ease);width:fit-content;margin-top:.4rem}
+        .tg-btn-v5{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;font-weight:700;color:var(--grp-accent, #32b478);text-decoration:none;transition:gap .3s var(--ease);width:fit-content;margin-top:.4rem}
         .tg-card.style-grp:hover .tg-btn-v5{gap:12px}
         .tg-btn-v5-arr{transition:transform .3s var(--ease);font-size:1rem}
         .tg-card.style-grp:hover .tg-btn-v5-arr{transform:translateX(3px)}
-        body.theme-dark .tg-card.style-grp{border-top-color:#32b478;border-bottom-color:rgba(192,132,252,.16)}
-        body.theme-dark .tg-card.style-grp::after{background:#32b478}
+        body.theme-dark .tg-card.style-grp{border-top-color:var(--grp-accent, #32b478);border-bottom-color:rgba(192,132,252,.16)}
+        body.theme-dark .tg-card.style-grp::after{background:var(--grp-accent, #32b478)}
 
         /* ── HUBS ── */
         .hubs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.8rem}
-        .hub-card{position:relative;display:flex;flex-direction:column;background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r);padding:2.1rem;text-decoration:none;color:var(--text-main);backdrop-filter:blur(15px);overflow:hidden;transition:.5s var(--ease);transform-style:preserve-3d}
-        .hub-card::before{content:'';position:absolute;bottom:-55px;right:-55px;width:160px;height:160px;border-radius:50%;opacity:0;filter:blur(50px);transition:opacity .5s}
-        .hub-card:nth-child(1)::before{background:#c8a2ff}
-        .hub-card:nth-child(2)::before{background:#a2d4ff}
-        .hub-card:nth-child(3)::before{background:#a2ffc8}
-        .hub-card:nth-child(4)::before{background:#ffd4a2}
-        .hub-card:nth-child(5)::before{background:#ffa2c8}
-        .hub-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.18) 0%,transparent 60%);opacity:0;transition:.5s;pointer-events:none}
-        .hub-card:hover::before{opacity:.4}
-        .hub-card:hover::after{opacity:1}
-        .hub-card:hover{border-color:rgba(200,162,255,.5);box-shadow:0 22px 55px rgba(200,162,255,.12)}
-        .hub-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.6rem}
-        .hub-icon-wrap{width:55px;height:55px;border-radius:15px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(200,162,255,.2),rgba(174,239,255,.2));border:1px solid rgba(255,255,255,.7);box-shadow:0 4px 14px rgba(200,162,255,.15);flex-shrink:0}
-        .hub-icon-wrap svg{width:22px;height:22px}
-        .hub-badge{font-size:.65rem;text-transform:uppercase;letter-spacing:2px;font-weight:700;color:white;padding:4px 10px;border-radius:20px;background:linear-gradient(135deg,var(--primary),var(--secondary));box-shadow:0 4px 10px rgba(200,162,255,.25);white-space:nowrap}
-        .hub-card h3{font-family:var(--font-display);font-size:1.25rem;font-weight:800;letter-spacing:-.4px;margin-bottom:.65rem}
-        .hub-card p{font-size:.86rem;color:var(--text-muted);line-height:1.65;flex:1;margin-bottom:1.7rem}
-        .hub-visit{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.86rem;color:var(--primary);transition:gap .3s var(--ease)}
-        .hub-card:hover .hub-visit{gap:13px}
-        .arrow-circle{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-dark));display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(200,162,255,.4);transition:transform .3s var(--ease);flex-shrink:0}
-        .arrow-circle svg{width:11px;height:11px}
-        .hub-card:hover .arrow-circle{transform:rotate(-45deg)}
+        .project-card.style-tools-prism:hover .hub-arr-icon {
+            transform: translateX(4px);
+        }
+
+        /* ─── FUTURISTIC TECH HUB CARDS ─── */
+         #hubs-tech-grid {
+             display: grid !important;
+             grid-template-columns: repeat(3, 1fr) !important;
+             gap: 1.8rem !important;
+         }
+         @media(max-width: 991px) {
+             #hubs-tech-grid {
+                 grid-template-columns: repeat(2, 1fr) !important;
+             }
+         }
+         @media(max-width: 640px) {
+             #hubs-tech-grid {
+                 grid-template-columns: 1fr !important;
+             }
+         }
+
+         .tech-hub-card {
+             position: relative;
+             background: rgba(255, 255, 255, 0.45) !important;
+             border: 1px solid rgba(0, 136, 204, 0.15) !important;
+             border-radius: 24px !important;
+             padding: 2rem !important;
+             display: flex !important;
+             flex-direction: column !important;
+             overflow: hidden !important;
+             transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+             backdrop-filter: blur(25px) saturate(180%) !important;
+             -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
+             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03), inset 0 0 15px rgba(255, 255, 255, 0.5) !important;
+             text-decoration: none !important;
+             color: var(--text-main) !important;
+             transform-style: preserve-3d !important;
+         }
+         body.theme-dark .tech-hub-card {
+             background: rgba(10, 15, 30, 0.45) !important;
+             border-color: rgba(255, 255, 255, 0.08) !important;
+             box-shadow: 0 16px 45px rgba(0, 0, 0, 0.35), inset 0 0 20px rgba(var(--tech-accent-rgb), 0.03) !important;
+         }
+
+         /* Bento Featured Layout Extensions */
+         .tech-card-featured {
+             grid-column: span 2;
+         }
+         @media(max-width: 640px) {
+             .tech-card-featured {
+                 grid-column: span 1;
+             }
+         }
+         @media(min-width: 768px) {
+             .tech-card-featured .tech-card-body {
+                 flex-direction: row !important;
+                 align-items: center !important;
+                 gap: 2rem !important;
+             }
+             .tech-card-featured .tech-icon-wrap {
+                 width: 70px !important;
+                 height: 70px !important;
+                 border-radius: 18px !important;
+             }
+             .tech-card-featured .tech-icon-wrap svg {
+                 width: 32px !important;
+                 height: 32px !important;
+             }
+         }
+
+         .tech-hub-card::before {
+             content: '';
+             position: absolute;
+             top: -60px; right: -60px;
+             width: 150px; height: 150px;
+             background: radial-gradient(circle, var(--tech-accent) 0%, transparent 70%);
+             opacity: 0.1;
+             transition: transform 0.6s var(--ease), opacity 0.45s;
+             pointer-events: none;
+             z-index: 1;
+         }
+         .tech-hub-card::after {
+             content: '';
+             position: absolute;
+             bottom: 0;
+             left: 50%;
+             width: 0%;
+             height: 2px;
+             background: var(--tech-accent);
+             transition: all 0.4s var(--ease);
+             transform: translateX(-50%);
+         }
+         .tech-hub-card:hover {
+             transform: translateY(-8px) scale(1.01) !important;
+             border-color: var(--tech-accent) !important;
+             box-shadow: 0 22px 55px rgba(0, 0, 0, 0.22), 0 0 22px var(--tech-accent) !important;
+         }
+         .tech-hub-card:hover::before {
+             transform: scale(2.2) translate(-10px, 10px);
+             opacity: 0.35;
+         }
+         .tech-hub-card:hover::after {
+             width: 80%;
+         }
+
+          /* ─── YOUTUBE CHANNEL STYLE CARDS ─── */
+          .yt-grid {
+              display: grid !important;
+              grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
+              gap: 1.8rem !important;
+          }
+          .yt-channel-card {
+              position: relative;
+              background: rgba(255, 255, 255, 0.45) !important;
+              border: 1px solid rgba(255, 0, 0, 0.1) !important;
+              border-radius: 24px !important;
+              display: flex !important;
+              flex-direction: column !important;
+              overflow: hidden !important;
+              transition: all 0.45s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+              backdrop-filter: blur(25px) saturate(180%) !important;
+              -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
+              box-shadow: 0 8px 25px rgba(0, 0, 0, 0.03), inset 0 0 15px rgba(255, 255, 255, 0.5) !important;
+              text-decoration: none !important;
+              color: var(--text-main) !important;
+              transform-style: preserve-3d !important;
+          }
+          body.theme-dark .yt-channel-card {
+              background: rgba(15, 10, 15, 0.45) !important;
+              border-color: rgba(255, 255, 255, 0.06) !important;
+              box-shadow: 0 14px 40px rgba(0, 0, 0, 0.32), inset 0 0 20px rgba(255, 255, 255, 0.02) !important;
+          }
+          .yt-channel-card:hover {
+              transform: translateY(-8px) scale(1.01) !important;
+              border-color: var(--yt-accent) !important;
+              box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12), 0 0 20px rgba(var(--yt-accent-rgb), 0.18) !important;
+          }
+          
+          /* Thumbnail Block */
+          .yt-thumbnail {
+              position: relative;
+              height: 125px;
+              background: linear-gradient(135deg, rgba(var(--yt-accent-rgb), 0.25), rgba(var(--yt-accent-rgb), 0.05));
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              overflow: hidden;
+              transition: all 0.4s var(--ease);
+          }
+          .yt-channel-card:hover .yt-thumbnail {
+              background: linear-gradient(135deg, rgba(var(--yt-accent-rgb), 0.35), rgba(var(--yt-accent-rgb), 0.1));
+          }
+          .yt-play-overlay {
+              width: 42px;
+              height: 42px;
+              border-radius: 50%;
+              background: var(--yt-accent);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              box-shadow: 0 6px 20px rgba(var(--yt-accent-rgb), 0.4);
+              transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s;
+              position: relative;
+              z-index: 2;
+          }
+          .yt-play-overlay svg {
+              width: 16px;
+              height: 16px;
+              fill: #fff;
+              stroke: #fff;
+              transform: translateX(1px);
+          }
+          .yt-channel-card:hover .yt-play-overlay {
+              transform: scale(1.15);
+              background: #FF0000;
+              box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5);
+          }
+          .yt-badge-live {
+              position: absolute;
+              bottom: 12px;
+              right: 12px;
+              font-size: 0.55rem;
+              font-family: monospace;
+              font-weight: 800;
+              letter-spacing: 0.5px;
+              padding: 2px 7px;
+              border-radius: 4px;
+              background: rgba(0, 0, 0, 0.72);
+              color: #fff;
+              border: 1px solid rgba(255, 255, 255, 0.15);
+          }
+          .yt-badge-hdr {
+              position: absolute;
+              top: 12px;
+              left: 12px;
+              font-size: 0.52rem;
+              font-family: monospace;
+              font-weight: 800;
+              padding: 1px 5px;
+              border-radius: 3px;
+              background: var(--yt-accent);
+              color: #fff;
+          }
+          
+          /* Body Block */
+          .yt-card-body {
+              padding: 1.1rem !important;
+              display: flex !important;
+              gap: 0.9rem !important;
+              align-items: flex-start !important;
+              flex: 1 !important;
+          }
+          .yt-avatar-wrap {
+              width: 38px;
+              height: 38px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: rgba(255, 255, 255, 0.05);
+              border: 2px solid rgba(255, 255, 255, 0.15);
+              box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+              flex-shrink: 0;
+              transition: all 0.4s var(--ease);
+          }
+          .yt-channel-card:hover .yt-avatar-wrap {
+              border-color: var(--yt-accent);
+              transform: scale(1.08);
+              box-shadow: 0 4px 12px rgba(var(--yt-accent-rgb), 0.2);
+          }
+          .yt-channel-card:hover .yt-avatar-wrap svg {
+              transform: scale(1.05);
+          }
+          .yt-info-group {
+              flex: 1;
+          }
+          .yt-channel-card h3 {
+              font-family: var(--font-display);
+              font-size: 1rem;
+              font-weight: 800;
+              color: var(--text-main);
+              margin-bottom: 0.35rem;
+              letter-spacing: -0.2px;
+          }
+          .yt-channel-card p {
+              font-size: 0.78rem;
+              line-height: 1.55;
+              color: var(--text-muted);
+              margin-bottom: 0.8rem;
+          }
+          .yt-sub-btn {
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              gap: 6px;
+              width: 100%;
+              padding: 0.5rem 0.8rem;
+              border-radius: 50px;
+              background: rgba(var(--yt-accent-rgb), 0.08);
+              border: 1px solid rgba(var(--yt-accent-rgb), 0.2);
+              color: var(--yt-accent);
+              font-size: 0.76rem;
+              font-weight: 700;
+              transition: all 0.3s;
+          }
+          .yt-sub-btn svg {
+              width: 14px !important;
+              height: 14px !important;
+              flex-shrink: 0;
+          }
+          .yt-channel-card:hover .yt-sub-btn {
+              background: var(--yt-accent);
+              border-color: var(--yt-accent);
+              color: #fff;
+              box-shadow: 0 6px 15px rgba(var(--yt-accent-rgb), 0.3);
+          }
+         
+         .tech-card-header {
+             display: flex;
+             align-items: center;
+             justify-content: space-between;
+             margin-bottom: 1.4rem;
+             position: relative;
+             z-index: 2;
+         }
+         .tech-badge-pill {
+             font-size: 0.6rem;
+             font-family: monospace;
+             text-transform: uppercase;
+             letter-spacing: 1px;
+             font-weight: 700;
+             padding: 3px 9px;
+             border-radius: 50px;
+             background: rgba(var(--tech-accent-rgb), 0.12);
+             color: var(--tech-accent);
+             border: 1px solid rgba(var(--tech-accent-rgb), 0.25);
+         }
+         .tech-sys-status {
+             display: flex;
+             align-items: center;
+             gap: 6px;
+             font-family: monospace;
+             font-size: 0.58rem;
+             color: var(--text-muted);
+         }
+         .tech-status-dot {
+             width: 6px;
+             height: 6px;
+             border-radius: 50%;
+             background: var(--tech-accent);
+             box-shadow: 0 0 8px var(--tech-accent);
+             animation: techPulse 2s infinite;
+         }
+         
+         .tech-card-body {
+             display: flex;
+             gap: 1.2rem;
+             align-items: flex-start;
+             flex: 1;
+             margin-bottom: 1.6rem;
+             position: relative;
+             z-index: 2;
+         }
+         .tech-icon-wrap {
+             width: 50px;
+             height: 50px;
+             border-radius: 12px;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             background: rgba(255, 255, 255, 0.05);
+             border: 1px solid rgba(255, 255, 255, 0.12);
+             flex-shrink: 0;
+             transition: all 0.4s var(--ease);
+             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+         }
+         .tech-hub-card:hover .tech-icon-wrap {
+             transform: scale(1.1) rotate(-5deg);
+             border-color: var(--tech-accent);
+             background: rgba(var(--tech-accent-rgb), 0.08);
+             box-shadow: 0 8px 20px rgba(var(--tech-accent-rgb), 0.15);
+         }
+         .tech-text-group {
+             flex: 1;
+         }
+         .tech-hub-card h3 {
+             font-family: var(--font-display);
+             font-size: 1.15rem;
+             font-weight: 800;
+             color: var(--text-main);
+             margin-bottom: 0.4rem;
+             letter-spacing: -0.3px;
+         }
+         .tech-hub-card p {
+             font-size: 0.8rem;
+             line-height: 1.6;
+             color: var(--text-muted);
+             margin-bottom: 0;
+         }
+         
+         .tech-card-footer {
+             display: flex;
+             align-items: center;
+             justify-content: space-between;
+             padding-top: 1rem;
+             border-top: 1px solid rgba(255, 255, 255, 0.08);
+             position: relative;
+             z-index: 2;
+         }
+         .tech-meta-spec {
+             font-family: monospace;
+             font-size: 0.58rem;
+             color: var(--text-muted);
+             text-transform: uppercase;
+         }
+         .tech-btn-arrow {
+             display: inline-flex;
+             align-items: center;
+             gap: 6px;
+             font-size: 0.75rem;
+             font-weight: 700;
+             color: var(--tech-accent);
+             transition: gap 0.3s;
+         }
+         .tech-hub-card:hover .tech-btn-arrow {
+             gap: 10px;
+         }
+         .tech-btn-arrow-icon {
+             transition: transform 0.3s;
+         }
+         .tech-hub-card:hover .tech-btn-arrow-icon {
+             transform: translateX(2px);
+         }
+         
+         @keyframes techPulse {
+             0% { opacity: 0.4; box-shadow: 0 0 2px var(--tech-accent); }
+             50% { opacity: 1; box-shadow: 0 0 10px var(--tech-accent); }
+             100% { opacity: 0.4; box-shadow: 0 0 2px var(--tech-accent); }
+         }
 
         /* ── CHANNELS ── */
         .channels-platform-group{margin-bottom:3.8rem}
@@ -1476,19 +1850,1051 @@
         @media(max-width:900px){.india-3col{grid-template-columns:1fr 1fr}}
         @media(max-width:580px){.india-3col{grid-template-columns:1fr}}
 
-        /* cards — glass-btn purple theme */
-        .india-card{background:rgba(200,162,255,.08);border:1px solid rgba(200,162,255,.28);border-radius:var(--r);padding:1.6rem;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:.4s var(--ease);text-decoration:none;color:var(--text-main);display:flex;flex-direction:column;gap:.7rem;position:relative;overflow:hidden;box-shadow:0 4px 18px rgba(200,162,255,.07),0 1px 0 rgba(255,255,255,.72) inset}
+        /* Bento Grid System for India Section */
+        .india-bento {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.6rem;
+            margin-bottom: 1.6rem;
+        }
+        .india-span-4 { grid-column: span 4; }
+        .india-span-5 { grid-column: span 5; }
+        .india-span-7 { grid-column: span 7; }
+        .india-span-8 { grid-column: span 8; }
+
+        @media(max-width:1100px) {
+            .india-bento {
+                grid-template-columns: repeat(6, 1fr);
+            }
+            .india-span-4 { grid-column: span 3; }
+            .india-span-5 { grid-column: span 3; }
+            .india-span-7 { grid-column: span 3; }
+            .india-span-8 { grid-column: span 6; }
+        }
+        @media(max-width:768px) {
+            .india-bento {
+                display: flex;
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+        }
+
+        /* cards — glass-btn dynamic theme */
+        .india-card{background:rgba(var(--india-accent-rgb, 200,162,255),.06);border:1px solid rgba(var(--india-accent-rgb, 200,162,255),.22);border-radius:var(--r);padding:1.6rem;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:.4s var(--ease);text-decoration:none;color:var(--text-main);display:flex;flex-direction:column;gap:.7rem;position:relative;overflow:hidden;box-shadow:0 4px 18px rgba(var(--india-accent-rgb, 200,162,255),.04),0 1px 0 rgba(255,255,255,.72) inset}
+        body.theme-dark .india-card{background:rgba(var(--india-accent-rgb, 192,132,252),.15);border-color:rgba(var(--india-accent-rgb, 192,132,252),.16);box-shadow:0 6px 20px rgba(0,0,0,.25),0 1px 0 rgba(255,255,255,.05) inset}
         .india-card::before{content:'';position:absolute;top:0;left:0;right:0;height:45%;background:linear-gradient(180deg,rgba(255,255,255,.38) 0%,transparent 100%);border-radius:var(--r) var(--r) 0 0;pointer-events:none}
-        .india-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,162,255,.12),rgba(174,239,255,.06));opacity:0;transition:.4s;pointer-events:none}
-        .india-card:hover{border-color:rgba(200,162,255,.55);box-shadow:0 18px 45px rgba(200,162,255,.15),0 1px 0 rgba(255,255,255,.88) inset;transform:translateY(-4px)}
+        .india-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(var(--india-accent-rgb, 200,162,255),.08),rgba(174,239,255,.03));opacity:0;transition:.4s;pointer-events:none}
+        .india-card:hover{border-color:var(--india-accent, rgba(200,162,255,.55));box-shadow:0 18px 45px rgba(var(--india-accent-rgb, 200,162,255),.18),0 1px 0 rgba(255,255,255,.88) inset;transform:translateY(-4px)}
         .india-card:hover::after{opacity:1}
         .india-card-icon{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
         .india-card-icon svg{width:22px;height:22px}
         .india-card h3{font-size:1.02rem;font-weight:700;letter-spacing:-.2px;margin:0}
         .india-card p{font-size:.82rem;color:var(--text-muted);line-height:1.6;flex:1;margin:0}
-        .india-card .ic-tag{font-size:.62rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;padding:2px 8px;border-radius:20px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:white;width:fit-content;box-shadow:0 2px 8px rgba(200,162,255,.35)}
-        .india-map-trigger{display:flex;align-items:center;gap:.6rem;margin-top:.5rem;font-size:.8rem;font-weight:700;color:var(--primary-dark);cursor:pointer;transition:gap .3s}
+        .india-card .ic-tag{font-size:.62rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;padding:2px 8px;border-radius:20px;background:linear-gradient(135deg,var(--india-accent, var(--primary)),var(--india-accent, var(--primary-dark)));color:white;width:fit-content;box-shadow:0 2px 8px rgba(var(--india-accent-rgb, 200,162,255),.25)}
+        .india-map-trigger{display:flex;align-items:center;gap:.6rem;margin-top:.5rem;font-size:.8rem;font-weight:700;color:var(--india-accent, var(--primary-dark));cursor:pointer;transition:gap .3s}
         .india-map-trigger:hover{gap:1rem}
+
+        /* ─── INDIVIDUAL CARD VISUAL SYSTEMS ─── */
+        /* 1. What is India? (Overview) — Tri-color Sacred Mandala Aura */
+        .india-card.style-india-overview {
+            background: rgba(255, 153, 51, 0.02) !important;
+            border-color: rgba(255, 153, 51, 0.16) !important;
+        }
+        body.theme-dark .india-card.style-india-overview {
+            background: rgba(255, 153, 51, 0.06) !important;
+            border-color: rgba(255, 153, 51, 0.12) !important;
+        }
+        .india-card.style-india-overview .mandala-bg {
+            position: absolute;
+            bottom: -35px;
+            right: -35px;
+            width: 140px;
+            height: 140px;
+            background-image: radial-gradient(circle, transparent 40%, rgba(255, 153, 51, 0.06) 70%);
+            border: 1px dashed rgba(255, 153, 51, 0.12);
+            border-radius: 50%;
+            pointer-events: none;
+            transition: transform 15s linear, border-color 0.4s;
+        }
+        .india-card.style-india-overview .mandala-inner {
+            position: absolute;
+            inset: 15px;
+            border: 1px dashed rgba(18, 136, 7, 0.12);
+            border-radius: 50%;
+        }
+        .india-card.style-india-overview:hover .mandala-bg {
+            transform: rotate(90deg) scale(1.15);
+            border-color: rgba(255, 153, 51, 0.22);
+        }
+        .india-card.style-india-overview:hover {
+            border-color: #ff9933 !important;
+            box-shadow: 0 20px 48px rgba(255, 153, 51, 0.12), 0 0 24px rgba(18, 136, 7, 0.12) !important;
+        }
+
+        /* 2. Kayastha (Community) — Vintage Calligraphy Parchment */
+        .india-card.style-india-kayastha {
+            background: rgba(139, 92, 246, 0.02) !important;
+            border-color: rgba(139, 92, 246, 0.16) !important;
+            border-left: 4px solid var(--india-accent) !important;
+        }
+        body.theme-dark .india-card.style-india-kayastha {
+            background: rgba(139, 92, 246, 0.06) !important;
+            border-color: rgba(139, 92, 246, 0.12) !important;
+        }
+        .india-card.style-india-kayastha .parchment-glow {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 10% 10%, rgba(139, 92, 246, 0.05), transparent 60%);
+            pointer-events: none;
+        }
+        .india-card.style-india-kayastha .feather-writing {
+            transition: transform 0.4s var(--ease);
+        }
+        .india-card.style-india-kayastha:hover .feather-writing {
+            transform: rotate(-18deg) translate(-3px, -3px);
+        }
+        .india-card.style-india-kayastha:hover {
+            box-shadow: 0 20px 48px rgba(139, 92, 246, 0.14) !important;
+        }
+
+        /* 3. Rajput (Community) — Royal Fort Shield */
+        .india-card.style-india-rajput {
+            background: rgba(220, 38, 38, 0.02) !important;
+            border-color: rgba(220, 38, 38, 0.16) !important;
+        }
+        body.theme-dark .india-card.style-india-rajput {
+            background: rgba(220, 38, 38, 0.06) !important;
+            border-color: rgba(220, 38, 38, 0.12) !important;
+        }
+        .india-card.style-india-rajput .fort-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-image: repeating-linear-gradient(90deg, var(--india-accent) 0px, var(--india-accent) 12px, transparent 12px, transparent 24px);
+            opacity: 0.12;
+            transition: opacity 0.3s;
+        }
+        .india-card.style-india-rajput:hover .fort-line {
+            opacity: 0.35;
+        }
+        .india-card.style-india-rajput:hover {
+            border-color: #dc2626 !important;
+            box-shadow: 0 20px 48px rgba(220, 38, 38, 0.16), 0 0 20px rgba(212, 175, 55, 0.18) !important;
+        }
+        .india-card.style-india-rajput:hover .india-card-icon {
+            transform: scale(1.12) rotate(10deg);
+        }
+
+        /* 4. Festivals of India (Culture) — Rangoli & Firework Burst */
+        .india-card.style-india-festivals {
+            background: rgba(219, 39, 119, 0.02) !important;
+            border-color: rgba(219, 39, 119, 0.16) !important;
+        }
+        body.theme-dark .india-card.style-india-festivals {
+            background: rgba(219, 39, 119, 0.06) !important;
+            border-color: rgba(219, 39, 119, 0.12) !important;
+        }
+        .india-card.style-india-festivals .fest-glows {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 80% 80%, rgba(219, 39, 119, 0.06), transparent 45%),
+                        radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.04), transparent 45%);
+            pointer-events: none;
+            transition: transform 0.6s var(--ease);
+        }
+        .india-card.style-india-festivals .rangoli-bg {
+            position: absolute;
+            bottom: -35px;
+            right: -35px;
+            width: 140px;
+            height: 140px;
+            border: 1px dashed rgba(219, 39, 119, 0.15);
+            background-image: radial-gradient(circle, transparent 30%, rgba(219, 39, 119, 0.03) 50%, rgba(245, 158, 11, 0.03) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            transition: transform 12s linear, border-color 0.4s;
+        }
+        .india-card.style-india-festivals:hover .rangoli-bg {
+            transform: rotate(180deg) scale(1.15);
+            border-color: rgba(219, 39, 119, 0.35);
+        }
+        .india-card.style-india-festivals:hover .fest-glows {
+            transform: scale(1.1);
+        }
+        .india-card.style-india-festivals:hover {
+            border-color: #db2777 !important;
+            box-shadow: 0 22px 52px rgba(219, 39, 119, 0.18), 0 0 30px rgba(245, 158, 11, 0.14) !important;
+        }
+        .india-card.style-india-festivals .india-card-icon {
+            animation: fest-diya-glow 3.5s infinite ease-in-out;
+        }
+        @keyframes fest-diya-glow {
+            0%, 100% { filter: drop-shadow(0 0 2px rgba(219, 39, 119, 0.2)); }
+            50% { filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.7)); }
+        }
+
+        /* 5. Indian Cuisine (Food) — Terracotta Saffron Aroma */
+        .india-card.style-india-cuisine {
+            background: rgba(245, 158, 11, 0.02) !important;
+            border-color: rgba(245, 158, 11, 0.16) !important;
+        }
+        body.theme-dark .india-card.style-india-cuisine {
+            background: rgba(245, 158, 11, 0.06) !important;
+            border-color: rgba(245, 158, 11, 0.12) !important;
+        }
+        .india-card.style-india-cuisine .brass-plate {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 120px;
+            height: 120px;
+            border: 1.5px solid rgba(245, 158, 11, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+            background: radial-gradient(circle, transparent 50%, rgba(245, 158, 11, 0.02) 70%);
+            transition: transform 0.6s var(--ease), border-color 0.4s;
+        }
+        .india-card.style-india-cuisine:hover .brass-plate {
+            transform: scale(1.18);
+            border-color: rgba(245, 158, 11, 0.28);
+        }
+        .india-card.style-india-cuisine .cuisine-steam-container {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            display: flex;
+            gap: 4px;
+            opacity: 0.15;
+            transition: opacity 0.3s;
+        }
+        .india-card.style-india-cuisine:hover .cuisine-steam-container {
+            opacity: 0.65;
+        }
+        .india-card.style-india-cuisine .steam-wave {
+            width: 2px;
+            height: 12px;
+            background: var(--india-accent);
+            border-radius: 50%;
+            animation: cuisine-steam 2s infinite ease-in-out;
+        }
+        .india-card.style-india-cuisine .steam-wave:nth-child(2) { animation-delay: 0.4s; }
+        .india-card.style-india-cuisine .steam-wave:nth-child(3) { animation-delay: 0.8s; }
+        @keyframes cuisine-steam {
+            0% { transform: translateY(3px) scaleY(0.8); opacity: 0.15; }
+            50% { transform: translateY(-4px) scaleY(1.2); opacity: 0.7; }
+            100% { transform: translateY(-8px) scaleY(0.8); opacity: 0; }
+        }
+        .india-card.style-india-cuisine:hover {
+            border-color: #f59e0b !important;
+            box-shadow: 0 20px 48px rgba(245, 158, 11, 0.14) !important;
+        }
+
+        /* 6. Languages of India (Language) — Typographical Scripture Scroll */
+        .india-card.style-india-languages {
+            background: rgba(8, 145, 178, 0.02) !important;
+            border-color: rgba(8, 145, 178, 0.16) !important;
+        }
+        body.theme-dark .india-card.style-india-languages {
+            background: rgba(8, 145, 178, 0.06) !important;
+            border-color: rgba(8, 145, 178, 0.12) !important;
+        }
+        .india-card.style-india-languages .lang-glyphs {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            user-select: none;
+            mask-image: linear-gradient(180deg, transparent, white 20%, white 80%, transparent);
+            -webkit-mask-image: linear-gradient(180deg, transparent, white 20%, white 80%, transparent);
+        }
+        .india-card.style-india-languages .script-scroll {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-family: serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--india-accent);
+            opacity: 0.03;
+            padding: 10px;
+            animation: script-scrolling-y 40s linear infinite;
+        }
+        @keyframes script-scrolling-y {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+        .india-card.style-india-languages:hover .script-scroll {
+            opacity: 0.12;
+        }
+        .india-card.style-india-languages:hover {
+            border-color: #0891b2 !important;
+            box-shadow: 0 20px 48px rgba(8, 145, 178, 0.14) !important;
+        }
+
+        /* 7. Indian Art & Dance (Art) — Morphing Peacock Canvas mudra */
+        .india-card.style-india-art {
+            background: rgba(217, 70, 239, 0.02) !important;
+            border-color: rgba(217, 70, 239, 0.16) !important;
+        }
+        body.theme-dark .india-card.style-india-art {
+            background: rgba(217, 70, 239, 0.06) !important;
+            border-color: rgba(217, 70, 239, 0.12) !important;
+        }
+        .india-card.style-india-art .peacock-eye {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(217, 70, 239, 0.12) 0%, rgba(8, 145, 178, 0.08) 40%, transparent 70%);
+            border-radius: 50%;
+            animation: mudra-pulse 4s infinite ease-in-out alternate;
+            pointer-events: none;
+            transition: transform 0.4s var(--ease);
+        }
+        @keyframes mudra-pulse {
+            0% { transform: scale(1); opacity: 0.4; }
+            100% { transform: scale(1.3); opacity: 0.8; }
+        }
+        .india-card.style-india-art:hover .peacock-eye {
+            transform: scale(1.4);
+        }
+        .india-card.style-india-art .art-fluid {
+            position: absolute;
+            bottom: -40px;
+            right: -40px;
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle, rgba(217, 70, 239, 0.04), transparent 70%);
+            border-radius: 43% 57% 50% 50% / 40% 40% 60% 60%;
+            animation: art-morph 8s infinite alternate ease-in-out;
+            pointer-events: none;
+            transition: transform 0.4s var(--ease);
+        }
+        .india-card.style-india-art:hover .art-fluid {
+            transform: scale(1.2) translate(-10px, -10px);
+        }
+        @keyframes art-morph {
+            0% { border-radius: 43% 57% 50% 50% / 40% 40% 60% 60%; }
+            50% { border-radius: 50% 50% 38% 62% / 50% 43% 57% 50%; }
+            100% { border-radius: 43% 57% 50% 50% / 40% 40% 60% 60%; }
+        }
+        .india-card.style-india-art:hover {
+            border-color: #d946ef !important;
+            box-shadow: 0 20px 48px rgba(217, 70, 239, 0.14) !important;
+        }
+
+        /* 8. History of India (History) — Timeless Stone Carving timeline */
+        .india-card.style-india-history {
+            background: rgba(180, 83, 9, 0.02) !important;
+            border-color: rgba(180, 83, 9, 0.16) !important;
+        }
+        body.theme-dark .india-card.style-india-history {
+            background: rgba(180, 83, 9, 0.06) !important;
+            border-color: rgba(180, 83, 9, 0.12) !important;
+        }
+        .india-card.style-india-history .history-timeline {
+            position: absolute;
+            left: 28px;
+            top: 35px;
+            bottom: 20px;
+            width: 2px;
+            background: linear-gradient(180deg, transparent, rgba(180, 83, 9, 0.12) 10%, rgba(180, 83, 9, 0.12) 90%, transparent);
+            pointer-events: none;
+            z-index: 1;
+            transition: background 0.3s;
+        }
+        .india-card.style-india-history .history-node {
+            position: absolute;
+            left: 25px;
+            width: 8px;
+            height: 8px;
+            background: rgba(180, 83, 9, 0.2);
+            border: 2px solid var(--bg-start);
+            border-radius: 50%;
+            z-index: 2;
+            transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+        }
+        .india-card.style-india-history .node-1 { top: 60px; }
+        .india-card.style-india-history .node-2 { top: 110px; }
+        .india-card.style-india-history .node-3 { top: 160px; }
+        .india-card.style-india-history:hover .history-timeline {
+            background: linear-gradient(180deg, transparent, rgba(180, 83, 9, 0.35) 10%, rgba(180, 83, 9, 0.35) 90%, transparent);
+        }
+        .india-card.style-india-history:hover .history-node {
+            background: var(--india-accent);
+            box-shadow: 0 0 8px var(--india-accent);
+            transform: scale(1.2);
+        }
+        .india-card.style-india-history:hover {
+            border-color: #b45309 !important;
+            box-shadow: 0 20px 48px rgba(180, 83, 9, 0.14) !important;
+        }
+
+        /* 9. Explore All States (Map) — Holographic Compass Radar */
+        .india-card.style-india-map {
+            background: rgba(22, 163, 74, 0.02) !important;
+            border-color: rgba(22, 163, 74, 0.16) !important;
+        }
+        body.theme-dark .india-card.style-india-map {
+            background: rgba(22, 163, 74, 0.06) !important;
+            border-color: rgba(22, 163, 74, 0.12) !important;
+        }
+        .india-card.style-india-map .map-radar {
+            position: absolute;
+            bottom: -40px;
+            right: -40px;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 1px solid rgba(22, 163, 74, 0.04);
+            background: radial-gradient(circle, rgba(22, 163, 74, 0.02) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .india-card.style-india-map .map-radar::before {
+            content: '';
+            position: absolute;
+            inset: 15px;
+            border-radius: 50%;
+            border: 1.5px dashed rgba(22, 163, 74, 0.08);
+            animation: map-radar-spin 25s linear infinite;
+        }
+        .india-card.style-india-map .radar-blip {
+            position: absolute;
+            top: 40px;
+            right: 50px;
+            width: 6px;
+            height: 6px;
+            background: var(--india-accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--india-accent);
+            animation: map-radar-pulse 2s infinite ease-in-out;
+        }
+        @keyframes map-radar-spin {
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes map-radar-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.35; }
+            50% { transform: scale(2.2); opacity: 1; box-shadow: 0 0 16px var(--india-accent); }
+        }
+        .india-card.style-india-map:hover {
+            border-color: #16a34a !important;
+            box-shadow: 0 22px 52px rgba(22, 163, 74, 0.16) !important;
+        }
+        .india-card.style-india-map:hover .map-radar {
+            transform: scale(1.15);
+            border-color: rgba(22, 163, 74, 0.12);
+        }
+
+        /* ─── ABOUT / ENTITY SECTION THEME (WONDERMAYANK PROFILE) ─── */
+        .about-container {
+            max-width: 980px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Animated Saffron and Emerald Backglow Orbs */
+        .about-backglow-saffron {
+            position: absolute;
+            top: -60px; left: -60px;
+            width: 320px; height: 320px;
+            background: radial-gradient(circle, rgba(255, 153, 51, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: about-glow-pulse 6s infinite alternate ease-in-out;
+        }
+        .about-backglow-emerald {
+            position: absolute;
+            bottom: -80px; right: -80px;
+            width: 350px; height: 350px;
+            background: radial-gradient(circle, rgba(22, 163, 74, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: about-glow-pulse 8s infinite alternate ease-in-out 1.5s;
+        }
+        @keyframes about-glow-pulse {
+            0% { opacity: 0.8; transform: scale(0.95) translate(0, 0); }
+            100% { opacity: 1.1; transform: scale(1.05) translate(10px, 10px); }
+        }
+
+        /* Bento 12-Column Grid */
+        .about-bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Core Card styling */
+        .about-card {
+            background: var(--glass) !important;
+            border: 1px solid var(--glass-border) !important;
+            border-radius: 24px !important;
+            padding: 2.2rem;
+            backdrop-filter: blur(25px) saturate(180%) !important;
+            -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02), inset 0 20px 20px -10px rgba(255,255,255,0.2) !important;
+            transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        body.theme-dark .about-card {
+            background: rgba(18, 6, 32, 0.45) !important;
+            border-color: rgba(192, 132, 252, 0.16) !important;
+            box-shadow: 0 16px 42px rgba(0, 0, 0, 0.28), inset 0 20px 30px -15px rgba(255,255,255,0.03) !important;
+        }
+        .about-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(200, 162, 255, 0.45) !important;
+            box-shadow: 0 24px 60px rgba(155, 111, 255, 0.15), inset 0 20px 20px -10px rgba(255,255,255,0.25) !important;
+        }
+        body.theme-dark .about-card:hover {
+            border-color: rgba(192, 132, 252, 0.4) !important;
+            box-shadow: 0 24px 60px rgba(155, 111, 255, 0.22) !important;
+        }
+
+        /* Bento Span Sizes */
+        .about-span-8 { grid-column: span 8; }
+        .about-span-4 { grid-column: span 4; }
+        .about-span-7 { grid-column: span 7; }
+        .about-span-5 { grid-column: span 5; }
+
+        /* Card A: Identity Layout */
+        .about-identity {
+            display: flex;
+            align-items: center;
+            gap: 2.2rem;
+            flex-direction: row;
+        }
+
+        /* Counter-Rotating Neon Avatar Rings */
+        .about-avatar-wrap {
+            position: relative;
+            width: 105px;
+            height: 105px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .about-avatar-wrap::before, .about-avatar-wrap::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+        /* Outer Rotating Saffron Ring */
+        .about-avatar-wrap::before {
+            inset: -8px;
+            border: 2px dashed rgba(255, 153, 51, 0.35);
+            animation: avatar-spin-cw 20s linear infinite;
+        }
+        /* Inner Rotating Emerald Ring */
+        .about-avatar-wrap::after {
+            inset: -4px;
+            border: 1.5px dashed rgba(22, 163, 74, 0.35);
+            animation: avatar-spin-ccw 15s linear infinite;
+        }
+        
+        @keyframes avatar-spin-cw {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes avatar-spin-ccw {
+            0% { transform: rotate(360deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        /* Avatar hover state acceleration and glow */
+        .about-card:hover .about-avatar-wrap::before {
+            border-color: rgba(255, 153, 51, 0.95);
+            filter: drop-shadow(0 0 8px rgba(255, 153, 51, 0.6));
+            inset: -10px;
+            animation-duration: 7s;
+        }
+        .about-card:hover .about-avatar-wrap::after {
+            border-color: rgba(22, 163, 74, 0.95);
+            filter: drop-shadow(0 0 8px rgba(22, 163, 74, 0.6));
+            inset: -5px;
+            animation-duration: 5s;
+        }
+
+        .about-avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3.5px solid var(--primary) !important;
+            object-fit: cover;
+            z-index: 1;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s;
+        }
+        .about-card:hover .about-avatar {
+            transform: scale(1.04) rotate(3deg);
+            border-color: var(--secondary) !important;
+        }
+
+        /* Avatar Identity Text */
+        .about-profile-info {
+            flex: 1;
+            min-width: 200px;
+        }
+        .about-name {
+            font-family: var(--font-display);
+            font-size: 2.1rem;
+            font-weight: 800;
+            letter-spacing: -0.75px;
+            line-height: 1.25;
+            padding-bottom: 2px;
+            background: linear-gradient(135deg, var(--text-main) 30%, var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        body.theme-dark .about-name {
+            background: linear-gradient(135deg, #ffffff 40%, var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Badges */
+        .about-badge {
+            font-size: 0.7rem !important;
+            font-weight: 700 !important;
+            letter-spacing: 1.2px !important;
+            text-transform: uppercase !important;
+            padding: 4.5px 12px !important;
+            border-radius: 20px !important;
+            background: rgba(255, 255, 255, 0.4) !important;
+            border: 1px solid rgba(200, 162, 255, 0.15) !important;
+            transition: all 0.3s var(--ease);
+            display: inline-block;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        body.theme-dark .about-badge {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border-color: rgba(255, 255, 255, 0.08) !important;
+        }
+        .about-badge:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.65) !important;
+            border-color: var(--primary) !important;
+            box-shadow: 0 4px 12px rgba(155, 111, 255, 0.12) !important;
+        }
+        body.theme-dark .about-badge:hover {
+            background: rgba(255, 255, 255, 0.12) !important;
+        }
+
+        /* YouTube & Telegram Authentic Brand Buttons */
+        .about-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            flex-shrink: 0;
+            z-index: 2;
+        }
+        .btn-youtube, .btn-telegram {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            font-size: 0.82rem;
+            padding: 0.65rem 1.3rem;
+            border-radius: 14px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        /* YouTube Button: Red */
+        .btn-youtube {
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            color: #ef4444 !important;
+        }
+        .btn-youtube svg {
+            fill: #ef4444;
+            transition: transform 0.3s;
+        }
+        .btn-youtube:hover {
+            background: #ff0000 !important;
+            border-color: #ff0000 !important;
+            color: #ffffff !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 0, 0, 0.3) !important;
+        }
+        .btn-youtube:hover svg {
+            fill: #ffffff;
+            transform: scale(1.1);
+        }
+
+        /* Telegram Button: Blue */
+        .btn-telegram {
+            background: rgba(0, 136, 204, 0.08);
+            border: 1px solid rgba(0, 136, 204, 0.25);
+            color: #0088cc !important;
+        }
+        .btn-telegram svg {
+            stroke: #0088cc;
+            transition: transform 0.3s;
+        }
+        .btn-telegram:hover {
+            background: #0088cc !important;
+            border-color: #0088cc !important;
+            color: #ffffff !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 136, 204, 0.3) !important;
+        }
+        .btn-telegram:hover svg {
+            stroke: #ffffff;
+            transform: scale(1.1) translate(1px, -1px);
+        }
+
+        /* Card B: Stats Panel Dashboard */
+        .about-stats-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            height: 100%;
+        }
+        .about-stat-box {
+            border-radius: 16px;
+            padding: 1.15rem 1.4rem;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 1.5px solid transparent;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            background: rgba(255,255,255,0.4);
+            box-shadow: inset 0 8px 12px -6px rgba(255,255,255,0.4);
+        }
+        body.theme-dark .about-stat-box {
+            background: rgba(255,255,255,0.02);
+            box-shadow: inset 0 8px 12px -6px rgba(255,255,255,0.01);
+        }
+
+        /* Specific Stat Box Border glows */
+        .stat-tools {
+            border-color: rgba(139, 92, 246, 0.15);
+        }
+        .stat-collections {
+            border-color: rgba(37, 99, 235, 0.15);
+        }
+        .stat-free {
+            border-color: rgba(22, 163, 74, 0.15);
+        }
+
+        /* Hover Stats Glow */
+        .about-stat-box:hover {
+            transform: scale(1.03) translateX(3px);
+        }
+        .stat-tools:hover {
+            background: rgba(139, 92, 246, 0.05);
+            border-color: rgba(139, 92, 246, 0.45);
+            box-shadow: 0 10px 24px rgba(139, 92, 246, 0.12);
+        }
+        .stat-collections:hover {
+            background: rgba(37, 99, 235, 0.05);
+            border-color: rgba(37, 99, 235, 0.45);
+            box-shadow: 0 10px 24px rgba(37, 99, 235, 0.12);
+        }
+        .stat-free:hover {
+            background: rgba(22, 163, 74, 0.05);
+            border-color: rgba(22, 163, 74, 0.45);
+            box-shadow: 0 10px 24px rgba(22, 163, 74, 0.12);
+        }
+
+        .about-stat-box .num {
+            font-family: var(--font-display);
+            font-size: 2.1rem !important;
+            font-weight: 800 !important;
+            line-height: 1.1;
+            margin-bottom: 0.1rem;
+            transition: transform 0.3s;
+        }
+        .about-stat-box:hover .num {
+            transform: scale(1.05);
+        }
+        
+        /* Stats watermarks */
+        .stat-watermark {
+            position: absolute;
+            right: 1rem;
+            bottom: 0.5rem;
+            opacity: 0.04;
+            pointer-events: none;
+            transition: all 0.4s var(--ease);
+            color: var(--text-main);
+        }
+        .about-stat-box:hover .stat-watermark {
+            opacity: 0.12;
+            transform: scale(1.1) rotate(-4deg);
+        }
+
+        /* Card C: Frosted Narrative (Biography) */
+        .about-span-7 p {
+            line-height: 1.85;
+            font-size: 0.96rem;
+            color: var(--text-main);
+            margin-bottom: 1.1rem;
+        }
+        .about-span-7 p:last-child {
+            margin-bottom: 0;
+        }
+        .about-span-7 strong {
+            color: #6d28d9;
+            font-weight: 700;
+        }
+        body.theme-dark .about-span-7 strong {
+            color: var(--primary-light);
+        }
+
+        /* Monospace developer watermark glyph */
+        .about-watermark {
+            position: absolute;
+            right: 2rem;
+            bottom: 1rem;
+            font-family: monospace;
+            font-size: 8.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            opacity: 0.015;
+            pointer-events: none;
+            transition: all 0.5s var(--ease);
+            user-select: none;
+        }
+        .about-card:hover .about-watermark {
+            opacity: 0.06;
+            transform: translateY(-8px) scale(1.05);
+        }
+
+        /* Card D: Central Connectivity Access Hub */
+        .secure-header {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 1.25rem;
+        }
+        .secure-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.4px;
+        }
+
+        /* pulsing green status beacon */
+        .secure-beacon {
+            width: 8px;
+            height: 8px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 12px rgba(34, 197, 94, 0.85);
+            animation: secure-beacon-pulse 2s infinite alternate ease-in-out;
+        }
+        @keyframes secure-beacon-pulse {
+            0% { transform: scale(0.9); box-shadow: 0 0 4px rgba(34, 197, 94, 0.5); }
+            100% { transform: scale(1.15); box-shadow: 0 0 12px rgba(34, 197, 94, 0.95); }
+        }
+
+        .about-links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            height: 100%;
+        }
+
+        /* Advanced Quick Link Glass Cards */
+        .about-link-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--glass) !important;
+            border: 1px solid var(--glass-border) !important;
+            border-radius: 16px !important;
+            padding: 0.9rem 1.4rem !important;
+            text-decoration: none !important;
+            color: var(--text-main) !important;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+            backdrop-filter: blur(15px) !important;
+            z-index: 1;
+        }
+        body.theme-dark .about-link-card {
+            background: rgba(255, 255, 255, 0.02) !important;
+            border-color: rgba(255, 255, 255, 0.05) !important;
+        }
+
+        /* Left brand indicator port bar */
+        .port-indicator {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .indicator-mainsite { background: #8b5cf6; }
+        .indicator-blog { background: #f97316; }
+        .indicator-instagram { background: #d62976; }
+        .indicator-contact { background: #0088cc; }
+
+        /* Default Platform-Colored SVG Logos */
+        .about-link-card svg {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 3;
+            flex-shrink: 0;
+        }
+        .about-link-card.link-mainsite svg { fill: #8b5cf6; stroke: none !important; }
+        .about-link-card.link-blog svg { stroke: #f97316; fill: none; }
+        .about-link-card.link-instagram svg { stroke: #d62976; fill: none; }
+        .about-link-card.link-contact svg { stroke: #0088cc; fill: none; }
+
+        /* Double-line structured address label */
+        .port-sub {
+            font-size: 0.72rem !important;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-top: 0.15rem;
+            transition: color 0.3s;
+        }
+
+        /* Slid-in Gradient Hover Fill Transitions */
+        .about-link-card::before {
+            content: '';
+            position: absolute;
+            left: -100%;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: 2;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0;
+        }
+        
+        /* platform specific hover gradients */
+        .about-link-card.link-mainsite::before {
+            background: linear-gradient(90deg, #7c3aed, #9061f9);
+        }
+        .about-link-card.link-blog::before {
+            background: linear-gradient(90deg, #ea580c, #f97316);
+        }
+        .about-link-card.link-instagram::before {
+            background: linear-gradient(90deg, #c13584, #fd1d1d, #f56040);
+        }
+        .about-link-card.link-contact::before {
+            background: linear-gradient(90deg, #0088cc, #00a8e8);
+        }
+
+        /* Hover execution rules */
+        .about-link-card:hover {
+            transform: translateY(-2px) translateX(4px) !important;
+            color: #ffffff !important;
+            box-shadow: 0 10px 24px rgba(139, 92, 246, 0.15) !important;
+        }
+        .about-link-card:hover::before {
+            left: 0;
+            opacity: 1;
+        }
+        .about-link-card:hover .port-indicator {
+            width: 8px;
+            z-index: 4;
+        }
+        .about-link-card:hover div, .about-link-card:hover span {
+            z-index: 3;
+        }
+        .about-link-card:hover .port-sub {
+            color: rgba(255, 255, 255, 0.82) !important;
+        }
+
+        /* Interactive hover transitions to solid white logos */
+        .about-link-card:hover svg {
+            transform: scale(1.15) rotate(4deg);
+            stroke: #ffffff !important;
+            fill: none !important;
+        }
+        .about-link-card.link-mainsite:hover svg { fill: #ffffff !important; stroke: none !important; }
+        .about-link-card.link-blog:hover svg { fill: #ffffff !important; stroke: none !important; }
+
+        .about-link-card::after {
+            content: '→';
+            position: absolute;
+            right: 1.4rem;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: opacity 0.3s, transform 0.3s var(--ease);
+            color: #ffffff;
+            font-weight: 700;
+            z-index: 3;
+        }
+        .about-link-card:hover::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Responsive Adapting Rules */
+        @media (max-width: 900px) {
+            .about-bento-grid {
+                gap: 1.2rem;
+            }
+            .about-span-8, .about-span-4, .about-span-7, .about-span-5 {
+                grid-column: span 12;
+            }
+            .about-stats-grid {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .about-stat-box {
+                flex: 1 1 200px;
+            }
+            .about-links-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+                height: auto !important;
+            }
+        }
+        @media (max-width: 600px) {
+            .about-identity {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+                padding: 2.2rem 1.5rem;
+            }
+            .about-avatar-wrap {
+                width: 110px;
+                height: 110px;
+            }
+            .about-actions {
+                flex-direction: row;
+                width: 100%;
+                justify-content: center;
+            }
+            .btn-youtube, .btn-telegram {
+                flex: 1;
+                padding: 0.75rem 1rem;
+            }
+            .about-links-container {
+                grid-template-columns: 1fr;
+            }
+            .about-name {
+                font-size: 1.85rem;
+            }
+        }
 
         /* map popup — glass-btn purple theme */
         .india-map-popup{display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,0,30,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);align-items:center;justify-content:center;padding:1.5rem}
@@ -1891,96 +3297,122 @@
         <p>Explore the rich heritage, communities, states and cultural tapestry of India.</p>
     </div>
 
-    <!-- Row 1: 3 cards in 1 row -->
-    <div class="india-3col">
-        <a class="india-card" href="https://wondermayank.github.io/india" target="_blank" rel="noopener noreferrer">
+    <!-- Bento Grid Layout: Rearranged and themed asymmetrical bento card decks -->
+    <div class="india-bento">
+        <!-- 1. What is India? (Overview) — spans 8 columns -->
+        <a class="india-card style-india-overview india-span-8" href="https://wondermayank.github.io/india" style="--india-accent:#ff9933; --india-accent-rgb:255, 153, 51;" target="_blank" rel="noopener noreferrer">
+            <div class="mandala-bg"><div class="mandala-inner"></div></div>
             <span class="ic-tag">Overview</span>
-            <div class="india-card-icon" style="background:linear-gradient(135deg,rgba(200,162,255,.22),rgba(174,239,255,.15));border:1px solid rgba(200,162,255,.38)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2"><path d="M12 2C8 2 4 5 3 9c-1 4 1 8 4 10l1 1h8l1-1c3-2 5-6 4-10C20 5 16 2 12 2z"/><circle cx="12" cy="12" r="2.5" stroke="var(--primary)"/></svg>
+            <div class="india-card-icon" style="background:rgba(var(--india-accent-rgb), 0.12); border:1px solid rgba(var(--india-accent-rgb), 0.28);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--india-accent)" stroke-width="2"><path d="M12 2C8 2 4 5 3 9c-1 4 1 8 4 10l1 1h8l1-1c3-2 5-6 4-10C20 5 16 2 12 2z"/><circle cx="12" cy="12" r="2.5" stroke="var(--india-accent)"/></svg>
             </div>
             <h3>What is India?</h3>
             <p>Discover the essence of India — its history, philosophy, geography and identity as the world's oldest civilization.</p>
         </a>
 
-        <a class="india-card" href="https://wondermayank.github.io/kayastha" target="_blank" rel="noopener noreferrer">
+        <!-- 2. Rajput (Community) — spans 4 columns -->
+        <a class="india-card style-india-rajput india-span-4" href="https://wondermayank.github.io/rajput" style="--india-accent:#dc2626; --india-accent-rgb:220, 38, 38;" target="_blank" rel="noopener noreferrer">
+            <div class="fort-line"></div>
             <span class="ic-tag">Community</span>
-            <div class="india-card-icon" style="background:linear-gradient(135deg,rgba(200,162,255,.22),rgba(174,239,255,.15));border:1px solid rgba(200,162,255,.38)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <h3>Kayastha</h3>
-            <p>Explore the Kayastha community — their history, cultural traditions, contributions to art, literature and governance.</p>
-        </a>
-
-        <a class="india-card" href="https://wondermayank.github.io/rajput" target="_blank" rel="noopener noreferrer">
-            <span class="ic-tag">Community</span>
-            <div class="india-card-icon" style="background:linear-gradient(135deg,rgba(200,162,255,.22),rgba(162,212,255,.15));border:1px solid rgba(155,111,255,.32)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2"><path d="M12 2l2 7h7l-6 4 2 7-5-4-5 4 2-7-6-4h7z"/></svg>
+            <div class="india-card-icon" style="background:rgba(var(--india-accent-rgb), 0.12); border:1px solid rgba(var(--india-accent-rgb), 0.28);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--india-accent)" stroke-width="2"><path d="M12 2l2 7h7l-6 4 2 7-5-4-5 4 2-7-6-4h7z"/></svg>
             </div>
             <h3>Rajput</h3>
             <p>Valor, chivalry and royal heritage — dive into the glorious history of Rajput clans and their legendary kingdoms.</p>
         </a>
-    </div>
 
-    <!-- Row 2: 3 more cards -->
-    <div class="india-3col">
-        <a class="india-card" href="https://wondermayank.github.io/india/festivals" target="_blank" rel="noopener noreferrer">
+        <!-- 3. Festivals of India (Culture) — spans 4 columns -->
+        <a class="india-card style-india-festivals india-span-4" href="https://wondermayank.github.io/india/festivals" style="--india-accent:#db2777; --india-accent-rgb:219, 39, 119;" target="_blank" rel="noopener noreferrer">
+            <div class="fest-glows"></div>
+            <div class="rangoli-bg"></div>
             <span class="ic-tag">Culture</span>
-            <div class="india-card-icon" style="background:linear-gradient(135deg,rgba(200,162,255,.22),rgba(174,239,255,.15));border:1px solid rgba(200,162,255,.38)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2"><path d="M12 2l1.5 4.5H18l-3.7 2.7 1.4 4.3L12 11l-3.7 2.5 1.4-4.3L6 6.5h4.5z"/><circle cx="12" cy="18" r="3"/></svg>
+            <div class="india-card-icon" style="background:rgba(var(--india-accent-rgb), 0.12); border:1px solid rgba(var(--india-accent-rgb), 0.28);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--india-accent)" stroke-width="2"><path d="M12 2l1.5 4.5H18l-3.7 2.7 1.4 4.3L12 11l-3.7 2.5 1.4-4.3L6 6.5h4.5z"/><circle cx="12" cy="18" r="3"/></svg>
             </div>
             <h3>Festivals of India</h3>
             <p>From Diwali to Holi, Eid to Pongal — celebrate the vibrant festivals that color every corner of India.</p>
         </a>
 
-        <a class="india-card" href="https://wondermayank.github.io/india/cuisine" target="_blank" rel="noopener noreferrer">
+        <!-- 4. Indian Cuisine (Food) — spans 4 columns -->
+        <a class="india-card style-india-cuisine india-span-4" href="https://wondermayank.github.io/india/cuisine" style="--india-accent:#f59e0b; --india-accent-rgb:245, 158, 11;" target="_blank" rel="noopener noreferrer">
+            <div class="brass-plate"></div>
+            <div class="cuisine-steam-container"><span class="steam-wave"></span><span class="steam-wave"></span><span class="steam-wave"></span></div>
             <span class="ic-tag">Food</span>
-            <div class="india-card-icon" style="background:linear-gradient(135deg,rgba(200,162,255,.22),rgba(174,239,255,.15));border:1px solid rgba(200,162,255,.38)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            <div class="india-card-icon" style="background:rgba(var(--india-accent-rgb), 0.12); border:1px solid rgba(var(--india-accent-rgb), 0.28);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--india-accent)" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
             </div>
             <h3>Indian Cuisine</h3>
             <p>A journey through the spices, flavors and regional cuisines that make Indian food truly legendary worldwide.</p>
         </a>
 
-        <a class="india-card" href="https://wondermayank.github.io/india/languages" target="_blank" rel="noopener noreferrer">
+        <!-- 5. Languages of India (Language) — spans 4 columns -->
+        <a class="india-card style-india-languages india-span-4" href="https://wondermayank.github.io/india/languages" style="--india-accent:#0891b2; --india-accent-rgb:8, 145, 178;" target="_blank" rel="noopener noreferrer">
+            <div class="lang-glyphs">
+                <div class="script-scroll">
+                    <span>अ आ इ ई उ ऊ ऋ ए ऐ ओ औ</span>
+                    <span>क ख ग घ ङ च छ ज झ ञ</span>
+                    <span>ट ठ ड ढ ण त थ द ध न</span>
+                    <span>प फ ब भ म य र ल व श</span>
+                    <span>ॐ नमः शिवाय ज्ञानं परं ध्येयम्</span>
+                    <span>अ आ इ ई उ ऊ ऋ ए ऐ ओ औ</span>
+                </div>
+            </div>
             <span class="ic-tag">Language</span>
-            <div class="india-card-icon" style="background:linear-gradient(135deg,rgba(174,239,255,.25),rgba(200,162,255,.15));border:1px solid rgba(174,239,255,.45)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/></svg>
+            <div class="india-card-icon" style="background:rgba(var(--india-accent-rgb), 0.12); border:1px solid rgba(var(--india-accent-rgb), 0.28);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--india-accent)" stroke-width="2"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/></svg>
             </div>
             <h3>Languages of India</h3>
             <p>Over 1,600 languages — from Sanskrit to Tamil, Hindi to Bengali. Explore India's incredible linguistic diversity.</p>
         </a>
-    </div>
 
-    <!-- Row 3: 3 more cultural cards -->
-    <div class="india-3col" style="margin-bottom:2rem">
-        <a class="india-card" href="https://wondermayank.github.io/india/art" target="_blank" rel="noopener noreferrer">
+        <!-- 6. Indian Art & Dance (Art) — spans 5 columns -->
+        <a class="india-card style-india-art india-span-5" href="https://wondermayank.github.io/india/art" style="--india-accent:#d946ef; --india-accent-rgb:217, 70, 239;" target="_blank" rel="noopener noreferrer">
+            <div class="peacock-eye"></div>
+            <div class="art-fluid"></div>
             <span class="ic-tag">Art</span>
-            <div class="india-card-icon" style="background:linear-gradient(135deg,rgba(200,162,255,.22),rgba(174,239,255,.15));border:1px solid rgba(200,162,255,.38)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125C12.72 19.977 12.573 19.61 12.573 19.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+            <div class="india-card-icon" style="background:rgba(var(--india-accent-rgb), 0.12); border:1px solid rgba(var(--india-accent-rgb), 0.28);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--india-accent)" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125C12.72 19.977 12.573 19.61 12.573 19.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
             </div>
             <h3>Indian Art &amp; Dance</h3>
             <p>Bharatanatyam to Madhubani painting — India's art forms are a living heritage spanning thousands of years.</p>
         </a>
 
-        <a class="india-card" href="https://wondermayank.github.io/india/history" target="_blank" rel="noopener noreferrer">
+        <!-- 7. History of India (History) — spans 7 columns -->
+        <a class="india-card style-india-history india-span-7" href="https://wondermayank.github.io/india/history" style="--india-accent:#b45309; --india-accent-rgb:180, 83, 9;" target="_blank" rel="noopener noreferrer">
+            <div class="history-timeline"></div>
+            <div class="history-node node-1"></div>
+            <div class="history-node node-2"></div>
+            <div class="history-node node-3"></div>
             <span class="ic-tag">History</span>
-            <div class="india-card-icon" style="background:linear-gradient(135deg,rgba(200,162,255,.22),rgba(162,212,255,.15));border:1px solid rgba(155,111,255,.32)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            <div class="india-card-icon" style="background:rgba(var(--india-accent-rgb), 0.12); border:1px solid rgba(var(--india-accent-rgb), 0.28);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--india-accent)" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
             </div>
             <h3>History of India</h3>
             <p>From the Indus Valley to Independence — a chronicle of empires, revolutions and the making of modern India.</p>
         </a>
 
-        <!-- Map trigger card -->
-        <div class="india-card" style="cursor:pointer" onclick="document.getElementById('india-map-popup').classList.add('open')">
+        <!-- 8. Kayastha (Community) — spans 4 columns -->
+        <a class="india-card style-india-kayastha india-span-4" href="https://wondermayank.github.io/kayastha" style="--india-accent:#8b5cf6; --india-accent-rgb:139, 92, 246;" target="_blank" rel="noopener noreferrer">
+            <div class="parchment-glow"></div>
+            <span class="ic-tag">Community</span>
+            <div class="india-card-icon feather-writing" style="background:rgba(var(--india-accent-rgb), 0.12); border:1px solid rgba(var(--india-accent-rgb), 0.28);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--india-accent)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Kayastha</h3>
+            <p>Explore the Kayastha community — their history, cultural traditions, contributions to art, literature and governance.</p>
+        </a>
+
+        <!-- 9. Explore All States (Map trigger) — spans 8 columns -->
+        <div class="india-card style-india-map india-span-8" style="--india-accent:#16a34a; --india-accent-rgb:22, 163, 74; cursor:pointer" onclick="document.getElementById('india-map-popup').classList.add('open')">
+            <div class="map-radar"></div><div class="radar-blip"></div>
             <span class="ic-tag">States</span>
-            <div class="india-card-icon" style="background:linear-gradient(135deg,rgba(174,239,255,.25),rgba(200,162,255,.18));border:1px solid rgba(174,239,255,.45)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div class="india-card-icon" style="background:rgba(var(--india-accent-rgb), 0.12); border:1px solid rgba(var(--india-accent-rgb), 0.28);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--india-accent)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <h3>Explore All States</h3>
             <p>Click to open an interactive India map — tap any state to visit its dedicated culture and heritage page.</p>
             <div class="india-map-trigger">
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2" width="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--india-accent)" stroke-width="2" width="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 Open India Map →
             </div>
         </div>
@@ -2178,93 +3610,117 @@
         <p>The person, the creator, the digital universe.</p>
     </div>
 
-    <!-- Hero identity card -->
-    <div style="max-width:900px;margin:0 auto">
+    <!-- Hero identity card wrapped in about-container for glowing backlight spot effects -->
+    <div class="about-container">
+        <div class="about-backglow-saffron"></div>
+        <div class="about-backglow-emerald"></div>
 
-        <!-- Top profile strip -->
-        <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r);padding:2.4rem 2.6rem;backdrop-filter:blur(20px);display:flex;align-items:center;gap:2rem;flex-wrap:wrap;margin-bottom:1.4rem;position:relative;overflow:hidden">
-            <!-- Glow orb -->
-            <div style="position:absolute;top:-60px;right:-60px;width:220px;height:220px;background:radial-gradient(circle,var(--primary) 0%,transparent 70%);opacity:.1;pointer-events:none"></div>
+        <div class="about-bento-grid">
+            <!-- Card A: Identity block (8 columns) -->
+            <div class="about-card about-span-8 about-identity">
+                <!-- Floating background glow decoration -->
+                <div style="position:absolute;top:-60px;right:-60px;width:220px;height:220px;background:radial-gradient(circle,var(--primary) 0%,transparent 70%);opacity:.12;pointer-events:none"></div>
+                
+                <div class="about-avatar-wrap">
+                    <img src="https://i.pinimg.com/1200x/72/11/17/721117f3130a87778647a91cbc62a9a6.jpg" alt="Wondermayank" class="about-avatar" loading="lazy">
+                </div>
 
-            <img src="https://i.pinimg.com/1200x/72/11/17/721117f3130a87778647a91cbc62a9a6.jpg" alt="Wondermayank" style="width:90px;height:90px;border-radius:50%;border:3px solid var(--primary);box-shadow:0 0 0 6px rgba(200,162,255,.18),0 8px 28px rgba(155,111,255,.28);flex-shrink:0;object-fit:cover">
+                <div class="about-profile-info">
+                    <div class="about-name">Wondermayank</div>
+                    <div style="font-size:.88rem;color:var(--text-muted);margin-top:.4rem;font-weight:600;letter-spacing:0.5px">STUDENT DEVELOPER · INDIA 🇮🇳</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem">
+                        <span class="about-badge" style="color:var(--primary)">70+ Projects</span>
+                        <span class="about-badge" style="color:#2563eb">100% Free</span>
+                        <span class="about-badge" style="color:#16a34a">Open Access</span>
+                    </div>
+                </div>
 
-            <div style="flex:1;min-width:200px">
-                <div style="font-family:var(--font-display);font-size:1.7rem;font-weight:800;letter-spacing:-.5px;line-height:1.1">Wondermayank</div>
-                <div style="font-size:.85rem;color:var(--text-muted);margin-top:.35rem;font-weight:500">Student Developer · India 🇮🇳</div>
-                <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.9rem">
-                    <span style="font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(200,162,255,.2),rgba(174,239,255,.15));border:1px solid rgba(200,162,255,.35);color:var(--primary)">70+ Projects</span>
-                    <span style="font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(162,212,255,.2),rgba(174,239,255,.15));border:1px solid rgba(162,212,255,.35);color:#2563eb">100% Free</span>
-                    <span style="font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:linear-gradient(135deg,rgba(162,255,200,.2),rgba(174,239,255,.15));border:1px solid rgba(162,255,200,.35);color:#16a34a">Open Access</span>
+                <div class="about-actions">
+                    <a href="https://www.youtube.com/@wondermayank" class="btn-youtube" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.97A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+                        YouTube
+                    </a>
+                    <a href="https://t.me/wondermayank" class="btn-telegram" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                        Telegram
+                    </a>
                 </div>
             </div>
 
-            <div style="display:flex;flex-direction:column;gap:.6rem;flex-shrink:0">
-                <a href="https://www.youtube.com/@wondermayank" class="glass-btn primary sm" target="_blank" rel="noopener noreferrer" style="justify-content:center">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.97A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
-                    YouTube
-                </a>
-                <a href="https://t.me/wondermayank" class="glass-btn sm" target="_blank" rel="noopener noreferrer" style="justify-content:center">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-                    Telegram
-                </a>
+            <!-- Card B: Stats Dashboard (4 columns) -->
+            <div class="about-card about-span-4" style="padding:1.6rem">
+                <div class="about-stats-grid">
+                    <div class="about-stat-box stat-tools">
+                        <div class="num" style="color:var(--primary)">70+</div>
+                        <div style="font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted)">Free Tools</div>
+                        <svg class="stat-watermark" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <div class="about-stat-box stat-collections">
+                        <div class="num" style="color:#2563eb">7</div>
+                        <div style="font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted)">Collections</div>
+                        <svg class="stat-watermark" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+                    </div>
+                    <div class="about-stat-box stat-free">
+                        <div class="num" style="color:#16a34a">∞</div>
+                        <div style="font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted)">Always Free</div>
+                        <svg class="stat-watermark" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.25z"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card C: Frosted Narrative / Story (7 columns) -->
+            <div class="about-card about-span-7" style="justify-content:center">
+                <div class="about-watermark">&lt;/&gt;</div>
+                <p><strong>Wondermayank</strong> is a passionate student developer from <strong>India</strong> who designs and crafts free, open-access digital solutions, testing engines, and educational utilities for learners across the globe.</p>
+                <p>The main portal <a href="https://wondermayank.github.io/" style="color:var(--primary-dark);font-weight:700" target="_blank" rel="noopener noreferrer">wondermayank.github.io</a> serves as the nerve center — linking to a diverse set of themed hubs: <em>Finder, Study, Tools, Love, Art, India,</em> and <em>Entertainment</em>. Popular creations include **Movie Finder**, **Anime Finder**, **Paletteify**, and exam simulators.</p>
+                <p>Believing that high-quality tools should be universally accessible, everything remains <strong>completely free</strong> with zero barriers, sign-ups, or paywalls.</p>
+            </div>
+
+            <!-- Card D: Secure Access Connectivity Hub (5 columns) -->
+            <div class="about-card about-span-5" style="justify-content:space-between">
+                <div class="secure-header">
+                    <span class="secure-beacon"></span>
+                    <h3 class="secure-title">Secure Access</h3>
+                </div>
+
+                <div class="about-links-container">
+                    <a href="https://wondermayank.github.io/" target="_blank" rel="noopener noreferrer" class="about-link-card link-mainsite">
+                        <div class="port-indicator indicator-mainsite"></div>
+                        <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                        <div style="display:flex;flex-direction:column;line-height:1.25">
+                            <span style="font-size:.92rem;font-weight:700">Main Portal</span>
+                            <span class="port-sub">wondermayank.github.io</span>
+                        </div>
+                    </a>
+                    <a href="https://commercesehoga.blogspot.com" target="_blank" rel="noopener noreferrer" class="about-link-card link-blog">
+                        <div class="port-indicator indicator-blog"></div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        <div style="display:flex;flex-direction:column;line-height:1.25">
+                            <span style="font-size:.92rem;font-weight:700">Study Blog</span>
+                            <span class="port-sub">commercesehoga.blogspot.com</span>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/WONDERMAYANK" target="_blank" rel="noopener noreferrer" class="about-link-card link-instagram">
+                        <div class="port-indicator indicator-instagram"></div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        <div style="display:flex;flex-direction:column;line-height:1.25">
+                            <span style="font-size:.92rem;font-weight:700">Instagram</span>
+                            <span class="port-sub">@WONDERMAYANK</span>
+                        </div>
+                    </a>
+                    <a href="https://t.me/Mindmaster_robot" target="_blank" rel="noopener noreferrer" class="about-link-card link-contact">
+                        <div class="port-indicator indicator-contact"></div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"></path><path d="M22 2 11 13"></path></svg>
+                        <div style="display:flex;flex-direction:column;line-height:1.25">
+                            <span style="font-size:.92rem;font-weight:700">Contact Info</span>
+                            <span class="port-sub">@Mindmaster_robot</span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
-
-        <!-- Bio + stats row -->
-        <div style="display:grid;grid-template-columns:1fr auto;gap:1.4rem;margin-bottom:1.4rem;align-items:stretch">
-            <!-- Bio text -->
-            <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r);padding:2rem 2.2rem;backdrop-filter:blur(15px);line-height:1.85;font-size:.94rem;color:var(--text-main)">
-                <p><strong>Wondermayank</strong> is a student developer from <strong>India</strong> who builds free, open-access digital tools and educational resources for students, learners and curious minds across India and the world.</p>
-                <p style="margin-top:.9rem">The site <a href="https://wondermayank.github.io/" style="color:var(--primary-dark);font-weight:700" target="_blank" rel="noopener noreferrer">wondermayank.github.io</a> is the central hub — hosting tools across seven themed collections: <em>Finder, Study, Tools, Love, Art, India</em> and <em>Entertainment</em>. Notable builds include a <strong>Movie Finder</strong>, <strong>Anime Finder</strong>, <strong>Paletteify</strong>, <strong>CBT Mock Simulator</strong> (CUET · NEET · JEE · Banking · SSC) and more.</p>
-                <p style="margin-top:.9rem">Everything is <strong>completely free</strong> — no account, no paywall. Driven by a passion to make quality tools accessible to every student in India and beyond.</p>
-            </div>
-
-            <!-- Stats column -->
-            <div style="display:flex;flex-direction:column;gap:.9rem;min-width:170px">
-                <div style="background:linear-gradient(135deg,rgba(200,162,255,.18),rgba(174,239,255,.12));border:1px solid rgba(200,162,255,.32);border-radius:18px;padding:1.3rem 1.4rem;backdrop-filter:blur(15px);text-align:center;flex:1;display:flex;flex-direction:column;justify-content:center">
-                    <div style="font-family:var(--font-display);font-size:2.2rem;font-weight:800;color:var(--primary)">70+</div>
-                    <div style="font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-top:.2rem">Free Tools</div>
-                </div>
-                <div style="background:linear-gradient(135deg,rgba(162,212,255,.18),rgba(174,239,255,.12));border:1px solid rgba(162,212,255,.32);border-radius:18px;padding:1.3rem 1.4rem;backdrop-filter:blur(15px);text-align:center;flex:1;display:flex;flex-direction:column;justify-content:center">
-                    <div style="font-family:var(--font-display);font-size:2.2rem;font-weight:800;color:#2563eb">7</div>
-                    <div style="font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-top:.2rem">Collections</div>
-                </div>
-                <div style="background:linear-gradient(135deg,rgba(162,255,200,.18),rgba(174,239,255,.12));border:1px solid rgba(162,255,200,.32);border-radius:18px;padding:1.3rem 1.4rem;backdrop-filter:blur(15px);text-align:center;flex:1;display:flex;flex-direction:column;justify-content:center">
-                    <div style="font-family:var(--font-display);font-size:2.2rem;font-weight:800;color:#16a34a">∞</div>
-                    <div style="font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin-top:.2rem">Always Free</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Quick-links row -->
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:.85rem">
-            <a href="https://wondermayank.github.io/" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:.7rem;background:var(--glass);border:1px solid var(--glass-border);border-radius:14px;padding:.85rem 1.1rem;text-decoration:none;color:var(--text-main);font-size:.84rem;font-weight:600;transition:.3s;backdrop-filter:blur(14px)" onmouseover="this.style.borderColor='rgba(200,162,255,.5)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
-                <svg viewBox="0 0 24 24" fill="var(--primary)" stroke="none" width="16" height="16"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-                Main Site
-            </a>
-            <a href="https://commercesehoga.blogspot.com" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:.7rem;background:var(--glass);border:1px solid var(--glass-border);border-radius:14px;padding:.85rem 1.1rem;text-decoration:none;color:var(--text-main);font-size:.84rem;font-weight:600;transition:.3s;backdrop-filter:blur(14px)" onmouseover="this.style.borderColor='rgba(232,96,44,.5)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#e8602c" stroke-width="2" width="16" height="16"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                Study Blog
-            </a>
-            <a href="https://www.instagram.com/WONDERMAYANK" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:.7rem;background:var(--glass);border:1px solid var(--glass-border);border-radius:14px;padding:.85rem 1.1rem;text-decoration:none;color:var(--text-main);font-size:.84rem;font-weight:600;transition:.3s;backdrop-filter:blur(14px)" onmouseover="this.style.borderColor='rgba(188,24,136,.5)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#bc1888" stroke-width="2" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                Instagram
-            </a>
-            <a href="https://t.me/Mindmaster_robot" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:.7rem;background:var(--glass);border:1px solid var(--glass-border);border-radius:14px;padding:.85rem 1.1rem;text-decoration:none;color:var(--text-main);font-size:.84rem;font-weight:600;transition:.3s;backdrop-filter:blur(14px)" onmouseover="this.style.borderColor='rgba(0,136,204,.5)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='';this.style.transform=''">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#0088cc" stroke-width="2" width="16" height="16"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-                Contact
-            </a>
-        </div>
-
     </div>
 </section>
-<style>
-@media(max-width:640px){
-    #about [style*="grid-template-columns:1fr auto"]{grid-template-columns:1fr!important}
-    #about [style*="min-width:170px"]{flex-direction:row!important;min-width:unset!important}
-    #about [style*="min-width:170px"] > div{flex:1}
-}
-</style>
 </div>
 
 <!-- ══════════════════════════════════════════
@@ -2547,7 +4003,7 @@ const hubsStudy = [
     {icon:'zap',badge:'Blogspot',title:'Commerce Special',desc:'Commerce-focused deep dives — concepts, exam tips and subject breakdowns.',link:'https://thundercommerce.blogspot.com/'},
     {icon:'type',badge:'GitHub Pages',title:'English Hub',desc:'Mock notes, grammar drills and more for all competitive English exams.',link:'https://commercesehoga.github.io/english/'},
     {icon:'check',badge:'GitHub Pages',title:'General Test (GAT)',desc:'Mock tests, Q&A resources and notes for all general aptitude exams.',link:'https://commercesehoga.github.io/gat/'},
-    {icon:'india',badge:'GitHub Pages',title:'General Studies (GS)',desc:'History, geography and more — mock notes and resources for all GS sections.',link:'https://commercesehoga.github.io/'},
+    {icon:'india',badge:'GitHub Pages',title:'General Studies (GS)',desc:'History, geography and more — mock notes and resources for all GS sections.',link:'https://commercesehoga.github.io/gs/'},
 ];
 const hubsTech = [
     {icon:'zap',badge:'GitHub Pages',title:'Thunder Technology',desc:'Showcase of tech projects, experiments and developer utilities on GitHub Pages.',link:'https://wondermayank.github.io/thundertechnology/'},
@@ -2634,7 +4090,6 @@ function renderTg(t,type) {
         ];
         const grad=botColors[tgBots.indexOf(t)%botColors.length];
         const iconSvg=`<svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16" stroke-width="3" stroke-linecap="round"/><line x1="16" y1="16" x2="16" y2="16" stroke-width="3" stroke-linecap="round"/></svg>`;
-        const tgSvg=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>`;
         return `<a href="${t.link}" class="tg-card style-bot" style="--bot-grad:${grad}" target="_blank" rel="noopener noreferrer">
             <div class="tg-bot-top">
                 <div class="tg-bot-icon">${iconSvg}</div>
@@ -2643,11 +4098,13 @@ function renderTg(t,type) {
             <h3>${t.title}</h3>
             <div class="tg-handle">${t.handle}</div>
             <p>${t.desc}</p>
-            <a href="${t.link}" class="tg-btn-v6" target="_blank" rel="noopener noreferrer">${tgSvg} Open Bot</a>
         </a>`;
     } else {
-        // Variant 5 — Minimal Editorial (groups)
-        return `<a href="${t.link}" class="tg-card style-grp" target="_blank" rel="noopener noreferrer">
+        // Variant 5 — Minimal Editorial (groups) with unique colors
+        const grpAccents = ['#32b478', '#0088cc', '#e05c2e', '#8b5cf6'];
+        const grpIdx = tgGroups.indexOf(t);
+        const color = grpAccents[grpIdx % grpAccents.length];
+        return `<a href="${t.link}" class="tg-card style-grp" style="--grp-accent:${color}" target="_blank" rel="noopener noreferrer">
             <div class="tg-grp-row1">
                 <span class="tg-grp-type">Group</span>
                 <span class="tg-handle">${t.handle}</span>
@@ -2661,14 +4118,52 @@ function renderTg(t,type) {
 function renderHub(h,i) {
     const cols=['#c8a2ff','#a2d4ff','#a2ffc8','#ffd4a2','#ffa2c8'];
     const c=cols[i%cols.length];
-    return `<a href="${h.link}" class="hub-card" target="_blank" rel="noopener noreferrer">
-        <div class="hub-top">
-            <div class="hub-icon-wrap">${ic(h.icon,c)}</div>
-            <span class="hub-badge">${h.badge}</span>
+    return `<div class="project-card style-tools-prism" style="--c:${c}; display: flex; flex-direction: column;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.4rem; position: relative; z-index: 2;">
+            <div class="prism-icon-wrap" style="background:linear-gradient(135deg,${c}22,${c}10); border:1px solid ${c}30; margin-bottom: 0;">${ic(h.icon,c)}</div>
+            <span class="proj-tag-bento" style="background:linear-gradient(135deg,${c},${c}dd); margin-bottom: 0;">${h.badge}</span>
         </div>
-        <h3>${h.title}</h3>
-        <p>${h.desc}</p>
-        <div class="hub-visit">Visit Hub <span class="arrow-circle">${ic('arrow','white')}</span></div>
+        <h3 style="position: relative; z-index: 2;">${h.title}</h3>
+        <p style="flex: 1; margin-bottom: 1.5rem; position: relative; z-index: 2;">${h.desc}</p>
+        <div class="card-actions" style="margin-top: auto; width: 100%; position: relative; z-index: 2;">
+            <a href="${h.link}" class="glass-btn primary" style="background:linear-gradient(135deg,${c}28,${c}18); border-color:${c}40; color:var(--text-main); width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px;" target="_blank" rel="noopener noreferrer">
+                Visit Hub <span style="display: inline-flex; transition: transform 0.3s;" class="hub-arr-icon">→</span>
+            </a>
+        </div>
+    </div>`;
+}
+function renderTechHub(h,i) {
+    const techAccents = [
+        { hex: '#0ea5e9', rgb: '14, 165, 233', code: 'SYS_CORE_V1.1' },
+        { hex: '#f59e0b', rgb: '245, 158, 11', code: 'SYS_PLAY_V3.0' },
+        { hex: '#10b981', rgb: '16, 185, 129', code: 'SYS_CODE_V2.5' },
+        { hex: '#8b5cf6', rgb: '139, 92, 246', code: 'SYS_AI_V4.2' },
+        { hex: '#db2777', rgb: '219, 39, 119', code: 'SYS_MIN_V0.8' }
+    ];
+    const acc = techAccents[i % techAccents.length];
+    const isFeatured = i === 0;
+    const featuredClass = isFeatured ? ' tech-card-featured' : '';
+    return `<a href="${h.link}" class="tech-hub-card${featuredClass}" style="--tech-accent:${acc.hex}; --tech-accent-rgb:${acc.rgb};" target="_blank" rel="noopener noreferrer">
+        <div class="tech-card-header">
+            <span class="tech-badge-pill">${h.badge}</span>
+            <div class="tech-sys-status">
+                <span class="tech-status-dot"></span>
+                <span>ONLINE</span>
+            </div>
+        </div>
+        <div class="tech-card-body">
+            <div class="tech-icon-wrap">${ic(h.icon, acc.hex)}</div>
+            <div class="tech-text-group">
+                <h3>${h.title}</h3>
+                <p>${h.desc}</p>
+            </div>
+        </div>
+        <div class="tech-card-footer">
+            <span class="tech-meta-spec">${acc.code}</span>
+            <span class="tech-btn-arrow">
+                Launch Hub <span class="tech-btn-arrow-icon">→</span>
+            </span>
+        </div>
     </a>`;
 }
 function renderCh(ch,plat) {
@@ -2681,6 +4176,42 @@ function renderCh(ch,plat) {
         <h3>${ch.title}</h3>
         <p>${ch.desc}</p>
         <div class="ch-open-btn">${isYt?'Visit Channel':'View Profile'} ${ic('arrow','var(--primary)')}</div>
+    </a>`;
+}
+function renderYtCard(ch,i) {
+    const defaultColor = '#cc0000';
+    const col = ch.c || defaultColor;
+    
+    // Hex to RGB parser for CSS variables
+    const hexToRgb = (hex) => {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : '204, 0, 0';
+    };
+    const rgb = hexToRgb(col);
+    
+    const playSvg = `<svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>`;
+    const subIconSvg = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>`;
+    
+    const badges = ['HD', '4K', 'LIVE', 'NEW', 'HDR', '1080P', '144P'];
+    const badge = badges[i % badges.length];
+    
+    return `<a href="${ch.link}" class="yt-channel-card" style="--yt-accent:${col}; --yt-accent-rgb:${rgb};" target="_blank" rel="noopener noreferrer">
+        <div class="yt-thumbnail">
+            <span class="yt-badge-hdr">${badge}</span>
+            <div class="yt-play-overlay">${playSvg}</div>
+            <span class="yt-badge-live">SUBSCRIBE</span>
+        </div>
+        <div class="yt-card-body">
+            <div class="yt-avatar-wrap">${ic(ch.icon, col)}</div>
+            <div class="yt-info-group">
+                <h3>${ch.title}</h3>
+                <p>${ch.desc}</p>
+                <div class="yt-sub-btn">
+                    ${subIconSvg}
+                    <span>Subscribe</span>
+                </div>
+            </div>
+        </div>
     </a>`;
 }
 
@@ -2805,8 +4336,8 @@ document.getElementById('tg-groups').innerHTML=tgGroups.map(t=>renderTg(t,'grp')
 const studyGrid=document.getElementById('hubs-grid');
 if(studyGrid) studyGrid.innerHTML=hubsStudy.map(renderHub).join('');
 const techGrid=document.getElementById('hubs-tech-grid');
-if(techGrid) techGrid.innerHTML=hubsTech.map(renderHub).join('');
-document.getElementById('yt-grid').innerHTML=ytCh.map(ch=>renderCh(ch,'yt')).join('');
+if(techGrid) techGrid.innerHTML=hubsTech.map((h, i) => renderTechHub(h, i)).join('');
+document.getElementById('yt-grid').innerHTML=ytCh.map((ch, i)=>renderYtCard(ch, i)).join('');
 document.getElementById('ig-grid').innerHTML=igCh.map(ch=>renderCh(ch,'ig')).join('');
 
 const indiaMapLinks = {
@@ -2929,6 +4460,8 @@ addTilt('.project-card');
 addTilt('.hub-card');
 addTilt('.channel-card');
 addTilt('.tg-card.style-bot');
+addTilt('.yt-channel-card');
+addTilt('.tech-hub-card');
 addTilt('.india-card');
 </script>
 
