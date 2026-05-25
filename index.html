@@ -166,6 +166,8 @@
       ]
     }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -213,7 +215,7 @@
         body.theme-dark .india-map-popup{background:rgba(2,0,7,.84)}
         body.theme-dark .india-map-svg path,body.theme-dark .india-map-svg polygon{fill:rgba(168,85,247,.24)!important;stroke:rgba(246,237,255,.78)!important}
         body.theme-dark .india-map-svg path:hover,body.theme-dark .india-map-svg polygon:hover,body.theme-dark .india-map-svg .is-active-region{fill:rgba(216,180,254,.78)!important}
-        .quick-jump{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:950;display:flex;gap:.35rem;padding:.35rem;border-radius:999px;background:rgba(255,255,255,.68);border:1px solid var(--glass-border);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 14px 38px rgba(80,40,140,.12)}
+        .quick-jump{display:none !important;position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:950;gap:.35rem;padding:.35rem;border-radius:999px;background:rgba(255,255,255,.68);border:1px solid var(--glass-border);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:0 14px 38px rgba(80,40,140,.12)}
         .quick-jump a{width:36px;height:36px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--text-muted);text-decoration:none;transition:.25s var(--ease)}
         .quick-jump a:hover{color:white;background:linear-gradient(135deg,var(--primary),var(--primary-dark));transform:translateY(-2px)}
         .quick-jump svg{width:16px;height:16px}
@@ -238,8 +240,8 @@
         .india-card:hover .india-card-icon{transform:scale(1.08) rotate(-3deg);box-shadow:0 10px 24px rgba(155,111,255,.18)}
         .india-card-icon{transition:.35s var(--ease)}
         body.theme-dark .india-card:hover{box-shadow:0 24px 58px rgba(168,85,247,.22),0 1px 0 rgba(255,255,255,.08) inset}
-        @media(max-width:900px){.main-container{padding:3.5rem 5% 2.5rem}.quick-jump{left:12px;right:12px;transform:none;justify-content:space-between}.quick-jump a{width:34px;height:34px}.back-top{right:14px;bottom:72px}.india-map-inner{padding:1.4rem;max-height:90vh}.india-map-svg{max-height:50vh}.india-states-grid{grid-template-columns:repeat(auto-fill,minmax(118px,1fr))}}
-        @media(max-width:580px){nav{padding:0 5%;height:64px}.mobile-nav{top:64px}.nav-brand{font-size:1.05rem}.logo-img{width:36px;height:36px}.hero{margin-top:64px;min-height:560px}.section-header{margin-bottom:2rem}.section-header h2{font-size:clamp(1.6rem,9vw,2.2rem)}.india-card{padding:1.25rem;border-radius:18px}.india-map-tools{grid-template-columns:1fr}.india-map-status{white-space:normal}.india-map-inner h3{font-size:1.1rem;padding-right:2rem}.india-map-svg{max-height:42vh}.india-states-grid{grid-template-columns:1fr 1fr}.quick-jump{bottom:10px;padding:.3rem}.back-top{bottom:66px;width:38px;height:38px}}
+        @media(max-width:900px){.main-container{padding:3.5rem 5% 2.5rem}.quick-jump{display:flex !important;left:50%;right:auto;transform:translateX(-50%);justify-content:center;gap:.25rem;padding:.25rem;width:auto}.quick-jump a{width:30px;height:30px}.quick-jump svg{width:13px;height:13px}.back-top{right:14px;bottom:72px}.india-map-inner{padding:1.4rem;max-height:90vh}.india-map-svg{max-height:50vh}.india-states-grid{grid-template-columns:repeat(auto-fill,minmax(118px,1fr))}}
+        @media(max-width:580px){nav{padding:0 5%;height:64px}.mobile-nav{top:64px}.nav-brand{font-size:1.05rem}.logo-img{width:36px;height:36px}.hero{margin-top:64px;min-height:560px}.section-header{margin-bottom:2rem}.section-header h2{font-size:clamp(1.6rem,9vw,2.2rem)}.india-card{padding:1.25rem;border-radius:18px}.india-map-tools{grid-template-columns:1fr}.india-map-status{white-space:normal}.india-map-inner h3{font-size:1.1rem;padding-right:2rem}.india-map-svg{max-height:42vh}.india-states-grid{grid-template-columns:1fr 1fr}.quick-jump{display:flex !important;bottom:10px;left:50%;right:auto;transform:translateX(-50%);padding:.25rem;gap:.2rem;width:auto}.quick-jump a{width:30px;height:30px}.quick-jump svg{width:13px;height:13px}.back-top{bottom:66px;width:38px;height:38px}}
 
         /* ── CURSOR ── */
         #cursor-glow{position:fixed;width:380px;height:380px;background:radial-gradient(circle,rgba(200,162,255,0.11) 0%,transparent 70%);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);z-index:0;transition:left .08s,top .08s}
@@ -261,6 +263,10 @@
         .theme-toggle:hover{transform:translateY(-2px);background:rgba(200,162,255,.2);box-shadow:0 8px 24px rgba(155,111,255,.24)}
         .theme-toggle svg{width:17px;height:17px;pointer-events:none}
         body.theme-dark .theme-toggle{background:rgba(168,85,247,.18);border-color:rgba(216,180,254,.42);color:#f5d0fe;box-shadow:0 8px 24px rgba(0,0,0,.32)}
+        .search-trigger{width:38px;height:38px;border-radius:50%;border:1px solid rgba(200,162,255,.42);background:rgba(255,255,255,.24);color:var(--primary-dark);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:.3s var(--ease);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 4px 16px rgba(0,0,0,.08);flex-shrink:0;margin-right:2px}
+        .search-trigger:hover{transform:translateY(-2px);background:rgba(200,162,255,.2);box-shadow:0 8px 24px rgba(155,111,255,.24)}
+        .search-trigger svg{width:17px;height:17px;pointer-events:none}
+        body.theme-dark .search-trigger{background:rgba(168,85,247,.18);border-color:rgba(216,180,254,.42);color:#f5d0fe;box-shadow:0 8px 24px rgba(0,0,0,.32)}
         .nav-links a{text-decoration:none;color:var(--text-muted);font-weight:500;font-size:.86rem;transition:color .25s;letter-spacing:.2px}
         .nav-links a:hover{color:var(--primary)}
         .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
@@ -455,39 +461,38 @@
         .project-card:hover::after{opacity:1}
         .proj-icon{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;flex-shrink:0}
         .proj-icon svg{width:20px;height:20px}
-        .proj-tag{position:absolute;top:1.1rem;right:1.1rem;font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;padding:3px 9px;border-radius:20px;background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+        .proj-tag{position:absolute;top:1.1rem;right:1.1rem;font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--c) !important;color:white;box-shadow:0 2px 8px rgba(0,0,0,.1)}
         .project-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.6rem;letter-spacing:-.2px;transition:text-shadow 0.3s var(--ease), color 0.3s var(--ease)}
         .project-card p{font-size:.84rem;color:var(--text-muted);line-height:1.65;flex:1;margin-bottom:1.4rem}
-        .text-highlight{transition:background-color 0.22s var(--ease), color 0.22s var(--ease);border-radius:5px;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:2px 5px !important;background-color:transparent}
-        .project-card h3 .text-highlight{padding:3px 8px !important}
+        .text-highlight{transition:color 0.22s var(--ease);border-radius:0;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 !important;background-color:transparent !important}
+        .project-card h3 .text-highlight{padding:0 !important}
         
-        /* Solid organic wrapped inline highlights with zero layout shifts (like in the reference image) */
-        .project-card.style-study-cyber:hover .text-highlight,
-        .project-card.style-bento-combined:hover h3 .text-highlight,
-        .project-card.style-love-card:hover h3 .text-highlight,
-        .project-card.style-code-tech:hover h3 .text-highlight,
-        .project-card.style-ideas-draft:hover h3 .text-highlight,
-        .project-card.style-fun-pop:hover h3 .text-highlight {
-            background-color:var(--c) !important;
-            color:#ffffff !important;
+        /* Direct single-color transitions on card hover for all card variations, with no background boxes or neon text shadows */
+        .project-card:hover h3,
+        .project-card:hover h3 .text-highlight {
+            color: var(--c) !important;
+            background-color: transparent !important;
             text-shadow: none !important;
         }
-        body.theme-dark .project-card.style-study-cyber:hover .text-highlight,
-        body.theme-dark .project-card.style-bento-combined:hover h3 .text-highlight,
-        body.theme-dark .project-card.style-love-card:hover h3 .text-highlight,
-        body.theme-dark .project-card.style-code-tech:hover h3 .text-highlight,
-        body.theme-dark .project-card.style-ideas-draft:hover h3 .text-highlight,
-        body.theme-dark .project-card.style-fun-pop:hover h3 .text-highlight {
-            background-color:var(--c) !important;
-            color:#ffffff !important;
+        body.theme-dark .project-card:hover h3,
+        body.theme-dark .project-card:hover h3 .text-highlight {
+            color: var(--c) !important;
+            background-color: transparent !important;
             text-shadow: none !important;
         }
-        
-        /* Other section cards (Finder, etc., except Study and Tools): Soft glowing neon text-shadow backlights */
-        .project-card:not(.style-study-cyber):not(.style-tools-prism):hover h3{color:var(--text-main) !important;text-shadow:0 0 8px var(--c), 0 0 16px rgba(255,255,255,0.95), 0 0 24px rgba(255,255,255,0.95) !important}
-        .project-card:not(.style-study-cyber):not(.style-tools-prism):hover p{color:var(--text-main) !important;transition:color 0.3s var(--ease)}
-        body.theme-dark .project-card:not(.style-study-cyber):not(.style-tools-prism):hover h3{color:#ffffff !important;text-shadow:0 0 10px var(--c), 0 0 20px var(--c), 0 0 30px var(--c) !important}
-        body.theme-dark .project-card:not(.style-study-cyber):not(.style-tools-prism):hover p{color:var(--text-main) !important}
+        .project-card:hover p,
+        .project-card:hover p .text-highlight {
+            color: var(--text-main) !important;
+            background-color: transparent !important;
+            text-shadow: none !important;
+            transition: color 0.3s var(--ease);
+        }
+        body.theme-dark .project-card:hover p,
+        body.theme-dark .project-card:hover p .text-highlight {
+            color: var(--text-main) !important;
+            background-color: transparent !important;
+            text-shadow: none !important;
+        }
 
         /* Premium glassmorphism button highlights on card hover */
         .project-card:hover .glass-btn,
@@ -657,7 +662,7 @@
             width:20px;height:20px
         }
         .proj-tag-bento {
-            font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;padding:3px 9px;border-radius:20px;color:white;box-shadow:0 2px 8px rgba(0,0,0,.1);width:fit-content;margin-bottom:0.8rem
+            font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;padding:3px 9px;border-radius:20px;color:white;box-shadow:0 2px 8px rgba(0,0,0,.1);width:fit-content;margin-bottom:0.8rem;background:var(--c) !important
         }
 
         /* ─── NEW STUDY SECTION: FUTURISTIC CYBER-GRID THEME ─── */
@@ -747,7 +752,7 @@
             padding: 4px 11px;
             border-radius: 30px;
             color: white;
-            background: linear-gradient(135deg, var(--c), var(--primary-dark));
+            background: var(--c) !important;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
@@ -1412,33 +1417,33 @@
             z-index: 2;
         }
 
-        /* Sci-fi console pills buttons */
+        /* Sci-fi console pills buttons — each with unique color */
         .cbt-quick.style-cbt-console .cbt-pills a {
             padding: 0.7rem 1.45rem !important;
             font-size: 0.8rem !important;
             font-weight: 700 !important;
-            background: rgba(255, 255, 255, 0.25) !important;
-            border: 1px solid rgba(255, 255, 255, 0.5) !important;
-            color: var(--text-main) !important;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04) !important;
+            color: white !important;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12) !important;
             text-transform: none !important;
-            letter-spacing: 0.2px !important;
+            letter-spacing: 0.3px !important;
             border-radius: 12px !important;
             transition: all 0.3s var(--ease) !important;
+            border: none !important;
         }
-
-        body.theme-dark .cbt-quick.style-cbt-console .cbt-pills a {
-            background: rgba(255, 255, 255, 0.05) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
-        }
+        .cbt-quick.style-cbt-console .cbt-pills a:nth-child(1) { background: linear-gradient(135deg, #7c3aed, #a855f7) !important; }
+        .cbt-quick.style-cbt-console .cbt-pills a:nth-child(2) { background: linear-gradient(135deg, #2563eb, #3b82f6) !important; }
+        .cbt-quick.style-cbt-console .cbt-pills a:nth-child(3) { background: linear-gradient(135deg, #0891b2, #06b6d4) !important; }
+        .cbt-quick.style-cbt-console .cbt-pills a:nth-child(4) { background: linear-gradient(135deg, #d97706, #f59e0b) !important; }
+        .cbt-quick.style-cbt-console .cbt-pills a:nth-child(5) { background: linear-gradient(135deg, #dc2626, #ef4444) !important; }
+        .cbt-quick.style-cbt-console .cbt-pills a:nth-child(6) { background: linear-gradient(135deg, #16a34a, #22c55e) !important; }
+        .cbt-quick.style-cbt-console .cbt-pills a:nth-child(7) { background: linear-gradient(135deg, #0284c7, #0ea5e9) !important; }
+        .cbt-quick.style-cbt-console .cbt-pills a:nth-child(8) { background: linear-gradient(135deg, #db2777, #ec4899) !important; }
+        .cbt-quick.style-cbt-console .cbt-pills a:nth-child(9) { background: linear-gradient(135deg, #ea580c, #f97316) !important; }
 
         .cbt-quick.style-cbt-console .cbt-pills a:hover {
-            transform: translateY(-3px) !important;
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary)) !important;
-            border-color: var(--primary) !important;
-            color: white !important;
-            box-shadow: 0 8px 24px rgba(155, 111, 255, 0.3) !important;
+            transform: translateY(-3px) scale(1.04) !important;
+            filter: brightness(1.15) !important;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.22) !important;
         }
 
         @media (max-width: 768px) {
@@ -2202,7 +2207,7 @@
         .india-card-icon svg{width:22px;height:22px}
         .india-card h3{font-size:1.02rem;font-weight:700;letter-spacing:-.2px;margin:0}
         .india-card p{font-size:.82rem;color:var(--text-muted);line-height:1.6;flex:1;margin:0}
-        .india-card .ic-tag{font-size:.62rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;padding:2px 8px;border-radius:20px;background:linear-gradient(135deg,var(--india-accent, var(--primary)),var(--india-accent, var(--primary-dark)));color:white;width:fit-content;box-shadow:0 2px 8px rgba(var(--india-accent-rgb, 200,162,255),.25)}
+        .india-card .ic-tag{font-size:.62rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;padding:2px 8px;border-radius:20px;background:var(--india-accent, var(--primary)) !important;color:white;width:fit-content;box-shadow:0 2px 8px rgba(var(--india-accent-rgb, 200,162,255),.15)}
         .india-map-trigger{display:flex;align-items:center;gap:.6rem;margin-top:.5rem;font-size:.8rem;font-weight:700;color:var(--india-accent, var(--primary-dark));cursor:pointer;transition:gap .3s}
         .india-map-trigger:hover{gap:1rem}
 
@@ -3268,6 +3273,492 @@
 .bs-dot{width:6px;height:6px;background:#a8d8f5;border-radius:50%;animation:bs-pulse 1.4s ease-in-out infinite}
 .bs-dot:nth-child(2){animation-delay:.2s;background:#7bbde8}
 .bs-dot:nth-child(3){animation-delay:.4s;background:#4fa3da}
+
+        /* ─── SCROLL ENTRY REVEAL ANIMATIONS ─── */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+        .reveal-element.reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ─── WORD REVEAL TYPOGRAPHY ─── */
+        .word-wrap {
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: bottom;
+            margin-right: 0.28em;
+        }
+        .word-inner {
+            display: inline-block;
+            transform: translateY(100%);
+            opacity: 0;
+            transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+        .reveal-visible .word-inner {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        /* ─── HIGH-PERFORMANCE GLASSMORPHISM & GPU ACCELERATION OVERRIDES ─── */
+        .project-card,
+        .tg-card,
+        .hub-card,
+        .channel-card,
+        .india-card,
+        .cs-header,
+        .glass-btn,
+        .tech-hub-card,
+        .about-link-card,
+        .about-span-8,
+        .about-span-4,
+        .about-span-7,
+        .about-span-5,
+        details {
+            backdrop-filter: blur(10px) saturate(140%) !important;
+            -webkit-backdrop-filter: blur(10px) saturate(140%) !important;
+            transform: translate3d(0,0,0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+        
+        /* ─── CIRCLE RIPPLE VIEW TRANSITIONS OVERRIDES ─── */
+        ::view-transition-old(root),
+        ::view-transition-new(root) {
+            animation: none;
+            mix-blend-mode: normal;
+        }
+        ::view-transition-old(root) {
+            z-index: 1;
+        }
+        ::view-transition-new(root) {
+            z-index: 9999;
+        }
+        .theme-dark::view-transition-old(root) {
+            z-index: 9999;
+        }
+        .theme-dark::view-transition-new(root) {
+            z-index: 1;
+        }
+        
+        /* ─── DYNAMIC SVG INDIA MAP GLOWS & MODALS ─── */
+        .region-glow-saffron { fill: rgba(255, 153, 51, 0.72) !important; filter: drop-shadow(0 0 10px rgba(255, 153, 51, 0.6)); }
+        .region-glow-emerald { fill: rgba(19, 136, 8, 0.72) !important; filter: drop-shadow(0 0 10px rgba(19, 136, 8, 0.6)); }
+        .region-glow-white { fill: rgba(255, 255, 255, 0.72) !important; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4)); }
+        body.theme-dark .region-glow-white { fill: rgba(255, 255, 255, 0.38) !important; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2)); }
+        
+        .explore-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: rgba(10, 3, 20, 0.68);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.4s var(--ease);
+        }
+        .explore-modal.open {
+            display: flex;
+            opacity: 1;
+        }
+        .explore-modal-content {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            padding: 2.2rem;
+            max-width: 580px;
+            width: 100%;
+            position: relative;
+            transform: translateY(30px) scale(0.96);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
+        }
+        .explore-modal.open .explore-modal-content {
+            transform: translateY(0) scale(1);
+        }
+        .explore-modal-close {
+            position: absolute;
+            top: 1.1rem;
+            right: 1.3rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            transition: 0.25s var(--ease);
+        }
+        .explore-modal-close:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--text-main);
+            transform: scale(1.1) rotate(90deg);
+        }
+        .explore-modal-header {
+            margin-bottom: 1.5rem;
+        }
+        .explore-badge-pill {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: 0.7rem;
+            color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .explore-badge-saffron { background: #ff9933 !important; }
+        .explore-badge-emerald { background: #138808 !important; }
+        .explore-badge-white { background: #6b7280 !important; }
+        
+        .explore-modal-header h2 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 850;
+            letter-spacing: -0.6px;
+            margin-bottom: 0.4rem;
+        }
+        .explore-fact {
+            font-size: 0.94rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            font-weight: 500;
+        }
+        .explore-modal-body {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-bottom: 1.8rem;
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1.4rem 0;
+            max-height: 45vh;
+            overflow-y: auto;
+        }
+        .explore-info-section h3 {
+            font-size: 0.86rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.1px;
+            margin-bottom: 0.4rem;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .explore-info-section p {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: var(--text-main);
+        }
+        .explore-modal-footer {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .explore-modal-footer .glass-btn {
+            width: 100%;
+            justify-content: center;
+            padding: 0.85rem 1.5rem !important;
+            font-size: 0.9rem !important;
+        }
+        
+        /* ─── SPOTLIGHT CMD SEARCH OVERLAYS ─── */
+        .spotlight-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 10100;
+            background: rgba(10, 3, 20, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            align-items: flex-start;
+            justify-content: center;
+            padding: 5vh 1.5rem 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s var(--ease);
+        }
+        .spotlight-overlay.open {
+            display: flex;
+            opacity: 1;
+        }
+        .spotlight-modal {
+            background: rgba(255, 255, 255, 0.97);
+            border: 1px solid rgba(200, 162, 255, 0.3);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 640px;
+            box-shadow: 0 35px 80px rgba(0,0,0,0.18), 0 0 0 1px rgba(200,162,255,0.12);
+            overflow: hidden;
+            transform: translateY(-20px) scale(0.97);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        body.theme-dark .spotlight-modal {
+            background: rgba(20, 8, 35, 0.96);
+            border-color: rgba(192, 132, 252, 0.28);
+            box-shadow: 0 35px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(192,132,252,0.1);
+        }
+        .spotlight-overlay.open .spotlight-modal {
+            transform: translateY(0) scale(1);
+        }
+        .spotlight-header {
+            display: flex;
+            align-items: center;
+            padding: 1.2rem 1.6rem;
+            border-bottom: 1px solid rgba(200,162,255,0.18);
+            gap: 12px;
+            background: rgba(245, 240, 255, 0.5);
+        }
+        body.theme-dark .spotlight-header {
+            background: rgba(255,255,255,0.03);
+            border-bottom-color: rgba(192,132,252,0.2);
+        }
+        .spotlight-search-icon {
+            width: 20px;
+            height: 20px;
+            color: var(--primary-dark);
+            opacity: 0.85;
+            flex-shrink: 0;
+        }
+        #spotlight-input {
+            background: transparent;
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 1.05rem;
+            color: var(--text-main);
+            font-family: inherit;
+        }
+        #spotlight-input::placeholder {
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+        .spotlight-kbd-indicator {
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 3px 7px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid var(--glass-border);
+            border-radius: 6px;
+            color: var(--text-muted);
+            font-family: monospace;
+            flex-shrink: 0;
+        }
+        .spotlight-body {
+            max-height: 52vh;
+            overflow-y: auto;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.6);
+        }
+        body.theme-dark .spotlight-body {
+            background: transparent;
+        }
+        .spotlight-results {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .spotlight-category-title {
+            font-size: 0.68rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--primary-dark);
+            padding: 0.7rem 0.8rem 0.3rem;
+            opacity: 0.85;
+        }
+        .spotlight-item {
+            display: flex;
+            align-items: center;
+            padding: 0.9rem 1.1rem;
+            border-radius: 14px;
+            text-decoration: none;
+            color: var(--text-main);
+            gap: 12px;
+            transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+            cursor: pointer;
+        }
+        .spotlight-item:hover,
+        .spotlight-item.selected {
+            background: rgba(200, 162, 255, 0.18);
+            transform: translateX(4px);
+            --c: var(--primary-dark);
+        }
+        body.theme-dark .spotlight-item:hover,
+        body.theme-dark .spotlight-item.selected {
+            background: rgba(168, 85, 247, 0.15);
+        }
+        .spotlight-item-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: rgba(200, 162, 255, 0.1);
+            border: 1px solid rgba(200, 162, 255, 0.2);
+        }
+        body.theme-dark .spotlight-item-icon {
+            background: rgba(255,255,255,0.06);
+            border-color: var(--glass-border);
+        }
+        .spotlight-item-icon svg {
+            width: 15px;
+            height: 15px;
+        }
+        .spotlight-item-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .spotlight-item-title {
+            font-size: 0.92rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .spotlight-item-desc {
+            font-size: 0.76rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .spotlight-item-badge {
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 2px 7px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            flex-shrink: 0;
+        }
+        .spotlight-item:hover .spotlight-item-badge,
+        .spotlight-item.selected .spotlight-item-badge {
+            background: var(--c);
+            color: white;
+            border-color: transparent;
+        }
+        .spotlight-no-results {
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.94rem;
+        }
+        .spotlight-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1.6rem;
+            border-top: 1px solid var(--glass-border);
+            background: rgba(0,0,0,0.02);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+        @media(max-width:580px) {
+            .spotlight-overlay {
+                padding: 2vh 1rem 1rem;
+            }
+            .spotlight-footer {
+                display: none;
+            }
+        }
+        
+        /* ─── LIVE BOT TELEMETRY STYLES ─── */
+        .tg-card.style-bot {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 250px;
+        }
+        .tg-bot-telemetry-bg {
+            position: absolute;
+            inset: 0;
+            font-family: monospace;
+            font-size: 0.6rem;
+            color: rgba(255, 255, 255, 0.035);
+            pointer-events: none;
+            user-select: none;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 0.5rem;
+            line-height: 1.4;
+            z-index: 1;
+        }
+        .theme-dark .tg-bot-telemetry-bg {
+            color: rgba(255, 255, 255, 0.045);
+        }
+        .tg-bot-telemetry-bg-scroll {
+            display: block;
+            animation: tele-scroll 20s linear infinite;
+        }
+        .tg-bot-telemetry {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            padding-top: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-family: monospace;
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.7);
+            position: relative;
+            z-index: 2;
+            margin-top: auto;
+        }
+        body.theme-dark .tg-bot-telemetry {
+            border-top-color: rgba(255, 255, 255, 0.1);
+        }
+        .tg-telemetry-status {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .tg-telemetry-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 8px #10b981;
+            animation: tele-pulse 1.6s infinite ease-in-out;
+        }
+        .tg-telemetry-ping {
+            color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.06);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        @keyframes tele-pulse {
+            0%, 100% { opacity: 0.4; transform: scale(0.85); }
+            50% { opacity: 1; transform: scale(1.15); }
+        }
+        @keyframes tele-scroll {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
     </style>
 </head>
 <body>
@@ -3325,6 +3816,9 @@
         <a href="#hubs">Hubs</a>
         <a href="#channels">Channels</a>
         <a href="#faq">FAQ</a>
+        <button class="search-trigger" id="search-trigger" type="button" aria-label="Search digital universe" title="Search (Ctrl + K)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" style="width:17px;height:17px;display:block"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
         <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch to dark mode" title="Dark mode">
             <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.6 6.6 0 0 0 21 12.8z"/></svg>
             <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
@@ -3341,6 +3835,10 @@
     <a href="#hubs" onclick="toggleNav()">Hubs</a>
     <a href="#channels" onclick="toggleNav()">Channels</a>
     <a href="#faq" onclick="toggleNav()">FAQ</a>
+    <button class="search-trigger mobile-search-trigger" type="button" aria-label="Search digital universe" title="Search (Ctrl + K)" style="background:rgba(255,255,255,0.08); border:1px solid var(--glass-border); border-radius:12px; padding:0.6rem 1rem; width:100%; display:flex; align-items:center; gap:8px; color:var(--text-main); font-weight:600; margin-bottom:1rem; cursor:pointer;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" style="width:16px;height:16px;color:var(--primary-dark)"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <span style="font-family:var(--font-body); font-size:0.86rem; color:var(--text-main)">Search WM Universe</span>
+    </button>
     <button class="theme-toggle mobile-theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch to dark mode" title="Dark mode">
         <svg class="theme-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.6 6.6 0 0 0 21 12.8z"/></svg>
         <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
@@ -3360,7 +3858,7 @@
 <!-- HERO (Video bg) -->
 <section class="hero">
     <div id="hero-bg">
-        <video id="hero-video" autoplay muted loop playsinline></video>
+        <video id="hero-video" autoplay muted loop playsinline preload="metadata"></video>
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -3920,6 +4418,55 @@
     </div>
 </div>
 
+<!-- ── SPOTLIGHT SEARCH OVERLAY ── -->
+<div id="spotlight-overlay" class="spotlight-overlay" onclick="if(event.target===this)toggleSpotlight(false)">
+    <div class="spotlight-modal">
+        <div class="spotlight-header">
+            <svg class="spotlight-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="spotlight-input" placeholder="Search creations, bots, tools, channels... (Esc to close)" autocomplete="off">
+            <span class="spotlight-kbd-indicator">ESC</span>
+        </div>
+        <div class="spotlight-body">
+            <div class="spotlight-results" id="spotlight-results">
+                <!-- Injected in real-time -->
+            </div>
+        </div>
+        <div class="spotlight-footer">
+            <span>Use <b>↑</b> <b>↓</b> keys to navigate, <b>Enter</b> to launch</span>
+            <span>Press <b>Ctrl + K</b> anywhere</span>
+        </div>
+    </div>
+</div>
+
+<!-- ── INDIA EXPLORE MODAL ── -->
+<div id="india-explore-modal" class="explore-modal" onclick="if(event.target===this)this.classList.remove('open')">
+    <div class="explore-modal-content">
+        <span class="explore-modal-close" onclick="document.getElementById('india-explore-modal').classList.remove('open')">&times;</span>
+        <div class="explore-modal-header">
+            <span class="explore-badge-pill explore-badge-saffron" id="explore-badge">Overview</span>
+            <h2 id="explore-title">State Name</h2>
+            <p id="explore-fact" class="explore-fact">State quick fact goes here...</p>
+        </div>
+        <div class="explore-modal-body">
+            <div class="explore-info-section">
+                <h3>🎭 Cultural Festivals</h3>
+                <p id="explore-festivals">Festivals list...</p>
+            </div>
+            <div class="explore-info-section">
+                <h3>🍛 Famous Cuisine</h3>
+                <p id="explore-cuisine">Cuisine list...</p>
+            </div>
+            <div class="explore-info-section">
+                <h3>📜 Historical Heritage</h3>
+                <p id="explore-history">History details...</p>
+            </div>
+        </div>
+        <div class="explore-modal-footer">
+            <a href="#" id="explore-link" class="glass-btn primary" target="_blank" rel="noopener noreferrer">Read Full Heritage Article →</a>
+        </div>
+    </div>
+</div>
+
 <!-- ══════════════════════════════════════════
      ABOUT / ENTITY SECTION (GEO — LLM & AI Discovery)
 ══════════════════════════════════════════ -->
@@ -4275,21 +4822,21 @@ function ic(k, col) {
 // ─── DATA ────────────────────────────────────────────────
 const creations = {
     finder:[
-        {title:'Movie Finder',desc:'Search and explore movie databases. Get instant details, ratings and trending films.',link:'https://wondermayank.github.io/movie',icon:'clapper',color:'#e03030',tag:'Cinema'},
+        {title:'Movie Finder',desc:'Search and explore movie databases. Get instant details, ratings and trending films.',link:'https://wondermayank.github.io/movie',icon:'clapper',color:'#f59e0b',tag:'Cinema'},
         {title:'Anime Finder',desc:'Discover anime series and more. Powered by the modern Jikan API with full details.',link:'https://wondermayank.github.io/anime',icon:'anime',color:'#8b5cf6',tag:'Media'},
         {title:'Book Finder',desc:'Your personal library explorer. Find books by title, author or genre with ease.',link:'https://wondermayank.github.io/books',icon:'books',color:'#2563eb',tag:'Knowledge'},
-        {title:'Pokédex',desc:'Search and explore the Pokémon world.',link:'https://wondermayank.github.io/pokedex',icon:'pokeball',color:'#FF0000',tag:'Pokémon'},
-        {title:'Games Finder',desc:'Free Games for PC & Mobile.',link:'https://wondermayank.github.io/game',icon:'console',color:'#ADD8E6',tag:'Gaming'},
+        {title:'Pokédex',desc:'Search and explore the Pokémon world.',link:'https://wondermayank.github.io/pokedex',icon:'pokeball',color:'#ef4444',tag:'Pokémon'},
+        {title:'Games Finder',desc:'Free Games for PC & Mobile.',link:'https://wondermayank.github.io/game',icon:'console',color:'#10b981',tag:'Gaming'},
     ],
     study:[
-        {title:'Book Hub',desc:'Organized educational books and structured study resources for all subjects.',link:'https://wondermayank.github.io/book',icon:'book',color:'#2563eb',tag:'Books'},
-        {title:'CBT Mock Test',desc:'Computer-Based Test simulator for CUET, NEET, JEE, Banking & SSC preparation.',link:'https://wondermayank.github.io/cbtmock',icon:'cbt',color:'#16a34a',tag:'Exam Prep'},
-        {title:'Main Study Blog',desc:'Structured notes, resources and educational content for commerce students.',link:'https://commercesehoga.blogspot.com/',icon:'pencil',color:'#e8602c',tag:'Commerce'},
-        {title:'English Practice',desc:'Daily English tests, grammar exercises, vocabulary builders and more.',link:'https://commercesehoga.github.io/english',icon:'speech_a',color:'#0891b2',tag:'Language'},
-        {title:'General Aptitude Test',desc:'Practice general awareness, reasoning and aptitude tests systematically.',link:'https://commercesehoga.github.io/gat',icon:'puzzle',color:'#7c3aed',tag:'Aptitude'},
-        {title:'Current Affairs',desc:'Yearly, Monthly, Quarterly & Half-Yearly current affairs for all exams.',link:'https://wondermayank.github.io/Current_Affairs',icon:'news',color:'#b45309',tag:'News'},
-        {title:'Periodic Table',desc:'Study Periodic Table With Future Tech',link:'https://wondermayank.github.io/Periodic-Table/v2/',icon:'Chemistry',color:'#2563eb',tag:'Chemistry'},
-        {title:'Hindi',desc:'Hindi Typing, Learn, Practice & More',link:'https://wondermayank.github.io/hindi',icon:'hindi',color:'#ffb7ce',tag:'Hindi'},
+        {title:'Book Hub',desc:'Organized educational books and structured study resources for all subjects.',link:'https://wondermayank.github.io/book',icon:'book',color:'#3b82f6',tag:'Books'},
+        {title:'CBT Mock Test',desc:'Computer-Based Test simulator for CUET, NEET, JEE, Banking & SSC preparation.',link:'https://wondermayank.github.io/cbtmock',icon:'cbt',color:'#10b981',tag:'Exam Prep'},
+        {title:'Main Study Blog',desc:'Structured notes, resources and educational content for commerce students.',link:'https://commercesehoga.blogspot.com/',icon:'pencil',color:'#f97316',tag:'Commerce'},
+        {title:'English Practice',desc:'Daily English tests, grammar exercises, vocabulary builders and more.',link:'https://commercesehoga.github.io/english',icon:'speech_a',color:'#06b6d4',tag:'Language'},
+        {title:'General Aptitude Test',desc:'Practice general awareness, reasoning and aptitude tests systematically.',link:'https://commercesehoga.github.io/gat',icon:'puzzle',color:'#8b5cf6',tag:'Aptitude'},
+        {title:'Current Affairs',desc:'Yearly, Monthly, Quarterly & Half-Yearly current affairs for all exams.',link:'https://wondermayank.github.io/Current_Affairs',icon:'news',color:'#d97706',tag:'News'},
+        {title:'Periodic Table',desc:'Study Periodic Table With Future Tech',link:'https://wondermayank.github.io/Periodic-Table/v2/',icon:'Chemistry',color:'#ec4899',tag:'Chemistry'},
+        {title:'Hindi',desc:'Hindi Typing, Learn, Practice & More',link:'https://wondermayank.github.io/hindi',icon:'hindi',color:'#f43f5e',tag:'Hindi'},
     ],
     tools:[
         {title:'Text to PDF',desc:'Convert plain text documents into professionally formatted PDFs in one click.',link:'https://wondermayank.github.io/pdftotext',icon:'pdf',color:'#dc2626',tag:'PDF'},
@@ -4331,7 +4878,7 @@ const tgGroups = [
 ];
 const hubsStudy = [
     {icon:'rss',badge:'Blogspot',title:'ThunderStudy Official',desc:'The original ThunderStudy blog — latest updates, all links and announcements.',link:'https://thunderstudyofficial.blogspot.com/'},
-    {icon:'globe',badge:'GitHub Pages',title:'ThunderStudy Updates',desc:'ThunderStudy update page — all resources, links and new releases in one place.',link:'https://thunderstudy.github.io/'},
+    {icon:'globe',badge:'GitHub Pages',title:'ThunderStudy',desc:'Free study material for Class 9, 10, 11, 12 — Commerce, Science & Humanities. Exam prep for CUET, JEE, NEET, NDA, Banking, SSC, CAT, CLAT, UPSC and more.',link:'https://thunderstudy.github.io/',keywords:'class 9 10 11 12 school cbse commerce science humanities arts biology physics chemistry maths english history geography political science economics accountancy business studies cuet jee neet nda banking ssc cat clat upsc study material notes mock test'},
     {icon:'check',badge:'GitHub Pages',title:'Commerce Se Hoga',desc:'Main CBT mock test site and structured notes for commerce & competitive exams.',link:'https://commercesehoga.github.io/'},
     {icon:'books',badge:'Blogspot',title:'Study Material Blog',desc:'Deep-dive study material blog for commerce, CBSE and competitive exam aspirants.',link:'https://commercesehoga.blogspot.com/'},
     {icon:'clipboard',badge:'Blogspot',title:'CBT Mock Blog',desc:'Blog companion to the CBT mock dashboard — tips, updates and new test sets.',link:'https://thunderstudydashboard.blogspot.com/'},
@@ -4427,14 +4974,43 @@ function renderTg(t,type) {
         ];
         const grad=botColors[tgBots.indexOf(t)%botColors.length];
         const iconSvg=`<svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16" stroke-width="3" stroke-linecap="round"/><line x1="16" y1="16" x2="16" y2="16" stroke-width="3" stroke-linecap="round"/></svg>`;
+        
+        // Simulated live ping
+        const simulatedPing = Math.floor(Math.random() * 15) + 12;
+        
         return `<a href="${t.link}" class="tg-card style-bot" style="--bot-grad:${grad}" target="_blank" rel="noopener noreferrer">
-            <div class="tg-bot-top">
+            <div class="tg-bot-telemetry-bg">
+                <div class="tg-bot-telemetry-bg-scroll">
+                    SYS_DAEMON_V2.5<br>
+                    BIND_PORT_8080<br>
+                    WS_CONNECT_200<br>
+                    PING_STAT_${simulatedPing}ms<br>
+                    SYS_STATUS_OK<br>
+                    DB_ALIVE_TRUE<br>
+                    POLL_DAEMON_V2.5<br>
+                    SYS_DAEMON_V2.5<br>
+                    BIND_PORT_8080<br>
+                    WS_CONNECT_200<br>
+                    PING_STAT_${simulatedPing}ms<br>
+                    SYS_STATUS_OK<br>
+                    DB_ALIVE_TRUE<br>
+                    POLL_DAEMON_V2.5
+                </div>
+            </div>
+            <div class="tg-bot-top" style="position: relative; z-index: 2;">
                 <div class="tg-bot-icon">${iconSvg}</div>
                 <span class="tg-badge-v6">Bot</span>
             </div>
-            <h3>${t.title}</h3>
-            <div class="tg-handle">${t.handle}</div>
-            <p>${t.desc}</p>
+            <h3 style="position: relative; z-index: 2;">${t.title}</h3>
+            <div class="tg-handle" style="position: relative; z-index: 2;">${t.handle}</div>
+            <p style="position: relative; z-index: 2;">${t.desc}</p>
+            <div class="tg-bot-telemetry">
+                <div class="tg-telemetry-status">
+                    <span class="tg-telemetry-dot"></span>
+                    <span style="font-weight: 700; color: #10b981;">ONLINE</span>
+                </div>
+                <span class="tg-telemetry-ping">PING: ${simulatedPing}ms</span>
+            </div>
         </a>`;
     } else {
         // Variant 5 — Minimal Editorial (groups) with unique colors
@@ -4455,7 +5031,7 @@ function renderTg(t,type) {
 function renderHub(h,i) {
     const cols=['#c8a2ff','#a2d4ff','#a2ffc8','#ffd4a2','#ffa2c8'];
     const c=cols[i%cols.length];
-    return `<div class="project-card style-tools-prism" style="--c:${c}; display: flex; flex-direction: column;">
+    return `<div class="project-card style-tools-prism" style="--c:${c}; display: flex; flex-direction: column;" data-keywords="${h.keywords||''}">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.4rem; position: relative; z-index: 2;">
             <div class="prism-icon-wrap" style="background:linear-gradient(135deg,${c}22,${c}10); border:1px solid ${c}30; margin-bottom: 0;">${ic(h.icon,c)}</div>
             <span class="proj-tag-bento" style="background:linear-gradient(135deg,${c},${c}dd); margin-bottom: 0;">${h.badge}</span>
@@ -4480,7 +5056,7 @@ function renderTechHub(h,i) {
     const acc = techAccents[i % techAccents.length];
     const isFeatured = i === 0;
     const featuredClass = isFeatured ? ' tech-card-featured' : '';
-    return `<a href="${h.link}" class="tech-hub-card${featuredClass}" style="--tech-accent:${acc.hex}; --tech-accent-rgb:${acc.rgb};" target="_blank" rel="noopener noreferrer">
+    return `<a href="${h.link}" class="tech-hub-card${featuredClass}" style="--tech-accent:${acc.hex}; --tech-accent-rgb:${acc.rgb};" data-keywords="${h.keywords||''}" target="_blank" rel="noopener noreferrer">
         <div class="tech-card-header">
             <span class="tech-badge-pill">${h.badge}</span>
             <div class="tech-sys-status">
@@ -4680,19 +5256,106 @@ document.getElementById('ig-grid').innerHTML=igCh.map(ch=>renderCh(ch,'ig')).joi
 const indiaMapLinks = {
     INAN:'andaman-nicobar', INTG:'telangana', INAP:'ap', INAR:'arunachal', INAS:'assam', INBR:'bihar', INCH:'chandigarh', INCT:'cg', INDH:'dadra-nagar-haveli-daman-diu', INDL:'delhi', INGA:'goa', INGJ:'gujarat', INHR:'haryana', INHP:'hp', INJH:'jharkhand', INKA:'karnataka', INKL:'kerala', INMP:'mp', INMH:'maharashtra', INMN:'manipur', INML:'meghalaya', INMZ:'mizoram', INNL:'nagaland', INOR:'odisha', INPY:'puducherry', INPB:'punjab', INRJ:'rajasthan', INSK:'sikkim', INTN:'tn', INTR:'tripura', INUP:'up', INUT:'uk', INWB:'wb', INLD:'lakshadweep', INJK:'jk', INLA:'ladakh'
 };
+
+const indiaStateFacts = {
+    INAN: { name: "Andaman & Nicobar", color: "white", fact: "Pristine beaches and historical penal colony.", festivals: "Island Tourism Festival, Subhash Mela", cuisine: "Seafood platters, coconut prawns, tropical fruits", history: "Home to indigenous tribes and Netaji Subhash Chandra Bose's first flag hoisting." },
+    INTG: { name: "Telangana", color: "emerald", fact: "Land of Charminar and unique Deccani culture.", festivals: "Bathukamma, Bonalu, Samakka Saralamma Jatara", cuisine: "Hyderabadi Biryani, Haleem, Qubani ka Meetha", history: "Seat of the Kakatiya Dynasty and Nizams of Hyderabad, famous for diamond mines." },
+    INAP: { name: "Andhra Pradesh", color: "emerald", fact: "Rice bowl of India, land of Tirupati Temple.", festivals: "Ugadhi, Pongal, Tirupati Brahmotsavam", cuisine: "Pesarattu, Gongura Pachadi, Hyderabadi Haleem", history: "Ancient kingdom of Satavahanas, birthplace of Telugu script and classical Kuchipudi dance." },
+    INAR: { name: "Arunachal Pradesh", color: "emerald", fact: "Land of the rising sun and pristine valleys.", festivals: "Losar, Solung, Nyokum", cuisine: "Thukpa, Zan, bamboo shoot dishes", history: "Mentioned in Hindu epics Kalika Purana and Mahabharata, home to Tawang Monastery." },
+    INAS: { name: "Assam", color: "emerald", fact: "Land of tea gardens and the one-horned rhino.", festivals: "Bihu, Ambubachi Mela, Jonbeel Mela", cuisine: "Khaar, Masor Tenga, Duck meat curry", history: "Ruled by the mighty Ahom Dynasty for 600 years, securing northeast from Mughal invasions." },
+    INBR: { name: "Bihar", color: "saffron", fact: "Birthplace of Buddhism and ancient learning.", festivals: "Chhath Puja, Sama Chakeva, Sonepur Fair", cuisine: "Litti Chokha, Sattu Paratha, Thekua", history: "Core of Maurya and Gupta Empires, home to Nalanda and Vikramashila universities." },
+    INCH: { name: "Chandigarh", color: "white", fact: "Beautiful planned city designed by Le Corbusier.", festivals: "Rose Festival, Plaza Carnival, Mango Festival", cuisine: "Butter Chicken, Sarson ka Saag, Chole Bhature", history: "Post-independence masterfully planned city serving as joint capital of Punjab & Haryana." },
+    INCT: { name: "Chhattisgarh", color: "saffron", fact: "Heart of tribal art and waterfalls.", festivals: "Bastar Dussehra, Madai Festival, Hareli", cuisine: "Chila, Muthia, Fara, Bafauri", history: "Carved from Madhya Pradesh, historically known as South Kosala, rich in ancient tribal kingdoms." },
+    INDH: { name: "Dadra & Nagar Haveli and Daman & Diu", color: "white", fact: "Portuguese heritage and scenic coastlines.", festivals: "Nariyal Poornima, Tarpa Festival, Garba", cuisine: "Seafood, Ubadiyu, local Gujarati delicacies", history: "Former Portuguese colonies integrated into India, preserving hybrid Indo-Portuguese architecture." },
+    INDL: { name: "Delhi", color: "white", fact: "Sultanate capital, blending history and modernity.", festivals: "Qutub Festival, Phool Walon Ki Sair, Holi", cuisine: "Chole Bhature, Biryani, Nihari, Paranthas", history: "Seat of multiple empires including Pandavas (Indraprastha), Tomars, Mughals, and British Raj." },
+    INGA: { name: "Goa", color: "emerald", fact: "Sun, sand, and beautiful Indo-Portuguese vibes.", festivals: "Goa Carnival, Shigmo, Feast of St. Francis Xavier", cuisine: "Fish Curry Rice, Pork Vindaloo, Bebinca, Feni", history: "Portuguese territory for 450 years until liberation in 1961, famous for historical churches." },
+    INGJ: { name: "Gujarat", color: "saffron", fact: "Land of Mahatma Gandhi and vibrant Garba.", festivals: "Navratri, International Kite Festival (Uttarayan)", cuisine: "Dhokla, Thepla, Khandvi, Gujarati Thali", history: "Harappan ports like Lothal, land of Maurya rule, Solanki architecture, and Swaraj birthplace." },
+    INHR: { name: "Haryana", color: "saffron", fact: "Land of Mahabharata and champion athletes.", festivals: "Teej, Surajkund International Crafts Mela, Gita Mahotsav", cuisine: "Singri ki Sabzi, Bajra Khichri, Lassi, Kheer", history: "Historic battlefield of Kurukshetra, Panipat, and home of the Vedic Indus valley sites." },
+    INHP: { name: "Himachal Pradesh", color: "saffron", fact: "Snowy peaks, apple orchards, and mountain temples.", festivals: "Kullu Dussehra, Minjar Fair, Lavi Fair", cuisine: "Siddu, Madra, Dham, Tudkiya Bhath", history: "Known as Dev Bhoomi (Land of Gods), princely hill states merged post-independence." },
+    INJH: { name: "Jharkhand", color: "saffron", fact: "Land of forests and mineral wealth.", festivals: "Sarhul, Karam Puja, Sohrai, Tusu Parab", cuisine: "Dhooska, Arsa Roti, Litti Chokha", history: "Heartland of tribal freedom fighters like Birsa Munda who rebelled against British exploitation." },
+    INKA: { name: "Karnataka", color: "emerald", fact: "Silicon valley of India, land of stone carvings.", festivals: "Mysore Dasara, Ugadi, Kambala (Buffalo Race)", cuisine: "Bisi Bele Bath, Mysore Pak, Rava Idli, Neer Dosa", history: "Ruled by Kadambas, Chalukyas, Hoysalas, and Vijayanagara Empire with ruins at Hampi." },
+    INKL: { name: "Kerala", color: "emerald", fact: "God's Own Country, spice garden of the world.", festivals: "Onam, Vishu, Thrissur Pooram, Boat Races", cuisine: "Kerala Sadya, Appam with Stew, Karimeen Pollichathu", history: "Ancient maritime trade hub with Romans, Phoenicians, Chinese, Arabs, and European colonialists." },
+    INMP: { name: "Madhya Pradesh", color: "saffron", fact: "Heart of India, land of tigers and temples.", festivals: "Khajuraho Dance Festival, Lokrang, Tansen Music Festival", cuisine: "Poha Jalebi, Daal Bafla, Bhutte ka Kees", history: "Home to Khajuraho temples, Sanchi Stupa, Bhimbetka rock shelters, and dynasties of Chandelas." },
+    INMH: { name: "Maharashtra", color: "emerald", fact: "Land of Shivaji Maharaj and Ajanta frescoes.", festivals: "Ganesh Chaturthi, Gudi Padwa, Shivaji Jayanti", cuisine: "Vada Pav, Pav Bhaji, Puran Poli, Misal Pav", history: "Rise of the Maratha Empire under Chhatrapati Shivaji Maharaj, challenging Mughal supremacy." },
+    INMN: { name: "Manipur", color: "emerald", fact: "Jewel of India, home of classical Manipuri dance.", festivals: "Yaoshang, Sangai Festival, Kang Rath Yatra", cuisine: "Eromba, Singju, Kangshoi, Chamthong", history: "Historic princely state with ancient Meitei folklore, battlefield of INA in World War II." },
+    INML: { name: "Meghalaya", color: "emerald", fact: "Abode of clouds, home of living root bridges.", festivals: "Wangala, Nongkrem Dance Festival, Behdeinkhlam", cuisine: "Jadoh, Doh-Khlieh, Nakham Bitchi", history: "Home to Khasi, Jaintia, and Garo tribes, famous for Mawlynnong (cleanest village in Asia)." },
+    INMZ: { name: "Mizoram", color: "emerald", fact: "Land of rolling hills and bamboo dances.", festivals: "Chapchar Kut, Mim Kut, Pawl Kut", cuisine: "Bai, Sawhchiar, Vawksa Rep", history: "Mizo hills historically governed by autonomous chiefs, integrated as a state in 1987." },
+    INNL: { name: "Nagaland", color: "emerald", fact: "Land of warriors and the Hornbill Festival.", festivals: "Hornbill Festival, Sekrenyi, Moatsu, Tokhu Emong", cuisine: "Smoked pork with bamboo shoots, Axone, Galho", history: "Home to 16 major Naga tribes, each with distinct colorful textiles and warrior folklore." },
+    INOR: { name: "Odisha", color: "emerald", fact: "Land of Lord Jagannath and Konark Sun Temple.", festivals: "Ratha Yatra, Durga Puja, Konark Dance Festival", cuisine: "Dalma, Pakhala Bhata, Chhena Poda, Rasgulla", history: "Ancient Kalinga kingdom which transformed Emperor Ashoka from warrior to Buddhist pacifist." },
+    INPY: { name: "Puducherry", color: "white", fact: "French Riviera of the East, spiritual Auroville.", festivals: "Bastille Day, International Yoga Festival, Pongal", cuisine: "Creole fish curry, croissants, French-Tamil fusion", history: "Main French settlement in India from 1674, transferred peacefully to Indian Union in 1954." },
+    INPB: { name: "Punjab", color: "saffron", fact: "Land of five rivers and high-energy Bhangra.", festivals: "Baisakhi, Lohri, Gurpurab, Hola Mohalla", cuisine: "Sarson ka Saag & Makki di Roti, Butter Chicken", history: "Birthplace of Sikhism, cradle of Indus valley, and major granary of India." },
+    INRJ: { name: "Rajasthan", color: "saffron", fact: "Land of Palaces, royal forts and deserts.", festivals: "Pushkar Camel Fair, Teej, Gangaur, Desert Festival", cuisine: "Dal Baati Churma, Gatte ki Sabzi, Ker Sangri", history: "Home of the Rajput clans, famous for architectural wonders like Amer Fort, Hawa Mahal and Lake Palace." },
+    INSK: { name: "Sikkim", color: "emerald", fact: "Organic state in the shadow of Mount Kanchenjunga.", festivals: "Losoong, Saga Dawa, Pang Lhabsol", cuisine: "Momo, Thukpa, Gundruk, Phagshapa", history: "Former Buddhist kingdom ruled by Namgyal dynasty (Chogyals), joined Indian Union in 1975." },
+    INTN: { name: "Tamil Nadu", color: "emerald", fact: "Land of Chola temples and ancient Tamil culture.", festivals: "Pongal, Puthandu (Tamil New Year), Karthigai Deepam", cuisine: "Sambar Rice, Dosa, Idli, Chettinad Chicken", history: "Seat of Chola, Chera, and Pandya dynasties; preserves the oldest surviving classical language." },
+    INTR: { name: "Tripura", color: "emerald", fact: "Land of 19 tribes and royal palaces.", festivals: "Kharchi Puja, Garia Puja, Orange & Tourism Festival", cuisine: "Mui Borok, Chakhwi, Mwkhwi", history: "Ancient independent kingdom ruled by the Manikya dynasty for hundreds of years." },
+    INUP: { name: "Uttar Pradesh", color: "saffron", fact: "Cradle of Hinduism, land of Taj Mahal and Ganga.", festivals: "Kumbh Mela, Taj Mahotsav, Lathmar Holi", cuisine: "Tunday Kababi, Petha, Bedai, Awadhi Biryani", history: "Birthplace of Lord Rama and Krishna, heartland of Vedic civilization, Maurya, and Mughal history." },
+    INUT: { name: "Uttarakhand", color: "saffron", fact: "Land of Gods (Devbhoomi), yoga capital Rishikesh.", festivals: "Kumbh Mela, Ganga Dussehra, Phool Dei", cuisine: "Kafuli, Aloo ke Gutke, Bal Mithai", history: "Historic Uttarakhand hills home to ancient Garhwal and Kumaon kingdoms, source of Ganga & Yamuna." },
+    INWB: { name: "West Bengal", color: "emerald", fact: "Cultural capital of India, land of Rabindrasangeet.", festivals: "Durga Puja, Poila Baisakh, Poush Mela", cuisine: "Machher Jhol (Fish Curry), Rosogolla, Sandesh, Luchi", history: "Center of Bengal Renaissance, hub of Indian independence movement and British East India Company." },
+    INLD: { name: "Lakshadweep", color: "white", fact: "Coral paradise islands in the Arabian Sea.", festivals: "Eid-ul-Fitr, Milad-un-Nabi, Bakrid", cuisine: "Coconut-infused seafood, tuna curry, Kadalakka", history: "Ancient Buddhist and Islamic center settled by Cheraman Perumal's legendary travelers." },
+    INJK: { name: "Jammu and Kashmir", color: "saffron", fact: "Paradise on Earth, land of saffron and lakes.", festivals: "Shikara Festival, Tulip Festival, Eid, Urs", cuisine: "Wazwan (Rogan Josh, Rista), Kahwa (Saffron tea)", history: "Rule of Mauryas, Kushans, Mughals, and Dogras; famous for pashmina and alpine beauty." },
+    INLA: { name: "Ladakh", color: "saffron", fact: "Cold desert of monasteries and high-altitude lakes.", festivals: "Hemis Festival, Losar, Ladakh Festival", cuisine: "Thukpa, Skyu, Tsampa, Butter tea", history: "Historically connected to Tibet and Silk Route trade, famous for ancient Himalayan monasteries." }
+};
+
 const indiaRegions = Array.from(document.querySelectorAll('.india-map-svg #features [id^="IN"]'));
 const indiaTip = document.getElementById('india-map-tip');
 const indiaList = document.getElementById('india-states-list');
 const indiaSearch = document.getElementById('india-map-search');
 const indiaStatus = document.getElementById('india-map-status');
+
 function openIndiaRegion(region){
-    const slug = indiaMapLinks[region.id];
-    if(slug) window.open(`https://wondermayank.github.io/india/${slug}`,'_blank','noopener,noreferrer');
+    const data = indiaStateFacts[region.id];
+    if (data) {
+        document.getElementById('explore-title').textContent = data.name;
+        document.getElementById('explore-fact').textContent = data.fact;
+        document.getElementById('explore-festivals').textContent = data.festivals;
+        document.getElementById('explore-cuisine').textContent = data.cuisine;
+        document.getElementById('explore-history').textContent = data.history;
+        
+        const badge = document.getElementById('explore-badge');
+        badge.className = 'explore-badge-pill'; // Reset classes
+        if (data.color === 'saffron') badge.classList.add('explore-badge-saffron');
+        else if (data.color === 'emerald') badge.classList.add('explore-badge-emerald');
+        else badge.classList.add('explore-badge-white');
+        badge.textContent = data.color.toUpperCase() + ' HERITAGE';
+        
+        const slug = indiaMapLinks[region.id];
+        const linkEl = document.getElementById('explore-link');
+        if (slug && linkEl) {
+            linkEl.href = `https://wondermayank.github.io/india/${slug}`;
+            linkEl.style.display = 'inline-flex';
+        } else if (linkEl) {
+            linkEl.style.display = 'none';
+        }
+        
+        document.getElementById('india-explore-modal').classList.add('open');
+    } else {
+        const slug = indiaMapLinks[region.id];
+        if(slug) window.open(`https://wondermayank.github.io/india/${slug}`,'_blank','noopener,noreferrer');
+    }
 }
 function setIndiaActive(region, active){
     region.classList.toggle('is-active-region', active);
     const listLink = document.querySelector(`[data-region-id="${region.id}"]`);
     if(listLink) listLink.classList.toggle('is-active-region', active);
+    
+    // Remove glow classes
+    region.classList.remove('region-glow-saffron', 'region-glow-emerald', 'region-glow-white');
+    
+    if (active) {
+        const data = indiaStateFacts[region.id];
+        if (data) {
+            region.classList.add(`region-glow-${data.color}`);
+            if(indiaTip){
+                indiaTip.innerHTML = `<strong style="color: var(--primary-dark)">${data.name}</strong><br><span style="font-size:0.78rem; font-weight:500; opacity:0.95">${data.fact}</span>`;
+                indiaTip.style.display = 'block';
+            }
+        } else {
+            const name = region.getAttribute('name') || region.id;
+            if(indiaTip){ indiaTip.innerHTML = `<strong>${name}</strong>`; indiaTip.style.display = 'block'; }
+        }
+    } else {
+        if(indiaTip) indiaTip.style.display = 'none';
+    }
 }
 indiaRegions.forEach(region=>{
     const name = region.getAttribute('name') || region.id;
@@ -4708,9 +5371,9 @@ indiaRegions.forEach(region=>{
     region.addEventListener('keydown',e=>{
         if(e.key==='Enter' || e.key===' '){ e.preventDefault(); openIndiaRegion(region); }
     });
-    region.addEventListener('mouseenter',()=>{ setIndiaActive(region,true); if(indiaTip){ indiaTip.textContent=name; indiaTip.style.display='block'; } });
+    region.addEventListener('mouseenter',()=>{ setIndiaActive(region,true); });
     region.addEventListener('mousemove',e=>{ if(indiaTip){ indiaTip.style.left=(e.clientX+14)+'px'; indiaTip.style.top=(e.clientY+14)+'px'; } });
-    region.addEventListener('mouseleave',()=>{ setIndiaActive(region,false); if(indiaTip) indiaTip.style.display='none'; });
+    region.addEventListener('mouseleave',()=>{ setIndiaActive(region,false); });
 });
 function renderIndiaList(filter=''){
     if(!indiaList) return;
@@ -4741,10 +5404,334 @@ function renderIndiaList(filter=''){
         const region = document.getElementById(link.dataset.regionId);
         link.addEventListener('mouseenter',()=>region && setIndiaActive(region,true));
         link.addEventListener('mouseleave',()=>region && setIndiaActive(region,false));
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            if (region) openIndiaRegion(region);
+        });
     });
 }
 if(indiaSearch) indiaSearch.addEventListener('input',e=>renderIndiaList(e.target.value));
 renderIndiaList();
+
+// ─── SPOTLIGHT ENGINE & DYNAMIC SEARCH ───────────────────
+let spotlightIndex = [];
+let selectedIdx = 0;
+let currentResults = [];
+
+function buildSpotlightIndex() {
+    spotlightIndex = [];
+    
+    // 1. Creations
+    Object.entries(creations).forEach(([category, items]) => {
+        items.forEach(item => {
+            spotlightIndex.push({
+                title: item.title,
+                desc: item.desc || '',
+                link: item.link,
+                tag: item.tag || '',
+                icon: item.icon,
+                color: item.color || 'var(--primary)',
+                category: 'Creations (' + category.toUpperCase() + ')'
+            });
+        });
+    });
+    
+    // 2. Bots
+    tgBots.forEach(bot => {
+        spotlightIndex.push({
+            title: bot.title,
+            desc: bot.desc || '',
+            link: bot.link,
+            tag: bot.handle || 'Bot',
+            icon: 'bot',
+            color: '#0088cc',
+            category: 'Telegram Bots'
+        });
+    });
+    
+    // 3. Groups
+    tgGroups.forEach(grp => {
+        spotlightIndex.push({
+            title: grp.title,
+            desc: grp.desc || '',
+            link: grp.link,
+            tag: grp.handle || 'Group',
+            icon: 'users',
+            color: '#32b478',
+            category: 'Telegram Groups'
+        });
+    });
+    
+    // 4. Hubs (Study & Tech)
+    hubsStudy.forEach(hub => {
+        spotlightIndex.push({
+            title: hub.title,
+            desc: hub.desc || '',
+            link: hub.link,
+            tag: hub.badge || 'Hub',
+            icon: hub.icon || 'globe',
+            color: '#7c3aed',
+            category: 'Study Hubs',
+            keywords: hub.keywords || ''
+        });
+    });
+    hubsTech.forEach(hub => {
+        spotlightIndex.push({
+            title: hub.title,
+            desc: hub.desc || '',
+            link: hub.link,
+            tag: hub.badge || 'Hub',
+            icon: hub.icon || 'zap',
+            color: '#0ea5e9',
+            category: 'Tech Hubs'
+        });
+    });
+    
+    // 5. YouTube channels
+    ytCh.forEach(ch => {
+        spotlightIndex.push({
+            title: ch.title,
+            desc: ch.desc || '',
+            link: ch.link,
+            tag: 'YouTube',
+            icon: ch.icon || 'clapper',
+            color: ch.c || '#cc0000',
+            category: 'YouTube Channels'
+        });
+    });
+    
+    // 6. Instagram profiles
+    igCh.forEach(ch => {
+        spotlightIndex.push({
+            title: ch.title,
+            desc: ch.desc || '',
+            link: ch.link,
+            tag: 'Instagram',
+            icon: ch.icon || 'heart',
+            color: '#bc1888',
+            category: 'Instagram Profiles'
+        });
+    });
+}
+
+function searchSpotlight(query) {
+    const q = query.trim().toLowerCase();
+    if (!q) return spotlightIndex.slice(0, 10);
+    
+    const terms = q.split(/\s+/);
+    return spotlightIndex.filter(item => {
+        return terms.every(term => {
+            return item.title.toLowerCase().includes(term) ||
+                   item.desc.toLowerCase().includes(term) ||
+                   item.tag.toLowerCase().includes(term) ||
+                   item.category.toLowerCase().includes(term) ||
+                   (item.keywords && item.keywords.toLowerCase().includes(term));
+        });
+    });
+}
+
+function renderSearchResults(results) {
+    const container = document.getElementById('spotlight-results');
+    if (!container) return;
+    
+    currentResults = results;
+    selectedIdx = 0;
+    
+    if (results.length === 0) {
+        container.innerHTML = `
+            <div style="padding: 2.5rem 1.5rem; text-align: center; color: var(--text-muted)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px; margin: 0 auto 1rem; opacity: 0.35; color: var(--primary-dark)">
+                    <circle cx="12" cy="12" r="10"/><line x1="8" y1="12" x2="16" y2="12"/>
+                </svg>
+                <p style="font-weight: 700; font-size: 1rem; color: var(--text-main)">No resources found matching your search</p>
+                <p style="font-size: 0.8rem; margin-top: 0.4rem">Try typing something else like "movie", "bot", or "study"</p>
+            </div>
+        `;
+        return;
+    }
+    
+    const groups = {};
+    results.forEach(item => {
+        if (!groups[item.category]) groups[item.category] = [];
+        groups[item.category].push(item);
+    });
+    
+    let html = '';
+    let flatIndex = 0;
+    
+    Object.entries(groups).forEach(([category, items]) => {
+        html += `<div class="spotlight-category-title">${category}</div>`;
+        items.forEach(item => {
+            const isSel = flatIndex === selectedIdx ? ' selected' : '';
+            const bg = `background: linear-gradient(135deg, ${item.color}22, ${item.color}10); border: 1px solid ${item.color}30; color: ${item.color};`;
+            html += `
+                <a href="${item.link}" class="spotlight-item${isSel}" data-index="${flatIndex}" target="_blank" rel="noopener noreferrer" onclick="toggleSpotlight(false)">
+                    <div class="spotlight-item-icon" style="${bg}">
+                        ${ic(item.icon, item.color)}
+                    </div>
+                    <div style="flex: 1; min-width: 0;">
+                        <div style="font-weight: 700; font-size: 0.94rem; display: flex; align-items: center; gap: 8px;">
+                            <span style="color: var(--text-main)">${item.title}</span>
+                            <span class="spotlight-kbd-indicator" style="font-size: 0.6rem; padding: 1px 5px;">${item.tag}</span>
+                        </div>
+                        <div style="font-size: 0.76rem; color: var(--text-muted); text-overflow: ellipsis; overflow: hidden; white-space: nowrap; margin-top: 0.2rem;">${item.desc}</div>
+                    </div>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 15px; height: 15px; opacity: 0.55; flex-shrink: 0;" class="spotlight-arrow">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </a>
+            `;
+            flatIndex++;
+        });
+    });
+    
+    container.innerHTML = html;
+}
+
+function updateSelectedHighlight() {
+    const items = document.querySelectorAll('.spotlight-item');
+    items.forEach(el => {
+        const idx = parseInt(el.dataset.index);
+        if (idx === selectedIdx) {
+            el.classList.add('selected');
+            el.scrollIntoView({ block: 'nearest' });
+        } else {
+            el.classList.remove('selected');
+        }
+    });
+}
+
+function filterAllCards(query) {
+    const q = query.trim().toLowerCase();
+    const cards = document.querySelectorAll('.project-card, .tg-card, .tech-hub-card, .yt-channel-card, .channel-card, .hub-card');
+    
+    cards.forEach(card => {
+        if (!q) {
+            card.classList.remove('search-hidden');
+            return;
+        }
+        
+        const title = (card.querySelector('h3') ? card.querySelector('h3').textContent : '').toLowerCase();
+        const desc = (card.querySelector('p') ? card.querySelector('p').textContent : '').toLowerCase();
+        const dataKeywords = (card.dataset.keywords || '').toLowerCase();
+        
+        let tagsText = '';
+        const tags = card.querySelectorAll('.proj-tag, .proj-tag-bento, .proj-tag-cyber, .ideas-tag, .fun-tag, .tech-badge-pill, .tg-grp-type, .tg-badge-v6');
+        tags.forEach(t => tagsText += t.textContent + ' ');
+        tagsText = tagsText.toLowerCase();
+        
+        const isMatch = title.includes(q) || desc.includes(q) || tagsText.includes(q) || dataKeywords.includes(q);
+        card.classList.toggle('search-hidden', !isMatch);
+    });
+}
+
+function toggleSpotlight(open) {
+    const overlay = document.getElementById('spotlight-overlay');
+    if (!overlay) return;
+    
+    if (open) {
+        overlay.classList.add('open');
+        const input = document.getElementById('spotlight-input');
+        if (input) {
+            input.value = '';
+            input.focus();
+        }
+        renderSearchResults(spotlightIndex.slice(0, 10));
+        filterAllCards('');
+    } else {
+        overlay.classList.remove('open');
+        filterAllCards('');
+    }
+}
+
+function openSpotlightWithQuery(query) {
+    toggleSpotlight(true);
+    const input = document.getElementById('spotlight-input');
+    if (input) {
+        input.value = query;
+        input.focus();
+        const results = searchSpotlight(query);
+        renderSearchResults(results);
+        filterAllCards(query);
+    }
+}
+
+// Bind spotlight setup and listeners
+document.addEventListener('DOMContentLoaded', () => {
+    buildSpotlightIndex();
+    
+    const spotInput = document.getElementById('spotlight-input');
+    if (spotInput) {
+        spotInput.addEventListener('keydown', e => {
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (currentResults.length > 0) {
+                    selectedIdx = (selectedIdx + 1) % currentResults.length;
+                    updateSelectedHighlight();
+                }
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (currentResults.length > 0) {
+                    selectedIdx = (selectedIdx - 1 + currentResults.length) % currentResults.length;
+                    updateSelectedHighlight();
+                }
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                const activeItem = document.querySelector('.spotlight-item.selected');
+                if (activeItem) {
+                    activeItem.click();
+                } else if (currentResults.length > 0) {
+                    const item = currentResults[0];
+                    window.open(item.link, '_blank', 'noopener,noreferrer');
+                    toggleSpotlight(false);
+                }
+            } else if (e.key === 'Escape') {
+                e.preventDefault();
+                toggleSpotlight(false);
+            }
+        });
+        
+        spotInput.addEventListener('input', e => {
+            const query = e.target.value;
+            const results = searchSpotlight(query);
+            renderSearchResults(results);
+            filterAllCards(query);
+        });
+    }
+    
+    // Bind global keyboard shortcut Ctrl+K / Cmd+K
+    window.addEventListener('keydown', e => {
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+            e.preventDefault();
+            const overlay = document.getElementById('spotlight-overlay');
+            const isOpen = overlay && overlay.classList.contains('open');
+            toggleSpotlight(!isOpen);
+        }
+    });
+    
+    // Bind search trigger click buttons (desktop nav & mobile drawer nav)
+    document.querySelectorAll('.search-trigger').forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            toggleSpotlight(true);
+        });
+    });
+    
+    // Make tags globally clickable & bind actions
+    const tags = document.querySelectorAll('.proj-tag, .proj-tag-bento, .proj-tag-cyber, .ideas-tag, .fun-tag, .tech-badge-pill, .tg-badge-v6');
+    tags.forEach(tag => {
+        tag.style.cursor = 'pointer';
+        tag.setAttribute('title', 'Click to filter resources');
+        tag.style.transition = 'all 0.2s ease';
+        tag.addEventListener('click', e => {
+            e.preventDefault();
+            e.stopPropagation();
+            const tagText = tag.textContent.trim();
+            openSpotlightWithQuery(tagText);
+        });
+    });
+});
+
 
 // ─── CURSOR GLOW ─────────────────────────────────────────
 const glow=document.getElementById('cursor-glow');
@@ -4773,12 +5760,54 @@ function applyTheme(theme){
     document.querySelectorAll('.theme-icon-sun').forEach(icon=>icon.style.display=isDark?'block':'none');
     document.querySelectorAll('.theme-toggle-label').forEach(label=>label.textContent=isDark?'Light mode':'Dark mode');
 }
-function toggleTheme(){
+function toggleTheme(e){
     const nextTheme = document.body.classList.contains('theme-dark') ? 'light' : 'dark';
-    localStorage.setItem('wm-theme', nextTheme);
-    applyTheme(nextTheme);
+    
+    // Fallback if View Transitions API is not supported
+    if (!document.startViewTransition || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        localStorage.setItem('wm-theme', nextTheme);
+        applyTheme(nextTheme);
+        return;
+    }
+
+    const x = e ? e.clientX : window.innerWidth / 2;
+    const y = e ? e.clientY : window.innerHeight / 2;
+    const endRadius = Math.hypot(
+        Math.max(x, window.innerWidth - x),
+        Math.max(y, window.innerHeight - y)
+    );
+
+    const transition = document.startViewTransition(() => {
+        localStorage.setItem('wm-theme', nextTheme);
+        applyTheme(nextTheme);
+    });
+
+    transition.ready.then(() => {
+        const clipPath = [
+            `circle(0px at ${x}px ${y}px)`,
+            `circle(${endRadius}px at ${x}px ${y}px)`
+        ];
+        document.documentElement.animate(
+            {
+                clipPath: nextTheme === 'dark' ? clipPath : [...clipPath].reverse(),
+            },
+            {
+                duration: 480,
+                easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+                pseudoElement: nextTheme === 'dark' ? '::view-transition-new(root)' : '::view-transition-old(root)',
+            }
+        );
+    });
 }
 applyTheme(localStorage.getItem('wm-theme') || 'light');
+
+// Bind to capture events dynamically
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.theme-toggle').forEach(btn => {
+        btn.removeAttribute('onclick');
+        btn.addEventListener('click', toggleTheme);
+    });
+});
 // ─── TILT ────────────────────────────────────────────────
 function addTilt(sel){
     document.querySelectorAll(sel).forEach(card=>{
@@ -4800,6 +5829,97 @@ addTilt('.tg-card.style-bot');
 addTilt('.yt-channel-card');
 addTilt('.tech-hub-card');
 addTilt('.india-card');
+
+// ─── SCROLL REVEAL & WORD REVEAL ANIMATIONS ──────────────
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. INTERSECTION OBSERVER Configuration
+    const obsOptions = {
+        root: null,
+        rootMargin: '0px -10% -6% 0px',
+        threshold: 0.08
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-visible');
+                
+                // Stagger child elements if it's a staggered grid/list container
+                if (entry.target.classList.contains('stagger-grid')) {
+                    const cards = entry.target.querySelectorAll('.project-card, .about-card, .tg-card, .hub-card, .yt-card, .channel-card, .india-card');
+                    cards.forEach((card, cIdx) => {
+                        card.style.transitionDelay = `${cIdx * 65}ms`;
+                        card.classList.add('reveal-visible');
+                    });
+                }
+            } else {
+                // Remove reveal-visible on exit to trigger the animation again on re-entry!
+                entry.target.classList.remove('reveal-visible');
+                
+                // Also reset grid cards staggered state
+                if (entry.target.classList.contains('stagger-grid')) {
+                    const cards = entry.target.querySelectorAll('.project-card, .about-card, .tg-card, .hub-card, .yt-card, .channel-card, .india-card');
+                    cards.forEach(card => {
+                        card.style.transitionDelay = '0ms';
+                        card.classList.remove('reveal-visible');
+                    });
+                }
+            }
+        });
+    }, obsOptions);
+
+    // A. Staggered word splitting for headers (Who is Wondermayank, catalogue titles, bot titles, etc.)
+    const headers = document.querySelectorAll('.section-header h2, .section-header p, .about-identity .about-name');
+    headers.forEach(h => {
+        h.classList.add('word-reveal');
+        const text = h.innerText.trim();
+        const words = text.split(/\s+/);
+        h.innerHTML = words.map((w, idx) => {
+            return `<span class="word-wrap"><span class="word-inner" style="transition-delay: ${idx * 60}ms">${w}</span></span>`;
+        }).join(' ');
+        
+        h.classList.add('reveal-element');
+        revealObserver.observe(h);
+    });
+
+    // B. Staggered grid card entries (creations, bento, bots, groups, hubs, youtube channels)
+    const grids = document.querySelectorAll('.projects-grid, .about-bento-grid, .hubs-grid, .channels-grid, .bots-grid, .groups-grid, .youtube-grid, .telegram-grid');
+    grids.forEach(g => {
+        g.classList.add('stagger-grid');
+        const cards = g.querySelectorAll('.project-card, .about-card, .tg-card, .hub-card, .yt-card, .channel-card, .india-card');
+        cards.forEach(card => {
+            card.classList.add('reveal-element');
+        });
+        revealObserver.observe(g);
+    });
+    
+    // C. Single elements or lists (e.g. faq-items, general elements)
+    const singleElements = document.querySelectorAll('.india-card, .faq-item');
+    singleElements.forEach(el => {
+        el.classList.add('reveal-element');
+        revealObserver.observe(el);
+    });
+    
+    // D. Pause hero video when scrolled offscreen to conserve CPU/GPU energy
+    const heroVideo = document.getElementById('hero-video');
+    if (heroVideo) {
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    heroVideo.play().catch(()=>{});
+                } else {
+                    heroVideo.pause();
+                }
+            });
+        }, { threshold: 0 });
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) {
+            videoObserver.observe(heroSection);
+        } else {
+            videoObserver.observe(heroVideo);
+        }
+    }
+});
 </script>
 
 <!-- ─── THREE.JS DEMON SLAYER HERO BG ─────────────────── -->
