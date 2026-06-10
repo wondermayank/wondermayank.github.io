@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -3759,6 +3760,389 @@
             0% { transform: translateY(0); }
             100% { transform: translateY(-50%); }
         }
+        /* ─── FANDOM UNIVERSE CARDS ─── */
+        .fandom-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 1.6rem !important;
+        }
+        @media(max-width:900px){.fandom-grid{grid-template-columns:repeat(auto-fill,minmax(260px,1fr)) !important}}
+        @media(max-width:580px){.fandom-grid{grid-template-columns:1fr !important}}
+
+        .fandom-card {
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--text-main);
+            display: block;
+            height: 320px;
+            transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+        }
+        .fandom-card-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            transition: transform 0.6s var(--ease);
+        }
+        .fandom-card:hover .fandom-card-bg {
+            transform: scale(1.06);
+        }
+        .fandom-card-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 60%, rgba(0,0,0,0.92) 100%);
+            transition: background 0.4s var(--ease);
+        }
+        .fandom-card:hover .fandom-card-overlay {
+            background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.82) 60%, rgba(0,0,0,0.96) 100%);
+        }
+        .fandom-card-content {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .fandom-world-badge {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            font-size: 0.6rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 4px 11px;
+            border-radius: 30px;
+            color: white;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.15);
+        }
+        .fandom-icon-wrap {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.18);
+            border: 1.5px solid rgba(255,255,255,0.35);
+            backdrop-filter: blur(10px);
+            margin-bottom: 1rem;
+            transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+        }
+        .fandom-card:hover .fandom-icon-wrap {
+            transform: scale(1.1) rotate(-6deg);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        .fandom-icon-wrap svg { width: 22px; height: 22px; }
+        .fandom-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.4rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .fandom-card p {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.82);
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+        }
+        .fandom-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.65rem 1.4rem;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.2);
+            border: 1.5px solid rgba(255,255,255,0.5);
+            color: white;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s var(--ease);
+            width: fit-content;
+        }
+        .fandom-btn:hover {
+            background: rgba(255,255,255,0.35);
+            transform: translateX(4px);
+        }
+        .fandom-btn svg { width: 14px; height: 14px; transition: transform 0.3s var(--ease); }
+        .fandom-btn:hover svg { transform: translateX(3px); }
+
+        /* Marvel red gradient bg */
+        .fandom-card.world-Marvel .fandom-card-bg {
+            background: linear-gradient(135deg, #1a0000 0%, #6b0000 40%, #dc2626 100%);
+        }
+        /* Harry Potter purple */
+        .fandom-card.world-HP .fandom-card-bg {
+            background: linear-gradient(135deg, #0f0318 0%, #4c1d95 45%, #7c3aed 100%);
+        }
+        /* Minecraft green */
+        .fandom-card.world-MC .fandom-card-bg {
+            background: linear-gradient(135deg, #0a1a0a 0%, #064e3b 45%, #16a34a 100%);
+        }
+        /* Particle dots overlay for Minecraft */
+        .fandom-card.world-MC .fandom-card-bg::after,
+        .fandom-card.world-HP .fandom-card-bg::after,
+        .fandom-card.world-Marvel .fandom-card-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+            background-size: 18px 18px;
+            opacity: 0.7;
+        }
+        .fandom-card:hover {
+            transform: translateY(-8px) scale(1.01) !important;
+        }
+        .fandom-card.world-Marvel:hover { box-shadow: 0 24px 56px rgba(220,38,38,0.4) !important; }
+        .fandom-card.world-HP:hover { box-shadow: 0 24px 56px rgba(124,58,237,0.4) !important; }
+        .fandom-card.world-MC:hover { box-shadow: 0 24px 56px rgba(22,163,74,0.4) !important; }
+
+        /* ─── FEATURED BIG SECTION: THUNDERSTUDY AI + ABOUT ─── */
+        .featured-section {
+            margin-top: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+        /* ═══════════════════════════════════════════
+           FLAGSHIP PROJECTS — UNIFIED IMAGE-BOX
+        ═══════════════════════════════════════════ */
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 1.6rem;
+            align-items: stretch;
+        }
+        @media(max-width:900px){ .featured-grid { grid-template-columns: 1fr; } }
+
+        /* ── CARD 1: ThunderStudy AI — full yellow ── */
+        .featured-card-thunder {
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem 2rem 2rem;
+            min-height: 280px;
+            text-decoration: none;
+            color: #1a1200;
+            background: #ffd000;
+            border: 1.5px solid #f5c800;
+            box-shadow: 0 8px 32px rgba(230,180,30,0.22), 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+            cursor: pointer;
+        }
+        body.theme-dark .featured-card-thunder {
+            background: #c9a000;
+            border-color: rgba(255,200,0,0.4);
+        }
+        .featured-card-thunder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(0,0,0,0.07) 1.5px, transparent 1.5px);
+            background-size: 20px 20px;
+            pointer-events: none;
+        }
+        .featured-card-thunder::after { content: none; }
+        .featured-card-thunder:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 22px 56px rgba(230,170,0,0.3), 0 4px 14px rgba(0,0,0,0.08);
+        }
+        .ft-zap-icon {
+            position: absolute;
+            bottom: -10px; right: -10px;
+            width: 160px; height: 160px;
+            opacity: 1;
+            z-index: 0;
+            transition: transform 0.4s var(--ease);
+        }
+        .featured-card-thunder:hover .ft-zap-icon { transform: scale(1.06) rotate(6deg); }
+        .featured-thunder-badge {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 4px 13px;
+            border-radius: 50px;
+            background: rgba(0,0,0,0.12);
+            border: 1px solid rgba(0,0,0,0.15);
+            color: #5a3c00;
+            margin-bottom: 0.85rem;
+            width: fit-content;
+        }
+        .featured-thunder-title {
+            position: relative;
+            z-index: 1;
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.15;
+            color: #1a1200;
+            margin-bottom: 0.55rem;
+        }
+        .featured-thunder-sub {
+            position: relative;
+            z-index: 1;
+            font-size: 0.87rem;
+            color: rgba(30,20,0,0.72);
+            margin-bottom: 1.5rem;
+            line-height: 1.65;
+            max-width: 480px;
+        }
+        .featured-thunder-btn {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 0.78rem 1.8rem;
+            border-radius: 50px;
+            background: #1a1200;
+            color: #ffd000;
+            font-weight: 800;
+            font-size: 0.87rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s var(--ease);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            width: fit-content;
+        }
+        .featured-thunder-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.28);
+            background: #000000;
+        }
+        .featured-thunder-btn svg { width: 16px; height: 16px; }
+
+        /* ── CARD 2: About — full blue ── */
+        .featured-card-about {
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem 1.8rem 2rem;
+            min-height: 280px;
+            text-decoration: none;
+            color: #ffffff;
+            background: #1e90ff;
+            border: 1.5px solid #60b4ff;
+            box-shadow: 0 8px 32px rgba(30,130,230,0.22), 0 2px 8px rgba(0,0,0,0.06);
+            transition: all 0.4s var(--ease);
+            cursor: pointer;
+        }
+        body.theme-dark .featured-card-about {
+            background: #0060cc;
+            border-color: rgba(30,144,255,0.45);
+        }
+        .featured-card-about::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.18) 1.5px, transparent 1.5px);
+            background-size: 18px 18px;
+            pointer-events: none;
+        }
+        .featured-card-about::after { content: none; }
+        .featured-card-about:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 22px 56px rgba(30,130,230,0.3), 0 4px 14px rgba(0,0,0,0.1);
+        }
+        .featured-about-avatar {
+            position: relative;
+            z-index: 1;
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.9);
+            object-fit: cover;
+            margin-bottom: 0.85rem;
+            display: block;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            transition: transform 0.4s var(--ease);
+        }
+        .featured-card-about:hover .featured-about-avatar {
+            transform: scale(1.07) rotate(-3deg);
+        }
+        .featured-about-name {
+            position: relative;
+            z-index: 1;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.2rem;
+            color: #ffffff;
+        }
+        .featured-about-role {
+            position: relative;
+            z-index: 1;
+            font-size: 0.71rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.75);
+            margin-bottom: 0.75rem;
+        }
+        .featured-about-desc {
+            position: relative;
+            z-index: 1;
+            font-size: 0.83rem;
+            color: rgba(255,255,255,0.82);
+            line-height: 1.65;
+            margin-bottom: 1.2rem;
+        }
+        .featured-about-btn {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.65rem 1.3rem;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.18);
+            border: 1.5px solid rgba(255,255,255,0.5);
+            color: #ffffff;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s var(--ease);
+            width: fit-content;
+            backdrop-filter: blur(8px);
+        }
+        .featured-about-btn:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.8);
+            transform: translateX(4px);
+        }
+        .featured-about-btn svg { width: 14px; height: 14px; transition: transform 0.3s var(--ease); }
+        .featured-about-btn:hover svg { transform: translateX(3px); }
+
+        /* Remove old sub-element rules no longer needed */
+        .ft-spacer, .fa-spacer,
+        .featured-thunder-content, .featured-about-content { display: contents; }
     </style>
 </head>
 <body>
@@ -3811,6 +4195,7 @@
     </a>
     <div class="nav-links">
         <a href="#catalog">Creation 7</a>
+        <a href="#featured">⚡ Featured</a>
         <a href="#india">🇮🇳 India</a>
         <a href="#telegram">Telegram</a>
         <a href="#hubs">Hubs</a>
@@ -3830,6 +4215,7 @@
 </nav>
 <div class="mobile-nav" id="mobnav">
     <a href="#catalog" onclick="toggleNav()">Creation 7</a>
+    <a href="#featured" onclick="toggleNav()">⚡ Featured</a>
     <a href="#india" onclick="toggleNav()">🇮🇳 India & Culture</a>
     <a href="#telegram" onclick="toggleNav()">Telegram</a>
     <a href="#hubs" onclick="toggleNav()">Hubs</a>
@@ -3881,6 +4267,49 @@
     </div>
 </section>
 
+<!-- ══════════════════════════════════════════
+     FEATURED: THUNDERSTUDY AI + ABOUT
+══════════════════════════════════════════ -->
+<div class="main-container" style="padding-top:1rem;padding-bottom:0">
+<section id="featured" aria-label="Featured Projects" style="scroll-margin-top:90px">
+    <div class="section-header" style="margin-bottom:1.8rem">
+        <div class="section-pill">✦ Featured</div>
+        <h2>Flagship Projects</h2>
+        <p>The biggest and most powerful creations from the WM universe.</p>
+    </div>
+    <div class="featured-grid">
+        <!-- ThunderStudy AI — single yellow card -->
+        <a href="https://thunderstudyai.vercel.app/" class="featured-card-thunder" target="_blank" rel="noopener noreferrer">
+            <svg class="ft-zap-icon" width="140" height="140" viewBox="0 0 24 24" fill="rgba(255,255,255,0.15)" stroke="none"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <div class="featured-thunder-badge">
+                <svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor" stroke="none"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                AI Powered · Royal Silk Theme
+            </div>
+            <div class="featured-thunder-title">ThunderStudy AI</div>
+            <div class="featured-thunder-sub">The gamified student portal — XP ranks, stat panels, ID cards, quizzes and an AI-powered study assistant. Built for serious learners.</div>
+            <span class="featured-thunder-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                Launch ThunderStudy AI
+            </span>
+        </a>
+
+        <!-- About Wondermayank — single blue card -->
+        <a href="https://wondermayank.github.io/about" class="featured-card-about" target="_blank" rel="noopener noreferrer">
+            <img src="https://i.pinimg.com/1200x/72/11/17/721117f3130a87778647a91cbc62a9a6.jpg" alt="Wondermayank" class="featured-about-avatar" loading="lazy">
+            <div class="featured-about-name">Wondermayank</div>
+            <div class="featured-about-role">Student Developer · India 🇮🇳</div>
+            <div class="featured-about-desc">Builder of 80+ free tools, exam simulators, cultural websites and digital universes. Every project is open access — no sign-ups, no paywalls.</div>
+            <span class="featured-about-btn">
+                View Full Profile
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </span>
+        </a>
+    </div>
+</section>
+</div>
+
+<div class="section-divider"></div>
+
 <div class="main-container">
 
 <!-- ══════════════════════════════════════════
@@ -3899,20 +4328,32 @@
             <div class="cs-icon" style="background:linear-gradient(135deg,rgba(200,162,255,.25),rgba(174,239,255,.2));border:1px solid rgba(200,162,255,.32)">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#c8a2ff" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
             </div>
-            <div><div class="cs-title">Finder</div><div class="cs-sub">Discover movies, anime &amp; books instantly</div></div>
-            <span class="cs-count">3 tools</span>
+            <div><div class="cs-title">Finder</div><div class="cs-sub">Discover movies, anime, books, food &amp; more</div></div>
+            <span class="cs-count">8 tools</span>
         </div>
         <div class="projects-grid" id="g-finder"></div>
     </div>
 
-    <!-- 2. STUDY -->
+    <!-- 2. FANDOM UNIVERSE -->
+    <div id="c-fandom" class="creation-section">
+        <div class="cs-header">
+            <div class="cs-icon" style="background:linear-gradient(135deg,rgba(251,191,36,.25),rgba(239,68,68,.2));border:1px solid rgba(251,191,36,.35)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div><div class="cs-title">Fandom Universe</div><div class="cs-sub">Encyclopedias, lore &amp; world exploration</div></div>
+            <span class="cs-count">3 worlds</span>
+        </div>
+        <div class="fandom-grid" id="g-fandom"></div>
+    </div>
+
+    <!-- 3. STUDY -->
     <div id="c-study" class="creation-section">
         <div class="cs-header">
             <div class="cs-icon" style="background:linear-gradient(135deg,rgba(162,212,255,.25),rgba(174,239,255,.2));border:1px solid rgba(162,212,255,.32)">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#6bb3ff" stroke-width="2.2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
             <div><div class="cs-title">Study</div><div class="cs-sub">Learn, practice &amp; prepare for exams</div></div>
-            <span class="cs-count">6 resources</span>
+            <span class="cs-count">9 resources</span>
         </div>
         <div class="projects-grid" id="g-study"></div>
         <div class="cbt-quick style-cbt-console">
@@ -3941,7 +4382,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="#32c87a" stroke-width="2.2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
             </div>
             <div><div class="cs-title">Tools</div><div class="cs-sub">Handy utilities for everyday needs</div></div>
-            <span class="cs-count">2 tools</span>
+            <span class="cs-count">4 tools</span>
         </div>
         <div class="projects-grid" id="g-tools"></div>
     </div>
@@ -3964,8 +4405,8 @@
             <div class="cs-icon" style="background:linear-gradient(135deg,rgba(200,162,255,.2),rgba(162,212,255,.2));border:1px solid rgba(200,162,255,.28)">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2.2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             </div>
-            <div><div class="cs-title">Code Helper</div><div class="cs-sub">Design, palettes &amp; developer tools</div></div>
-            <span class="cs-count">2 tools</span>
+            <div><div class="cs-title">Code Helper</div><div class="cs-sub">Design, palettes, 3D &amp; developer tools</div></div>
+            <span class="cs-count">5 tools</span>
         </div>
         <div class="projects-grid" id="g-code"></div>
     </div>
@@ -3993,9 +4434,8 @@
         </div>
         <div class="projects-grid" id="g-fun"></div>
     </div>
-</section>
 
-<div class="section-divider"></div>
+</section>
 
 <!-- ══════════════════════════════════════════
      TELEGRAM
@@ -4498,7 +4938,7 @@
                     <div class="about-name">Wondermayank</div>
                     <div style="font-size:.88rem;color:var(--text-muted);margin-top:.4rem;font-weight:600;letter-spacing:0.5px">STUDENT DEVELOPER · INDIA 🇮🇳</div>
                     <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem">
-                        <span class="about-badge" style="color:var(--primary)">70+ Projects</span>
+                        <span class="about-badge" style="color:var(--primary)">80+ Projects</span>
                         <span class="about-badge" style="color:#2563eb">100% Free</span>
                         <span class="about-badge" style="color:#16a34a">Open Access</span>
                     </div>
@@ -4520,7 +4960,7 @@
             <div class="about-card about-span-4" style="padding:1.6rem">
                 <div class="about-stats-grid">
                     <div class="about-stat-box stat-tools">
-                        <div class="num" style="color:var(--primary)">70+</div>
+                        <div class="num" style="color:var(--primary)">80+</div>
                         <div style="font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted)">Free Tools</div>
                         <svg class="stat-watermark" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
                     </div>
@@ -4559,6 +4999,14 @@
                         <div style="display:flex;flex-direction:column;line-height:1.25">
                             <span style="font-size:.92rem;font-weight:700">Main Portal</span>
                             <span class="port-sub">wondermayank.github.io</span>
+                        </div>
+                    </a>
+                    <a href="https://wondermayank.github.io/about" target="_blank" rel="noopener noreferrer" class="about-link-card link-contact">
+                        <div class="port-indicator indicator-contact" style="background:#a855f7"></div>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+                        <div style="display:flex;flex-direction:column;line-height:1.25">
+                            <span style="font-size:.92rem;font-weight:700">About Mayank</span>
+                            <span class="port-sub">wondermayank.github.io/about</span>
                         </div>
                     </a>
                     <a href="https://commercesehoga.blogspot.com" target="_blank" rel="noopener noreferrer" class="about-link-card link-blog">
@@ -4719,6 +5167,7 @@
         <div class="footer-col">
             <h4>Quick Links</h4>
             <a href="#catalog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Creation 7</a>
+            <a href="#featured"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Featured</a>
             <a href="#telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>Telegram</a>
             <a href="#hubs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Explore Hubs</a>
             <a href="#channels"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>Channels</a>
@@ -4728,10 +5177,11 @@
         <div class="footer-col">
             <h4>Popular Tools</h4>
             <a href="https://wondermayank.github.io/movie" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>Movie Finder</a>
-            <a href="https://wondermayank.github.io/anime" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg>Anime Finder</a>
+            <a href="https://wondermayank.github.io/Meal" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>Recipe Finder</a>
+            <a href="https://wondermayank.github.io/Cocktail" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h20l-9 8.5V19"/><path d="M7 19h10"/></svg>Drink Finder</a>
             <a href="https://wondermayank.github.io/paletteify" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>Paletteify</a>
-            <a href="https://wondermayank.github.io/pdftotext" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Text to PDF</a>
-            <a href="https://wondermayank.github.io/card" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Card Generator</a>
+            <a href="https://wondermayank.github.io/teleremind" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Teleremind</a>
+            <a href="https://thunderstudyai.vercel.app/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>ThunderStudy AI</a>
         </div>
 
         <div class="footer-col">
@@ -4813,6 +5263,22 @@ const I = {
     joker:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/><path d="M6 9c.5-1.5 2-2.5 4-2.5s3.5 1 4 2.5"/></svg>`,
     sparkles:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>`,
     megaphone:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.603 5.378A2 2 0 0 0 9.8 4H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h3.2a1 1 0 0 1 .8.4l3.2 4a1 1 0 0 0 1.8-.6V6a1 1 0 0 0-.397-.622z"/><path d="M18.8 8A5.99 5.99 0 0 1 20 12a5.99 5.99 0 0 1-1.2 4"/></svg>`,
+    bell:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>`,
+    cube3d:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 16-9 5-9-5"/><path d="m21 12-9 5-9-5"/><path d="m3 8 9-5 9 5"/><path d="m3 8 9 5 9-5"/></svg>`,
+    element:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="7" cy="10" r="1.5" fill="currentColor"/><circle cx="12" cy="10" r="1.5" fill="currentColor"/><circle cx="17" cy="10" r="1.5" fill="currentColor"/></svg>`,
+    brain:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-1.7-3.3 2.5 2.5 0 0 1 1.16-3.69 2.5 2.5 0 0 1-.44-4.47A2.5 2.5 0 0 1 9.5 2z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 1.7-3.3 2.5 2.5 0 0 0-1.16-3.69 2.5 2.5 0 0 0 .44-4.47A2.5 2.5 0 0 0 14.5 2z"/></svg>`,
+    minecraft:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>`,
+    globe2:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>`,
+    shield:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    wand:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4V2"/><path d="M15 16v-2"/><path d="M8 9h2"/><path d="M20 9h2"/><path d="M17.8 11.8 19 13"/><path d="M15 9h.01"/><path d="M17.8 6.2 19 5"/><path d="M3 21l9-9"/><path d="M12.2 6.2 11 5"/></svg>`,
+    sword:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" y1="19" x2="19" y2="13"/><line x1="16" y1="16" x2="20" y2="20"/><line x1="19" y1="21" x2="21" y2="19"/></svg>`,
+    star:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+    cocktail:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20l-9 8.5V19"/><path d="M7 19h10"/></svg>`,
+    utensils:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>`,
+    quote_icon:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>`,
+    pdf_tools:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M9 13h6M9 17h3"/></svg>`,
+    thunder_ai:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>`,
+    user_circle:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="10" r="3"/><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"/></svg>`,
 };
 
 function ic(k, col) {
@@ -4827,9 +5293,13 @@ const creations = {
         {title:'Book Finder',desc:'Your personal library explorer. Find books by title, author or genre with ease.',link:'https://wondermayank.github.io/books',icon:'books',color:'#2563eb',tag:'Knowledge'},
         {title:'Pokédex',desc:'Search and explore the Pokémon world.',link:'https://wondermayank.github.io/pokedex',icon:'pokeball',color:'#ef4444',tag:'Pokémon'},
         {title:'Games Finder',desc:'Free Games for PC & Mobile.',link:'https://wondermayank.github.io/game',icon:'console',color:'#10b981',tag:'Gaming'},
+        {title:'Recipe Finder',desc:'Discover delicious meals and recipes from around the world with full ingredients and steps.',link:'https://wondermayank.github.io/Meal',icon:'utensils',color:'#f97316',tag:'Food'},
+        {title:'Drink Finder',desc:'Explore cocktails and drinks with full recipes, ingredients and preparation guides.',link:'https://wondermayank.github.io/Cocktail',icon:'cocktail',color:'#06b6d4',tag:'Drinks'},
+        {title:'Quote Library',desc:'A beautiful collection of inspiring, funny and motivational quotes for every mood.',link:'https://wondermayank.github.io/Quote',icon:'quote_icon',color:'#8b5cf6',tag:'Quotes'},
     ],
     study:[
         {title:'Book Hub',desc:'Organized educational books and structured study resources for all subjects.',link:'https://wondermayank.github.io/book',icon:'book',color:'#3b82f6',tag:'Books'},
+        {title:'Learn',desc:'3D interactive learning — explore computers, science and more through immersive study.',link:'https://wondermayank.github.io/learn',icon:'brain',color:'#6366f1',tag:'3D Learning'},
         {title:'CBT Mock Test',desc:'Computer-Based Test simulator for CUET, NEET, JEE, Banking & SSC preparation.',link:'https://wondermayank.github.io/cbtmock',icon:'cbt',color:'#10b981',tag:'Exam Prep'},
         {title:'Main Study Blog',desc:'Structured notes, resources and educational content for commerce students.',link:'https://commercesehoga.blogspot.com/',icon:'pencil',color:'#f97316',tag:'Commerce'},
         {title:'English Practice',desc:'Daily English tests, grammar exercises, vocabulary builders and more.',link:'https://commercesehoga.github.io/english',icon:'speech_a',color:'#06b6d4',tag:'Language'},
@@ -4840,6 +5310,8 @@ const creations = {
     ],
     tools:[
         {title:'Text to PDF',desc:'Convert plain text documents into professionally formatted PDFs in one click.',link:'https://wondermayank.github.io/pdftotext',icon:'pdf',color:'#dc2626',tag:'PDF'},
+        {title:'PDF Tools',desc:'All-in-one PDF toolkit — merge, split, convert, compress and manage PDFs easily.',link:'https://wondermayank.github.io/help/pdf',icon:'pdf_tools',color:'#e11d48',tag:'PDF Suite'},
+        {title:'Teleremind',desc:'Set smart reminders via Telegram bot — never forget tasks, deadlines or events again.',link:'https://wondermayank.github.io/teleremind',icon:'bell',color:'#0088cc',tag:'Telegram Bot'},
         {title:'Help Tool',desc:'A comprehensive utility offering various daily helpers and quick reference tools.',link:'https://wondermayank.github.io/help',icon:'help',color:'#0284c7',tag:'Utility'},
     ],
     love:[
@@ -4849,6 +5321,8 @@ const creations = {
     code:[
         {title:'Paletteify',desc:'Generate aesthetic color palettes instantly. Discover unique harmonious gradients.',link:'https://wondermayank.github.io/paletteify',icon:'palette',color:'#7c3aed',tag:'Design'},
         {title:'Code Helper',desc:'Curated coding tools and developer utilities. Fast, minimal and efficient snippets.',link:'https://wondermayank.github.io/code',icon:'code',color:'#0ea5e9',tag:'Developer'},
+        {title:'3D Website UI',desc:'A stunning immersive 3D website UI experiment — pushing the boundaries of web design.',link:'https://wondermayank.github.io/3d_website',icon:'cube3d',color:'#a855f7',tag:'3D Design'},
+        {title:'Element UI',desc:'A rich collection of polished UI elements, components and design patterns to inspire.',link:'https://wondermayank.github.io/code_idea',icon:'element',color:'#f59e0b',tag:'UI Kit'},
         {title:'hand ai',desc:'Play With Your Hand',link:'https://wondermayank.github.io/code/handai.html',icon:'hand',color:'#10b981',tag:'Fun'},
     ],
     ideas:[
@@ -4859,6 +5333,11 @@ const creations = {
         {title:'Prank Hub',desc:'A collection of hilarious prank websites and ideas to surprise friends and partners.',link:'https://wondermayank.github.io/Prank',icon:'joker',color:'#f59e0b',tag:'Prank'},
         {title:'AI Prompt Library',desc:'Curated collection of powerful AI prompts for creativity, productivity and fun.',link:'https://aipromptwm.blogspot.com/',icon:'sparkles',color:'#8b5cf6',tag:'AI'},
         {title:'ThunderStudy Update',desc:'Latest updates, news and resources from the ThunderStudy official community.',link:'https://thunderstudyofficial.blogspot.com/',icon:'megaphone',color:'#16a34a',tag:'Blog'},
+    ],
+    fandom:[
+        {title:'Marvel Info',desc:'Deep-dive into the Marvel universe — heroes, villains, storylines and lore explained.',link:'https://wondermayank.github.io/Marvel',icon:'shield',color:'#dc2626',tag:'Marvel',world:'Marvel'},
+        {title:'Harry Potter Info',desc:'Explore the Wizarding World — spells, characters, houses and the complete HP lore.',link:'https://wondermayank.github.io/Harry_Potter',icon:'wand',color:'#7c3aed',tag:'Harry Potter',world:'HP'},
+        {title:'Minecraft Encyclopedia',desc:'The ultimate Minecraft item encyclopedia — blocks, mobs, crafting and survival guides.',link:'https://wondermayank.github.io/Minecraft',icon:'minecraft',color:'#16a34a',tag:'Minecraft',world:'MC'},
     ],
 };
 
@@ -5221,6 +5700,24 @@ function renderFunCard(p) {
     </div>`;
 }
 
+function renderFandomCard(p) {
+    const worldClass = `world-${p.world || 'Marvel'}`;
+    return `<div class="fandom-card ${worldClass}" onclick="window.open('${p.link}','_blank')" style="cursor:pointer">
+        <div class="fandom-card-bg"></div>
+        <div class="fandom-card-overlay"></div>
+        <div class="fandom-card-content">
+            <span class="fandom-world-badge">${p.tag}</span>
+            <div class="fandom-icon-wrap">${ic(p.icon, 'white')}</div>
+            <h3>${p.title}</h3>
+            <p>${p.desc}</p>
+            <a href="${p.link}" class="fandom-btn" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+                Explore
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+        </div>
+    </div>`;
+}
+
 // Inject all grids
 Object.entries(creations).forEach(([k,arr])=>{
     const el=document.getElementById('g-'+k);
@@ -5239,6 +5736,8 @@ Object.entries(creations).forEach(([k,arr])=>{
             el.innerHTML=arr.map(renderIdeasCard).join('');
         } else if(k === 'fun') {
             el.innerHTML=arr.map(renderFunCard).join('');
+        } else if(k === 'fandom') {
+            el.innerHTML=arr.map(renderFandomCard).join('');
         } else {
             el.innerHTML=arr.map(renderCard).join('');
         }
@@ -5512,6 +6011,23 @@ function buildSpotlightIndex() {
             category: 'Instagram Profiles'
         });
     });
+
+    // 7. Fandom worlds
+    (creations.fandom || []).forEach(p => {
+        spotlightIndex.push({
+            title: p.title,
+            desc: p.desc,
+            link: p.link,
+            tag: p.tag,
+            icon: p.icon,
+            color: p.color,
+            category: 'Fandom Universe'
+        });
+    });
+
+    // 8. Featured
+    spotlightIndex.push({ title:'ThunderStudy AI', desc:'Gamified student portal with XP, ID cards, AI assistant and rank system.', link:'https://thunderstudyai.vercel.app/', tag:'AI Platform', icon:'thunder_ai', color:'#c9973a', category:'Featured' });
+    spotlightIndex.push({ title:'About Wondermayank', desc:'The full profile — projects, story, skills and contact information.', link:'https://wondermayank.github.io/about', tag:'Profile', icon:'user_circle', color:'#8b5cf6', category:'Featured' });
 }
 
 function searchSpotlight(query) {
@@ -5603,7 +6119,7 @@ function updateSelectedHighlight() {
 
 function filterAllCards(query) {
     const q = query.trim().toLowerCase();
-    const cards = document.querySelectorAll('.project-card, .tg-card, .tech-hub-card, .yt-channel-card, .channel-card, .hub-card');
+    const cards = document.querySelectorAll('.project-card, .tg-card, .tech-hub-card, .yt-channel-card, .channel-card, .hub-card, .fandom-card');
     
     cards.forEach(card => {
         if (!q) {
@@ -6002,13 +6518,25 @@ if (bs) {
 <noscript>
 <section aria-label="Wondermayank Project Directory" style="padding:2rem;font-family:sans-serif">
   <h1>Wondermayank's Free Tools & Projects</h1>
-  <p>Wondermayank is a student developer from India offering 70+ free tools at wondermayank.github.io.</p>
+  <p>Wondermayank is a student developer from India offering 80+ free tools at wondermayank.github.io.</p>
   <ul>
     <li><a href="https://wondermayank.github.io/movie">Movie Finder — Search and explore Indian and international movies</a></li>
     <li><a href="https://wondermayank.github.io/anime">Anime Finder — Discover anime series powered by Jikan API</a></li>
     <li><a href="https://wondermayank.github.io/books">Book Finder — Find books by title, author or genre</a></li>
+    <li><a href="https://wondermayank.github.io/Meal">Recipe Finder — Discover delicious meals and recipes from around the world</a></li>
+    <li><a href="https://wondermayank.github.io/Cocktail">Drink Finder — Explore cocktails and drinks with full recipes</a></li>
+    <li><a href="https://wondermayank.github.io/Quote">Quote Library — Inspiring and motivational quotes collection</a></li>
+    <li><a href="https://wondermayank.github.io/Marvel">Marvel Info — Marvel universe heroes, villains and lore</a></li>
+    <li><a href="https://wondermayank.github.io/Harry_Potter">Harry Potter Info — Wizarding World spells, characters and houses</a></li>
+    <li><a href="https://wondermayank.github.io/Minecraft">Minecraft Encyclopedia — Item encyclopedia, blocks, mobs and crafting</a></li>
     <li><a href="https://wondermayank.github.io/paletteify">Paletteify — Free color palette generator for designers</a></li>
     <li><a href="https://wondermayank.github.io/pdftotext">Text to PDF — Convert plain text to formatted PDF</a></li>
+    <li><a href="https://wondermayank.github.io/help/pdf">PDF Tools — All-in-one PDF toolkit</a></li>
+    <li><a href="https://wondermayank.github.io/teleremind">Teleremind — Set reminders via Telegram bot</a></li>
+    <li><a href="https://wondermayank.github.io/3d_website">3D Website UI — Immersive 3D website experiment</a></li>
+    <li><a href="https://wondermayank.github.io/code_idea">Element UI — UI elements and design patterns</a></li>
+    <li><a href="https://wondermayank.github.io/learn">Learn — 3D interactive learning platform</a></li>
+    <li><a href="https://wondermayank.github.io/Country">Country Explorer — Explore countries of the world</a></li>
     <li><a href="https://wondermayank.github.io/cbtmock">CBT Mock Test — CUET, NEET, JEE, Banking and SSC exam simulator</a></li>
     <li><a href="https://wondermayank.github.io/book">Book Hub — Educational books and study resources</a></li>
     <li><a href="https://commercesehoga.github.io/english">English Practice — Grammar, vocabulary and language tests</a></li>
@@ -6021,11 +6549,8 @@ if (bs) {
     <li><a href="https://wondermayank.github.io/india">India — History, philosophy, geography and culture of India</a></li>
     <li><a href="https://wondermayank.github.io/kayastha">Kayastha — Community history and cultural traditions</a></li>
     <li><a href="https://wondermayank.github.io/rajput">Rajput — History and heritage of Rajput clans</a></li>
-    <li><a href="https://wondermayank.github.io/india/festivals">Festivals of India — Diwali, Holi, Eid, Pongal and more</a></li>
-    <li><a href="https://wondermayank.github.io/india/cuisine">Indian Cuisine — Spices, flavors and regional cuisines</a></li>
-    <li><a href="https://wondermayank.github.io/india/languages">Languages of India — Sanskrit, Tamil, Hindi, Bengali and more</a></li>
-    <li><a href="https://wondermayank.github.io/india/art">Indian Art and Dance — Bharatanatyam, Madhubani and more</a></li>
-    <li><a href="https://wondermayank.github.io/india/history">History of India — Indus Valley to Independence</a></li>
+    <li><a href="https://thunderstudyai.vercel.app/">ThunderStudy AI — Gamified student portal with AI assistant</a></li>
+    <li><a href="https://wondermayank.github.io/about">About Wondermayank — Full profile and project showcase</a></li>
     <li><a href="https://commercesehoga.github.io/cuet">CUET CBT — Computer based test for CUET preparation</a></li>
     <li><a href="https://commercesehoga.github.io/jee-neet">NEET-JEE CBT — Mock tests for NEET and JEE aspirants</a></li>
     <li><a href="https://commercesehoga.github.io/banking">Banking CBT — SBI IBPS and other banking exam mock tests</a></li>
@@ -6039,5 +6564,150 @@ if (bs) {
   <p>Contact: <a href="https://t.me/Mindmaster_robot">@Mindmaster_robot on Telegram</a></p>
 </section>
 </noscript>
+
+<style>
+/* ── Sidebar dot navigation ── */
+#snap-dots {
+    position: fixed;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.snap-dot {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(100,100,120,0.3);
+    border: 1.5px solid rgba(100,100,120,0.45);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.snap-dot.active {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: scale(1.4);
+    box-shadow: 0 0 8px rgba(155,111,255,0.5);
+}
+body.theme-dark .snap-dot {
+    background: rgba(200,162,255,0.25);
+    border-color: rgba(200,162,255,0.4);
+}
+body.theme-dark .snap-dot.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 8px rgba(200,162,255,0.55);
+}
+.snap-dot[data-label]:hover::before {
+    content: attr(data-label);
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(20,10,40,0.82);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    pointer-events: none;
+    font-family: var(--font-body);
+}
+
+/* ── Hero scroll hint ── */
+#snap-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    opacity: 0.7;
+    animation: hint-bounce 2s ease-in-out infinite;
+    pointer-events: none;
+}
+#snap-hint span {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+#snap-hint svg { color: white; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4)); }
+@keyframes hint-bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(8px); }
+}
+</style>
+
+<script>
+(function() {
+    const SECTIONS = [
+        { id: 'hero',     label: 'Home',      sel: '.hero'    },
+        { id: 'featured', label: 'Flagship',  sel: '#featured'},
+        { id: 'catalog',  label: 'Catalogue', sel: '#catalog' },
+        { id: 'telegram', label: 'Telegram',  sel: '#telegram'},
+        { id: 'hubs',     label: 'Hubs',      sel: '#hubs'    },
+        { id: 'channels', label: 'Channels',  sel: '#channels'},
+        { id: 'india',    label: 'India',     sel: '#india'   },
+        { id: 'about',    label: 'About',     sel: '#about'   },
+        { id: 'faq',      label: 'FAQ',       sel: '#faq'     },
+    ];
+
+    function init() {
+        const els = SECTIONS.map(s => ({ ...s, el: document.querySelector(s.sel) })).filter(s => s.el);
+
+        /* Scroll hint on hero */
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.position = 'relative';
+            const hint = document.createElement('div');
+            hint.id = 'snap-hint';
+            hint.innerHTML = `<span>Scroll</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>`;
+            hero.appendChild(hint);
+        }
+
+        /* Sidebar dots */
+        const dotsWrap = document.createElement('div');
+        dotsWrap.id = 'snap-dots';
+        els.forEach((s, i) => {
+            const dot = document.createElement('div');
+            dot.className = 'snap-dot';
+            dot.dataset.label = s.label;
+            dot.addEventListener('click', () => {
+                s.el.scrollIntoView({ behavior: 'smooth' });
+            });
+            dotsWrap.appendChild(dot);
+        });
+        document.body.appendChild(dotsWrap);
+        const dots = dotsWrap.querySelectorAll('.snap-dot');
+
+        /* Highlight active dot on scroll */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const idx = els.findIndex(s => s.el === entry.target);
+                    if (idx >= 0) dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+                }
+            });
+        }, { threshold: 0.35 });
+
+        els.forEach(s => observer.observe(s.el));
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+})();
+</script>
+
 </body>
 </html>
