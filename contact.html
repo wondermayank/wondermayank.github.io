@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -276,6 +277,88 @@
     .ci-tg-dm        { background: linear-gradient(135deg, #67e8f9, #0369a1); }
     .ci-reddit       { background: linear-gradient(135deg, #fca5a5, #f97316); }
     .ci-email        { background: linear-gradient(135deg, #fde68a, #f59e0b); }
+    .ci-primary-mail { background: linear-gradient(135deg, #6B4FFF, #573AFC 60%, #3b1fc8); }
+
+    /* ── FEATURED EMAIL CARD ── */
+    .email-hero-card {
+      background: var(--canvas);
+      border: 1.5px solid var(--primary);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px 32px;
+      position: relative; overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      grid-column: 1 / -1; /* full width */
+      max-width: 860px; margin: 0 auto 0; width: 100%;
+    }
+    .email-hero-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 80% 0%, rgba(87,58,252,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .email-hero-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(87,58,252,0.18);
+    }
+    .email-hero-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px; flex-wrap: wrap;
+    }
+    .email-hero-left { display: flex; align-items: center; gap: 20px; }
+    .email-hero-icon {
+      width: 60px; height: 60px; border-radius: var(--radius-md);
+      background: linear-gradient(135deg, #6B4FFF, #573AFC 60%, #3b1fc8);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; box-shadow: 0 8px 24px rgba(87,58,252,0.35);
+      transition: transform 0.2s ease;
+    }
+    .email-hero-card:hover .email-hero-icon { transform: scale(1.08) rotate(-4deg); }
+    .email-hero-icon svg { width: 28px; height: 28px; }
+    .email-hero-meta {}
+    .email-hero-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--primary); margin-bottom: 4px;
+    }
+    .email-hero-address {
+      font-size: 19px; font-weight: 700; color: var(--ink);
+      letter-spacing: -0.3px; line-height: 1.2; margin-bottom: 4px;
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    }
+    .email-hero-desc {
+      font-size: 13px; color: var(--muted); line-height: 1.5;
+    }
+    .email-hero-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .email-copy-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--surface-soft); border: 1px solid var(--hairline-strong);
+      color: var(--muted); font-size: 13px; font-weight: 600;
+      padding: 10px 16px; border-radius: var(--radius-pill);
+      cursor: pointer; transition: all 0.2s; font-family: inherit;
+    }
+    .email-copy-btn:hover { background: var(--hairline); color: var(--ink); }
+    .email-copy-btn.copied { background: #dcfce7; border-color: #86efac; color: #15803d; }
+    .email-copy-btn svg { width: 13px; height: 13px; }
+    .email-send-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--primary); color: var(--on-primary);
+      font-size: 14px; font-weight: 700;
+      padding: 11px 22px; border-radius: var(--radius-pill);
+      text-decoration: none; transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 14px rgba(87,58,252,0.3);
+      white-space: nowrap;
+    }
+    .email-send-btn:hover { background: var(--primary-active); box-shadow: 0 6px 20px rgba(87,58,252,0.45); }
+    .email-send-btn:active { transform: scale(0.95); }
+    .email-send-btn svg { width: 14px; height: 14px; }
+
+    @media (max-width: 640px) {
+      .email-hero-card { padding: 24px 18px; }
+      .email-hero-left { gap: 14px; }
+      .email-hero-address { font-size: 14px; }
+      .email-hero-icon { width: 48px; height: 48px; }
+      .email-hero-icon svg { width: 22px; height: 22px; }
+      .email-hero-actions { width: 100%; justify-content: flex-start; }
+    }
 
     .card-label {
       font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
@@ -509,6 +592,37 @@
     <div class="section-desc">Chat, collaborate, or report directly through our social and messaging platforms.</div>
   </div>
 
+  <!-- FEATURED PRIMARY EMAIL -->
+  <div style="max-width:1100px;margin:0 auto 28px;padding:0;">
+    <div class="email-hero-card">
+      <div class="email-hero-inner">
+        <div class="email-hero-left">
+          <div class="email-hero-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="3"/>
+              <path d="M2 7l10 7 10-7"/>
+            </svg>
+          </div>
+          <div class="email-hero-meta">
+            <div class="email-hero-label">Primary Contact · WonderMayank</div>
+            <div class="email-hero-address">contact@wondermayank.indevs.in</div>
+            <div class="email-hero-desc">Partnerships, collaborations, general queries — this is the main line.</div>
+          </div>
+        </div>
+        <div class="email-hero-actions">
+          <button class="email-copy-btn" id="copyEmailBtn" onclick="copyEmail()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            <span id="copyLabel">Copy</span>
+          </button>
+          <a href="mailto:contact@wondermayank.indevs.in?subject=Hello%20WonderMayank&body=Hi%20Mayank%2C%0A%0A" class="email-send-btn">
+            Send Email
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="cards-grid">
 
     <!-- Instagram -->
@@ -567,22 +681,523 @@
       </a>
     </div>
 
-    <!-- Email -->
-    <div class="card">
-      <div class="card-icon ci-email">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 7 10-7"/></svg>
-      </div>
-      <div class="card-label">Bug Reports</div>
-      <h2>Email Us</h2>
-      <span class="handle-tag">thunderstudyofficialx@gmail.com</span>
-      <p>Found a bug, broken link, or something wrong on any of our sites? Send a detailed bug report to our official email and we'll fix it ASAP.</p>
-      <a href="mailto:thunderstudyofficialx@gmail.com?subject=Bug Report&body=Site URL: %0ADescribe the bug: %0ASteps to reproduce: %0ADevice/Browser: " class="card-link">
-        SEND BUG REPORT ›
-      </a>
-    </div>
-
   </div>
 </section>
+
+<!-- REQUEST FORM SECTION -->
+
+<section id="reqSection" style="background:var(--canvas-parchment);padding:80px 24px;">
+  <div style="max-width:600px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:36px;">
+      <div class="section-label">Google Sheets</div>
+      <div class="section-title">Submit a Request</div>
+      <div class="section-desc">Tool, code, notes, or mock tests — we review all submissions regularly.</div>
+    </div>
+
+    <div class="req-card">
+
+      <!-- Header -->
+      <div class="req-header">
+        <div class="req-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </div>
+        <div>
+          <div class="req-title">Submit a request</div>
+          <div class="req-subtitle">We review all submissions regularly</div>
+        </div>
+      </div>
+
+      <!-- Toggle -->
+      <div class="req-toggle">
+        <div id="tog-tool" class="req-tab active" onclick="switchTab('tool')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span>Tool &amp; Code</span>
+        </div>
+        <div id="tog-study" class="req-tab" onclick="switchTab('study')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          <span>Study Material</span>
+        </div>
+      </div>
+
+      <!-- ── TOOL FORM ── -->
+      <form id="form-tool"
+        onsubmit="handleSubmit(event,'tool')"
+        style="display:flex;flex-direction:column;gap:14px;">
+
+        <input type="hidden" name="formType" value="tool">
+
+        <div>
+          <div class="flabel">What do you want?*</div>
+          <div class="option-grid" id="tool-what-opts">
+            <label class="option-card">
+              <input type="radio" name="toolWhat" value="Source Code" required>
+              <span class="option-radio"></span>
+              <span class="option-text">Source Code</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="toolWhat" value="Tools">
+              <span class="option-radio"></span>
+              <span class="option-text">Tools</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="toolWhat" value="3d website code">
+              <span class="option-radio"></span>
+              <span class="option-text">3D Website Code</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="toolWhat" value="3d website background or hero section">
+              <span class="option-radio"></span>
+              <span class="option-text">3D Website Background / Hero Section</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="toolWhat" value="Telegram bot code">
+              <span class="option-radio"></span>
+              <span class="option-text">Telegram Bot Code</span>
+            </label>
+            <label class="option-card option-other" id="tool-other-row">
+              <input type="radio" name="toolWhat" value="__other_option__" id="tool-other-radio">
+              <span class="option-radio"></span>
+              <span class="option-text">Other</span>
+              <input type="text" name="toolWhatOther" id="tool-other-text" class="option-other-input" placeholder="Specify…" onclick="document.getElementById('tool-other-radio').checked=true" onfocus="document.getElementById('tool-other-radio').checked=true">
+            </label>
+          </div>
+          <div class="field-error-msg">Please select an option above.</div>
+        </div>
+
+        <div>
+          <div class="flabel">How do I contact you?*</div>
+          <div class="option-grid">
+            <label class="option-card">
+              <input type="radio" name="toolContact" value="Telegram" required>
+              <span class="option-radio"></span>
+              <span class="option-text">Telegram</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="toolContact" value="Instagram">
+              <span class="option-radio"></span>
+              <span class="option-text">Instagram</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="toolContact" value="Whatsapp">
+              <span class="option-radio"></span>
+              <span class="option-text">WhatsApp</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="toolContact" value="Email">
+              <span class="option-radio"></span>
+              <span class="option-text">Email</span>
+            </label>
+          </div>
+          <div class="field-error-msg">Please select an option above.</div>
+        </div>
+
+        <div>
+          <div class="flabel">Username*</div>
+          <input type="text" name="toolUsername" required placeholder="@your_username or email" class="finput">
+          <div class="field-error-msg">Please fill this field.</div>
+        </div>
+
+        <button type="submit" class="fsubmit" id="tool-btn">
+          <span id="tool-btn-text">Submit Request</span>
+          <svg class="fsubmit-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          <span class="fsubmit-spinner"></span>
+        </button>
+      </form>
+
+      <!-- ── STUDY FORM ── -->
+      <form id="form-study"
+        onsubmit="handleSubmit(event,'study')"
+        style="display:none;flex-direction:column;gap:14px;">
+
+        <input type="hidden" name="formType" value="study">
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div>
+            <div class="flabel">Full Name*</div>
+            <input type="text" name="studyName" required placeholder="Mayank" class="finput">
+            <div class="field-error-msg">Please fill this field.</div>
+          </div>
+          <div>
+            <div class="flabel">Student ID</div>
+            <input type="text" name="studyId" placeholder="Optional" class="finput">
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div>
+            <div class="flabel">Contact Email</div>
+            <input type="email" name="studyEmail" placeholder="you@example.com" class="finput">
+          </div>
+          <div>
+            <div class="flabel">Telegram Username*</div>
+            <input type="text" name="studyTg" required placeholder="@username" class="finput">
+            <div class="field-error-msg">Please fill this field.</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flabel">What kind of material?*</div>
+          <div class="option-grid">
+            <label class="option-card">
+              <input type="radio" name="studyType" value="Class Lecture Notes" required>
+              <span class="option-radio"></span>
+              <span class="option-text">Class Lecture Notes</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="studyType" value="Summary/Revision Notes">
+              <span class="option-radio"></span>
+              <span class="option-text">Summary / Revision Notes</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="studyType" value="Practice Questions/Worksheets">
+              <span class="option-radio"></span>
+              <span class="option-text">Practice Questions / Worksheets</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="studyType" value="Past Year Exam Papers (Specify subject/year below)">
+              <span class="option-radio"></span>
+              <span class="option-text">Past Year Exam Papers</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="studyType" value="Full Mock Examination Access">
+              <span class="option-radio"></span>
+              <span class="option-text">Full Mock Examination Access</span>
+            </label>
+          </div>
+          <div class="field-error-msg">Please select an option above.</div>
+        </div>
+
+        <div>
+          <div class="flabel">Chapter / Notes Name*</div>
+          <input type="text" name="studyChapter" required placeholder="e.g. Chapter 3 — Accounting Concepts" class="finput">
+          <div class="field-error-msg">Please fill this field.</div>
+        </div>
+
+        <div>
+          <div class="flabel">Desired Format</div>
+          <div class="option-grid">
+            <label class="option-card">
+              <input type="radio" name="studyFormat" value="Digital PDF/Document">
+              <span class="option-radio"></span>
+              <span class="option-text">Digital PDF / Document</span>
+            </label>
+            <label class="option-card">
+              <input type="radio" name="studyFormat" value="Access via Online Learning Platform">
+              <span class="option-radio"></span>
+              <span class="option-text">Access via Online Learning Platform</span>
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <div class="flabel">How urgent? <span class="urgency-hint">(1 = Low · 5 = High)</span></div>
+          <div class="urgency-row">
+            <span class="urgency-end">Low</span>
+            <div class="urgency-dots">
+              <label class="urgency-dot"><input type="radio" name="studyUrgency" value="1"><span>1</span></label>
+              <label class="urgency-dot"><input type="radio" name="studyUrgency" value="2"><span>2</span></label>
+              <label class="urgency-dot"><input type="radio" name="studyUrgency" value="3"><span>3</span></label>
+              <label class="urgency-dot"><input type="radio" name="studyUrgency" value="4"><span>4</span></label>
+              <label class="urgency-dot"><input type="radio" name="studyUrgency" value="5"><span>5</span></label>
+            </div>
+            <span class="urgency-end">High</span>
+          </div>
+        </div>
+
+        <button type="submit" class="fsubmit" id="study-btn">
+          <span id="study-btn-text">Submit Request</span>
+          <svg class="fsubmit-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          <span class="fsubmit-spinner"></span>
+        </button>
+      </form>
+
+      <!-- Success state -->
+      <div id="success-msg" class="success-msg">
+        <div class="success-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="success-title">Request submitted!</div>
+        <div class="success-desc">We'll get back to you soon via your provided contact.</div>
+        <button onclick="resetForm()" class="success-reset">Submit another →</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ── Request card shell ── */
+  .req-card {
+    background: var(--canvas);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+  }
+  @media (max-width: 480px) {
+    .req-card { padding: 24px 18px; }
+  }
+
+  .req-header { display:flex; align-items:center; gap:14px; margin-bottom:24px; }
+  .req-icon {
+    width:48px; height:48px; border-radius:var(--radius-md); background:var(--primary);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .req-title { font-size:16px; font-weight:700; color:var(--ink); letter-spacing:-0.1px; }
+  .req-subtitle { font-size:13px; color:var(--muted); margin-top:2px; }
+
+  /* ── Tab toggle ── */
+  .req-toggle {
+    display:flex; background:var(--canvas-parchment); border:1px solid var(--hairline);
+    border-radius:var(--radius-md); padding:4px; gap:4px; margin-bottom:24px;
+  }
+  .req-tab {
+    flex:1; display:flex; align-items:center; justify-content:center; gap:7px;
+    padding:10px 8px; font-size:13px; font-weight:600; color:var(--muted);
+    border-radius:8px; cursor:pointer; transition:background 0.2s, color 0.2s;
+    -webkit-tap-highlight-color: transparent; user-select:none;
+  }
+  .req-tab svg { width:15px; height:15px; flex-shrink:0; }
+  .req-tab.active { background:var(--primary); color:#fff; }
+  .req-tab:not(.active):hover { background:var(--canvas); color:var(--ink); }
+  .req-tab:active { transform: scale(0.98); }
+
+  /* ── Field label ── */
+  .flabel { font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:5px; }
+
+  /* ── Text inputs ── */
+  .finput {
+    width:100%; background:var(--canvas); border:1px solid var(--hairline-strong);
+    border-radius:var(--radius-sm); padding:11px 13px; font-size:13px; color:var(--ink);
+    font-family:inherit; outline:none; box-sizing:border-box;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .finput:focus { border-color:var(--primary); box-shadow: 0 0 0 3px rgba(87,58,252,0.12); }
+  .finput.has-error { border-color:var(--error); box-shadow: 0 0 0 3px rgba(220,38,38,0.12); }
+
+  /* ── Option cards ("click boxes") ── */
+  .option-grid {
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(190px, 1fr));
+    gap:8px; margin-top:6px;
+  }
+  .option-card {
+    position:relative; display:flex; align-items:center; gap:10px;
+    padding:12px 14px; border:1.5px solid var(--hairline-strong); border-radius:var(--radius-sm);
+    background:var(--canvas); font-size:13px; line-height:1.35; color:var(--body); cursor:pointer;
+    transition: border-color 0.15s, background 0.15s, transform 0.1s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .option-card input[type=radio] { position:absolute; opacity:0; width:0; height:0; margin:0; }
+  .option-radio {
+    width:18px; height:18px; border-radius:50%; border:2px solid var(--hairline-strong);
+    background:var(--canvas); flex-shrink:0; position:relative; transition:border-color 0.15s;
+  }
+  .option-radio::after {
+    content:''; position:absolute; inset:3px; border-radius:50%; background:var(--primary);
+    transform:scale(0); transition:transform 0.15s;
+  }
+  .option-card input:checked ~ .option-radio { border-color:var(--primary); }
+  .option-card input:checked ~ .option-radio::after { transform:scale(1); }
+  .option-card:has(input:checked) { border-color:var(--primary); background:rgba(87,58,252,0.05); }
+  .option-card:has(input:focus-visible) { outline:2px solid var(--primary-focus); outline-offset:2px; }
+  .option-card:hover { border-color:var(--primary-focus); }
+  .option-card:active { transform:scale(0.98); }
+
+  .option-other { grid-column:1 / -1; }
+  .option-other-input {
+    flex:1; min-width:0; background:var(--canvas); border:1px solid var(--hairline-strong);
+    border-radius:6px; padding:8px 10px; font-size:12px; color:var(--ink); font-family:inherit;
+    outline:none; transition:border-color 0.15s;
+  }
+  .option-other-input:focus { border-color:var(--primary); box-shadow: 0 0 0 3px rgba(87,58,252,0.12); }
+
+  /* ── Field error states ── */
+  .option-grid.has-error .option-card { border-color:var(--error); }
+  .option-grid.has-error .option-card:has(input:checked) { background:rgba(220,38,38,0.05); }
+  .field-error-msg { display:none; font-size:12px; font-weight:600; color:var(--error); margin-top:6px; }
+  .field-error-msg.show { display:block; animation:fadeUpIn 0.2s ease both; }
+
+  /* ── Urgency dial ── */
+  .urgency-hint { font-weight:400; color:var(--muted-soft); text-transform:none; letter-spacing:0; }
+  .urgency-row { display:flex; align-items:center; gap:10px; margin-top:8px; }
+  .urgency-end { font-size:12px; color:var(--muted); flex-shrink:0; }
+  .urgency-dots { display:flex; gap:6px; flex:1; justify-content:space-between; }
+  .urgency-dot { display:flex; flex-direction:column; align-items:center; cursor:pointer; flex:1; -webkit-tap-highlight-color: transparent; }
+  .urgency-dot input { display:none; }
+  .urgency-dot span {
+    width:38px; height:38px; max-width:100%; border-radius:50%; border:1.5px solid var(--hairline-strong);
+    background:var(--canvas); display:flex; align-items:center; justify-content:center;
+    font-size:13px; font-weight:600; color:var(--muted); transition:all 0.15s;
+  }
+  .urgency-dot input:checked + span { background:var(--primary); color:#fff; border-color:var(--primary); transform:scale(1.05); }
+  .urgency-dot:hover span { border-color:var(--primary); color:var(--primary); }
+  .urgency-dot:active span { transform:scale(0.95); }
+
+  /* ── Submit button ── */
+  .fsubmit {
+    display:flex; align-items:center; justify-content:center; gap:8px; width:100%;
+    background:var(--primary); color:#fff; border:none; border-radius:var(--radius-pill);
+    padding:14px; font-size:14px; font-weight:700; cursor:pointer; font-family:inherit;
+    transition:background 0.2s; margin-top:6px;
+  }
+  .fsubmit:hover { background:var(--primary-active); }
+  .fsubmit:active { transform:scale(0.97); }
+  .fsubmit:disabled { background:var(--primary-disabled); cursor:not-allowed; transform:none; }
+  .fsubmit-spinner {
+    display:none; width:14px; height:14px; border:2px solid rgba(255,255,255,0.4);
+    border-top-color:#fff; border-radius:50%; animation:fspin 0.7s linear infinite;
+  }
+  .fsubmit.is-loading .fsubmit-arrow { display:none; }
+  .fsubmit.is-loading .fsubmit-spinner { display:inline-block; }
+  @keyframes fspin { to { transform:rotate(360deg); } }
+
+  /* ── Success state ── */
+  .success-msg { display:none; text-align:center; padding:32px 0; animation:fadeUpIn 0.4s ease both; }
+  .success-icon {
+    width:56px; height:56px; background:rgba(34,197,94,0.12); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; margin:0 auto 16px;
+  }
+  .success-title { font-size:18px; font-weight:700; color:var(--ink); margin-bottom:8px; }
+  .success-desc { font-size:14px; color:var(--muted); margin-bottom:20px; }
+  .success-reset {
+    background:transparent; border:1px solid var(--hairline-strong); border-radius:var(--radius-pill);
+    padding:9px 20px; font-size:13px; color:var(--muted); cursor:pointer; font-family:inherit;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .success-reset:hover { border-color:var(--primary); color:var(--primary); }
+  @keyframes fadeUpIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+</style>
+
+<script>
+  let currentTab = 'tool';
+
+  // 🔧 Paste your Google Apps Script Web App URL here (ends in /exec)
+  const SHEET_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwv7wjSRTa880ESiFaYT46Ib6oHqwrcIBBdC_4hpkxXy_6LvgcZ2NLDnz0BDANr79t01Q/exec';
+
+  function switchTab(tab) {
+    currentTab = tab;
+    document.getElementById('tog-tool').classList.toggle('active', tab === 'tool');
+    document.getElementById('tog-study').classList.toggle('active', tab === 'study');
+    document.getElementById('form-tool').style.display = tab==='tool' ? 'flex' : 'none';
+    document.getElementById('form-study').style.display = tab==='study' ? 'flex' : 'none';
+    document.getElementById('success-msg').style.display = 'none';
+  }
+
+  function validateForm(form) {
+    let isValid = true;
+    let firstInvalid = null;
+
+    // Required text/email inputs
+    form.querySelectorAll('input[required]:not([type=radio])').forEach((input) => {
+      const wrapper = input.closest('div');
+      const msg = wrapper ? wrapper.querySelector('.field-error-msg') : null;
+      if (!input.value.trim()) {
+        isValid = false;
+        input.classList.add('has-error');
+        if (msg) msg.classList.add('show');
+        if (!firstInvalid) firstInvalid = input;
+      } else {
+        input.classList.remove('has-error');
+        if (msg) msg.classList.remove('show');
+      }
+    });
+
+    // Required radio groups
+    const seen = new Set();
+    form.querySelectorAll('input[type=radio][required]').forEach((radio) => {
+      if (seen.has(radio.name)) return;
+      seen.add(radio.name);
+
+      const grid = radio.closest('.option-grid');
+      const wrapper = grid ? grid.closest('div') : null;
+      const msg = wrapper ? wrapper.querySelector('.field-error-msg') : null;
+      const checked = form.querySelector(`input[name="${radio.name}"]:checked`);
+
+      if (!checked) {
+        isValid = false;
+        if (grid) grid.classList.add('has-error');
+        if (msg) msg.classList.add('show');
+        if (!firstInvalid) firstInvalid = grid || radio;
+      } else {
+        if (grid) grid.classList.remove('has-error');
+        if (msg) msg.classList.remove('show');
+      }
+    });
+
+    return { isValid, firstInvalid };
+  }
+
+  function clearFieldError(el) {
+    el.classList.remove('has-error');
+    const wrapper = el.closest('div');
+    const msg = wrapper ? wrapper.querySelector('.field-error-msg') : null;
+    if (msg) msg.classList.remove('show');
+  }
+
+  // Clear error styling as soon as the person starts fixing a field
+  document.querySelectorAll('#form-tool input, #form-study input').forEach((input) => {
+    input.addEventListener('input', () => clearFieldError(input));
+    if (input.type === 'radio') {
+      input.addEventListener('change', () => {
+        const grid = input.closest('.option-grid');
+        if (grid) clearFieldError(grid);
+      });
+    }
+  });
+
+  function handleSubmit(e, type) {
+    e.preventDefault();
+
+    const form = document.getElementById('form-' + type);
+
+    const { isValid, firstInvalid } = validateForm(form);
+    if (!isValid) {
+      if (firstInvalid) {
+        firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return;
+    }
+
+    const btn = document.getElementById(type+'-btn');
+    const txt = document.getElementById(type+'-btn-text');
+    btn.disabled = true;
+    btn.classList.add('is-loading');
+    txt.textContent = 'Submitting…';
+
+    const formData = new FormData(form);
+
+    fetch(SHEET_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData
+    })
+    .then(() => {
+      document.getElementById('form-tool').style.display = 'none';
+      document.getElementById('form-study').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    })
+    .catch((err) => {
+      console.error('Submission error:', err);
+      btn.disabled = false;
+      btn.classList.remove('is-loading');
+      txt.textContent = 'Submit Request';
+      alert('Something went wrong — please try again.');
+    });
+  }
+
+  function resetForm() {
+    document.getElementById('success-msg').style.display = 'none';
+    document.getElementById('form-tool').reset();
+    document.getElementById('form-study').reset();
+    document.querySelectorAll('.has-error').forEach(el => el.classList.remove('has-error'));
+    document.querySelectorAll('.field-error-msg.show').forEach(el => el.classList.remove('show'));
+    const btn = document.getElementById(currentTab+'-btn');
+    const txt = document.getElementById(currentTab+'-btn-text');
+    btn.disabled = false;
+    btn.classList.remove('is-loading');
+    txt.textContent = 'Submit Request';
+    switchTab(currentTab);
+  }
+</script>
 
 <!-- CTA BAND (dark) -->
 <section class="cta-band">
@@ -638,6 +1253,17 @@
 </footer>
 
 <script>
+  // Copy email to clipboard
+  function copyEmail() {
+    const btn = document.getElementById('copyEmailBtn');
+    const label = document.getElementById('copyLabel');
+    navigator.clipboard.writeText('contact@wondermayank.indevs.in').then(() => {
+      btn.classList.add('copied');
+      label.textContent = 'Copied!';
+      setTimeout(() => { btn.classList.remove('copied'); label.textContent = 'Copy'; }, 2200);
+    });
+  }
+
   // Ripple on primary buttons
   document.querySelectorAll('.btn-primary').forEach(btn => {
     btn.addEventListener('click', function(e) {
