@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -244,7 +240,7 @@
         .india-card-icon{transition:.35s var(--ease)}
         body.theme-dark .india-card:hover{box-shadow:0 24px 58px rgba(168,85,247,.22),0 1px 0 rgba(255,255,255,.08) inset}
         @media(max-width:900px){.main-container{padding:3.5rem 5% 2.5rem}.quick-jump{display:flex !important;left:50%;right:auto;transform:translateX(-50%);justify-content:center;gap:.25rem;padding:.25rem;width:auto}.quick-jump a{width:30px;height:30px}.quick-jump svg{width:13px;height:13px}.back-top{right:14px;bottom:72px}.india-map-inner{padding:1.4rem;max-height:90vh}.india-map-svg{max-height:50vh}.india-states-grid{grid-template-columns:repeat(auto-fill,minmax(118px,1fr))}}
-        @media(max-width:580px){nav{padding:0 5%;height:64px}.mobile-nav{top:64px}.nav-brand{font-size:1.05rem}.logo-img{width:36px;height:36px}.hero{margin-top:64px;min-height:560px}.section-header{margin-bottom:2rem}.section-header h2{font-size:clamp(1.6rem,9vw,2.2rem)}.india-card{padding:1.25rem;border-radius:18px}.india-map-tools{grid-template-columns:1fr}.india-map-status{white-space:normal}.india-map-inner h3{font-size:1.1rem;padding-right:2rem}.india-map-svg{max-height:42vh}.india-states-grid{grid-template-columns:1fr 1fr}.quick-jump{display:flex !important;bottom:10px;left:50%;right:auto;transform:translateX(-50%);padding:.25rem;gap:.2rem;width:auto}.quick-jump a{width:30px;height:30px}.quick-jump svg{width:13px;height:13px}.back-top{bottom:66px;width:38px;height:38px}}
+        @media(max-width:580px){nav{padding:0 5%;height:64px}.mobile-nav{top:64px}.nav-brand{font-size:1.05rem}.logo-img{width:auto;height:36px}.hero{margin-top:64px;min-height:560px}.section-header{margin-bottom:2rem}.section-header h2{font-size:clamp(1.6rem,9vw,2.2rem)}.india-card{padding:1.25rem;border-radius:18px}.india-map-tools{grid-template-columns:1fr}.india-map-status{white-space:normal}.india-map-inner h3{font-size:1.1rem;padding-right:2rem}.india-map-svg{max-height:42vh}.india-states-grid{grid-template-columns:1fr 1fr}.quick-jump{display:flex !important;bottom:10px;left:50%;right:auto;transform:translateX(-50%);padding:.25rem;gap:.2rem;width:auto}.quick-jump a{width:30px;height:30px}.quick-jump svg{width:13px;height:13px}.back-top{bottom:66px;width:38px;height:38px}}
 
         /* ── CURSOR ── */
         #cursor-glow{position:fixed;width:380px;height:380px;background:radial-gradient(circle,rgba(200,162,255,0.11) 0%,transparent 70%);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);z-index:0;transition:left .08s,top .08s}
@@ -259,7 +255,7 @@
         /* ── NAV ── */
         nav{position:fixed;top:0;width:100%;height:70px;padding:0 7%;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.28);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);border-bottom:1px solid var(--glass-border);z-index:1000}
         .logo-wrap{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit}
-        .logo-img{height:40px;width:40px;border-radius:50%;border:2px solid rgba(255,255,255,.85);box-shadow:0 4px 12px rgba(0,0,0,.12);object-fit:cover}
+        .logo-img{height:40px;width:auto;border-radius:0;border:none;box-shadow:none;object-fit:contain}
         .nav-brand{font-family:var(--font-display);font-size:1.25rem;font-weight:800;letter-spacing:-.3px}
         .nav-links{display:flex;gap:1.8rem;align-items:center}
         .theme-toggle{width:38px;height:38px;border-radius:50%;border:1px solid rgba(200,162,255,.42);background:rgba(255,255,255,.24);color:var(--primary-dark);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:.3s var(--ease);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 4px 16px rgba(0,0,0,.08);flex-shrink:0}
@@ -4194,9 +4190,8 @@
 
 <!-- NAV -->
 <nav>
-    <a href="wondermayank.github.io" class="logo-wrap">
+    <a href="https://wondermayank.in" class="logo-wrap">
         <img src="https://wondermayank.github.io/head.svg" alt="Wondermayank logo" class="logo-img" loading="lazy">
-        <span class="nav-brand">Wondermayank ✨</span>
     </a>
     <div class="nav-links">
         <a href="#catalog">Creation 11</a>
