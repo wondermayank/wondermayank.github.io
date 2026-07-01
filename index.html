@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wondermayank — Free Online Tools, Study Resources &amp; Digital Projects | wondermayank.github.io</title>
-    <meta name="description" content="Wondermayank is a student developer from India who builds free online tools, exam-prep simulators (CUET, NEET, JEE, Banking, SSC), movie and anime finders, study blogs and 70+ digital projects. Explore the full collection at wondermayank.github.io.">
+    <meta name="description" content="Wondermayank is a student developer from India who builds free online tools, exam-prep simulators (CUET, NEET, JEE, Banking, SSC), movie and anime finders, study blogs and 3,200+ digital projects. Explore the full collection at wondermayank.github.io.">
     <meta name="keywords" content="Wondermayank, free online tools, CUET mock test, NEET JEE CBT, movie finder, anime finder, paletteify, study blog, India culture, digital projects, student developer India, wondermayank.github.io">
     <meta name="author" content="Wondermayank">
     <meta name="robots" content="index, follow">
@@ -14,7 +14,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Wondermayank — Free Tools, Study Resources &amp; Digital Projects">
-    <meta property="og:description" content="Explore 70+ free online tools, exam-prep simulators, movie and anime finders, study blogs and creative projects by Wondermayank — a student developer from India.">
+    <meta property="og:description" content="Explore 3,200+ free online tools, exam-prep simulators, movie and anime finders, study blogs and creative projects by Wondermayank — a student developer from India.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wondermayank.github.io/">
     <meta property="og:image" content="https://wondermayank.github.io/og-cover.jpg">
@@ -29,7 +29,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Wondermayank — Free Tools, Study Resources &amp; Digital Projects">
-    <meta name="twitter:description" content="Explore 70+ free online tools, exam-prep simulators, movie finders, study blogs and creative projects by Wondermayank.">
+    <meta name="twitter:description" content="Explore 3,200+ free online tools, exam-prep simulators, movie finders, study blogs and creative projects by Wondermayank.">
     <meta name="twitter:image" content="https://wondermayank.github.io/og-cover.jpg">
     <meta name="twitter:image:alt" content="Wondermayank Digital Universe">
     <meta name="twitter:site" content="@wondermayank">
@@ -54,7 +54,7 @@
   "https://thunderstudyofficial.blogspot.com"
 ],
       "jobTitle": "Student Developer",
-      "description": "Wondermayank is a student developer from India who creates free online tools, exam prep simulators, movie and anime finders, study blogs and 70+ digital projects.",
+      "description": "Wondermayank is a student developer from India who creates free online tools, exam prep simulators, movie and anime finders, study blogs and 3,200+ digital projects.",
       "nationality": "Indian",
       "knowsAbout": ["Web Development", "Online Tools", "Exam Preparation", "CUET", "NEET", "JEE", "Study Resources", "Indian Culture"]
     }
@@ -95,7 +95,7 @@
           "name": "Who is Wondermayank?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Wondermayank is a student developer from India who creates free online tools, exam preparation simulators, movie and anime finders, study blogs and 70+ digital projects hosted at wondermayank.github.io."
+            "text": "Wondermayank is a student developer from India who creates free online tools, exam preparation simulators, movie and anime finders, study blogs and 3,200+ digital projects hosted at wondermayank.github.io."
           }
         },
         {
@@ -103,7 +103,7 @@
           "name": "What tools does Wondermayank offer?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Wondermayank offers 70+ free tools including a Movie Finder, Anime Finder, Book Finder, Paletteify color palette generator, Text to PDF converter, CBT mock tests for CUET, NEET, JEE, Banking and SSC exams, a Periodic Table explorer, Hindi typing practice, Card Generator and more."
+            "text": "Wondermayank offers 3,200+ free tools and projects including a Movie Finder, Anime Finder, Book Finder, Paletteify color palette generator, Text to PDF converter, CBT mock tests for CUET, NEET, JEE, Banking and SSC exams, a Periodic Table explorer, Hindi typing practice, Card Generator and more."
           }
         },
         {
@@ -454,13 +454,16 @@
 
         /* ── PROJECT CARDS ── */
         .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:1.6rem}
-        .project-card{--c:var(--primary);background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r);padding:1.9rem;transition:.45s var(--ease);backdrop-filter:blur(15px);position:relative;overflow:hidden;transform-style:preserve-3d;cursor:default;display:flex;flex-direction:column}
+        .project-card{--c:var(--primary);background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--r);padding:1.9rem;transition:.45s var(--ease);backdrop-filter:blur(15px);position:relative;overflow:hidden;transform-style:preserve-3d;cursor:pointer;display:flex;flex-direction:column}
         .project-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,0) 60%);opacity:0;transition:.4s;pointer-events:none}
         .project-card:hover{border-color:rgba(200,162,255,.5);box-shadow:0 18px 45px rgba(0,0,0,.07)}
         .project-card:hover::after{opacity:1}
         .proj-icon{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;flex-shrink:0}
         .proj-icon svg{width:20px;height:20px}
         .proj-tag{position:absolute;top:1.1rem;right:1.1rem;font-size:.65rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;padding:3px 9px;border-radius:20px;background:var(--c) !important;color:white;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+        .proj-count-badge{display:inline-flex;align-items:center;gap:5px;font-size:.72rem;font-weight:700;padding:4px 11px;border-radius:20px;background:rgba(200,162,255,.14);border:1px solid rgba(200,162,255,.3);color:var(--primary-dark);margin-bottom:1rem;width:fit-content}
+        .proj-count-badge svg{width:11px;height:11px;flex-shrink:0}
+        body.theme-dark .proj-count-badge{background:rgba(192,132,252,.12);border-color:rgba(192,132,252,.28);color:#e9d5ff}
         .project-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.6rem;letter-spacing:-.2px;transition:text-shadow 0.3s var(--ease), color 0.3s var(--ease)}
         .project-card p{font-size:.84rem;color:var(--text-muted);line-height:1.65;flex:1;margin-bottom:1.4rem}
         .text-highlight{transition:color 0.22s var(--ease);border-radius:0;box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:0 !important;background-color:transparent !important}
@@ -606,7 +609,7 @@
             backdrop-filter: blur(20px) saturate(180%) !important;
             box-shadow: 0 8px 32px rgba(31, 38, 135, 0.04), inset 0 20px 20px -10px rgba(255,255,255,0.3) !important;
             transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease) !important;
-            cursor: default;
+            cursor: pointer;
             transform-style: flat !important;
             flex-direction: row;
         }
@@ -678,7 +681,7 @@
             display: flex !important;
             flex-direction: column !important;
             transform-style: preserve-3d !important;
-            cursor: default;
+            cursor: pointer;
         }
 
         body.theme-dark .project-card.style-study-cyber {
@@ -833,7 +836,7 @@
             flex-direction: column !important;
             align-items: center !important;
             text-align: center !important;
-            cursor: default;
+            cursor: pointer;
         }
         body.theme-dark .project-card.style-love-card {
             background: rgba(30, 10, 22, 0.55) !important;
@@ -958,7 +961,7 @@
             transition: all 0.4s var(--ease) !important;
             display: flex !important;
             flex-direction: column !important;
-            cursor: default;
+            cursor: pointer;
         }
         body.theme-dark .project-card.style-code-tech {
             background: rgba(15, 23, 42, 0.55) !important;
@@ -1098,7 +1101,7 @@
             transition: all 0.45s var(--ease) !important;
             display: flex !important;
             flex-direction: column !important;
-            cursor: default;
+            cursor: pointer;
         }
         body.theme-dark .project-card.style-ideas-draft {
             background: linear-gradient(rgba(18, 10, 32, 0.8), rgba(18, 10, 32, 0.8)), 
@@ -1222,7 +1225,7 @@
             transition: all 0.45s var(--ease) !important;
             display: flex !important;
             flex-direction: column !important;
-            cursor: default;
+            cursor: pointer;
         }
         body.theme-dark .project-card.style-fun-pop {
             background: rgba(26, 12, 42, 0.55) !important;
@@ -4280,7 +4283,13 @@
 <section id="featured" aria-label="Featured Projects" style="scroll-margin-top:90px">
     <div class="section-header" style="margin-bottom:1.8rem">
         <div class="section-pill">✦ Featured</div>
-        <h2>Flagship Projects</h2>
+        <div style="display:flex;align-items:center;justify-content:center;gap:.9rem;flex-wrap:wrap">
+            <h2 style="margin:0">Flagship Projects</h2>
+            <button type="button" class="glass-btn primary sm" onclick="surpriseMe()" title="Open a random project from the WM universe">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>
+                Surprise Me
+            </button>
+        </div>
         <p>The biggest and most powerful creations from the WM universe.</p>
     </div>
     <div class="featured-grid">
@@ -4304,7 +4313,7 @@
             <img src="https://i.pinimg.com/1200x/72/11/17/721117f3130a87778647a91cbc62a9a6.jpg" alt="Wondermayank" class="featured-about-avatar" loading="lazy">
             <div class="featured-about-name">Wondermayank</div>
             <div class="featured-about-role">Student Developer · India 🇮🇳</div>
-            <div class="featured-about-desc">Builder of 80+ free tools, exam simulators, cultural websites and digital universes. Every project is open access — no sign-ups, no paywalls.</div>
+            <div class="featured-about-desc">Builder of 3,200+ free tools, exam simulators, cultural websites and digital universes. Every project is open access — no sign-ups, no paywalls.</div>
             <span class="featured-about-btn">
                 View Full Profile
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
@@ -4346,7 +4355,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="#c8a2ff" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
             </div>
             <div><div class="cs-title">Finder</div><div class="cs-sub">Discover movies, anime, books, food &amp; more</div></div>
-            <span class="cs-count">8 tools</span>
+            <span class="cs-count">9 tools</span>
         </div>
         <div class="projects-grid" id="g-finder"></div>
     </div>
@@ -4449,7 +4458,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="#ff7b35" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M8 13s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
             </div>
             <div><div class="cs-title">Fun</div><div class="cs-sub">Pranks, AI prompts &amp; entertainment spaces</div></div>
-            <span class="cs-count">5 spaces</span>
+            <span class="cs-count">6 spaces</span>
         </div>
         <div class="projects-grid" id="g-fun"></div>
     </div>
@@ -4634,6 +4643,7 @@
             </div>
             <h3>What is India?</h3>
             <p>Discover the essence of India — its history, philosophy, geography and identity as the world's oldest civilization.</p>
+            <div class="proj-count-badge" style="color:var(--india-accent)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>36 pages inside</div>
         </a>
 
         <!-- 2. Rajput (Community) — spans 4 columns -->
@@ -5004,7 +5014,7 @@
                     <div class="about-name">Wondermayank</div>
                     <div style="font-size:.88rem;color:var(--text-muted);margin-top:.4rem;font-weight:600;letter-spacing:0.5px">STUDENT DEVELOPER · INDIA 🇮🇳</div>
                     <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem">
-                        <span class="about-badge" style="color:var(--primary)">80+ Projects</span>
+                        <span class="about-badge" style="color:var(--primary)">3,200+ Projects</span>
                         <span class="about-badge" style="color:#2563eb">100% Free</span>
                         <span class="about-badge" style="color:#16a34a">Open Access</span>
                     </div>
@@ -5026,8 +5036,8 @@
             <div class="about-card about-span-4" style="padding:1.6rem">
                 <div class="about-stats-grid">
                     <div class="about-stat-box stat-tools">
-                        <div class="num" style="color:var(--primary)">80+</div>
-                        <div style="font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted)">Free Tools</div>
+                        <div class="num" style="color:var(--primary)">3,200+</div>
+                        <div style="font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted)">Tools &amp; Projects</div>
                         <svg class="stat-watermark" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
                     </div>
                     <div class="about-stat-box stat-collections">
@@ -5126,7 +5136,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2.5" style="width:18px;height:18px;flex-shrink:0;transition:.3s"><path d="M6 9l6 6 6-6"/></svg>
             </summary>
             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" style="padding:0 1.6rem 1.3rem;font-size:.9rem;color:var(--text-muted);line-height:1.7;border-top:1px solid var(--glass-border)">
-                <span itemprop="text">Wondermayank is a student developer from India who creates free online tools, exam preparation simulators, movie and anime finders, study blogs and 70+ digital projects hosted at wondermayank.github.io.</span>
+                <span itemprop="text">Wondermayank is a student developer from India who creates free online tools, exam preparation simulators, movie and anime finders, study blogs and 3,200+ digital projects hosted at wondermayank.github.io.</span>
             </div>
         </details>
 
@@ -5137,7 +5147,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2.5" style="width:18px;height:18px;flex-shrink:0"><path d="M6 9l6 6 6-6"/></svg>
             </summary>
             <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" style="padding:0 1.6rem 1.3rem;font-size:.9rem;color:var(--text-muted);line-height:1.7;border-top:1px solid var(--glass-border)">
-                <span itemprop="text">Wondermayank offers 70+ free tools including a Movie Finder, Anime Finder, Book Finder, Paletteify color palette generator, Text to PDF converter, CBT mock tests for CUET, NEET, JEE, Banking and SSC exams, a Periodic Table explorer, Hindi typing practice, Card Generator and more.</span>
+                <span itemprop="text">Wondermayank offers 3,200+ free tools and projects including a Movie Finder, Anime Finder, Book Finder, Paletteify color palette generator, Text to PDF converter, CBT mock tests for CUET, NEET, JEE, Banking and SSC exams, a Periodic Table explorer, Hindi typing practice, Card Generator and more.</span>
             </div>
         </details>
 
@@ -5372,6 +5382,7 @@ const creations = {
         {title:'Recipe Finder',desc:'Discover delicious meals and recipes from around the world with full ingredients and steps.',link:'https://wondermayank.github.io/Meal',icon:'utensils',color:'#f97316',tag:'Food'},
         {title:'Drink Finder',desc:'Explore cocktails and drinks with full recipes, ingredients and preparation guides.',link:'https://wondermayank.github.io/Cocktail',icon:'cocktail',color:'#06b6d4',tag:'Drinks'},
         {title:'Quote Library',desc:'A beautiful collection of inspiring, funny and motivational quotes for every mood.',link:'https://wondermayank.github.io/Quote',icon:'quote_icon',color:'#8b5cf6',tag:'Quotes'},
+        {title:'Wallpaper Gallery',desc:'Browse and download a curated collection of high-quality wallpapers for phone and desktop.',link:'https://wondermayank.github.io/wallpaper',icon:'image_tools',color:'#a855f7',tag:'Wallpapers',count:'1,600 wallpapers'},
     ],
     study:[
         {title:'Book Hub',desc:'Organized educational books and structured study resources for all subjects.',link:'https://wondermayank.github.io/book',icon:'book',color:'#3b82f6',tag:'Books'},
@@ -5385,12 +5396,12 @@ const creations = {
         {title:'Hindi',desc:'Hindi Typing, Learn, Practice & More',link:'https://wondermayank.github.io/hindi',icon:'hindi',color:'#f43f5e',tag:'Hindi'},
     ],
     tools:[
-        {title:'Text to PDF',desc:'Convert plain text documents into professionally formatted PDFs in one click.',link:'https://wondermayank.github.io/pdftotext',icon:'pdf',color:'#dc2626',tag:'PDF'},
-        {title:'PDF Master Suite',desc:'Merge, compress, edit and convert PDFs instantly in your browser.',link:'https://wondermayank.github.io/help/pdf',icon:'pdf_tools',color:'#e11d48',tag:'PDF Suite'},
+        {title:'Text to PDF',desc:'Convert plain text documents into professionally formatted PDFs in one click.',link:'https://wondermayank.github.io/pdftotext',icon:'pdf',color:'#dc2626',tag:'PDF',count:'12 tools'},
+        {title:'PDF Master Suite',desc:'Merge, compress, edit and convert PDFs instantly in your browser.',link:'https://wondermayank.github.io/help/pdf',icon:'pdf_tools',color:'#e11d48',tag:'PDF Suite',count:'110+ tools'},
         {title:'Teleremind',desc:'Set smart reminders via Telegram bot — never forget tasks, deadlines or events again.',link:'https://wondermayank.github.io/teleremind',icon:'bell',color:'#0088cc',tag:'Telegram Bot'},
         {title:'IQ Spectrum Test',desc:'Challenge your intelligence and track your cognitive performance.',link:'https://wondermayank.github.io/help/iq',icon:'help',color:'#0284c7',tag:'IQ Test'},
         {title:'Personal Care Helper',desc:'Period tracker and wellness companion designed for her daily health.',link:'https://wondermayank.github.io/care',icon:'care',color:'#f472b6',tag:'Wellness'},
-        {title:'Image Tools',desc:'Resize, filter, compress and run AI utilities on your images.',link:'https://wondermayank.github.io/image',icon:'image_tools',color:'#8b5cf6',tag:'Image'},
+        {title:'Image Tools',desc:'Resize, filter, compress and run AI utilities on your images.',link:'https://wondermayank.github.io/image',icon:'image_tools',color:'#8b5cf6',tag:'Image',count:'50+ tools'},
         {title:'Tiny AI Bot',desc:'A personality-driven Telegram AI bot with image generation, text-to-speech and admin tools.',link:'https://tiny.wondermayank.indevs.in',icon:'bot',color:'#06b6d4',tag:'Telegram Bot'},
         {title:'Video Player',desc:'A fast glassmorphism video player with HLS streaming support for .m3u8 links.',link:'https://wondermayank.github.io/video_player',icon:'tv',color:'#7c3aed',tag:'Media'},
         {title:'YouTube Transcript',desc:'Extract full transcripts from any YouTube video instantly — perfect for notes and research.',link:'https://wondermayank.github.io/tools/youtube',icon:'speech_a',color:'#dc2626',tag:'YouTube'},
@@ -5407,33 +5418,34 @@ const creations = {
         {title:'AI Prompt Vault',desc:'A curated, searchable vault of useful AI prompts for everyday tasks.',link:'https://wondermayank.github.io/help/ai_prompt',icon:'sparkles',color:'#7c3aed',tag:'AI'},
     ],
     love:[
-        {title:'Card Generator',desc:'Create dynamic digital cards for weddings, birthdays and events with shareable links.',link:'https://wondermayank.github.io/card',icon:'gift',color:'#ec4899',tag:'Cards'},
-        {title:'Love Website',desc:'A creative digital space focusing on connection, affection and heartfelt themes.',link:'https://wondermayank.github.io/love',icon:'heart',color:'#e11d48',tag:'Creative'},
+        {title:'Card Generator',desc:'Create dynamic digital cards for weddings, birthdays and events with shareable links.',link:'https://wondermayank.github.io/card',icon:'gift',color:'#ec4899',tag:'Cards',count:'30+ card designs'},
+        {title:'Love Website',desc:'A creative digital space focusing on connection, affection and heartfelt themes.',link:'https://wondermayank.github.io/love',icon:'heart',color:'#e11d48',tag:'Creative',count:'6 pages'},
     ],
     code:[
         {title:'Paletteify',desc:'Generate aesthetic color palettes instantly. Discover unique harmonious gradients.',link:'https://wondermayank.github.io/paletteify',icon:'palette',color:'#7c3aed',tag:'Design'},
-        {title:'Code Helper',desc:'Curated coding tools and developer utilities. Fast, minimal and efficient snippets.',link:'https://wondermayank.github.io/code',icon:'code',color:'#0ea5e9',tag:'Developer'},
-        {title:'3D Website UI',desc:'A stunning immersive 3D website UI experiment — pushing the boundaries of web design.',link:'https://wondermayank.github.io/3d_website',icon:'cube3d',color:'#a855f7',tag:'3D Design'},
-        {title:'Element UI',desc:'A rich collection of polished UI elements, components and design patterns to inspire.',link:'https://wondermayank.github.io/code_idea',icon:'element',color:'#f59e0b',tag:'UI Kit'},
+        {title:'Code Helper',desc:'Curated coding tools and developer utilities. Fast, minimal and efficient snippets.',link:'https://wondermayank.github.io/code',icon:'code',color:'#0ea5e9',tag:'Developer',count:'66 snippets'},
+        {title:'3D Website UI',desc:'A stunning immersive 3D website UI experiment — pushing the boundaries of web design.',link:'https://wondermayank.github.io/3d_website',icon:'cube3d',color:'#a855f7',tag:'3D Design',count:'156 pages'},
+        {title:'Element UI',desc:'A rich collection of polished UI elements, components and design patterns to inspire.',link:'https://wondermayank.github.io/code_idea',icon:'element',color:'#f59e0b',tag:'UI Kit',count:'100 components'},
         {title:'hand ai',desc:'Play With Your Hand',link:'https://wondermayank.github.io/code/handai.html',icon:'hand',color:'#10b981',tag:'Fun'},
-        {title:'Logos Gallery',desc:'A massive gallery of 15,000+ logos across 20 categories for design inspiration.',link:'https://wondermayank.github.io/logos',icon:'badge',color:'#0891b2',tag:'Design'},
+        {title:'Logos Gallery',desc:'A massive gallery of 13,071+ logos across 20 categories for design inspiration.',link:'https://wondermayank.github.io/logos',icon:'badge',color:'#0891b2',tag:'Design',count:'13,071 icons'},
     ],
     ideas:[
-        {title:'Portfolio Hub',desc:'A collection of 500+ beautiful portfolio site ideas and design inspiration for creatives.',link:'https://wondermayank.github.io/portfolio',icon:'badge',color:'#0891b2',tag:'Portfolio'},
-        {title:'Voidpages',desc:'Beautiful 404 error pages and unique web page designs with full source code.',link:'https://wondermayank.github.io/voidpages',icon:'alert',color:'#6b7280',tag:'UI Design'},
+        {title:'Portfolio Hub',desc:'A collection of 2,250+ beautiful portfolio site ideas and design inspiration for creatives.',link:'https://wondermayank.github.io/portfolio',icon:'badge',color:'#0891b2',tag:'Portfolio',count:'2,250+ portfolios'},
+        {title:'Voidpages',desc:'Beautiful 404 error pages and unique web page designs with full source code.',link:'https://wondermayank.github.io/voidpages',icon:'alert',color:'#6b7280',tag:'UI Design',count:'200 pages'},
     ],
     fun:[
-        {title:'Prank Hub',desc:'A collection of hilarious prank websites and ideas to surprise friends and partners.',link:'https://wondermayank.github.io/Prank',icon:'joker',color:'#f59e0b',tag:'Prank'},
+        {title:'Puzzle',desc:'Play fun, brain-teasing puzzle games right in your browser — free and no installs needed.',link:'https://wondermayank.github.io/puzzle',icon:'puzzle',color:'#10b981',tag:'Puzzle'},
+        {title:'Prank Hub',desc:'A collection of hilarious prank websites and ideas to surprise friends and partners.',link:'https://wondermayank.github.io/Prank',icon:'joker',color:'#f59e0b',tag:'Prank',count:'50 pranks'},
         {title:'AI Prompt Library',desc:'Curated collection of powerful AI prompts for creativity, productivity and fun.',link:'https://aipromptwm.blogspot.com/',icon:'sparkles',color:'#8b5cf6',tag:'AI'},
         {title:'ThunderStudy Update',desc:'Latest updates, news and resources from the ThunderStudy official community.',link:'https://thunderstudyofficial.blogspot.com/',icon:'megaphone',color:'#16a34a',tag:'Blog'},
         {title:'Mindmap AI',desc:'Generate visual mind maps instantly using AI — perfect for brainstorming and study revision.',link:'https://mindmap.thunderstudy.indevs.in',icon:'mindmap',color:'#06b6d4',tag:'AI'},
         {title:'Flashcard AI',desc:'Create smart AI-powered flashcards for fast, effective memorisation and exam prep.',link:'https://flashcard.thunderstudy.indevs.in',icon:'flashcard',color:'#f97316',tag:'AI'},
     ],
     ai:[
-        {title:'ThunderStudy AI Suite',desc:'10+ AI-powered study tools in one hub, including an AI chat assistant.',link:'https://ai.thunderstudy.indevs.in',icon:'thunder_ai',color:'#7c3aed',tag:'AI Hub'},
+        {title:'ThunderStudy AI Suite',desc:'10+ AI-powered study tools in one hub, including an AI chat assistant.',link:'https://ai.thunderstudy.indevs.in',icon:'thunder_ai',color:'#7c3aed',tag:'AI Hub',count:'10+ AI tools'},
         {title:'AI CBT Mock Test Maker',desc:'Generate full computer-based mock tests instantly using AI.',link:'https://aimock.thunderstudy.indevs.in',icon:'cbt',color:'#10b981',tag:'AI'},
         {title:'Formula Story Mode',desc:'Learn formulas through AI-generated stories and memorable mnemonics.',link:'https://formula.thunderstudy.indevs.in/',icon:'sparkles',color:'#f59e0b',tag:'AI'},
-        {title:'SelfCare AI',desc:'Skin, hair, mental wellness and period care with an AI-generated daily routine.',link:'https://selfcare.wondermayank.indevs.in',icon:'care',color:'#f472b6',tag:'AI'},
+        {title:'SelfCare AI',desc:'Skin, hair, mental wellness and period care with an AI-generated daily routine.',link:'https://selfcare.wondermayank.in',icon:'care',color:'#f472b6',tag:'AI'},
         {title:'ThunderStudy AI Chat',desc:'Direct AI chat assistant for instant doubt-solving and study help.',link:'https://ai.thunderstudy.indevs.in/chat',icon:'speech_a',color:'#06b6d4',tag:'AI'},
     ],
     heroes:[
@@ -5545,24 +5557,26 @@ const igCh = [
 // ─── RENDER ──────────────────────────────────────────────
 function renderCard(p) {
     const bg = `background:linear-gradient(135deg,${p.color}22,${p.color}10);border:1px solid ${p.color}30;`;
-    return `<div class="project-card" style="--c:${p.color}">
+    return `<div class="project-card" style="--c:${p.color}" onclick="window.open('${p.link}','_blank')">
         <span class="proj-tag">${p.tag}</span>
         <div class="proj-icon" style="${bg}">${ic(p.icon,p.color)}</div>
         <h3><span class="text-highlight">${p.title}</span></h3>
         <p><span class="text-highlight">${p.desc}</span></p>
+        ${p.count ? `<div class="proj-count-badge">${I.layout}${p.count} inside</div>` : ''}
         <div class="card-actions">
-            <a href="${p.link}" class="glass-btn primary" target="_blank" rel="noopener noreferrer">${I.eye} Preview</a>
+            <a href="${p.link}" class="glass-btn primary" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">${I.eye} Preview</a>
         </div>
     </div>`;
 }
 function renderFinderCard(p) {
-    return `<div class="project-card style-bento-combined" style="--c:${p.color}">
+    return `<div class="project-card style-bento-combined" style="--c:${p.color}" onclick="window.open('${p.link}','_blank')">
         <div class="bento-content">
             <span class="proj-tag-bento" style="background:linear-gradient(135deg,var(--primary),var(--secondary))">${p.tag}</span>
             <h3><span class="text-highlight">${p.title}</span></h3>
             <p><span class="text-highlight">${p.desc}</span></p>
+            ${p.count ? `<div class="proj-count-badge">${I.layout}${p.count} inside</div>` : ''}
             <div class="card-actions">
-                <a href="${p.link}" class="glass-btn primary" target="_blank" rel="noopener noreferrer">${I.eye} Preview</a>
+                <a href="${p.link}" class="glass-btn primary" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">${I.eye} Preview</a>
             </div>
         </div>
         <div class="bento-side" style="background:${p.color}0c">
@@ -5572,7 +5586,7 @@ function renderFinderCard(p) {
 }
 function renderStudyCard(p) {
     const bg = `background:linear-gradient(135deg,${p.color}22,${p.color}10);border:1px solid ${p.color}30;`;
-    return `<div class="project-card style-study-cyber" style="--c:${p.color}">
+    return `<div class="project-card style-study-cyber" style="--c:${p.color}" onclick="window.open('${p.link}','_blank')">
         <div class="cyber-grid-bg"></div>
         <div class="cyber-top-row">
             <span class="proj-tag-cyber">${p.tag}</span>
@@ -5581,7 +5595,7 @@ function renderStudyCard(p) {
         <h3><span class="text-highlight">${p.title}</span></h3>
         <p><span class="text-highlight">${p.desc}</span></p>
         <div class="card-actions">
-            <a href="${p.link}" class="cyber-btn" target="_blank" rel="noopener noreferrer">
+            <a href="${p.link}" class="cyber-btn" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
                 <span>Launch Resource</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
             </a>
@@ -5683,7 +5697,7 @@ function renderGpt(t) {
 function renderHub(h,i) {
     const cols=['#c8a2ff','#a2d4ff','#a2ffc8','#ffd4a2','#ffa2c8'];
     const c=cols[i%cols.length];
-    return `<div class="project-card style-tools-prism" style="--c:${c}; display: flex; flex-direction: column;" data-keywords="${h.keywords||''}">
+    return `<div class="project-card style-tools-prism" style="--c:${c}; display: flex; flex-direction: column;" data-keywords="${h.keywords||''}" onclick="window.open('${h.link}','_blank')">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.4rem; position: relative; z-index: 2;">
             <div class="prism-icon-wrap" style="background:linear-gradient(135deg,${c}22,${c}10); border:1px solid ${c}30; margin-bottom: 0;">${ic(h.icon,c)}</div>
             <span class="proj-tag-bento" style="background:linear-gradient(135deg,${c},${c}dd); margin-bottom: 0;">${h.badge}</span>
@@ -5691,7 +5705,7 @@ function renderHub(h,i) {
         <h3 style="position: relative; z-index: 2;">${h.title}</h3>
         <p style="flex: 1; margin-bottom: 1.5rem; position: relative; z-index: 2;">${h.desc}</p>
         <div class="card-actions" style="margin-top: auto; width: 100%; position: relative; z-index: 2;">
-            <a href="${h.link}" class="glass-btn primary" style="background:linear-gradient(135deg,${c}28,${c}18); border-color:${c}40; color:var(--text-main); width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px;" target="_blank" rel="noopener noreferrer">
+            <a href="${h.link}" class="glass-btn primary" style="background:linear-gradient(135deg,${c}28,${c}18); border-color:${c}40; color:var(--text-main); width: 100%; display: flex; justify-content: center; align-items: center; gap: 8px;" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
                 Visit Hub <span style="display: inline-flex; transition: transform 0.3s;" class="hub-arr-icon">→</span>
             </a>
         </div>
@@ -5782,26 +5796,28 @@ function renderYtCard(ch,i) {
 
 function renderToolsCard(p) {
     const bg = `background:linear-gradient(135deg,${p.color}22,${p.color}10);border:1px solid ${p.color}30;`;
-    return `<div class="project-card style-tools-prism" style="--c:${p.color}">
+    return `<div class="project-card style-tools-prism" style="--c:${p.color}" onclick="window.open('${p.link}','_blank')">
         <span class="proj-tag-bento" style="background:linear-gradient(135deg,var(--primary),var(--secondary)); margin-bottom: 1.2rem; display: inline-block;">${p.tag}</span>
         <div class="prism-icon-wrap" style="${bg}">${ic(p.icon,p.color)}</div>
         <h3>${p.title}</h3>
         <p>${p.desc}</p>
+        ${p.count ? `<div class="proj-count-badge">${I.layout}${p.count} inside</div>` : ''}
         <div class="card-actions">
-            <a href="${p.link}" class="glass-btn primary" target="_blank" rel="noopener noreferrer">${I.eye} Preview</a>
+            <a href="${p.link}" class="glass-btn primary" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">${I.eye} Preview</a>
         </div>
     </div>`;
 }
 
 function renderLoveCard(p) {
     const bg = `background:linear-gradient(135deg,${p.color}22,${p.color}10);border:1px solid ${p.color}30;`;
-    return `<div class="project-card style-love-card" style="--c:${p.color}">
+    return `<div class="project-card style-love-card" style="--c:${p.color}" onclick="window.open('${p.link}','_blank')">
         <span class="proj-tag-bento" style="background:linear-gradient(135deg,#ec4899,#f43f5e);">${p.tag}</span>
         <div class="love-icon-wrap" style="${bg}">${ic(p.icon,p.color)}</div>
         <h3><span class="text-highlight">${p.title}</span></h3>
         <p><span class="text-highlight">${p.desc}</span></p>
+        ${p.count ? `<div class="proj-count-badge">${I.layout}${p.count} inside</div>` : ''}
         <div class="card-actions" style="width: 100%">
-            <a href="${p.link}" class="love-btn" target="_blank" rel="noopener noreferrer">
+            <a href="${p.link}" class="love-btn" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
                 ${I.heart}
                 <span>Launch Romance</span>
             </a>
@@ -5811,7 +5827,7 @@ function renderLoveCard(p) {
 
 function renderCodeCard(p) {
     const bg = `background:linear-gradient(135deg,${p.color}22,${p.color}10);border:1px solid ${p.color}30;`;
-    return `<div class="project-card style-code-tech" style="--c:${p.color}">
+    return `<div class="project-card style-code-tech" style="--c:${p.color}" onclick="window.open('${p.link}','_blank')">
         <div class="code-editor-header">
             <div class="code-window-dots">
                 <span class="dot-red"></span>
@@ -5824,8 +5840,9 @@ function renderCodeCard(p) {
             <div class="code-icon-wrap" style="${bg}">${ic(p.icon,p.color)}</div>
             <h3><span class="text-highlight">${p.title}</span></h3>
             <p>${p.desc}</p>
+            ${p.count ? `<div class="proj-count-badge">${I.layout}${p.count} inside</div>` : ''}
             <div class="card-actions" style="width: 100%">
-                <a href="${p.link}" class="code-btn" target="_blank" rel="noopener noreferrer">
+                <a href="${p.link}" class="code-btn" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                     <span>Execute Project</span>
                 </a>
@@ -5836,7 +5853,7 @@ function renderCodeCard(p) {
 
 function renderIdeasCard(p) {
     const bg = `background:linear-gradient(135deg,${p.color}22,${p.color}10);border:1px solid ${p.color}30;`;
-    return `<div class="project-card style-ideas-draft" style="--c:${p.color}">
+    return `<div class="project-card style-ideas-draft" style="--c:${p.color}" onclick="window.open('${p.link}','_blank')">
         <div class="ideas-top-row">
             <span class="ideas-tag">${p.tag}</span>
             <div class="ideas-icon-wrap" style="${bg}">${ic(p.icon,p.color)}</div>
@@ -5844,8 +5861,9 @@ function renderIdeasCard(p) {
         <div class="ideas-body">
             <h3><span class="text-highlight">${p.title}</span></h3>
             <p>${p.desc}</p>
+            ${p.count ? `<div class="proj-count-badge">${I.layout}${p.count} inside</div>` : ''}
             <div class="card-actions" style="width: 100%">
-                <a href="${p.link}" class="ideas-btn" target="_blank" rel="noopener noreferrer">
+                <a href="${p.link}" class="ideas-btn" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
                     <span>Explore Design</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
                 </a>
@@ -5856,7 +5874,7 @@ function renderIdeasCard(p) {
 
 function renderFunCard(p) {
     const bg = `background:linear-gradient(135deg,${p.color}22,${p.color}10);border:1px solid ${p.color}30;`;
-    return `<div class="project-card style-fun-pop" style="--c:${p.color}">
+    return `<div class="project-card style-fun-pop" style="--c:${p.color}" onclick="window.open('${p.link}','_blank')">
         <div class="fun-top-row">
             <span class="fun-tag">${p.tag}</span>
             <div class="fun-icon-wrap" style="${bg}">${ic(p.icon,p.color)}</div>
@@ -5864,8 +5882,9 @@ function renderFunCard(p) {
         <div class="fun-body">
             <h3><span class="text-highlight">${p.title}</span></h3>
             <p>${p.desc}</p>
+            ${p.count ? `<div class="proj-count-badge">${I.layout}${p.count} inside</div>` : ''}
             <div class="card-actions" style="width: 100%">
-                <a href="${p.link}" class="fun-btn" target="_blank" rel="noopener noreferrer">
+                <a href="${p.link}" class="fun-btn" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
                     <span>Play & Explore</span>
                 </a>
             </div>
@@ -5916,6 +5935,16 @@ Object.entries(creations).forEach(([k,arr])=>{
         }
     }
 });
+
+// Surprise Me — jumps to a random project from anywhere in the WM universe
+function surpriseMe(){
+    const pool=[];
+    Object.values(creations).forEach(arr=>arr.forEach(p=>{ if(p && p.link) pool.push(p.link); }));
+    if(!pool.length) return;
+    const pick=pool[Math.floor(Math.random()*pool.length)];
+    window.open(pick,'_blank','noopener,noreferrer');
+}
+
 document.getElementById('tg-bots').innerHTML=tgBots.map(t=>renderTg(t,'bot')).join('');
 document.getElementById('tg-groups').innerHTML=tgGroups.map(t=>renderTg(t,'grp')).join('');
 document.getElementById('gpt-grid').innerHTML=customGPTs.map(renderGpt).join('');
@@ -6692,7 +6721,7 @@ if (bs) {
 <noscript>
 <section aria-label="Wondermayank Project Directory" style="padding:2rem;font-family:sans-serif">
   <h1>Wondermayank's Free Tools & Projects</h1>
-  <p>Wondermayank is a student developer from India offering 80+ free tools at wondermayank.github.io.</p>
+  <p>Wondermayank is a student developer from India offering 3,200+ free tools and projects at wondermayank.github.io.</p>
   <ul>
     <li><a href="https://wondermayank.github.io/movie">Movie Finder — Search and explore Indian and international movies</a></li>
     <li><a href="https://wondermayank.github.io/anime">Anime Finder — Discover anime series powered by Jikan API</a></li>
