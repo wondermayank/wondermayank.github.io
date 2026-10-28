@@ -1,275 +1,848 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 — Page Not Found | Wondermayank</title>
-    <meta name="description" content="Oops! This page doesn't exist. Return to Wondermayank's digital universe of free tools and study resources.">
-    <meta name="robots" content="noindex, follow">
-    <link rel="canonical" href="https://wondermayank.github.io/404">
-    <link rel="icon" type="image/svg+xml" href="logo2.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #c8a2ff;
-            --primary-dark: #9b6fff;
-            --secondary: #93c5fd;
-            --accent: #ff9eb5;
-            --bg-start: #fdfbff;
-            --bg-end: #ebfaff;
-            --glass: rgba(255,255,255,0.35);
-            --glass-border: rgba(255,255,255,0.55);
-            --text-main: #1a1a2e;
-            --text-muted: #8b8ba0;
-            --font-display: 'Syne', sans-serif;
-            --font-body: 'DM Sans', sans-serif;
-            --ease: cubic-bezier(.22,.68,0,1.2);
-        }
-        body.theme-dark {
-            --primary: #c084fc; --primary-dark: #a855f7; --secondary: #7dd3fc;
-            --accent: #f472b6; --bg-start: #05010c; --bg-end: #150026;
-            --glass: rgba(20,8,35,.68); --glass-border: rgba(192,132,252,.24);
-            --text-main: #f6edff; --text-muted: #bda7d8;
-        }
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body {
-            background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
-            color: var(--text-main);
-            font-family: var(--font-body);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        body.theme-dark {
-            background: radial-gradient(circle at 20% 0%, rgba(126,34,206,.32), transparent 34%),
-                        radial-gradient(circle at 80% 28%, rgba(88,28,135,.26), transparent 30%),
-                        linear-gradient(135deg, #030008, #13001f 58%, #05000a);
-        }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Page moved | WonderMayank</title>
+<meta name="description" content="This page has moved. Open the project at project.wondermayank.in, or read the source on GitHub.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" id="metaTheme" content="#573AFC">
+<meta name="color-scheme" id="metaScheme" content="light">
+<meta name="darkreader-lock">
+<script>
+/* Theme only ever 'light' or 'dark', from the saved choice. Never from the phone or system setting. */
+(function(){var t='light';try{var s=localStorage.getItem('theme');if(s==='dark'||s==='light')t=s;}catch(e){}
+document.documentElement.setAttribute('data-theme',t);
+var m=document.getElementById('metaTheme');if(m)m.setAttribute('content',t==='dark'?'#9A7AFB':'#573AFC');
+var c=document.getElementById('metaScheme');if(c)c.setAttribute('content',t);})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   TOKENS — clay system, light + dark, fixed
+========================================================= */
+:root{
+  color-scheme:light;
+  --canvas:#F4F1FC;
+  --canvas-deep:#ECE6FB;
+  --surface:#FAF8FE;
 
-        /* Shapes */
-        .shape { position: fixed; border-radius: 50%; filter: blur(90px); opacity: .13; pointer-events: none; z-index: 0; animation: fs 28s ease-in-out infinite; }
-        .s1 { width: 520px; height: 520px; background: var(--primary); top: -160px; left: -160px; }
-        .s2 { width: 400px; height: 400px; background: var(--secondary); bottom: -100px; right: -100px; animation-duration: 22s; }
-        .s3 { width: 260px; height: 260px; background: var(--accent); top: 50%; right: -70px; animation-duration: 18s; animation-delay: 5s; }
-        @keyframes fs { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(30px,-20px) scale(1.04)} 66%{transform:translate(-20px,30px) scale(.97)} }
+  --ink:#2B2640;
+  --body-c:#5C5575;
+  --muted:#6B6485;
 
-        /* Nav */
-        nav { position: fixed; top: 0; width: 100%; height: 70px; padding: 0 7%; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,.28); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); border-bottom: 1px solid var(--glass-border); z-index: 1000; }
-        body.theme-dark nav { background: rgba(10,2,20,.55); }
-        .logo-wrap { display: flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--text-main); }
-        .logo-img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--glass-border); }
-        .nav-brand { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; letter-spacing: -.3px; }
-        .theme-toggle { width: 38px; height: 38px; border-radius: 50%; border: 1px solid rgba(200,162,255,.42); background: rgba(255,255,255,.24); color: var(--primary-dark); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: .3s var(--ease); backdrop-filter: blur(18px); }
-        .theme-toggle:hover { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; transform: rotate(20deg); }
-        .theme-toggle svg { width: 16px; height: 16px; }
+  --hairline:rgba(43,38,64,.08);
+  --hairline-strong:rgba(43,38,64,.16);
 
-        /* Main */
-        main { position: relative; z-index: 1; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 100px 7% 60px; }
-        .container-404 { text-align: center; max-width: 620px; animation: fadeUp .8s var(--ease) both; }
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  --primary:#573AFC;
+  --primary-active:#4527E0;
+  --primary-soft:#E4DEFF;
+  --on-primary:#ffffff;
 
-        .error-visual { position: relative; margin-bottom: 2rem; display: inline-block; }
-        .num-404 {
-            font-family: var(--font-display);
-            font-size: clamp(7rem, 18vw, 13rem);
-            font-weight: 800;
-            line-height: 1;
-            letter-spacing: -8px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            filter: drop-shadow(0 0 40px rgba(155,111,255,.28));
-            animation: pulse404 3s ease-in-out infinite;
-        }
-        @keyframes pulse404 { 0%,100%{filter:drop-shadow(0 0 40px rgba(155,111,255,.28))} 50%{filter:drop-shadow(0 0 70px rgba(155,111,255,.55))} }
+  --success:#22c55e;
+  --warning:#f59e0b;
+  --error:#dc2626;
 
-        .orbit {
-            position: absolute;
-            width: 110%;
-            height: 110%;
-            top: -5%;
-            left: -5%;
-            border: 1.5px dashed rgba(200,162,255,.22);
-            border-radius: 50%;
-            animation: spin 18s linear infinite;
-        }
-        .orbit-dot {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 50%;
-            top: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 0 12px var(--primary);
-        }
-        @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+  --clay-light:rgba(255,255,255,.9);
+  --clay-dark:rgba(120,108,180,.5);
+  --scrim:rgba(26,23,48,.55);
 
-        .badge-404 {
-            display: inline-flex;
-            align-items: center;
-            gap: .4rem;
-            font-size: .68rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            padding: 5px 14px;
-            border-radius: 20px;
-            background: rgba(200,162,255,.12);
-            color: var(--primary-dark);
-            border: 1px solid rgba(200,162,255,.3);
-            margin-bottom: 1.2rem;
-        }
-        .title-404 { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -1px; margin-bottom: .8rem; }
-        .desc-404 { color: var(--text-muted); font-size: .95rem; line-height: 1.7; margin-bottom: 2.2rem; max-width: 440px; margin-left: auto; margin-right: auto; }
+  --radius-card:28px;
+  --radius-lg:24px;
+  --radius-md:20px;
+  --radius-sm:16px;
+  --radius-pill:999px;
 
-        .actions { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-bottom: 2.8rem; }
-        .btn-primary {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: .75rem 2rem; border-radius: 50px;
-            background: linear-gradient(135deg, #a855f7, #7c3aed);
-            color: white; border: none; font-size: .88rem; font-weight: 700;
-            cursor: pointer; text-decoration: none;
-            transition: .3s var(--ease);
-            box-shadow: 0 8px 24px rgba(124,58,237,.4);
-            font-family: var(--font-body);
-        }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(124,58,237,.55); }
-        .btn-glass {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: .75rem 1.6rem; border-radius: 50px;
-            background: rgba(255,255,255,.22); backdrop-filter: blur(22px);
-            border: 1px solid rgba(255,255,255,.62);
-            color: var(--text-main); font-size: .88rem; font-weight: 600;
-            text-decoration: none; cursor: pointer;
-            transition: .3s var(--ease);
-            box-shadow: 0 4px 18px rgba(0,0,0,.07), 0 1px 0 rgba(255,255,255,.88) inset;
-            font-family: var(--font-body);
-        }
-        .btn-glass:hover { transform: translateY(-2px); border-color: rgba(200,162,255,.5); }
-        .btn-glass svg, .btn-primary svg { width: 16px; height: 16px; flex-shrink: 0; }
+  --font:'Inter',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 
-        /* Quick links */
-        .quick-links-title { font-size: .72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
-        .quick-grid { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; }
-        .quick-chip {
-            display: inline-flex; align-items: center; gap: 6px;
-            padding: .45rem 1rem; border-radius: 50px;
-            background: var(--glass); backdrop-filter: blur(14px);
-            border: 1px solid var(--glass-border);
-            color: var(--text-main); font-size: .8rem; font-weight: 600;
-            text-decoration: none; transition: .25s var(--ease);
-        }
-        .quick-chip:hover { border-color: rgba(200,162,255,.5); transform: translateY(-2px); }
-        .quick-chip svg { width: 13px; height: 13px; }
+  --e-sm:4px 4px 10px var(--clay-dark),-4px -4px 10px var(--clay-light);
+  --e-md:6px 6px 14px var(--clay-dark),-6px -6px 14px var(--clay-light);
+  --e-lg:10px 10px 24px var(--clay-dark),-10px -10px 24px var(--clay-light);
+  --e-pressed:inset 4px 4px 10px var(--clay-dark),inset -4px -4px 10px var(--clay-light);
+  --ease-out:cubic-bezier(.2,.8,.2,1);
 
-        /* Footer */
-        footer { position: relative; z-index: 1; border-top: 1px solid var(--glass-border); padding: 1.4rem 7%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; background: rgba(255,255,255,.12); backdrop-filter: blur(20px); }
-        body.theme-dark footer { background: rgba(10,2,20,.4); }
-        .foot-copy { font-size: .78rem; color: var(--text-muted); }
-        .foot-links { display: flex; gap: 1.2rem; }
-        .foot-links a { font-size: .78rem; color: var(--text-muted); text-decoration: none; transition: color .2s; }
-        .foot-links a:hover { color: var(--primary-dark); }
-    </style>
+  --purple:#D9CCFF;--purple-ink:#3E2A9E;
+  --blue:#C7DDFF;--blue-ink:#1F4FA3;
+  --green:#C6F0D3;--green-ink:#1B6B3A;
+  --red:#FFCFCF;--red-ink:#A12626;
+  --yellow:#FFF0A8;--yellow-ink:#7A5C00;
+  --pink:#FFCFE6;--pink-ink:#9E2A68;
+  --orange:#FFD9B8;--orange-ink:#A34A0B;
+  --teal:#BDF0EA;--teal-ink:#0F6A63;
+  --lime:#E0F5A8;--lime-ink:#4D6B0A;
+  --cyan:#BDEBFF;--cyan-ink:#0B6180;
+}
+[data-theme="dark"]{
+  color-scheme:dark;
+  --canvas:#1A1730;
+  --canvas-deep:#15122A;
+  --surface:#221D3C;
+
+  --ink:#F1EEFB;
+  --body-c:#C7C0E0;
+  --muted:#8E86AC;
+
+  --hairline:rgba(255,255,255,.08);
+  --hairline-strong:rgba(255,255,255,.16);
+
+  --primary:#9A7AFB;
+  --primary-active:#B196FB;
+  --primary-soft:#2E2650;
+  --on-primary:#1A1730;
+
+  --clay-light:rgba(255,255,255,.05);
+  --clay-dark:rgba(0,0,0,.55);
+
+  --purple:#3B2F75;--purple-ink:#E3DAFF;
+  --blue:#26427A;--blue-ink:#D6E6FF;
+  --green:#1F5A36;--green-ink:#D3F6DF;
+  --red:#7A2A2A;--red-ink:#FFDADA;
+  --yellow:#6B5A1A;--yellow-ink:#FFF2B8;
+  --pink:#7A2F58;--pink-ink:#FFDAEE;
+  --orange:#7A4220;--orange-ink:#FFE2CB;
+  --teal:#1D5A56;--teal-ink:#CCF6F1;
+  --lime:#4A5E1E;--lime-ink:#E8F8BE;
+  --cyan:#1C5670;--cyan-ink:#CDF1FF;
+}
+
+/* =========================================================
+   BASE
+========================================================= */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+html,body{margin:0;padding:0;min-height:100%}
+body{
+  font-family:var(--font);
+  background:var(--canvas);
+  color:var(--body-c);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+  transition:background .3s ease,color .3s ease;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+main{flex:1 0 auto}
+a{text-decoration:none;color:inherit}
+button{font-family:var(--font);border:none;background:none;cursor:pointer;color:inherit}
+h1,h2,h3,h4,p{margin:0}
+svg{flex-shrink:0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+@media(max-width:640px){.wrap{padding:0 20px}}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid var(--primary);outline-offset:3px}
+
+/* =========================================================
+   HEADER
+========================================================= */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb,var(--canvas) 80%,transparent);
+  border-bottom:1px solid var(--hairline);
+  -webkit-backdrop-filter:blur(16px) saturate(1.5);
+  backdrop-filter:blur(16px) saturate(1.5);
+  box-shadow:0 8px 24px -16px var(--clay-dark);
+  transition:transform .35s var(--ease-out);
+}
+.nav.up{transform:translateY(-100%)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;color:var(--ink);min-width:0}
+.brand-text{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.brand-name{color:var(--ink);font-size:17px;font-weight:700;letter-spacing:-.2px;white-space:nowrap}
+.brand-accent{color:var(--primary)}
+.brand-by{color:var(--muted);font-size:11.5px;font-weight:400;letter-spacing:.1px}
+.brand-mark{width:36px;height:36px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:none}
+.brand-mark img{width:32px;height:32px;display:block}
+.nav-right{display:flex;align-items:center;gap:10px;flex:none}
+
+.nav-request,.theme-btn,.ham-btn{
+  width:44px;height:44px;border-radius:14px;
+  background:var(--surface);color:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--e-sm);
+  transition:transform .2s var(--ease-out),color .2s,box-shadow .2s,background .2s;
+}
+.nav-request svg,.ham-btn svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.nav-request:hover,.theme-btn:hover,.ham-btn:hover{color:var(--primary);transform:translateY(-2px)}
+.nav-request:active,.theme-btn:active,.ham-btn:active{transform:scale(.92)}
+
+/* theme icons morph */
+.theme-btn{position:relative;overflow:hidden}
+.theme-btn svg{position:absolute;inset:0;margin:auto;width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;transition:transform .55s cubic-bezier(.2,.8,.2,1),opacity .3s ease}
+#themeIconSun{opacity:1;transform:rotate(0) scale(1)}
+#themeIconMoon{opacity:0;transform:rotate(-90deg) scale(.3)}
+[data-theme="dark"] #themeIconSun{opacity:0;transform:rotate(90deg) scale(.3)}
+[data-theme="dark"] #themeIconMoon{opacity:1;transform:rotate(0) scale(1)}
+
+/* hamburger to X */
+.ham-icon path{transform-box:fill-box;transform-origin:center;transition:transform .25s ease,opacity .2s ease}
+.ham-btn[aria-expanded="true"] .ham-top{transform:translateY(6px) rotate(45deg)}
+.ham-btn[aria-expanded="true"] .ham-mid{opacity:0;transform:scaleX(0)}
+.ham-btn[aria-expanded="true"] .ham-bot{transform:translateY(-6px) rotate(-45deg)}
+
+/* mobile / dropdown menu */
+.mobile-menu{
+  display:flex;flex-direction:column;
+  position:fixed;top:76px;left:0;right:0;z-index:49;
+  background:var(--canvas);border-bottom:1px solid var(--hairline);
+  padding:0 20px;max-height:0;overflow:hidden;visibility:hidden;
+  transition:max-height .25s ease,padding .25s ease,visibility 0s .25s;
+}
+.mobile-menu.open{
+  max-height:80vh;overflow-y:auto;padding:8px 20px 20px;visibility:visible;
+  transition:max-height .25s ease,padding .25s ease,visibility 0s;
+}
+.mobile-menu a{
+  display:flex;align-items:center;gap:12px;
+  font-size:15px;font-weight:600;color:var(--ink);
+  padding:14px 4px;border-bottom:1px solid var(--hairline);
+}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover{color:var(--primary)}
+.mobile-menu a svg{width:20px;height:20px;color:var(--primary);flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+@media(min-width:1024px){
+  .mobile-menu{left:auto;right:20px;width:264px;border:1px solid var(--hairline);border-radius:var(--radius-card);box-shadow:var(--e-lg)}
+  .mobile-menu:not(.open){border-color:transparent;box-shadow:none}
+}
+@media(max-width:640px){
+  .mobile-menu{top:68px}
+  .nav .wrap{height:68px}
+  .brand-by{display:none}
+}
+@media(max-width:520px){.brand-text{display:none}}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+.btn{
+  min-height:46px;padding:0 24px;border-radius:var(--radius-pill);
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-size:15px;font-weight:600;font-family:var(--font);
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .2s ease;
+}
+.btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn-primary{background:var(--primary);color:var(--on-primary);box-shadow:var(--e-md)}
+.btn-primary:hover{background:var(--primary-active);transform:translateY(-3px)}
+.btn-primary:active{transform:scale(.95);background:var(--primary-active)}
+.btn-secondary{background:var(--surface);color:var(--ink);box-shadow:var(--e-md)}
+.btn-secondary:hover{color:var(--primary);transform:translateY(-3px)}
+.btn-secondary:active{transform:scale(.95)}
+.btn-outline{background:transparent;color:var(--ink);border:1px solid var(--hairline-strong)}
+.btn-outline:hover{color:var(--primary);border-color:var(--primary)}
+.btn-outline:active{transform:scale(.95)}
+.btn-lg{min-height:54px;padding:0 32px;font-size:16px;font-weight:700}
+.btn-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+
+/* =========================================================
+   BADGE
+========================================================= */
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 16px;border-radius:var(--radius-pill);
+  font-size:12px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;
+}
+.badge-primary{background:var(--primary-soft);color:var(--primary)}
+[data-theme="dark"] .badge-primary{color:var(--primary-active)}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:currentColor}
+
+/* =========================================================
+   MOVED SECTION
+========================================================= */
+.moved-sec{position:relative;overflow:hidden;padding:72px 0 84px}
+.moved-bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.moved-orb{position:absolute;border-radius:50%;filter:blur(40px);opacity:.7}
+.moved-orb.o1{width:420px;height:420px;left:-150px;top:-140px;background:radial-gradient(circle at 35% 35%,var(--purple),transparent 70%);animation:drift 17s ease-in-out infinite}
+.moved-orb.o2{width:360px;height:360px;right:-140px;top:60px;background:radial-gradient(circle at 60% 40%,var(--blue),transparent 70%);animation:drift 21s ease-in-out -7s infinite reverse}
+.moved-orb.o3{width:300px;height:300px;left:42%;bottom:-160px;background:radial-gradient(circle,var(--pink),transparent 70%);animation:drift 24s ease-in-out -12s infinite}
+[data-theme="dark"] .moved-orb{opacity:.4}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,30px) scale(1.12)}66%{transform:translate(-30px,50px) scale(.94)}}
+.moved-dots{
+  position:absolute;inset:0;
+  background-image:radial-gradient(var(--hairline-strong) 1.2px,transparent 1.4px);
+  background-size:28px 28px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 32%,#000 12%,transparent 72%);
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 32%,#000 12%,transparent 72%);
+  opacity:.85;
+}
+.moved-sec .wrap{position:relative;z-index:1}
+.moved-inner{max-width:820px;margin:0 auto;text-align:center}
+
+.moved-badge{animation:rise .7s var(--ease-out) both}
+.moved-ping{position:relative;width:8px;height:8px;border-radius:50%;background:var(--primary)}
+.moved-ping::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--primary);animation:ping 1.8s ease-out infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.6}100%{transform:scale(3.2);opacity:0}}
+
+.moved-inner h1{
+  margin:22px auto 0;max-width:760px;
+  font-size:clamp(34px,6vw,58px);line-height:1.06;font-weight:700;
+  letter-spacing:-.6px;color:var(--ink);
+  animation:rise .8s var(--ease-out) .1s both;
+}
+.moved-inner h1 .accent{color:var(--primary)}
+@supports((-webkit-background-clip:text) or (background-clip:text)){
+  .moved-inner h1 .accent{
+    background:linear-gradient(100deg,var(--primary) 0 38%,color-mix(in srgb,var(--primary) 35%,#fff) 50%,var(--primary) 62% 100%);
+    background-size:260% 100%;
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:transparent;
+    animation:sheen 5s ease-in-out 1.6s infinite;
+  }
+}
+@keyframes sheen{0%{background-position:120% 0}60%,100%{background-position:-60% 0}}
+
+.moved-sub{
+  margin:20px auto 0;max-width:600px;
+  font-size:17.5px;line-height:1.6;color:var(--body-c);
+  animation:rise .8s var(--ease-out) .22s both;
+}
+
+.path-chip{
+  display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;
+  margin-top:22px;padding:9px 18px;max-width:100%;
+  border-radius:var(--radius-pill);
+  background:var(--surface);box-shadow:var(--e-sm);
+  font-size:12.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:var(--muted);
+  animation:rise .8s var(--ease-out) .32s both;
+}
+.path-chip code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:12.5px;font-weight:700;letter-spacing:0;text-transform:none;
+  color:var(--ink);overflow-wrap:anywhere;
+}
+
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+/* ---- destination cards ---- */
+.dest-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;max-width:820px;margin:40px auto 0;
+  animation:rise .8s var(--ease-out) .42s both;
+}
+@media(max-width:760px){.dest-grid{grid-template-columns:minmax(0,1fr);max-width:460px}}
+
+.dest{
+  display:flex;align-items:center;gap:18px;
+  padding:22px;min-width:0;
+  border-radius:var(--radius-card);
+  background:var(--surface);
+  box-shadow:var(--e-md);
+  text-align:left;
+  transition:transform .25s var(--ease-out),box-shadow .25s var(--ease-out);
+}
+.dest:hover{transform:translateY(-4px);box-shadow:var(--e-lg)}
+.dest:active{transform:scale(.98)}
+.dest-ico{
+  flex:none;width:56px;height:56px;border-radius:18px;
+  display:grid;place-items:center;
+  background:var(--c);color:var(--k);
+  transition:transform .3s var(--ease-out);
+}
+.dest:hover .dest-ico{transform:rotate(-6deg) scale(1.06)}
+.dest-ico svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dest-body{flex:1;min-width:0}
+.dest-body small{
+  display:block;font-size:11.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);
+}
+.dest-url{
+  display:block;margin-top:5px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:14.5px;font-weight:700;line-height:1.4;color:var(--ink);
+  overflow-wrap:anywhere;
+}
+.dest-sub{display:block;margin-top:6px;font-size:13.5px;line-height:1.45;color:var(--body-c)}
+.dest-arrow{
+  flex:none;width:22px;height:22px;color:var(--muted);
+  fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;
+  transition:transform .25s var(--ease-out),color .2s;
+}
+.dest:hover .dest-arrow{color:var(--primary);transform:translateX(4px)}
+
+/* ---- actions ---- */
+.moved-actions{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:12px;
+  margin-top:32px;
+  animation:rise .8s var(--ease-out) .52s both;
+}
+
+/* ---- help cards ---- */
+.help-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;
+  margin-top:56px;
+  animation:rise .8s var(--ease-out) .62s both;
+}
+@media(max-width:900px){.help-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.help-grid{grid-template-columns:minmax(0,1fr);max-width:460px;margin-left:auto;margin-right:auto}}
+.help-card{
+  padding:26px 24px;border-radius:var(--radius-lg);
+  background:var(--surface);box-shadow:var(--e-sm);
+  text-align:left;
+}
+.help-ico{
+  width:44px;height:44px;border-radius:14px;display:grid;place-items:center;
+  background:var(--c);color:var(--k);margin-bottom:14px;
+}
+.help-ico svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.help-card h3{font-size:16.5px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.help-card p{font-size:14.5px;line-height:1.6;color:var(--muted)}
+.help-card a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1.5px}
+.help-card a:hover{color:var(--primary-active)}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+footer.ft{
+  background:var(--surface);
+  border-top:1px solid var(--hairline);
+  padding:56px 0 0;
+  margin-top:0;
+  flex-shrink:0;
+}
+.ft-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px 48px;padding-bottom:44px}
+.ft-brand{display:inline-flex;align-items:center;gap:12px;color:var(--ink)}
+.ft-mark{width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex:none}
+.ft-mark img{width:36px;height:36px;display:block}
+.ft-brand-text{display:flex;flex-direction:column;line-height:1.2}
+.ft-brand-name{color:var(--ink);font-size:19px;font-weight:700}
+.ft-accent{color:var(--primary)}
+.ft-brand-by{color:var(--muted);font-size:12.5px}
+.ft-desc{margin:14px 0 0;max-width:320px;font-size:14px;line-height:1.6;font-weight:300;color:var(--muted)}
+.ft-title{margin:0 0 10px;font-size:13px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--ink)}
+.ft-links{list-style:none;margin:0;padding:0}
+.ft-links a{
+  display:inline-flex;align-items:center;min-height:44px;
+  font-size:15px;color:var(--body-c);
+  transition:color .2s ease;
+}
+.ft-links a:hover,.ft-links a:focus-visible{color:var(--primary)}
+.ft-bottom{border-top:1px solid var(--hairline)}
+.ft-bottom-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;padding:14px 0}
+.ft-copy{font-size:14px;color:var(--muted);letter-spacing:-.1px}
+.ft-legal{display:flex;flex-wrap:wrap;gap:0 26px}
+.ft-legal a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;color:var(--body-c);transition:color .2s}
+.ft-legal a:hover{color:var(--primary)}
+@media(max-width:900px){.ft-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){
+  footer.ft{padding-top:44px}
+  .ft-grid{grid-template-columns:1fr;gap:8px;padding-bottom:28px}
+  .ft-brand-col{margin-bottom:12px}
+  .ft-bottom-inner{flex-direction:column;align-items:flex-start}
+  .ft-legal{gap:0 20px}
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+  .moved-inner h1 .accent{-webkit-text-fill-color:var(--primary);color:var(--primary)}
+}
+
+/* theme swap: no transition flash during view transition */
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+::view-transition-old(root){z-index:1}
+::view-transition-new(root){z-index:2}
+html.theme-swap *{transition:none!important}
+</style>
 </head>
 <body>
 
-<div class="shape s1"></div>
-<div class="shape s2"></div>
-<div class="shape s3"></div>
-
-<nav>
-    <a href="https://wondermayank.github.io/" class="logo-wrap">
-        <img src="https://i.pinimg.com/1200x/72/11/17/721117f3130a87778647a91cbc62a9a6.jpg" alt="Wondermayank" class="logo-img" loading="lazy">
-        <span class="nav-brand">Wondermayank ✨</span>
+<!-- ============ HEADER ============ -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="https://wondermayank.in/" aria-label="WonderMayank home">
+      <span class="brand-mark">
+        <img src="/favicon.svg" alt="WonderMayank logo" width="32" height="32">
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Wonder<span class="brand-accent">Mayank</span></span>
+        <span class="brand-by">Web Developer &amp; Creator</span>
+      </span>
     </a>
-    <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle dark mode">
-        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.6 6.6 0 0 0 21 12.8z"/></svg>
-        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-</nav>
+
+    <div class="nav-right">
+      <a class="nav-request" href="https://project.wondermayank.in/" title="All projects" aria-label="All projects">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="3" width="7" height="7" rx="2"/>
+          <rect x="14" y="3" width="7" height="7" rx="2"/>
+          <rect x="3" y="14" width="7" height="7" rx="2"/>
+          <rect x="14" y="14" width="7" height="7" rx="2"/>
+        </svg>
+      </a>
+
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle dark mode">
+        <svg id="themeIconSun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.5v2.4M12 19.1v2.4"/>
+          <path d="M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7"/>
+          <path d="M2.5 12h2.4M19.1 12h2.4"/>
+          <path d="M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/>
+        </svg>
+        <svg id="themeIconMoon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/>
+        </svg>
+      </button>
+
+      <button class="ham-btn" id="hamBtn" type="button" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false">
+        <svg class="ham-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path class="ham-top" d="M3 6h18"/>
+          <path class="ham-mid" d="M3 12h18"/>
+          <path class="ham-bot" d="M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="https://wondermayank.in/">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="https://project.wondermayank.in/">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>
+    <span>All projects</span>
+  </a>
+  <a href="https://github.com/wondermayank" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+    <span>GitHub</span>
+  </a>
+  <a href="https://wondermayank.in/contact">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 8 8 6 8-6"/></svg>
+    <span>Contact</span>
+  </a>
+  <a href="https://wondermayank.in/faq">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/></svg>
+    <span>FAQ</span>
+  </a>
+</div>
 
 <main>
-    <div class="container-404">
-
-        <div class="error-visual">
-            <div class="num-404">404</div>
-            <div class="orbit"><div class="orbit-dot"></div></div>
-        </div>
-
-        <div class="badge-404">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="11" height="11"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-            Page Not Found
-        </div>
-
-        <h1 class="title-404">Lost in the Digital Universe?</h1>
-        <p class="desc-404">The page you're looking for has drifted into a black hole. Maybe it was moved, deleted, or never existed. Let's get you back on track.</p>
-
-        <div class="actions">
-            <a href="https://wondermayank.github.io/" class="btn-primary">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                Back to Home
-            </a>
-            <a href="javascript:history.back()" class="btn-glass">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
-                Go Back
-            </a>
-        </div>
-
-        <p class="quick-links-title">Or explore these</p>
-        <div class="quick-grid">
-            <a href="https://wondermayank.github.io/movie" class="quick-chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
-                Movie Finder
-            </a>
-            <a href="https://wondermayank.github.io/anime" class="quick-chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg>
-                Anime Finder
-            </a>
-            <a href="https://wondermayank.github.io/paletteify" class="quick-chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
-                Paletteify
-            </a>
-            <a href="https://commercesehoga.github.io/cuet" class="quick-chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
-                CUET CBT
-            </a>
-            <a href="https://wondermayank.github.io/about.html" class="quick-chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                About
-            </a>
-        </div>
-
+  <section class="moved-sec" aria-labelledby="movedTitle">
+    <div class="moved-bg" aria-hidden="true">
+      <i class="moved-orb o1"></i>
+      <i class="moved-orb o2"></i>
+      <i class="moved-orb o3"></i>
+      <span class="moved-dots"></span>
     </div>
+
+    <div class="wrap">
+      <div class="moved-inner">
+
+        <span class="badge badge-primary moved-badge">
+          <span class="moved-ping"></span>
+          Moved
+        </span>
+
+        <h1 id="movedTitle">This page has <span class="accent">moved</span></h1>
+
+        <p class="moved-sub">
+          The address you opened is not here anymore. This project now lives at
+          <strong>project.wondermayank.in</strong> — and the source code is open on GitHub.
+        </p>
+
+        <div class="path-chip">
+          <span>Requested path</span>
+          <code id="pathOut">/</code>
+        </div>
+
+        <!-- ---- destination cards ---- -->
+        <div class="dest-grid">
+
+          <a class="dest" id="destProject" href="https://project.wondermayank.in/" target="_blank" rel="noopener noreferrer">
+            <span class="dest-ico" style="--c:var(--blue);--k:var(--blue-ink)">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="3"/>
+                <path d="M2 9h20"/>
+                <circle cx="6" cy="6.5" r=".9" fill="currentColor" stroke="none"/>
+                <circle cx="9" cy="6.5" r=".9" fill="currentColor" stroke="none"/>
+              </svg>
+            </span>
+            <span class="dest-body">
+              <small>Live project</small>
+              <b class="dest-url" id="projUrl">project.wondermayank.in</b>
+              <span class="dest-sub">Open the tool on its new address</span>
+            </span>
+            <svg class="dest-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+
+          <a class="dest" id="destRepo" href="https://github.com/wondermayank" target="_blank" rel="noopener noreferrer">
+            <span class="dest-ico" style="--c:var(--purple);--k:var(--purple-ink)">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>
+              </svg>
+            </span>
+            <span class="dest-body">
+              <small>Source code</small>
+              <b class="dest-url" id="repoUrl">github.com/wondermayank</b>
+              <span class="dest-sub">Read the repo, or fork it on GitHub</span>
+            </span>
+            <svg class="dest-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+
+        </div>
+
+        <div class="moved-actions">
+          <a class="btn btn-primary btn-lg" id="goProject" href="https://project.wondermayank.in/">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+            Open the project
+          </a>
+          <a class="btn btn-secondary btn-lg" href="https://wondermayank.in/">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
+            Back to homepage
+          </a>
+        </div>
+
+        <!-- ---- help cards ---- -->
+        <div class="help-grid">
+
+          <div class="help-card">
+            <span class="help-ico" style="--c:var(--yellow);--k:var(--yellow-ink)">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"/>
+                <path d="m20 20-3.5-3.5"/>
+              </svg>
+            </span>
+            <h3>Wrong address?</h3>
+            <p>Check the URL for a typo, or start again from the <a href="https://project.wondermayank.in/">project index</a>.</p>
+          </div>
+
+          <div class="help-card">
+            <span class="help-ico" style="--c:var(--green);--k:var(--green-ink)">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7" rx="2"/>
+                <rect x="14" y="3" width="7" height="7" rx="2"/>
+                <rect x="3" y="14" width="7" height="7" rx="2"/>
+                <rect x="14" y="14" width="7" height="7" rx="2"/>
+              </svg>
+            </span>
+            <h3>Looking for another tool?</h3>
+            <p>Every live project is listed in one place at <a href="https://project.wondermayank.in/">project.wondermayank.in</a>.</p>
+          </div>
+
+          <div class="help-card">
+            <span class="help-ico" style="--c:var(--pink);--k:var(--pink-ink)">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 22V4"/>
+                <path d="M4 4h14l-2 5 2 5H4"/>
+              </svg>
+            </span>
+            <h3>Found a broken link?</h3>
+            <p>Tell us where you came from and we will redirect it. <a href="https://wondermayank.in/contact">Send a message</a>.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer>
-    <span class="foot-copy">© 2018–2026 Wondermayank. All rights reserved.</span>
-    <div class="foot-links">
-        <a href="https://wondermayank.github.io/privacy">Privacy</a>
-        <a href="https://wondermayank.github.io/terms">Terms</a>
-        <a href="https://wondermayank.github.io/disclaimer">Disclaimer</a>
+<!-- ============ FOOTER ============ -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-grid">
+
+      <div class="ft-brand-col">
+        <a class="ft-brand" href="https://wondermayank.in/" aria-label="WonderMayank home">
+          <span class="ft-mark"><img src="/favicon.svg" alt="WonderMayank logo" width="36" height="36" loading="lazy"></span>
+          <span class="ft-brand-text">
+            <span class="ft-brand-name">Wonder<span class="ft-accent">Mayank</span></span>
+            <span class="ft-brand-by">Web Developer &amp; Creator</span>
+          </span>
+        </a>
+        <p class="ft-desc">Free project tools, vibecoding experiments and exam-prep resources for Indian students.</p>
+      </div>
+
+      <nav aria-label="Projects">
+        <h2 class="ft-title">Projects</h2>
+        <ul class="ft-links">
+          <li><a href="https://project.wondermayank.in/">All projects</a></li>
+          <li><a href="https://thunderstudy.indevs.in/">ThunderStudy</a></li>
+          <li><a href="https://thundertest.indevs.in/">CBT Mock</a></li>
+          <li><a href="https://make.wondermayank.in/">Vibecoding</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Support">
+        <h2 class="ft-title">Support</h2>
+        <ul class="ft-links">
+          <li><a href="https://wondermayank.in/contact">Contact</a></li>
+          <li><a href="https://wondermayank.in/faq">FAQ</a></li>
+          <li><a href="https://github.com/wondermayank" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://wondermayank.in/sitemap">Sitemap</a></li>
+        </ul>
+      </nav>
+
     </div>
+  </div>
+
+  <div class="ft-bottom">
+    <div class="wrap ft-bottom-inner">
+      <div class="ft-copy">&copy; 2026 WonderMayank. All rights reserved.</div>
+      <nav class="ft-legal" aria-label="Legal">
+        <a href="https://wondermayank.in/privacy">Privacy</a>
+        <a href="https://wondermayank.in/terms">Terms</a>
+        <a href="https://wondermayank.in/cookies">Cookies</a>
+        <a href="https://wondermayank.in/disclaimer">Disclaimer</a>
+      </nav>
+    </div>
+  </div>
 </footer>
 
 <script>
-    const saved = localStorage.getItem('wm-theme');
-    if (saved === 'dark') applyDark();
-    function applyDark() {
-        document.body.classList.add('theme-dark');
-        document.querySelector('.moon-icon').style.display = 'none';
-        document.querySelector('.sun-icon').style.display = '';
+/* =========================================================
+   PATH DETECTION
+   Reads the first part of the URL and builds both links:
+     /app        ->  project.wondermayank.in/app
+                     github.com/wondermayank/app
+   Falls back to the index when the path is empty.
+========================================================= */
+(function(){
+  var raw = '';
+  try { raw = decodeURIComponent(location.pathname || '/'); } catch (e) { raw = location.pathname || '/'; }
+
+  var segs = raw.split('/').filter(Boolean);
+  var slug = segs.length ? segs[0] : '';
+  slug = slug.replace(/\.html?$/i, '').replace(/[^A-Za-z0-9._-]/g, '');
+
+  var projUrl = 'https://project.wondermayank.in/' + slug;
+  var repoUrl = 'https://github.com/wondermayank/' + slug;
+  var projLabel = 'project.wondermayank.in' + (slug ? '/' + slug : '');
+  var repoLabel = 'github.com/wondermayank' + (slug ? '/' + slug : '');
+
+  var a = document.getElementById('destProject');
+  var b = document.getElementById('destRepo');
+  var g = document.getElementById('goProject');
+  if (a) a.href = projUrl;
+  if (b) b.href = repoUrl;
+  if (g) g.href = projUrl;
+
+  var pa = document.getElementById('projUrl');
+  var rb = document.getElementById('repoUrl');
+  var po = document.getElementById('pathOut');
+  if (pa) pa.textContent = projLabel;
+  if (rb) rb.textContent = repoLabel;
+  if (po) po.textContent = raw === '/' ? '/' : raw;
+})();
+
+/* =========================================================
+   THEME TOGGLE
+========================================================= */
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeBtn');
+  var metaTheme = document.getElementById('metaTheme');
+  var metaScheme = document.getElementById('metaScheme');
+
+  function sync(){
+    var dark = root.getAttribute('data-theme') === 'dark';
+    btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+    btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+  sync();
+
+  btn.addEventListener('click', function(){
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+
+    function apply(){
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      if (metaTheme) metaTheme.setAttribute('content', next === 'dark' ? '#9A7AFB' : '#573AFC');
+      if (metaScheme) metaScheme.setAttribute('content', next);
+      sync();
     }
-    function toggleTheme() {
-        const isDark = document.body.classList.toggle('theme-dark');
-        localStorage.setItem('wm-theme', isDark ? 'dark' : 'light');
-        document.querySelector('.moon-icon').style.display = isDark ? 'none' : '';
-        document.querySelector('.sun-icon').style.display = isDark ? '' : 'none';
+
+    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!document.startViewTransition || reduce) { apply(); return; }
+
+    var r = btn.getBoundingClientRect();
+    var x = r.left + r.width / 2;
+    var y = r.top + r.height / 2;
+    var rad = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+
+    root.classList.add('theme-swap');
+    var t = document.startViewTransition(apply);
+    t.ready.then(function(){
+      root.animate(
+        { clipPath: ['circle(0px at ' + x + 'px ' + y + 'px)', 'circle(' + rad + 'px at ' + x + 'px ' + y + 'px)'] },
+        { duration: 650, easing: 'cubic-bezier(.4,0,.2,1)', pseudoElement: '::view-transition-new(root)' }
+      );
+    });
+    t.finished.then(function(){ root.classList.remove('theme-swap'); }, function(){ root.classList.remove('theme-swap'); });
+  });
+})();
+
+/* =========================================================
+   MENU
+========================================================= */
+(function(){
+  var ham = document.getElementById('hamBtn');
+  var menu = document.getElementById('mobileMenu');
+
+  ham.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    ham.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      menu.classList.remove('open');
+      ham.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  document.addEventListener('click', function(e){
+    if (!menu.classList.contains('open')) return;
+    if (menu.contains(e.target) || ham.contains(e.target)) return;
+    menu.classList.remove('open');
+    ham.setAttribute('aria-expanded', 'false');
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && menu.classList.contains('open')) {
+      menu.classList.remove('open');
+      ham.setAttribute('aria-expanded', 'false');
+      ham.focus();
     }
+  });
+})();
+
+/* =========================================================
+   HEADER HIDES ON SCROLL DOWN
+========================================================= */
+(function(){
+  var nav = document.getElementById('nav');
+  var last = window.scrollY, ticking = false;
+
+  function update(){
+    var y = window.scrollY;
+    var d = y - last;
+    if (Math.abs(d) > 6) {
+      nav.classList.toggle('up', d > 0 && y > 120);
+      last = y;
+      if (nav.classList.contains('up')) {
+        var menu = document.getElementById('mobileMenu');
+        var ham = document.getElementById('hamBtn');
+        if (menu && menu.classList.contains('open') && ham) ham.click();
+      }
+    }
+    if (y < 40) nav.classList.remove('up');
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function(){
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+})();
 </script>
+
 </body>
 </html>
