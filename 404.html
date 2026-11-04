@@ -450,6 +450,21 @@ footer.ft{
 ::view-transition-old(root){z-index:1}
 ::view-transition-new(root){z-index:2}
 html.theme-swap *{transition:none!important}
+
+/* ---- auto-redirect countdown ---- */
+.redirect-note{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 18px;
+  margin:22px auto 0;padding:14px 20px;max-width:560px;
+  border-radius:var(--r-lg,24px);background:var(--surface);box-shadow:var(--e-sm);
+  font-size:14.5px;color:var(--ink);
+}
+.redirect-note[hidden]{display:none}
+.redirect-note b{color:var(--primary);font-variant-numeric:tabular-nums}
+.rn-bar{flex:1 1 120px;min-width:100px;height:8px;border-radius:999px;background:var(--hairline-strong,rgba(120,108,180,.25));overflow:hidden}
+.rn-bar i{display:block;height:100%;width:0;border-radius:999px;background:var(--primary);transition:width 1s linear}
+.redirect-note .btn{min-height:40px;padding:0 20px;font-size:14px}
+.redirect-note.is-stopped .rn-bar{display:none}
+@media (prefers-reduced-motion:reduce){.rn-bar i{transition:none}}
 </style>
 </head>
 <body>
@@ -553,6 +568,14 @@ html.theme-swap *{transition:none!important}
           <code id="pathOut">/</code>
         </div>
 
+        <!-- ---- auto-redirect (only when the exact new page is known) ---- -->
+        <div class="redirect-note" id="redirectNote" role="status" aria-live="polite" hidden>
+          <span class="rn-text" id="rnText">Taking you there in <b id="rnSec">5</b>s</span>
+          <span class="rn-bar" aria-hidden="true"><i id="rnFill"></i></span>
+          <button type="button" class="btn btn-outline" id="rnStay">Stay here</button>
+        </div>
+
+
         <!-- ---- destination cards ---- -->
         <div class="dest-grid">
 
@@ -566,14 +589,14 @@ html.theme-swap *{transition:none!important}
               </svg>
             </span>
             <span class="dest-body">
-              <small>Live project</small>
+              <small id="projTag">Live project</small>
               <b class="dest-url" id="projUrl">project.wondermayank.in</b>
-              <span class="dest-sub">Open the tool on its new address</span>
+              <span class="dest-sub" id="projSub">Open this page on its new address</span>
             </span>
             <svg class="dest-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
 
-          <a class="dest" id="destRepo" href="https://github.com/wondermayank" target="_blank" rel="noopener noreferrer">
+          <a class="dest" href="https://github.com/wondermayank" target="_blank" rel="noopener noreferrer">
             <span class="dest-ico" style="--c:var(--purple);--k:var(--purple-ink)">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>
@@ -581,7 +604,7 @@ html.theme-swap *{transition:none!important}
             </span>
             <span class="dest-body">
               <small>Source code</small>
-              <b class="dest-url" id="repoUrl">github.com/wondermayank</b>
+              <b class="dest-url">github.com/wondermayank</b>
               <span class="dest-sub">Read the repo, or fork it on GitHub</span>
             </span>
             <svg class="dest-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -700,37 +723,226 @@ html.theme-swap *{transition:none!important}
 <script>
 /* =========================================================
    PATH DETECTION
-   Reads the first part of the URL and builds both links:
-     /app        ->  project.wondermayank.in/app
-                     github.com/wondermayank/app
-   Falls back to the index when the path is empty.
+   Reads the full old address, finds the matching page on
+   project.wondermayank.in (using the project sitemap), and
+   points both buttons at it.
+     /image            ->  project.wondermayank.in/tools/image
+     /Periodic-Table/v2 ->  project.wondermayank.in/study/Periodic_Table/v2
+   If the exact page is unknown it falls back to the closest
+   section, and finally to the project index.
 ========================================================= */
 (function(){
+  var PROJECT = 'https://project.wondermayank.in';
+  /* old github.io path (lowercase, no .html) -> new address. Starts with / = on project.wondermayank.in, otherwise a full URL. */
+  var KNOWN = {
+    "3d_website":"/3d_website",
+    "404":"/404",
+    "about":"/about",
+    "anime":"/finder/anime",
+    "book":"/study/book",
+    "books":"/finder/books",
+    "card":"/love/card",
+    "care":"/care",
+    "cares":"/cares",
+    "cares/mehendi":"/cares/Mehendi",
+    "cares/period":"/cares/period",
+    "cares/skin_tone":"/cares/Skin_Tone",
+    "cares/skincare":"/cares/Skincare",
+    "cbtmock":"/cbtmock",
+    "cbtmock/english":"/cbtmock/english",
+    "cbtmock/gat":"/cbtmock/gat",
+    "cocktail":"/finder/cocktail",
+    "code":"/code",
+    "code/code_idea":"/code/code_idea",
+    "code/handai":"/fun/handai",
+    "code/paletteify":"/code/paletteify",
+    "code/voidpages":"/code/voidpages",
+    "code_idea":"/code/code_idea",
+    "contact":"https://wondermayank.in/contact",
+    "cookies":"https://wondermayank.in/cookies",
+    "country":"/india",
+    "current_affairs":"/study/Current_Affairs",
+    "dc":"/showcase/dc",
+    "diary":"/diary",
+    "diary/v1":"/diary/v1",
+    "diary/v2":"/diary/v2",
+    "disclaimer":"https://wondermayank.in/disclaimer",
+    "english_typing":"/typing/english",
+    "english_typings":"/typing/english",
+    "faq":"https://wondermayank.in/faq",
+    "finder":"/finder",
+    "fqa":"https://wondermayank.in/faq",
+    "fun":"/fun",
+    "fun/handai":"/fun/handai",
+    "fun/iq":"/fun/iq",
+    "fun/prank":"/fun/Prank",
+    "fun/puzzle":"/fun/puzzle",
+    "fun/sign_language":"/fun/Sign_language",
+    "game":"/finder/games",
+    "games":"/finder/games",
+    "handai":"/fun/handai",
+    "harry_potter":"/Harry_Potter",
+    "help":"/help",
+    "help/ai_prompt":"/help/ai_prompt",
+    "help/fake_whatsapp":"/help/Fake_WhatsApp",
+    "help/iq":"/help/iq",
+    "help/mehendi":"/help/Mehendi",
+    "help/pdf":"/help/pdf",
+    "help/period":"/help/period",
+    "help/skin_tone":"/help/Skin_Tone",
+    "help/skincare":"/help/Skincare",
+    "help/upi":"/help/upi",
+    "hindi":"/typing/hindi",
+    "image":"/tools/image",
+    "india":"/india",
+    "india/art":"/india/art",
+    "india/cuisine":"/india/cuisine",
+    "india/festivals":"/india/festivals",
+    "india/history":"/india/history",
+    "india/kayastha":"/india/kayastha",
+    "india/languages":"/india/languages",
+    "india/rajput":"/india/rajput",
+    "kayastha":"/india/kayastha",
+    "learn":"/study/learn",
+    "logos":"/logos",
+    "love":"/love",
+    "love/card":"/love/card",
+    "mail":"/mail",
+    "marvel":"/showcase/Marvel",
+    "meal":"/finder/meals",
+    "meals":"/finder/meals",
+    "minecraft":"/Minecraft",
+    "movie":"/finder/movie",
+    "paletteify":"/code/paletteify",
+    "pdftotext":"/tools/pdftotext",
+    "periodic-table":"/study/Periodic_Table",
+    "periodic-table/v2":"/study/Periodic_Table/v2",
+    "pokedex":"/finder/pokedex",
+    "portfolio":"https://portfolio.wondermayank.in",
+    "prank":"/fun/Prank",
+    "privacy":"https://wondermayank.in/privacy",
+    "puzzle":"/fun/puzzle",
+    "quote":"/finder/quotes",
+    "quotes":"/finder/quotes",
+    "rajput":"/india/rajput",
+    "reviews":"/reviews",
+    "showcase":"/showcase",
+    "showcase/dc":"/showcase/dc",
+    "showcase/harry_potter":"/showcase/Harry_Potter",
+    "showcase/marvel":"/showcase/Marvel",
+    "showcase/minecraft":"/showcase/Minecraft",
+    "study":"/study",
+    "study/book":"/study/book",
+    "study/current_affairs":"/study/Current_Affairs",
+    "study/learn":"/study/learn",
+    "study/periodic_table":"/study/Periodic_Table",
+    "study/periodic_table/v2":"/study/Periodic_Table/v2",
+    "study/political":"/study/political",
+    "teleremind":"/tools/teleremind",
+    "terms":"https://wondermayank.in/terms",
+    "tools":"/tools",
+    "tools/ai_prompt":"/tools/ai_prompt",
+    "tools/aipdf":"/tools/aipdf",
+    "tools/convert":"/tools/Convert",
+    "tools/downloader":"/tools/downloader",
+    "tools/fake_whatsapp":"/tools/Fake_WhatsApp",
+    "tools/image":"/tools/image",
+    "tools/image/png_to_vector":"/tools/image/png_to_vector",
+    "tools/pdf":"/tools/pdf",
+    "tools/pdftotext":"/tools/pdftotext",
+    "tools/teleremind":"/tools/teleremind",
+    "tools/upi":"/tools/upi",
+    "tools/video_player":"/tools/video_player",
+    "tools/wonderprint":"/tools/wonderprint",
+    "tools/youtube":"/tools/transcript",
+    "transcript":"/tools/transcript",
+    "typing":"/typing",
+    "typing/english":"/typing/english",
+    "typing/hindi":"/typing/hindi",
+    "video_player":"/tools/video_player",
+    "voidpages":"/code/voidpages",
+    "wallpaper":"https://wallpaper.wondermayank.in",
+    "wonderprint":"/tools/wonderprint"
+  };
+  /* old pages with no exact match yet -> closest section page */
+  var HUB = {
+    "tools/voice":"/tools"
+  };
+  /* top-level sections that exist on the project */
+  var SECTIONS = ["cares", "code", "diary", "finder", "fun", "india", "love", "showcase", "study", "tools", "typing", "help", "cbtmock"];
+
+  function norm(p){
+    p = p.split('?')[0].split('#')[0].replace(/^\/+|\/+$/g, '').replace(/\.html?$/i, '');
+    return p.toLowerCase();
+  }
+  function full(v){ return v.charAt(0) === '/' ? PROJECT + v : v; }
+
+  function resolve(raw){
+    var n = norm(raw);
+    if (!n) return { url: PROJECT + '/', kind: 'index' };
+    if (KNOWN.hasOwnProperty(n)) return { url: full(KNOWN[n]), kind: 'exact' };
+    var segs = n.split('/');
+    for (var k = segs.length - 1; k > 0; k--) {
+      var sub = segs.slice(0, k).join('/');
+      if (KNOWN.hasOwnProperty(sub)) return { url: full(KNOWN[sub]), kind: 'section' };
+    }
+    if (HUB.hasOwnProperty(n)) return { url: PROJECT + HUB[n], kind: 'section' };
+    if (SECTIONS.indexOf(segs[0]) > -1) return { url: PROJECT + '/' + segs[0], kind: 'section' };
+    return { url: PROJECT + '/', kind: 'home' };
+  }
+
   var raw = '';
   try { raw = decodeURIComponent(location.pathname || '/'); } catch (e) { raw = location.pathname || '/'; }
 
-  var segs = raw.split('/').filter(Boolean);
-  var slug = segs.length ? segs[0] : '';
-  slug = slug.replace(/\.html?$/i, '').replace(/[^A-Za-z0-9._-]/g, '');
-
-  var projUrl = 'https://project.wondermayank.in/' + slug;
-  var repoUrl = 'https://github.com/wondermayank/' + slug;
-  var projLabel = 'project.wondermayank.in' + (slug ? '/' + slug : '');
-  var repoLabel = 'github.com/wondermayank' + (slug ? '/' + slug : '');
+  var r = resolve(raw);
+  var label = r.url.replace(/^https:\/\//, '').replace(/\/$/, '');
+  var onMain = r.url.indexOf('https://wondermayank.in/') === 0;
+  var onOther = !onMain && r.url.indexOf(PROJECT) !== 0;
 
   var a = document.getElementById('destProject');
-  var b = document.getElementById('destRepo');
   var g = document.getElementById('goProject');
-  if (a) a.href = projUrl;
-  if (b) b.href = repoUrl;
-  if (g) g.href = projUrl;
-
   var pa = document.getElementById('projUrl');
-  var rb = document.getElementById('repoUrl');
   var po = document.getElementById('pathOut');
-  if (pa) pa.textContent = projLabel;
-  if (rb) rb.textContent = repoLabel;
+  var tag = document.getElementById('projTag');
+  var sub = document.getElementById('projSub');
+
+  if (a) a.href = r.url;
+  if (g) g.href = r.url;
+  if (pa) pa.textContent = label;
   if (po) po.textContent = raw === '/' ? '/' : raw;
+  if (tag) tag.textContent = onMain ? 'Main site' : (onOther ? 'New site' : 'Live project');
+  if (sub) sub.textContent =
+    r.kind === 'exact'   ? 'Open this page on its new address' :
+    r.kind === 'section' ? 'Closest match — this page may have a new name' :
+    r.kind === 'index'   ? 'Browse every project in one place' :
+                           'We could not match this address, so this opens the project index';
+
+  /* Optional auto-redirect: only for exact matches, 5s, cancellable */
+  if (r.kind === 'exact') {
+    var note = document.getElementById('rnSec') && document.getElementById('redirectNote');
+    var secEl = document.getElementById('rnSec');
+    var fill  = document.getElementById('rnFill');
+    var stay  = document.getElementById('rnStay');
+    var text  = document.getElementById('rnText');
+    var total = 5, left = total, timer = null;
+    if (note) {
+      note.hidden = false;
+      timer = setInterval(function(){
+        left--;
+        if (secEl) secEl.textContent = left;
+        if (fill) fill.style.width = ((total - left) / total * 100) + '%';
+        if (left <= 0) { clearInterval(timer); location.replace(r.url); }
+      }, 1000);
+      /* start the bar moving right away */
+      setTimeout(function(){ if (fill) fill.style.width = (1 / total * 100) + '%'; }, 30);
+      if (stay) stay.addEventListener('click', function(){
+        clearInterval(timer);
+        note.classList.add('is-stopped');
+        if (text) text.textContent = 'Auto-redirect stopped. Use the button above when you are ready.';
+        stay.hidden = true;
+      });
+    }
+  }
 })();
 
 /* =========================================================

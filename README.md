@@ -1,106 +1,93 @@
 <div align="center">
 
-![Wondermayank OG Cover](og-cover.jpg)
+<img src="og-cover.png" alt="Wondermayank — all projects now live at project.wondermayank.in" width="720">
 
-# ✨ Wondermayank — Digital Universe
+# Wondermayank
 
-**Free tools, study resources & digital projects for students across India**
+**All projects have moved to [project.wondermayank.in](https://project.wondermayank.in/)**
 
-[![Website](https://img.shields.io/badge/Website-wondermayank.github.io-9b6fff?style=for-the-badge&logo=github)](https://wondermayank.github.io/)
-[![Telegram](https://img.shields.io/badge/Telegram-@wondermayank-0088cc?style=for-the-badge&logo=telegram)](https://t.me/wondermayank)
-[![YouTube](https://img.shields.io/badge/YouTube-@wondermayank-cc0000?style=for-the-badge&logo=youtube)](https://www.youtube.com/@wondermayank)
-[![Instagram](https://img.shields.io/badge/Instagram-WONDERMAYANK-bc1888?style=for-the-badge&logo=instagram)](https://www.instagram.com/WONDERMAYANK)
+Free tools, exam-prep simulators and study resources by a student developer from India.
 
 </div>
 
 ---
 
-## 🌐 What is this?
+## 📍 What is this repo?
 
-This is the source repo for **[wondermayank.github.io](https://wondermayank.github.io/)** — a personal index page and digital hub built by Wondermayank, a student developer from India.
+This repo (`wondermayank.github.io`) used to host every Wondermayank project. They now live at
+**[project.wondermayank.in](https://project.wondermayank.in/)**, so this site only keeps:
 
-The site is a central launchpad for **70+ free tools, exam prep simulators, study resources, cultural projects and creative experiments** — all completely free, no sign-up required.
+- a short **creator page** (`index.html`) that links to the projects;
+- a smart **`404.html`** — old links such as `/image` or `/Periodic-Table/v2` show a "This page has moved"
+  screen and forward to the matching page on project.wondermayank.in (5-second countdown, with a *Stay here* button);
+- the SEO and verification files search engines expect.
 
----
+### 📁 Files
 
-## 📁 Repo File Structure
-
-```
-wondermayank.github.io/
-│
-├── index.html          ← Main homepage (SEO + AEO + GEO optimised)
-├── about.html          ← About page (Person schema entity page)
-├── sitemap.xml         ← XML sitemap for Google Search Console
-├── robots.txt          ← Crawl rules (Google, GPTBot, Claude, Perplexity)
-├── llms.txt            ← AI-readable directory for LLM discovery (GEO)
-├── og-cover.jpg        ← Open Graph / Twitter Card social share image
-├── logo2.svg           ← Site favicon / logo
-│
-├── background.mp4      ← Hero video (landscape)
-├── background_m.mp4    ← Hero video (portrait / mobile)
-│
-└── [tool folders]      ← Each tool lives in its own subfolder
-    ├── movie/
-    ├── anime/
-    ├── books/
-    ├── paletteify/
-    ├── cbtmock/
-    ├── pdftotext/
-    ├── card/
-    ├── hindi/
-    ├── india/
-    └── ...
-```
+| File | Purpose |
+|------|---------|
+| `index.html` | Creator page — JSON-LD (Person, WebSite, FAQPage), FAQ and a crawler-friendly link list |
+| `404.html` | Old-address router: maps old paths to project.wondermayank.in using the project sitemap |
+| `sitemap.xml` | Only the creator page (projects have their own sitemap) |
+| `robots.txt` | Crawler rules |
+| `llms.txt` | AI-readable summary that points to project.wondermayank.in |
+| `og-cover.png` | 1200×630 social preview — "All projects now live at project.wondermayank.in" |
+| `favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, `head.svg` | Icons and logo |
+| `humans.txt`, `.well-known/security.txt` | Site and security info |
+| `google1a15a2b883bed825.html`, `openai-domain-verification=…txt` | Ownership verification — keep these |
 
 ---
 
-## 🛠️ Creation 7 — Tool Categories
+## 🧭 Where things live now
 
-### 🔍 Finder
+### 🔎 Finder
 | Tool | Description | Link |
 |------|-------------|------|
-| Movie Finder | Search Indian and international movies, ratings & details | [→](https://wondermayank.github.io/movie) |
-| Anime Finder | Discover anime via Jikan API with full metadata | [→](https://wondermayank.github.io/anime) |
-| Book Finder | Find books by title, author or genre | [→](https://wondermayank.github.io/books) |
-| Game | Free browser game for PC & mobile | [→](https://wondermayank.github.io/game) |
+| Movie Finder | Search Indian and international movies, ratings & details | [→](https://project.wondermayank.in/finder/movie) |
+| Anime Finder | Discover anime via Jikan API with full metadata | [→](https://project.wondermayank.in/finder/anime) |
+| Book Finder | Find books by title, author or genre | [→](https://project.wondermayank.in/finder/books) |
+| Games | Free browser games for PC & mobile | [→](https://project.wondermayank.in/finder/games) |
+| Wallpaper | Wallpaper and mascot art gallery | [→](https://wallpaper.wondermayank.in) |
 
 ### 📚 Study
 | Tool | Description | Link |
 |------|-------------|------|
-| CBT Mock Test | Exam simulator — CUET, NEET, JEE, Banking, SSC | [→](https://wondermayank.github.io/cbtmock) |
-| Book Hub | Educational books and structured study resources | [→](https://wondermayank.github.io/book) |
-| English Practice | Grammar, vocabulary and language tests | [→](https://wondermayank.github.io/cbtmock/english) |
-| General Aptitude | Reasoning and awareness practice | [→](https://wondermayank.github.io/cbtmock/gat) |
-| Current Affairs | Monthly, quarterly & yearly current affairs | [→](https://wondermayank.github.io/Current_Affairs) |
-| Periodic Table | Interactive chemistry periodic table | [→](https://wondermayank.github.io/Periodic-Table/v2/) |
-| Hindi Typing | Learn and practise Hindi typing | [→](https://wondermayank.github.io/hindi) |
-| Study Blog | Commerce & exam prep notes on Blogger | [→](https://commercesehoga.blogspot.com) |
+| CBT Mock Test | Exam simulator — CUET, NEET, JEE, Banking, SSC | [→](https://project.wondermayank.in/cbtmock) |
+| Book Hub | Educational books and structured study resources | [→](https://project.wondermayank.in/study/book) |
+| English Practice | Grammar, vocabulary and language tests | [→](https://project.wondermayank.in/cbtmock/english) |
+| General Aptitude | Reasoning and awareness practice | [→](https://project.wondermayank.in/cbtmock/gat) |
+| Current Affairs | Monthly, quarterly & yearly current affairs | [→](https://project.wondermayank.in/study/Current_Affairs) |
+| Periodic Table | Interactive chemistry periodic table | [→](https://project.wondermayank.in/study/Periodic_Table/v2) |
+| Hindi Typing | Learn and practise Hindi typing | [→](https://project.wondermayank.in/typing/hindi) |
+| English Typing | English typing speed test | [→](https://project.wondermayank.in/typing/english) |
 
 ### ⚙️ Tools
 | Tool | Description | Link |
 |------|-------------|------|
-| Paletteify | Free color palette generator for designers | [→](https://wondermayank.github.io/paletteify) |
-| Text to PDF | Convert plain text to formatted PDF | [→](https://wondermayank.github.io/pdftotext) |
-| Help Tool | Daily helpers and quick-reference utilities | [→](https://wondermayank.github.io/help) |
-| Card Generator | Digital cards for weddings, birthdays & events | [→](https://wondermayank.github.io/card) |
+| Paletteify | Free color palette generator for designers | [→](https://project.wondermayank.in/code/paletteify) |
+| Text to PDF | Convert plain text to formatted PDF | [→](https://project.wondermayank.in/tools/pdftotext) |
+| YouTube Transcript | Get the transcript of a YouTube video | [→](https://project.wondermayank.in/tools/transcript) |
+| Help Tools | Daily helpers and quick-reference utilities | [→](https://project.wondermayank.in/help) |
+| Card Generator | Digital cards for weddings, birthdays & events | [→](https://project.wondermayank.in/love/card) |
+| Portfolio | Portfolio of Wondermayank | [→](https://portfolio.wondermayank.in) |
 
 ### 🇮🇳 India & Culture
 | Page | Description | Link |
 |------|-------------|------|
-| What is India? | History, philosophy, geography & identity | [→](https://wondermayank.github.io/india) |
-| Festivals of India | Diwali, Holi, Eid, Pongal & more | [→](https://wondermayank.github.io/india/festivals) |
-| Indian Cuisine | Spices, flavours & regional cuisines | [→](https://wondermayank.github.io/india/cuisine) |
-| Languages of India | Sanskrit, Tamil, Hindi, Bengali & 1600+ more | [→](https://wondermayank.github.io/india/languages) |
-| Indian Art & Dance | Bharatanatyam, Madhubani & living heritage | [→](https://wondermayank.github.io/india/art) |
-| History of India | Indus Valley to Independence | [→](https://wondermayank.github.io/india/history) |
-| Kayastha | Community history and cultural traditions | [→](https://wondermayank.github.io/kayastha) |
-| Rajput | Royal heritage and valor of Rajput clans | [→](https://wondermayank.github.io/rajput) |
+| What is India? | History, philosophy, geography & identity | [→](https://project.wondermayank.in/india) |
+| Festivals of India | Diwali, Holi, Eid, Pongal & more | [→](https://project.wondermayank.in/india/festivals) |
+| Indian Cuisine | Spices, flavours & regional cuisines | [→](https://project.wondermayank.in/india/cuisine) |
+| Languages of India | Sanskrit, Tamil, Hindi, Bengali & 1600+ more | [→](https://project.wondermayank.in/india/languages) |
+| Indian Art & Dance | Bharatanatyam, Madhubani & living heritage | [→](https://project.wondermayank.in/india/art) |
+| History of India | Indus Valley to Independence | [→](https://project.wondermayank.in/india/history) |
+| Kayastha | Community history and cultural traditions | [→](https://project.wondermayank.in/india/kayastha) |
+| Rajput | Royal heritage and valor of Rajput clans | [→](https://project.wondermayank.in/india/rajput) |
 
 ---
 
 ## 🎓 Exam Prep (CBT Simulators)
 
-Free Computer-Based Test simulators hosted at [commercesehoga.github.io](https://commercesehoga.github.io/):
+Free Computer-Based Test simulators at [commercesehoga.github.io](https://commercesehoga.github.io/) (unchanged):
 
 | Exam | Direct Link |
 |------|-------------|
@@ -120,39 +107,19 @@ Free Computer-Based Test simulators hosted at [commercesehoga.github.io](https:/
 
 ---
 
-## 🔍 SEO / AEO / GEO Status
-
-This repo is fully optimised for search engines, AI answer engines and generative search:
-
-| File | Purpose |
-|------|---------|
-| `index.html` | Title, meta description, canonical, OG tags, Twitter Card, H1, JSON-LD Person + WebSite + FAQPage + BreadcrumbList schemas, FAQ section, noscript crawler list |
-| `about.html` | Dedicated entity page — Person schema, ProfilePage schema, tool directory |
-| `sitemap.xml` | 30+ URLs with priority & changefreq — submit to Google Search Console |
-| `robots.txt` | Allows all crawlers: Googlebot, GPTBot, ClaudeBot, PerplexityBot, Meta-ExternalAgent |
-| `llms.txt` | AI-readable structured directory — helps ChatGPT, Claude, Gemini, Perplexity discover and cite this site |
-| `og-cover.jpg` | 1200×630px social preview image for Twitter, Instagram, WhatsApp shares |
-
-> **After pushing:** Submit `https://wondermayank.github.io/sitemap.xml` to [Google Search Console](https://search.google.com/search-console).
-
----
-
 ## 🚀 Tech Stack
 
 - Pure **HTML5 + CSS3 + Vanilla JavaScript** — zero build tools, zero dependencies
-- Hosted on **GitHub Pages** — free, fast, reliable
-- Fonts via **Google Fonts** (Syne + DM Sans)
+- Hosted on **GitHub Pages**
 - Dark / Light theme toggle stored in `localStorage`
-- Interactive India map via **Simplemaps SVG**
-- Hero video with fallback chain (relative → remote → alt)
 
 ---
 
 ## 📄 Legal
 
-- [Privacy Policy](https://wondermayank.github.io/privacy)
-- [Terms & Conditions](https://wondermayank.github.io/terms)
-- [Disclaimer](https://wondermayank.github.io/disclaimer)
+- [Privacy Policy](https://wondermayank.in/privacy)
+- [Terms & Conditions](https://wondermayank.in/terms)
+- [Disclaimer](https://wondermayank.in/disclaimer)
 
 ---
 
@@ -160,6 +127,6 @@ This repo is fully optimised for search engines, AI answer engines and generativ
 
 © 2018 **Wondermayank**. All rights reserved.
 
-Made with ❤️ in India · [wondermayank.github.io](https://wondermayank.github.io/)
+Made with ❤️ in India · [project.wondermayank.in](https://project.wondermayank.in/)
 
 </div>

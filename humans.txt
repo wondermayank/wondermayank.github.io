@@ -2,7 +2,8 @@
 Name: Wondermayank
 Location: India
 GitHub: github.com/wondermayank
-Site: wondermayank.github.io
+Site: project.wondermayank.in
+Main site: wondermayank.in
 YouTube: youtube.com/@wondermayank
 Telegram: t.me/wondermayank
 
@@ -10,3 +11,4 @@ Telegram: t.me/wondermayank
 Last update: 2026
 Language: English, Hindi
 Standards: HTML5, CSS3, Vanilla JS
+Note: wondermayank.github.io is now a creator page; all projects moved to project.wondermayank.in
