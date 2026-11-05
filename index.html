@@ -186,8 +186,8 @@
             --font-body: 'DM Sans', sans-serif;
         }
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-        html{scroll-behavior:smooth}
-        body{background:linear-gradient(135deg,var(--bg-start),var(--bg-end));color:var(--text-main);font-family:var(--font-body);overflow-x:hidden}
+        html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip;max-width:100%}
+        body{background:linear-gradient(135deg,var(--bg-start),var(--bg-end));color:var(--text-main);font-family:var(--font-body);overflow-x:hidden;overflow-x:clip;max-width:100%}
         body.theme-dark{--primary:#c084fc;--primary-dark:#a855f7;--secondary:#7dd3fc;--accent:#f472b6;--bg-start:#05010c;--bg-end:#150026;--glass:rgba(20,8,35,.68);--glass-border:rgba(192,132,252,.24);--text-main:#f6edff;--text-muted:#bda7d8;background:radial-gradient(circle at 20% 0%,rgba(126,34,206,.32),transparent 34%),radial-gradient(circle at 80% 28%,rgba(88,28,135,.26),transparent 30%),linear-gradient(135deg,#030008,#13001f 58%,#05000a);color:var(--text-main)}
         body.theme-dark nav{background:rgba(7,2,14,.74);border-bottom-color:rgba(192,132,252,.28)}
         body.theme-dark .mobile-nav{background:rgba(9,3,18,.96);border-bottom-color:rgba(192,132,252,.28)}
@@ -4154,6 +4154,78 @@
         .ft-spacer, .fa-spacer,
         .featured-thunder-content, .featured-about-content { display: contents; }
     </style>
+<style id="wmf-css">footer.wmf{--f-surface:#FAF8FE;--f-canvas:#F4F1FC;--f-ink:#2B2640;--f-body:#5C5575;--f-muted:#6B6485;--f-hair:rgba(43,38,64,.08);--f-primary:#573AFC;display:block;position:relative;float:none;clear:both;width:auto;max-width:none;margin:0;padding:64px 0 0;text-align:left;background:var(--f-surface);border:0;border-top:1px solid var(--f-hair);border-radius:0;overflow:visible;color:var(--f-muted);font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-size:16px;font-weight:400;line-height:1.5;letter-spacing:normal;text-transform:none}
+[data-theme="dark"] footer.wmf,body.theme-dark footer.wmf{--f-surface:#221D3C;--f-canvas:#1A1730;--f-ink:#F1EEFB;--f-body:#C7C0E0;--f-muted:#8E86AC;--f-hair:rgba(255,255,255,.08);--f-primary:#9A7AFB}
+footer.wmf,footer.wmf *,footer.wmf *::before,footer.wmf *::after{box-sizing:border-box}
+footer.wmf .wmf-wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+footer.wmf .wmf-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px 48px;padding:0 0 48px;margin:0}
+footer.wmf a{text-decoration:none;background:none;box-shadow:none}
+footer.wmf .wmf-brand{display:inline-flex;align-items:center;gap:12px;color:var(--f-ink)}
+footer.wmf .wmf-mark{width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:none;box-shadow:none}
+footer.wmf .wmf-mark img{width:36px;height:36px;display:block;max-width:none}
+footer.wmf .wmf-brand-text{display:flex;flex-direction:column;line-height:1.2}
+footer.wmf .wmf-brand-name{color:var(--f-ink);font-size:20px;font-weight:700}
+footer.wmf .wmf-accent{color:var(--f-primary)}
+footer.wmf .wmf-brand-by{color:var(--f-muted);font-size:13px;font-weight:400}
+footer.wmf .wmf-desc{margin:16px 0 0;max-width:300px;color:var(--f-muted);font-size:14px;font-weight:300;line-height:1.55}
+footer.wmf .wmf-mascot{display:inline-flex;align-items:center;gap:12px;margin-top:20px;padding:8px 14px 8px 8px;border:1px solid var(--f-hair);border-radius:18px;background:var(--f-canvas);color:var(--f-ink);transition:transform .2s ease,border-color .2s ease}
+footer.wmf .wmf-mascot:hover,footer.wmf .wmf-mascot:focus-visible{border-color:var(--f-primary);transform:translateY(-2px)}
+footer.wmf .wmf-mascot img{width:72px;height:auto;aspect-ratio:16/9;border-radius:10px;display:block;object-fit:cover;max-width:none}
+footer.wmf .wmf-mascot span{display:flex;flex-direction:column;line-height:1.25}
+footer.wmf .wmf-mascot b{font-size:14px;font-weight:700;color:var(--f-ink)}
+footer.wmf .wmf-mascot small{font-size:12px;color:var(--f-muted)}
+footer.wmf .wmf-social{display:flex;flex-direction:column;gap:14px;margin-top:24px}
+footer.wmf .wmf-social-label{margin-bottom:6px;color:var(--f-muted);font-size:12px;line-height:1.3}
+footer.wmf .wmf-social-row{display:flex;flex-wrap:wrap;gap:8px}
+footer.wmf .wmf-social-btn{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid var(--f-hair);background:var(--f-canvas);color:var(--f-ink);transition:transform .2s ease,color .2s ease,border-color .2s ease}
+footer.wmf .wmf-social-btn:hover,footer.wmf .wmf-social-btn:focus-visible{color:var(--f-primary);border-color:var(--f-primary);transform:translateY(-2px)}
+footer.wmf .wmf-social-btn:active{transform:scale(.95)}
+footer.wmf .wmf-social-btn svg{width:24px;height:24px;display:block}
+footer.wmf .wmf-title{margin:0 0 12px;padding:0;color:var(--f-ink);font-family:inherit;font-size:18px;font-weight:700;line-height:1.4;letter-spacing:normal;text-transform:none}
+footer.wmf .wmf-links{list-style:none;margin:0;padding:0}
+footer.wmf .wmf-links li{margin:0;padding:0;list-style:none}
+footer.wmf .wmf-links a,footer.wmf .wmf-legal a{display:inline-flex;align-items:center;min-height:44px;color:var(--f-body);font-size:15px;font-weight:400;line-height:1.4;transition:color .2s ease}
+footer.wmf .wmf-links a:hover,footer.wmf .wmf-links a:focus-visible,footer.wmf .wmf-legal a:hover,footer.wmf .wmf-legal a:focus-visible{color:var(--f-primary)}
+footer.wmf .wmf-bottom{border-top:1px solid var(--f-hair)}
+footer.wmf .wmf-bottom-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;padding-top:14px;padding-bottom:14px}
+footer.wmf .wmf-copy{color:var(--f-muted);font-size:14px;line-height:1.43;letter-spacing:-.1px}
+footer.wmf .wmf-legal{display:flex;flex-wrap:wrap;gap:0 28px;margin-right:64px}
+@media(max-width:900px){footer.wmf .wmf-grid{grid-template-columns:repeat(3,1fr)}
+footer.wmf .wmf-brand-col{grid-column:1 / -1}
+}
+@media(max-width:640px){footer.wmf{padding-top:48px}
+footer.wmf .wmf-wrap{padding:0 20px}
+footer.wmf .wmf-grid{grid-template-columns:1fr;gap:28px;padding-bottom:32px}
+footer.wmf .wmf-bottom-inner{flex-direction:column;align-items:flex-start}
+footer.wmf .wmf-legal{margin-right:0}
+}
+
+/* ---- index integration: beat the index's old footer/nav rules ---- */
+body footer.wmf{margin-top:4rem;background:var(--f-surface)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;border-top:1px solid var(--f-hair)!important;box-shadow:none!important}
+body.theme-dark footer.wmf{background:var(--f-surface)!important;border-top:1px solid var(--f-hair)!important;box-shadow:none!important}
+body footer.wmf nav{all:unset;display:block}
+@media(max-width:900px){body footer.wmf .wmf-bottom{padding-bottom:84px}}
+</style>
+<style id="faq-design-css">
+#faq{--q-surface:#FAF8FE;--q-ink:#2B2640;--q-muted:#6B6485;--q-primary:#573AFC;--q-soft:#E4DEFF;--q-on:#ffffff;--q-light:rgba(255,255,255,.9);--q-dark:rgba(120,108,180,.5)}
+body.theme-dark #faq{--q-surface:#221D3C;--q-ink:#F1EEFB;--q-muted:#8E86AC;--q-primary:#9A7AFB;--q-soft:#2E2650;--q-on:#1A1730;--q-light:rgba(255,255,255,.05);--q-dark:rgba(0,0,0,.55)}
+#faq .dq-head{max-width:680px;margin:0 auto 40px;text-align:center}
+#faq .dq-kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--q-primary);background:var(--q-soft);padding:6px 14px;border-radius:999px;margin-bottom:14px}
+#faq .dq-head h2{font-size:clamp(26px,4vw,38px);line-height:1.15;font-weight:700;letter-spacing:-.5px;color:var(--q-ink);margin:0 0 12px;background:none;-webkit-text-fill-color:currentColor}
+#faq .dq-head h2 .accent{color:var(--q-primary);-webkit-text-fill-color:currentColor}
+#faq .dq-head p{font-size:16.5px;line-height:1.65;color:var(--q-muted);margin:0}
+#faq .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+#faq .faq-item{background:var(--q-surface);border-radius:20px;box-shadow:5px 5px 14px var(--q-dark),-5px -5px 14px var(--q-light);overflow:hidden}
+#faq .faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;font-size:16px;font-weight:700;line-height:1.4;color:var(--q-ink);min-height:44px}
+#faq .faq-item summary::-webkit-details-marker{display:none}
+#faq .faq-item summary:focus-visible{outline:2px solid var(--q-primary);outline-offset:-2px;border-radius:20px}
+#faq .faq-chev{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--q-soft);color:var(--q-primary);display:flex;align-items:center;justify-content:center;transition:transform .25s ease,background .2s ease,color .2s ease}
+#faq .faq-chev svg{width:16px;height:16px}
+#faq .faq-item[open] .faq-chev{transform:rotate(180deg);background:var(--q-primary);color:var(--q-on)}
+#faq .faq-item p{padding:0 22px 20px;font-size:15px;line-height:1.65;color:var(--q-muted);margin:0}
+#faq .faq-item p a{color:var(--q-primary);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+@media(prefers-reduced-motion:reduce){#faq .faq-chev{transition:none}}
+</style>
 </head>
 <body>
 
@@ -4294,7 +4366,7 @@
     </div>
     <div class="featured-grid">
         <!-- ThunderStudy AI — single yellow card -->
-        <a href="https://thunderstudyai.vercel.app/" class="featured-card-thunder" target="_blank" rel="noopener noreferrer">
+        <a href="https://ai.thunderstudy.indevs.in/" class="featured-card-thunder" target="_blank" rel="noopener noreferrer">
             <svg class="ft-zap-icon" width="140" height="140" viewBox="0 0 24 24" fill="rgba(255,255,255,0.15)" stroke="none"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             <div class="featured-thunder-badge">
                 <svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor" stroke="none"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
@@ -4342,9 +4414,9 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             wondermayank.in — Main Site
         </a>
-        <a href="https://wondermayank.indevs.in" class="glass-btn primary" target="_blank" rel="noopener noreferrer">
+        <a href="https://portfolio.wondermayank.in" class="glass-btn primary" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            wondermayank.indevs.in — Portfolio
+            portfolio.wondermayank.in — Portfolio
         </a>
     </div>
     
@@ -5122,90 +5194,41 @@
 <div class="section-divider" style="margin:2rem 0"></div>
 <div class="main-container" style="padding-top:1rem;padding-bottom:3rem">
 <section id="faq" aria-label="Frequently Asked Questions" style="scroll-margin-top:90px">
-    <div class="section-header">
-        <div class="section-pill">✦ FAQ</div>
-        <h2>Frequently Asked Questions</h2>
+    <svg aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute"><defs><symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol></defs></svg>
+    <div class="dq-head">
+        <span class="dq-kicker">FAQ</span>
+        <h2>Questions, <span class="accent">answered</span></h2>
         <p>Quick answers about Wondermayank and this digital universe.</p>
     </div>
-    <div style="max-width:780px;margin:0 auto" itemscope itemtype="https://schema.org/FAQPage">
-
-        <!-- FAQ Item 1 -->
-        <details style="background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;margin-bottom:1rem;backdrop-filter:blur(15px);overflow:hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <summary itemprop="name" style="padding:1.3rem 1.6rem;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem">
-                Who is Wondermayank?
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2.5" style="width:18px;height:18px;flex-shrink:0;transition:.3s"><path d="M6 9l6 6 6-6"/></svg>
-            </summary>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" style="padding:0 1.6rem 1.3rem;font-size:.9rem;color:var(--text-muted);line-height:1.7;border-top:1px solid var(--glass-border)">
-                <span itemprop="text">Wondermayank is a student developer from India who creates free online tools, exam preparation simulators, movie and anime finders, study blogs and 3,200+ digital projects at project.wondermayank.in.</span>
-            </div>
+    <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+        <details class="faq-item" open itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary itemprop="name">Who is Wondermayank?<span class="faq-chev"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-chev"/></svg></span></summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">Wondermayank is a student developer from India who creates free online tools, exam preparation simulators, movie and anime finders, study blogs and 3,200+ digital projects at project.wondermayank.in.</p></div>
         </details>
-
-        <!-- FAQ Item 2 -->
-        <details style="background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;margin-bottom:1rem;backdrop-filter:blur(15px);overflow:hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <summary itemprop="name" style="padding:1.3rem 1.6rem;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem">
-                What tools does Wondermayank offer?
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2.5" style="width:18px;height:18px;flex-shrink:0"><path d="M6 9l6 6 6-6"/></svg>
-            </summary>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" style="padding:0 1.6rem 1.3rem;font-size:.9rem;color:var(--text-muted);line-height:1.7;border-top:1px solid var(--glass-border)">
-                <span itemprop="text">Wondermayank offers 3,200+ free tools and projects including a Movie Finder, Anime Finder, Book Finder, Paletteify color palette generator, Text to PDF converter, CBT mock tests for CUET, NEET, JEE, Banking and SSC exams, a Periodic Table explorer, Hindi &amp; English typing practice, Card Generator and more.</span>
-            </div>
+        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary itemprop="name">What tools does Wondermayank offer?<span class="faq-chev"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-chev"/></svg></span></summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">Wondermayank offers 3,200+ free tools and projects including a Movie Finder, Anime Finder, Book Finder, Paletteify color palette generator, Text to PDF converter, CBT mock tests for CUET, NEET, JEE, Banking and SSC exams, a Periodic Table explorer, Hindi &amp; English typing practice, Card Generator and more.</p></div>
         </details>
-
-        <!-- FAQ Item 3 -->
-        <details style="background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;margin-bottom:1rem;backdrop-filter:blur(15px);overflow:hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <summary itemprop="name" style="padding:1.3rem 1.6rem;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem">
-                What is the Wondermayank CBT Mock Test?
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2.5" style="width:18px;height:18px;flex-shrink:0"><path d="M6 9l6 6 6-6"/></svg>
-            </summary>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" style="padding:0 1.6rem 1.3rem;font-size:.9rem;color:var(--text-muted);line-height:1.7;border-top:1px solid var(--glass-border)">
-                <span itemprop="text">The Wondermayank CBT Mock Test is a free Computer-Based Test simulator that helps students prepare for CUET, NEET, JEE, Banking (SBI, IBPS) and SSC exams with realistic timed practice sessions. Access it at project.wondermayank.in/cbtmock.</span>
-            </div>
+        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary itemprop="name">What is the Wondermayank CBT Mock Test?<span class="faq-chev"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-chev"/></svg></span></summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">The Wondermayank CBT Mock Test is a free Computer-Based Test simulator that helps students prepare for CUET, NEET, JEE, Banking (SBI, IBPS) and SSC exams with realistic timed practice sessions. Access it at project.wondermayank.in/cbtmock.</p></div>
         </details>
-
-        <!-- FAQ Item 4 -->
-        <details style="background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;margin-bottom:1rem;backdrop-filter:blur(15px);overflow:hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <summary itemprop="name" style="padding:1.3rem 1.6rem;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem">
-                Is Wondermayank free to use?
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2.5" style="width:18px;height:18px;flex-shrink:0"><path d="M6 9l6 6 6-6"/></svg>
-            </summary>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" style="padding:0 1.6rem 1.3rem;font-size:.9rem;color:var(--text-muted);line-height:1.7;border-top:1px solid var(--glass-border)">
-                <span itemprop="text">Yes, all tools and resources by Wondermayank are completely free to use with no account or sign-up required. The entire site is open access and built for students and learners across India.</span>
-            </div>
+        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary itemprop="name">Is Wondermayank free to use?<span class="faq-chev"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-chev"/></svg></span></summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">Yes, all tools and resources by Wondermayank are completely free to use with no account or sign-up required. The entire site is open access and built for students and learners across India.</p></div>
         </details>
-
-        <!-- FAQ Item 5 -->
-        <details style="background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;margin-bottom:1rem;backdrop-filter:blur(15px);overflow:hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <summary itemprop="name" style="padding:1.3rem 1.6rem;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem">
-                How can I contact Wondermayank?
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2.5" style="width:18px;height:18px;flex-shrink:0"><path d="M6 9l6 6 6-6"/></svg>
-            </summary>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" style="padding:0 1.6rem 1.3rem;font-size:.9rem;color:var(--text-muted);line-height:1.7;border-top:1px solid var(--glass-border)">
-                <span itemprop="text">You can contact Wondermayank via Telegram at @Mindmaster_robot or join the Telegram community at t.me/wondermayank. You can also follow on YouTube at youtube.com/@wondermayank and Instagram at instagram.com/WONDERMAYANK.</span>
-            </div>
+        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary itemprop="name">How can I contact Wondermayank?<span class="faq-chev"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-chev"/></svg></span></summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">You can contact Wondermayank via Telegram at @Mindmaster_robot or join the Telegram community at t.me/wondermayank. You can also follow on YouTube at youtube.com/@wondermayank and Instagram at instagram.com/WONDERMAYANK.</p></div>
         </details>
-
-        <!-- FAQ Item 6 -->
-        <details style="background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;margin-bottom:1rem;backdrop-filter:blur(15px);overflow:hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <summary itemprop="name" style="padding:1.3rem 1.6rem;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem">
-                What is Paletteify by Wondermayank?
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2.5" style="width:18px;height:18px;flex-shrink:0"><path d="M6 9l6 6 6-6"/></svg>
-            </summary>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" style="padding:0 1.6rem 1.3rem;font-size:.9rem;color:var(--text-muted);line-height:1.7;border-top:1px solid var(--glass-border)">
-                <span itemprop="text">Paletteify is a free color palette generator tool by Wondermayank available at project.wondermayank.in/code/paletteify. It helps designers and developers create beautiful, harmonious color palettes instantly — no sign-up needed.</span>
-            </div>
+        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary itemprop="name">What is Paletteify by Wondermayank?<span class="faq-chev"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-chev"/></svg></span></summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">Paletteify is a free color palette generator tool by Wondermayank available at project.wondermayank.in/code/paletteify. It helps designers and developers create beautiful, harmonious color palettes instantly — no sign-up needed.</p></div>
         </details>
-
-        <!-- FAQ Item 7 -->
-        <details style="background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;margin-bottom:1rem;backdrop-filter:blur(15px);overflow:hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-            <summary itemprop="name" style="padding:1.3rem 1.6rem;font-weight:700;font-size:.95rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem">
-                Does Wondermayank have a study blog?
-                <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary-dark)" stroke-width="2.5" style="width:18px;height:18px;flex-shrink:0"><path d="M6 9l6 6 6-6"/></svg>
-            </summary>
-            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer" style="padding:0 1.6rem 1.3rem;font-size:.9rem;color:var(--text-muted);line-height:1.7;border-top:1px solid var(--glass-border)">
-                <span itemprop="text">Yes, Wondermayank maintains a study blog at commercesehoga.blogspot.com with structured notes, resources and educational content for commerce students, exam prep aspirants and general knowledge seekers. There is also a ThunderStudy blog at thunderstudyofficial.blogspot.com.</span>
-            </div>
+        <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <summary itemprop="name">Does Wondermayank have a study blog?<span class="faq-chev"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-chev"/></svg></span></summary>
+            <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><p itemprop="text">Yes, Wondermayank maintains a study blog at commercesehoga.blogspot.com with structured notes, resources and educational content for commerce students, exam prep aspirants and general knowledge seekers. There is also a ThunderStudy blog at thunderstudyofficial.blogspot.com.</p></div>
         </details>
-
     </div>
 </section>
 </div>
@@ -5213,77 +5236,100 @@
 <!-- ══════════════════════════════════════════
      FOOTER
 ══════════════════════════════════════════ -->
-<footer>
-    <div class="footer-top">
-        <div>
-            <div class="footer-logo-wrap">
-                <img src="https://i.pinimg.com/1200x/72/11/17/721117f3130a87778647a91cbc62a9a6.jpg" alt="Wondermayank — Digital Universe Logo" class="logo-img" loading="lazy">
-                <span class="nav-brand">Wondermayank ✨</span>
-            </div>
-            <p class="footer-brand-p">A digital universe crafted by Mayank — tools, study resources, creative projects and more. Explore, learn &amp; connect.</p>
-            <div class="social-links">
-                <a href="https://www.youtube.com/@wondermayank" target="_blank" rel="noopener noreferrer" class="social-link social-youtube" title="YouTube Main">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#cc0000" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.97A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#cc0000" stroke="none"/></svg>
-                </a>
-                <a href="https://www.instagram.com/WONDERMAYANK" target="_blank" rel="noopener noreferrer" class="social-link social-instagram" title="Instagram">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#bc1888" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                </a>
-                <a href="https://t.me/wondermayank" target="_blank" rel="noopener noreferrer" class="social-link social-telegram" title="Telegram">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#0088cc" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-                </a>
-                <a href="https://commercesehoga.blogspot.com" target="_blank" rel="noopener noreferrer" class="social-link social-blog" title="Study Blog">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#e8602c" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                </a>
-                <a href="https://wondermayank.github.io" target="_blank" rel="noopener noreferrer" class="social-link social-github" title="GitHub Pages">
-                   <svg viewBox="0 0 24 24" fill="var(--primary)" stroke="none" width="15" height="15"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-                </a>
-            </div>
-        </div>
+<footer class="wmf">
+<svg aria-hidden="true" focusable="false" height="0" style="position:absolute" width="0">
+<defs>
+<symbol id="i-instagram" viewBox="0 0 2500 2500"><defs><radialGradient id="ig-grad-a" cx="332.14" cy="2511.81" r="3263.54" gradientUnits="userSpaceOnUse"><stop offset=".09" stop-color="#fa8f21"/><stop offset=".78" stop-color="#d82d7e"/></radialGradient><radialGradient id="ig-grad-b" cx="1516.14" cy="2623.81" r="2572.12" gradientUnits="userSpaceOnUse"><stop offset=".64" stop-color="#8c3aaa" stop-opacity="0"/><stop offset="1" stop-color="#8c3aaa"/></radialGradient></defs><path d="M833.4,1250c0-230.11,186.49-416.7,416.6-416.7s416.7,186.59,416.7,416.7-186.59,416.7-416.7,416.7S833.4,1480.11,833.4,1250m-225.26,0c0,354.5,287.36,641.86,641.86,641.86S1891.86,1604.5,1891.86,1250,1604.5,608.14,1250,608.14,608.14,895.5,608.14,1250M1767.27,582.69a150,150,0,1,0,150.06-149.94h-0.06a150.07,150.07,0,0,0-150,149.94M745,2267.47c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28,7.27-505.15c5.55-121.87,26-188,43-232.13,22.72-58.36,49.78-100,93.5-143.78s85.32-70.88,143.78-93.5c44-17.16,110.26-37.46,232.13-43,131.76-6.06,171.34-7.27,505-7.27s373.28,1.31,505.15,7.27c121.87,5.55,188,26,232.13,43,58.36,22.62,100,49.78,143.78,93.5s70.78,85.42,93.5,143.78c17.16,44,37.46,110.26,43,232.13,6.06,131.87,7.27,171.34,7.27,505.15s-1.21,373.28-7.27,505.15c-5.55,121.87-25.95,188.11-43,232.13-22.72,58.36-49.78,100-93.5,143.68s-85.42,70.78-143.78,93.5c-44,17.16-110.26,37.46-232.13,43-131.76,6.06-171.34,7.27-505.15,7.27s-373.28-1.21-505-7.27M734.65,7.57c-133.07,6.06-224,27.16-303.41,58.06C349,97.54,279.38,140.35,209.81,209.81S97.54,349,65.63,431.24c-30.9,79.46-52,170.34-58.06,303.41C1.41,867.93,0,910.54,0,1250s1.41,382.07,7.57,515.35c6.06,133.08,27.16,223.95,58.06,303.41,31.91,82.19,74.62,152,144.18,221.43S349,2402.37,431.24,2434.37c79.56,30.9,170.34,52,303.41,58.06C868,2498.49,910.54,2500,1250,2500s382.07-1.41,515.35-7.57c133.08-6.06,223.95-27.16,303.41-58.06,82.19-32,151.86-74.72,221.43-144.18s112.18-139.24,144.18-221.43c30.9-79.46,52.1-170.34,58.06-303.41,6.06-133.38,7.47-175.89,7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2150.95,97.54,2068.86,65.63c-79.56-30.9-170.44-52.1-303.41-58.06C1632.17,1.51,1589.56,0,1250.1,0S868,1.41,734.65,7.57" fill="url(#ig-grad-a)"/><path d="M833.4,1250c0-230.11,186.49-416.7,416.6-416.7s416.7,186.59,416.7,416.7-186.59,416.7-416.7,416.7S833.4,1480.11,833.4,1250m-225.26,0c0,354.5,287.36,641.86,641.86,641.86S1891.86,1604.5,1891.86,1250,1604.5,608.14,1250,608.14,608.14,895.5,608.14,1250M1767.27,582.69a150,150,0,1,0,150.06-149.94h-0.06a150.07,150.07,0,0,0-150,149.94M745,2267.47c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28,7.27-505.15c5.55-121.87,26-188,43-232.13,22.72-58.36,49.78-100,93.5-143.78s85.32-70.88,143.78-93.5c44-17.16,110.26-37.46,232.13-43,131.76-6.06,171.34-7.27,505-7.27s373.28,1.31,505.15,7.27c121.87,5.55,188,26,232.13,43,58.36,22.62,100,49.78,143.78,93.5s70.78,85.42,93.5,143.78c17.16,44,37.46,110.26,43,232.13,6.06,131.87,7.27,171.34,7.27,505.15s-1.21,373.28-7.27,505.15c-5.55,121.87-25.95,188.11-43,232.13-22.72,58.36-49.78,100-93.5,143.68s-85.42,70.78-143.78,93.5c-44,17.16-110.26,37.46-232.13,43-131.76,6.06-171.34,7.27-505.15,7.27s-373.28-1.21-505-7.27M734.65,7.57c-133.07,6.06-224,27.16-303.41,58.06C349,97.54,279.38,140.35,209.81,209.81S97.54,349,65.63,431.24c-30.9,79.46-52,170.34-58.06,303.41C1.41,867.93,0,910.54,0,1250s1.41,382.07,7.57,515.35c6.06,133.08,27.16,223.95,58.06,303.41,31.91,82.19,74.62,152,144.18,221.43S349,2402.37,431.24,2434.37c79.56,30.9,170.34,52,303.41,58.06C868,2498.49,910.54,2500,1250,2500s382.07-1.41,515.35-7.57c133.08-6.06,223.95-27.16,303.41-58.06,82.19-32,151.86-74.72,221.43-144.18s112.18-139.24,144.18-221.43c30.9-79.46,52.1-170.34,58.06-303.41,6.06-133.38,7.47-175.89,7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2150.95,97.54,2068.86,65.63c-79.56-30.9-170.44-52.1-303.41-58.06C1632.17,1.51,1589.56,0,1250.1,0S868,1.41,734.65,7.57" fill="url(#ig-grad-b)"/></symbol>
+<symbol id="i-youtube" viewBox="0 0 256 180"><path fill="red" d="M250.346 28.075A32.18 32.18 0 0 0 227.69 5.418C207.824 0 127.87 0 127.87 0S47.912.164 28.046 5.582A32.18 32.18 0 0 0 5.39 28.24c-6.009 35.298-8.34 89.084.165 122.97a32.18 32.18 0 0 0 22.656 22.657c19.866 5.418 99.822 5.418 99.822 5.418s79.955 0 99.82-5.418a32.18 32.18 0 0 0 22.657-22.657c6.338-35.348 8.291-89.1-.164-123.134"/><path fill="#fff" d="m102.421 128.06l66.328-38.418l-66.328-38.418z"/></symbol>
+<symbol id="i-x" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2L487 464H345L233.7 318.6L106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></symbol>
+<symbol id="i-reddit" viewBox="0 0 256 256"><circle cx="128" cy="128" r="128" fill="#ff4500"/><path fill="#fff" d="M213.15 129.22c0-10.376-8.391-18.617-18.617-18.617a18.74 18.74 0 0 0-12.97 5.189c-12.818-9.157-30.368-15.107-49.9-15.87l8.544-39.981l27.773 5.95c.307 7.02 6.104 12.667 13.278 12.667c7.324 0 13.275-5.95 13.275-13.278c0-7.324-5.95-13.275-13.275-13.275c-5.188 0-9.768 3.052-11.904 7.478l-30.976-6.562c-.916-.154-1.832 0-2.443.458c-.763.458-1.22 1.22-1.371 2.136l-9.464 44.558c-19.837.612-37.692 6.562-50.662 15.872a18.74 18.74 0 0 0-12.971-5.188c-10.377 0-18.617 8.391-18.617 18.617c0 7.629 4.577 14.037 10.988 16.939a33.6 33.6 0 0 0-.458 5.646c0 28.686 33.42 52.036 74.621 52.036c41.202 0 74.622-23.196 74.622-52.036a35 35 0 0 0-.458-5.646c6.408-2.902 10.985-9.464 10.985-17.093M85.272 142.495c0-7.324 5.95-13.275 13.278-13.275c7.324 0 13.275 5.95 13.275 13.275s-5.95 13.278-13.275 13.278c-7.327.15-13.278-5.953-13.278-13.278m74.317 35.251c-9.156 9.157-26.553 9.768-31.588 9.768c-5.188 0-22.584-.765-31.59-9.768c-1.371-1.373-1.371-3.51 0-4.883c1.374-1.371 3.51-1.371 4.884 0c5.8 5.8 18.008 7.782 26.706 7.782s21.058-1.983 26.704-7.782c1.374-1.371 3.51-1.371 4.884 0c1.22 1.373 1.22 3.51 0 4.883m-2.443-21.822c-7.325 0-13.275-5.95-13.275-13.275s5.95-13.275 13.275-13.275c7.327 0 13.277 5.95 13.277 13.275c0 7.17-5.95 13.275-13.277 13.275"/></symbol>
+<symbol id="i-telegram" viewBox="0 0 256 256"><defs><linearGradient id="tg-grad" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#2aabee"/><stop offset="100%" stop-color="#229ed9"/></linearGradient></defs><path fill="url(#tg-grad)" d="M128 0C94.06 0 61.48 13.494 37.5 37.49A128.04 128.04 0 0 0 0 128c0 33.934 13.5 66.514 37.5 90.51C61.48 242.506 94.06 256 128 256s66.52-13.494 90.5-37.49c24-23.996 37.5-56.576 37.5-90.51s-13.5-66.514-37.5-90.51C194.52 13.494 161.94 0 128 0"/><path fill="#fff" d="M57.94 126.648q55.98-24.384 74.64-32.152c35.56-14.786 42.94-17.354 47.76-17.441c1.06-.017 3.42.245 4.96 1.49c1.28 1.05 1.64 2.47 1.82 3.467c.16.996.38 3.266.2 5.038c-1.92 20.24-10.26 69.356-14.5 92.026c-1.78 9.592-5.32 12.808-8.74 13.122c-7.44.684-13.08-4.912-20.28-9.63c-11.26-7.386-17.62-11.982-28.56-19.188c-12.64-8.328-4.44-12.906 2.76-20.386c1.88-1.958 34.64-31.748 35.26-34.45c.08-.338.16-1.598-.6-2.262c-.74-.666-1.84-.438-2.64-.258c-1.14.256-19.12 12.152-54 35.686c-5.1 3.508-9.72 5.218-13.88 5.128c-4.56-.098-13.36-2.584-19.9-4.708c-8-2.606-14.38-3.984-13.82-8.41c.28-2.304 3.46-4.662 9.52-7.072"/></symbol>
+</defs>
+</svg>
 
-        <div class="footer-col">
-            <h4>Quick Links</h4>
-            <a href="#catalog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Creation 11</a>
-            <a href="#featured"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Featured</a>
-            <a href="#telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>Telegram</a>
-            <a href="#gpts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>Custom GPTs</a>
-            <a href="#hubs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Explore Hubs</a>
-            <a href="#channels"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>Channels</a>
-            <a href="https://thunderstudyofficial.blogspot.com/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="19" r="1"/><path d="M4 4a16 16 0 0 1 16 16"/><path d="M4 11a9 9 0 0 1 9 9"/></svg>ThunderStudy Blog</a>
-        </div>
-
-        <div class="footer-col">
-            <h4>Popular Tools</h4>
-            <a href="https://project.wondermayank.in/finder/movie" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>Movie Finder</a>
-            <a href="https://project.wondermayank.in/finder/meals" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>Recipe Finder</a>
-            <a href="https://project.wondermayank.in/finder/cocktail" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h20l-9 8.5V19"/><path d="M7 19h10"/></svg>Drink Finder</a>
-            <a href="https://project.wondermayank.in/code/paletteify" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>Paletteify</a>
-            <a href="https://project.wondermayank.in/tools/teleremind" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Teleremind</a>
-            <a href="https://thunderstudyai.vercel.app/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>ThunderStudy AI</a>
-        </div>
-
-        <div class="footer-col">
-            <h4>Contact &amp; Legal</h4>
-            <a href="https://t.me/Mindmaster_robot" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="#0088cc" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg><span style="color:#0088cc">Contact via Telegram</span></a>
-            <a href="https://wondermayank.in/privacy" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Privacy Policy</a>
-            <a href="https://wondermayank.in/terms" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Terms &amp; Conditions</a>
-            <a href="https://wondermayank.in/disclaimer" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Disclaimer</a>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <div class="footer-copy">© 2018–2025 Wondermayank. All rights reserved. Design &amp; Curation by Wondermayank.</div>
-        <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
-            <a href="https://t.me/Mindmaster_robot" target="_blank" rel="noopener noreferrer" class="contact-tg">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-                Contact: @Mindmaster_robot
-            </a>
-            <div class="footer-legal">
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#terms">Terms &amp; Conditions</a>
-                <a href="#disclaimer">Disclaimer</a>
-            </div>
-        </div>
-    </div>
+<div class="wmf-wrap">
+<div class="wmf-grid">
+<div class="wmf-brand-col">
+<a aria-label="WonderMayank home" class="wmf-brand" href="https://wondermayank.in/">
+<span class="wmf-mark"><img alt="WonderMayank logo" decoding="async" height="36" loading="lazy" src="/favicon.svg" width="36"></span>
+<span class="wmf-brand-text">
+<span class="wmf-brand-name">Wonder<span class="wmf-accent">Mayank</span></span>
+<span class="wmf-brand-by">Web Developer &amp; Creator</span>
+</span>
+</a>
+<p class="wmf-desc">Free project tools, vibecoding experiments and exam-prep resources for Indian students.</p>
+<a aria-label="Meet Tiny and Byte, the Wondermayank mascots" class="wmf-mascot" href="https://wondermayank.in/mascot/">
+<img alt="Tiny and Byte, the Wondermayank mascots" decoding="async" height="40" loading="lazy" src="https://wondermayank.in/mascot/img/duo-thumb.webp" width="72">
+<span><b>Meet Tiny &amp; Byte</b><small>Our mascots</small></span>
+</a>
+<div class="wmf-social">
+<div>
+<div class="wmf-social-label">Wondermayank</div>
+<div class="wmf-social-row">
+<a aria-label="Wondermayank on Instagram" class="wmf-social-btn" href="https://www.instagram.com/wondermayank" rel="noopener noreferrer" target="_blank" title="Instagram"><svg aria-hidden="true"><use href="#i-instagram"></use></svg></a>
+<a aria-label="Wondermayank on YouTube" class="wmf-social-btn" href="https://www.youtube.com/@wondermayank" rel="noopener noreferrer" target="_blank" title="YouTube"><svg aria-hidden="true"><use href="#i-youtube"></use></svg></a>
+<a aria-label="Wondermayank on X" class="wmf-social-btn" href="https://x.com/wondermayankx" rel="noopener noreferrer" target="_blank" title="X"><svg aria-hidden="true"><use href="#i-x"></use></svg></a>
+<a aria-label="Wondermayank on Reddit" class="wmf-social-btn" href="https://www.reddit.com/user/wondermayankx" rel="noopener noreferrer" target="_blank" title="Reddit"><svg aria-hidden="true"><use href="#i-reddit"></use></svg></a>
+<a aria-label="Wondermayank on Telegram" class="wmf-social-btn" href="https://t.me/wondermayank" rel="noopener noreferrer" target="_blank" title="Telegram"><svg aria-hidden="true"><use href="#i-telegram"></use></svg></a>
+</div>
+</div>
+<div>
+<div class="wmf-social-label">ThunderStudy</div>
+<div class="wmf-social-row">
+<a aria-label="ThunderStudy on Instagram" class="wmf-social-btn" href="https://www.instagram.com/thunderstudyx" rel="noopener noreferrer" target="_blank" title="Instagram"><svg aria-hidden="true"><use href="#i-instagram"></use></svg></a>
+<a aria-label="ThunderStudy on YouTube" class="wmf-social-btn" href="https://www.youtube.com/@thunderstudy_official" rel="noopener noreferrer" target="_blank" title="YouTube"><svg aria-hidden="true"><use href="#i-youtube"></use></svg></a>
+<a aria-label="ThunderStudy on X" class="wmf-social-btn" href="https://x.com/thunderstudyx" rel="noopener noreferrer" target="_blank" title="X"><svg aria-hidden="true"><use href="#i-x"></use></svg></a>
+<a aria-label="ThunderStudy on Reddit" class="wmf-social-btn" href="https://www.reddit.com/user/thunderstudyx" rel="noopener noreferrer" target="_blank" title="Reddit"><svg aria-hidden="true"><use href="#i-reddit"></use></svg></a>
+<a aria-label="ThunderStudy on Telegram" class="wmf-social-btn" href="https://t.me/thunderstudy" rel="noopener noreferrer" target="_blank" title="Telegram"><svg aria-hidden="true"><use href="#i-telegram"></use></svg></a>
+</div>
+</div>
+</div>
+</div>
+<nav aria-label="ThunderStudy">
+<h2 class="wmf-title">ThunderStudy</h2>
+<ul class="wmf-links">
+<li><a href="https://thunderstudy.indevs.in/">ThunderStudy</a></li>
+<li><a href="https://thundertest.indevs.in/">CBT Mock</a></li>
+<li><a aria-label="ThunderStudy blog" href="https://blog.thunderstudy.indevs.in/">Blog</a></li>
+<li><a aria-label="ThunderStudy AI home" href="https://ai.thunderstudy.indevs.in/">AI</a></li>
+</ul>
+</nav>
+<nav aria-label="Support">
+<h2 class="wmf-title">Support</h2>
+<ul class="wmf-links">
+<li><a aria-label="Wondermayank FAQ" href="https://wondermayank.in/faq">FAQ</a></li>
+<li><a aria-label="Email Wondermayank" href="https://wondermayank.in/mail">Mail</a></li>
+<li><a href="https://wondermayank.in/contact">Contact</a></li>
+<li><a href="https://wondermayank.in/copyright">Copyright</a></li>
+<li><a href="https://wondermayank.in/legal">Legal</a></li>
+</ul>
+</nav>
+<nav aria-label="wondermayank">
+<h2 class="wmf-title">wondermayank</h2>
+<ul class="wmf-links">
+<li><a href="https://make.wondermayank.in/">Vibecoding</a></li>
+<li><a href="https://project.wondermayank.in/">Useful Projects</a></li>
+<li><a href="https://wondermayank.in/">Portfolio</a></li>
+<li><a href="https://wondermayank.in/about">About</a></li>
+<li><a href="https://wondermayank.in/new">New</a></li>
+<li><a href="https://wondermayank.in/mascot/">Mascot</a></li>
+<li><a aria-label="Wondermayank blog" href="https://blog.wondermayank.indevs.in/">Blog</a></li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="wmf-bottom">
+<div class="wmf-wrap wmf-bottom-inner">
+<div class="wmf-copy">&copy; 2026 WonderMayank. All rights reserved.</div>
+<nav aria-label="Legal" class="wmf-legal">
+<a href="https://wondermayank.in/cookies">Cookies</a>
+<a href="https://wondermayank.in/terms">Terms</a>
+<a href="https://wondermayank.in/privacy">Privacy</a>
+<a href="https://wondermayank.in/disclaimer">Disclaimer</a>
+<a href="https://wondermayank.in/sitemap">Sitemap</a>
+</nav>
+</div>
+</div>
 </footer>
 
 <!-- ══════════════════════════════════════════
@@ -5485,8 +5531,8 @@ const creations = {
     ],
     fandom:[
         {title:'Marvel Info',desc:'Deep-dive into the Marvel universe — heroes, villains, storylines and lore explained.',link:'https://project.wondermayank.in/showcase/Marvel',icon:'shield',color:'#dc2626',tag:'Marvel',world:'Marvel'},
-        {title:'Harry Potter Info',desc:'Explore the Wizarding World — spells, characters, houses and the complete HP lore.',link:'https://project.wondermayank.in/Harry_Potter',icon:'wand',color:'#7c3aed',tag:'Harry Potter',world:'HP'},
-        {title:'Minecraft Encyclopedia',desc:'The ultimate Minecraft item encyclopedia — blocks, mobs, crafting and survival guides.',link:'https://project.wondermayank.in/Minecraft',icon:'minecraft',color:'#16a34a',tag:'Minecraft',world:'MC'},
+        {title:'Harry Potter Info',desc:'Explore the Wizarding World — spells, characters, houses and the complete HP lore.',link:'https://project.wondermayank.in/showcase/Harry_Potter',icon:'wand',color:'#7c3aed',tag:'Harry Potter',world:'HP'},
+        {title:'Minecraft Encyclopedia',desc:'The ultimate Minecraft item encyclopedia — blocks, mobs, crafting and survival guides.',link:'https://project.wondermayank.in/showcase/Minecraft',icon:'minecraft',color:'#16a34a',tag:'Minecraft',world:'MC'},
         {title:'Luffy Fanmade',desc:'A One Piece fan tribute site for Monkey D. Luffy — Gear 5, the Straw Hat crew and the road to becoming King of the Pirates.',link:'https://luffykidlaw.indevs.in',icon:'anchor',color:'#f59e0b',tag:'One Piece',world:'OP'},
     ],
 };
@@ -6231,7 +6277,7 @@ function buildSpotlightIndex() {
     });
 
     // 8. Featured
-    spotlightIndex.push({ title:'ThunderStudy AI', desc:'Gamified student portal with XP, ID cards, AI assistant and rank system.', link:'https://thunderstudyai.vercel.app/', tag:'AI Platform', icon:'thunder_ai', color:'#c9973a', category:'Featured' });
+    spotlightIndex.push({ title:'ThunderStudy AI', desc:'Gamified student portal with XP, ID cards, AI assistant and rank system.', link:'https://ai.thunderstudy.indevs.in/', tag:'AI Platform', icon:'thunder_ai', color:'#c9973a', category:'Featured' });
     spotlightIndex.push({ title:'About Wondermayank', desc:'The full profile — projects, story, skills and contact information.', link:'https://project.wondermayank.in/about', tag:'Profile', icon:'user_circle', color:'#8b5cf6', category:'Featured' });
 }
 
@@ -6732,8 +6778,8 @@ if (bs) {
     <li><a href="https://project.wondermayank.in/finder/cocktail">Drink Finder — Explore cocktails and drinks with full recipes</a></li>
     <li><a href="https://project.wondermayank.in/finder/quotes">Quote Library — Inspiring and motivational quotes collection</a></li>
     <li><a href="https://project.wondermayank.in/showcase/Marvel">Marvel Info — Marvel universe heroes, villains and lore</a></li>
-    <li><a href="https://project.wondermayank.in/Harry_Potter">Harry Potter Info — Wizarding World spells, characters and houses</a></li>
-    <li><a href="https://project.wondermayank.in/Minecraft">Minecraft Encyclopedia — Item encyclopedia, blocks, mobs and crafting</a></li>
+    <li><a href="https://project.wondermayank.in/showcase/Harry_Potter">Harry Potter Info — Wizarding World spells, characters and houses</a></li>
+    <li><a href="https://project.wondermayank.in/showcase/Minecraft">Minecraft Encyclopedia — Item encyclopedia, blocks, mobs and crafting</a></li>
     <li><a href="https://project.wondermayank.in/code/paletteify">Paletteify — Free color palette generator for designers</a></li>
     <li><a href="https://project.wondermayank.in/tools/pdftotext">Text to PDF — Convert plain text to formatted PDF</a></li>
     <li><a href="https://project.wondermayank.in/help/pdf">PDF Master Suite — Merge, compress, edit and convert PDFs</a></li>
@@ -6759,7 +6805,7 @@ if (bs) {
     <li><a href="https://project.wondermayank.in/india">India — History, philosophy, geography and culture of India</a></li>
     <li><a href="https://project.wondermayank.in/india/kayastha">Kayastha — Community history and cultural traditions</a></li>
     <li><a href="https://project.wondermayank.in/india/rajput">Rajput — History and heritage of Rajput clans</a></li>
-    <li><a href="https://thunderstudyai.vercel.app/">ThunderStudy AI — Gamified student portal with AI assistant</a></li>
+    <li><a href="https://ai.thunderstudy.indevs.in/">ThunderStudy AI — Gamified student portal with AI assistant</a></li>
     <li><a href="https://project.wondermayank.in/about">About Wondermayank — Full profile and project showcase</a></li>
     <li><a href="https://commercesehoga.github.io/cuet">CUET CBT — Computer based test for CUET preparation</a></li>
     <li><a href="https://commercesehoga.github.io/jee-neet">NEET-JEE CBT — Mock tests for NEET and JEE aspirants</a></li>
